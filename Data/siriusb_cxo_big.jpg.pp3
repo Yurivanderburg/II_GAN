@@ -3,7 +3,7 @@ AppVersion=5.8
 Version=346
 
 [General]
-Rank=-1
+Rank=0
 ColorLabel=0
 InTrash=false
 
@@ -77,7 +77,7 @@ Green=0;1000;0;
 Blue=0;0;1000;
 
 [Black & White]
-Enabled=false
+Enabled=true
 Method=Desaturation
 Auto=false
 ComplementaryColors=true
@@ -163,8 +163,8 @@ Uniformity=5
 [White Balance]
 Enabled=true
 Setting=Camera
-Temperature=6504
-Green=1
+Temperature=6490
+Green=1.002
 Equal=1
 TemperatureBias=0
 
@@ -179,7 +179,7 @@ Surrsrc=Average
 AdaptLum=16
 Badpixsl=0
 Model=RawT
-Algorithm=No
+Algorithm=JC
 J-Light=0
 Q-Bright=0
 C-Chroma=0
@@ -240,7 +240,7 @@ C2Method=AUTO
 SMethod=shal
 MedMethod=soft
 RGBMethod=soft
-MethodMed=none
+MethodMed=Lonly
 Redchro=0
 Bluechro=0
 Gamma=1.7
@@ -273,10 +273,10 @@ Lab=false
 
 [Crop]
 Enabled=false
-X=-1
-Y=-1
-W=15000
-H=15000
+X=0
+Y=0
+W=1024
+H=810
 FixedRatio=true
 Ratio=As Image
 Orientation=As Image
@@ -338,7 +338,7 @@ CenterY=0
 
 [Resize]
 Enabled=false
-Scale=1
+Scale=0.88
 AppliesTo=Cropped area
 Method=Lanczos
 DataSpecified=3
@@ -374,7 +374,7 @@ DeconvDamping=0
 DeconvIterations=100
 
 [Color Management]
-InputProfile=(cameraICC)
+InputProfile=(embedded)
 ToneCurve=false
 ApplyLookTable=false
 ApplyBaselineExposureOffset=true
@@ -383,7 +383,7 @@ DCPIlluminant=0
 WorkingProfile=ProPhoto
 WorkingTRC=none
 WorkingTRCGamma=2.3999999999999999
-WorkingTRCSlope=12.9231
+WorkingTRCSlope=12.92
 OutputProfile=RTv4_sRGB
 OutputProfileIntent=Relative
 OutputBPC=true
@@ -570,9 +570,9 @@ LabRegionChannel_1=-1
 LabRegionsShowMask=-1
 
 [RAW]
-DarkFrame=
+DarkFrame=/szeva
 DarkFrameAuto=false
-FlatFieldFile=
+FlatFieldFile=/szeva
 FlatFieldAutoSelect=false
 FlatFieldBlurRadius=32
 FlatFieldBlurType=Area Flatfield
