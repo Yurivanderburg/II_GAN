@@ -3,8 +3,9 @@ import json
 import datetime
 
 # Params
-start_date = "2023-08-01"
-end_date = datetime.date.today()
+start_date = "1995-06-26"
+end_date = "1995-12-31"
+#end_date = datetime.date.today()
 
 # Edit this to search for different images
 required_term1 = "spiral"
@@ -31,19 +32,21 @@ def main():
             date = result['date']
 
             if (required_term1 and required_term2) in result['explanation']:
-                image_counter += 1
+                if result['media_type'] == "image":
 
-                # Download images
-                if do_download:
-                    image = requests.get(result['url'])  # Change to hdurl if you want a high-resolution picture ;)
-                    with open(f"Data/SpiralGalaxy/apod_{date}.jpg", "wb") as f:
-                        f.write(image.content)
+                    image_counter += 1
 
-        if do_download:
-            print(f"Downloaded {image_counter} images between {start_date} and {end_date} matching the description.")
-        else:
-            print(f"Found {image_counter} images between {start_date} and {end_date} matching the description. "
-                  f"They were not downloaded.")
+                    # Download images
+                    if do_download:
+                        image = requests.get(result['url'])  # Change to hdurl if you want a high-resolution picture ;)
+                        with open(f"Data/SpiralGalaxy/apod_{date}.jpg", "wb") as f:
+                            f.write(image.content)
+
+            if do_download:
+                print(f"Downloaded {image_counter} images between {start_date} and {end_date} matching the description.")
+            else:
+                print(f"Found {image_counter} images between {start_date} and {end_date} matching the description. "
+                      f"They were not downloaded.")
 
     except:
         return "URL Error"
