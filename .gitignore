@@ -1,2 +1,6 @@
 venv/
-Data
+Data/
+training_checkpoints/
+Documentation/
+.ipynb_checkpoints/
+.idea/
