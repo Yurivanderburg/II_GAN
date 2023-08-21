@@ -9,18 +9,19 @@ def main():
     """
 
     # Fixed parameters
-    image_size = 512
+    image_size = 256
     startAngle = 0
     endAngle = 360
     color = (255, 0, 0)
     thickness = -1
 
     # Variable parameters:
-    center_x = np.arange(100, 400, 40)  # 10
-    center_y = np.arange(100, 400, 40)  # 10
-    axesLength1 = np.arange(10, 220, 25)  # 9
-    axesLength2 = np.arange(10, 220, 25)  # 9
+    center_x = np.arange(70, 200, 25)  # 5
+    center_y = np.arange(70, 200, 25)  # 5
+    axesLength1 = np.arange(10, 80, 15)  # 9
+    axesLength2 = np.arange(10, 80, 15)  # 9
     angles = np.arange(0, 360, 20)  # 15
+
 
     iterations = (len(center_x) * len(center_y) * len(axesLength1) * len(axesLength2) * len(angles))
     print(f"Generate almost {iterations} images...")
@@ -48,7 +49,7 @@ def main():
                                                             color, thickness)
                                 # Save image
                                 image = Image.fromarray(image_ellipse.astype(np.uint8))
-                                image.save(f"Data/Shapes/original2/ellipse_{counter}.jpg")
+                                image.save(f"Data/Ellipses/original/ellipse_{counter}.jpg")
 
                                 # Print progress every 10'000 steps
                                 if (counter % 10000) == 0:

@@ -6,8 +6,8 @@ import cv2
 import os
 
 # Params
-image_size = 512 #px
-PATH = "Data/Shapes/original2"
+image_size = 256 #px
+PATH = "Data/Ellipses/original"
 save_images = True
 
 
@@ -40,9 +40,9 @@ def main():
     if save_images:
         folders = ["val", "test", "train"]
         for folder in folders:
-            if not os.path.exists(f"Data/Shapes/{folder}"):
-                os.makedirs(f"Data/Shapes/{folder}")
-                print(f"Directory Data/Shapes/{folder} created.")
+            if not os.path.exists(f"Data/Ellipses/{folder}"):
+                os.makedirs(f"Data/Ellipses/{folder}")
+                print(f"Directory Data/Ellipses/{folder} created.")
 
     for filename in os.listdir(PATH):
 
@@ -60,11 +60,10 @@ def main():
         except:
             print(f"Image {image_name} not converted to grayscale.")
 
-        img_org_ed = cv2.resize(img_org, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA)
-        
         '''
-        img_org_ed = img_org - np.mean(img_org)
+        img_org_ed = cv2.resize(img_org, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA)
 
+        img_org_ed = img_org_ed - np.mean(img_org_ed)
 
         ## Generate power spectrum from images
         # Calculate 2D fourier transform (including shift)
@@ -84,12 +83,12 @@ def main():
         # Save or display images > use cv2 instead of matplotlib, as this always saves as (64,64,4)
         # Already save them in test & train & validation datasets; seems random TODO: Improve/Cross-Check
         if save_images:
-            if counter < 5000: # Save to val
-                cv2.imwrite(f"Data/Shapes/val/{image_name}.jpg", combined_image)
-            elif (counter >= 5000) and (counter < 10000):
-                cv2.imwrite(f"Data/Shapes/test/{image_name}.jpg", combined_image)
+            if counter < 1000: # Save to val
+                cv2.imwrite(f"Data/Ellipses/val/{image_name}.jpg", combined_image)
+            elif (counter >= 1000) and (counter < 2000):
+                cv2.imwrite(f"Data/Ellipses/test/{image_name}.jpg", combined_image)
             else:
-                cv2.imwrite(f"Data/Shapes/train/{image_name}.jpg", combined_image)
+                cv2.imwrite(f"Data/Ellipses/train/{image_name}.jpg", combined_image)
 
         else:
             plt.imshow(img_org_ed)
