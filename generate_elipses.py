@@ -16,8 +16,8 @@ def main():
     thickness = -1
 
     # Variable parameters:
-    center_x = np.arange(100, 400, 30)  # 10
-    center_y = np.arange(100, 400, 30)  # 10
+    center_x = np.arange(100, 400, 40)  # 10
+    center_y = np.arange(100, 400, 40)  # 10
     axesLength1 = np.arange(10, 220, 25)  # 9
     axesLength2 = np.arange(10, 220, 25)  # 9
     angles = np.arange(0, 360, 20)  # 15
@@ -48,10 +48,10 @@ def main():
                                                             color, thickness)
                                 # Save image
                                 image = Image.fromarray(image_ellipse.astype(np.uint8))
-                                image.save(f"Data/Shapes/tests/test_{counter}.jpg")
+                                image.save(f"Data/Shapes/original2/ellipse_{counter}.jpg")
 
                                 # Print progress every 10'000 steps
-                                if (counter % 25000) == 0:
+                                if (counter % 10000) == 0:
                                     print(f"Progress: Step {counter}...")
                                 counter += 1
 

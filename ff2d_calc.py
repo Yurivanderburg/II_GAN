@@ -6,8 +6,8 @@ import cv2
 import os
 
 # Params
-image_size = 64 #px
-PATH = "Data/SpiralGalaxy/original_cleaned"
+image_size = 512 #px
+PATH = "Data/Shapes/original2"
 save_images = True
 
 
@@ -40,9 +40,9 @@ def main():
     if save_images:
         folders = ["val", "test", "train"]
         for folder in folders:
-            if not os.path.exists(f"Data/SpiralGalaxy/{folder}"):
-                os.makedirs(f"Data/SpiralGalaxy/{folder}")
-                print(f"Directory Data/SpiralGalaxy/{folder} created.")
+            if not os.path.exists(f"Data/Shapes/{folder}"):
+                os.makedirs(f"Data/Shapes/{folder}")
+                print(f"Directory Data/Shapes/{folder} created.")
 
     for filename in os.listdir(PATH):
 
@@ -54,14 +54,17 @@ def main():
         # Convert to 1-channel grayscale
         # Resize images to image_size (skip images that are already grayscale)
         # subtract mean > better contrast
-
+        '''
         try:
             img_org = cv2.cvtColor(img_org, cv2.COLOR_BGR2GRAY)
         except:
             print(f"Image {image_name} not converted to grayscale.")
 
         img_org_ed = cv2.resize(img_org, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA)
-        img_org_ed = img_org_ed - np.mean(img_org_ed)
+        
+        '''
+        img_org_ed = img_org - np.mean(img_org)
+
 
         ## Generate power spectrum from images
         # Calculate 2D fourier transform (including shift)
@@ -81,20 +84,20 @@ def main():
         # Save or display images > use cv2 instead of matplotlib, as this always saves as (64,64,4)
         # Already save them in test & train & validation datasets; seems random TODO: Improve/Cross-Check
         if save_images:
-            if counter < 100: # Save to val
-                cv2.imwrite(f"Data/SpiralGalaxy/val/{image_name}.jpg", combined_image)
-            elif (counter >= 100) and (counter < 200):
-                cv2.imwrite(f"Data/SpiralGalaxy/test/{image_name}.jpg", combined_image)
+            if counter < 5000: # Save to val
+                cv2.imwrite(f"Data/Shapes/val/{image_name}.jpg", combined_image)
+            elif (counter >= 5000) and (counter < 10000):
+                cv2.imwrite(f"Data/Shapes/test/{image_name}.jpg", combined_image)
             else:
-                cv2.imwrite(f"Data/SpiralGalaxy/train/{image_name}.jpg", combined_image)
+                cv2.imwrite(f"Data/Shapes/train/{image_name}.jpg", combined_image)
 
         else:
-            #plt.imshow(img_org_ed)
+            plt.imshow(img_org_ed)
             print("Original image: ", np.mean(img_org_ed))
-            #plt.show()
-            #plt.imshow(img_fft_norm)
+            plt.show()
+            plt.imshow(img_fft_norm)
             print("FF2D image: ", np.mean(img_fft_norm))
-            #plt.show()
+            plt.show()
 
             if counter == 2:
                 break
