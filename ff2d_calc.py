@@ -6,7 +6,7 @@ import cv2
 import os
 
 # Params
-image_size = 256 #px
+image_size = 64 #px
 PATH = "Data/Ellipses/original"
 save_images = True
 
@@ -83,9 +83,9 @@ def main():
         # Save or display images > use cv2 instead of matplotlib, as this always saves as (64,64,4)
         # Already save them in test & train & validation datasets; seems random TODO: Improve/Cross-Check
         if save_images:
-            if counter < 1000: # Save to val
+            if counter < 600: # Save to val
                 cv2.imwrite(f"Data/Ellipses/val/{image_name}.jpg", combined_image)
-            elif (counter >= 1000) and (counter < 2000):
+            elif (counter >= 600) and (counter < 1200):
                 cv2.imwrite(f"Data/Ellipses/test/{image_name}.jpg", combined_image)
             else:
                 cv2.imwrite(f"Data/Ellipses/train/{image_name}.jpg", combined_image)

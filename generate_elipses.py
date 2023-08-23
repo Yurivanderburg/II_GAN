@@ -1,6 +1,10 @@
 import numpy as np
 import cv2
 from PIL import Image
+import os
+
+
+PATH = "Data/Ellipses/original"
 
 
 def main():
@@ -9,18 +13,23 @@ def main():
     """
 
     # Fixed parameters
-    image_size = 256
+    image_size = 64
     startAngle = 0
     endAngle = 360
     color = (255, 0, 0)
     thickness = -1
 
     # Variable parameters:
-    center_x = np.arange(70, 200, 25)  # 5
-    center_y = np.arange(70, 200, 25)  # 5
-    axesLength1 = np.arange(10, 80, 15)  # 9
-    axesLength2 = np.arange(10, 80, 15)  # 9
+    center_x = np.arange(12, 52, 12)  # 5
+    center_y = np.arange(12, 52, 12)  # 5
+    axesLength1 = np.arange(3, 35, 7)  # 5
+    axesLength2 = np.arange(3, 35, 7)  # 5
     angles = np.arange(0, 360, 20)  # 15
+
+    if not os.path.exists(PATH):
+        os.makedirs(PATH)
+        print(f"Directory {PATH} created.")
+
 
 
     iterations = (len(center_x) * len(center_y) * len(axesLength1) * len(axesLength2) * len(angles))
@@ -49,7 +58,7 @@ def main():
                                                             color, thickness)
                                 # Save image
                                 image = Image.fromarray(image_ellipse.astype(np.uint8))
-                                image.save(f"Data/Ellipses/original/ellipse_{counter}.jpg")
+                                image.save(f"{PATH}/ellipse_{counter}.jpg")
 
                                 # Print progress every 10'000 steps
                                 if (counter % 10000) == 0:
