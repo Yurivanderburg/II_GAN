@@ -25,8 +25,8 @@ def main():
     thickness = -1
 
     # Variable parameters:
-    axesLength1 = np.arange(2, 32, 2)  # 15
-    axesLength2 = np.arange(2, 32, 2)  # 15
+    axesLength1 = np.arange(6, 32, 2)  # 15
+    axesLength2 = np.arange(6, 32, 2)  # 15
     angles = np.arange(0, 360, 20)  # 15
 
     for axis in [axesLength1, axesLength2]:
@@ -44,13 +44,14 @@ def main():
 
     # Loop over variable parameters (center, axesLength, angle)
     counter = 0
+    counter_failed = 0
     for axis1 in axesLength1:
         for axis2 in axesLength2:
             axesLength = (axis1, axis2)
             for angle in angles:
 
                 # Condition: ellipse not too eccentric
-                if abs(axis1 - axis2) <= 20:
+                if abs(axis1 - axis2) <= 18:
 
                     # Create ellipse
                     new_image = np.zeros(shape=(image_size, image_size))
@@ -64,21 +65,28 @@ def main():
                         middle = center[1]
                         lower_side = center[1] + axesLength[1]
                         difference = (axesLength[1] + 1)
-                        col_grad = np.linspace(1, 1.5, difference)
+                        col_grad = np.linspace(1, 2, difference)
                         mask = np.ones((image_size, image_size))
 
                         # Rotation
                         if angle != 0:
-                            length = int(np.sqrt((upper_side / 2) ** 2 + (lower_side / 2) ** 2))
-                            col_grad_rot = np.linspace(1, 1.5, int(length))
 
-                            for i in range(image_size):
-                                mask[middle:middle + length, i] = col_grad_rot
-                                mask[middle - length:middle, i] = np.flip(col_grad_rot)
+                            # Define an offset, because of issues with the rotation
+                            offset = int(5 * np.sin(2*angle * np.pi / 180) ** 2)
+                            length = int(np.sqrt((upper_side / 2) ** 2 + (lower_side / 2) ** 2))+offset
+                            col_grad_rot = np.linspace(1, 2, length)
 
-                            # Rotate the mask and merge with image
-                            mask_rot = rotate(mask, angle=angle, reshape=False)
-                            image_ell_mask = np.multiply(mask_rot, image_ellipse)
+                            try:
+                                for i in range(image_size):
+                                    mask[middle:middle + length, i] = col_grad_rot
+                                    mask[middle - length:middle, i] = np.flip(col_grad_rot)
+
+                                # Rotate the mask and merge with image
+                                mask_rot = rotate(mask, angle=angle, reshape=False)
+                                image_ell_mask = np.multiply(mask_rot, image_ellipse)
+
+                            except:
+                                print(f"Image No. {counter} failed.")
 
                         # No rotation
                         else:
@@ -94,16 +102,17 @@ def main():
                         image = Image.fromarray(image_ell_mask.astype(np.uint8))
 
                         # print("Image stat:", np.max(image), np.min(image))
-                        plt.imshow(image)
+                        image.save(f"{PATH}/ellipse_{counter}.jpg")
+
 
                     # If not color_gradient:
                     else:
-                        # image = Image.fromarray(image_ellipse.astype(np.uint8))
-                        plt.imshow(image_ellipse)
+                        image = Image.fromarray(image_ellipse.astype(np.uint8))
+                        image.save(f"{PATH}/ellipse_{counter}.jpg")
 
                     # Print progress every 1'000 steps
                     if (counter % 1000) == 0:
-                        print(f"Progress: Step {counter}...")
+                        print(f"Progress: Step {counter} ___________________________")
                     counter += 1
 
     print(f"{counter} images were created")
