@@ -14,8 +14,9 @@ def ellip(sx,sy,rad,inc,pa,sq):
         Tv[x**2 + ((y-z)/cosI)**2 < (sn*rad)**2] = (4 + abs(cs))/5
         if np.min(Tv) < np.max(Tv):
             draw(sx,sy,Tv,2,'sky',ceil=1,cmap='inferno')
-        pl.pause(.05)
+        pl.pause(.01)
     return Tv
+
 
 sx,sy,x,y = grids(1e-10,512,1e-6)
 ellip(sx,sy,1e-8,1.5,1,0.5)
