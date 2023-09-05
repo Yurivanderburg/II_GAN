@@ -8,10 +8,13 @@ import os
 # Params
 image_size = 64 #px
 PATH = "Data/original"
+PATH_out = "Data/Ellipsoids_sampled/"
 save_images = True
-grayscale = True
-SAP_noise = True
-alpha = 0.05 # Salt and Pepper Noise probability
+grayscale = True # Only 1-color image
+SAP_noise = True # Salt and pepper noise
+sampling = True # Sparse sampling
+
+alpha = 0.005 # Salt and Pepper Noise probability
 
 
 # Try to concat images
@@ -53,6 +56,27 @@ def saltandpepper(image, prob):
     return output
 
 
+def sparse_sampling():
+    """
+    Add a mask that sparsely samples the FF2D image. Includes up-scaling and down-scaling to make the result smoother.
+    First version, where the ellipse is inclined by 45° (mathematically positive), with ellipse size of (8,4)
+    """
+    img_size = image_size * 1
+    mask = np.zeros(shape=(img_size, img_size))
+    center = (int(img_size / 2), int(img_size / 2))
+    axesLength = (int(img_size / 8), int(img_size / 16))
+    angle = 135
+    startAngle = 0
+    endAngle = 360
+    color = 1
+    thickness = -1
+
+    mask = cv2.ellipse(mask, center, axesLength, angle, startAngle, endAngle, color, thickness)
+    #mask = cv2.resize(mask, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA)
+
+    return mask
+
+
 def main():
     """
     Python script that calculates the 2D fourier transformation of all the ellipsoids, because these will be
@@ -64,9 +88,9 @@ def main():
     if save_images:
         folders = ["val", "test", "train"]
         for folder in folders:
-            if not os.path.exists(f"Data/Ellipsoids/SAP/{folder}"):
-                os.makedirs(f"Data/Ellipsoids/SAP/{folder}")
-                print(f"Directory Data/Ellipsoids/SAP/{folder} created.")
+            if not os.path.exists(f"{PATH_out}{folder}"):
+                os.makedirs(f"{PATH_out}{folder}")
+                print(f"{PATH_out}{folder} created.")
 
     for filename in os.listdir(PATH):
 
@@ -87,29 +111,39 @@ def main():
             except:
                 print(f"Image {image_name} not converted to grayscale.")
 
+        img_original = img_org.copy()
+
         # (Optional) Calculate Salt and Pepper noise
         if SAP_noise:
             noise = saltandpepper(img_org, alpha)
             img_org = cv2.add(img_org, noise)
-            label = "_noise"
-        else:
-            label = ""
+
 
         # Resize to image_size and subtract the mean
         img_org_ed = cv2.resize(img_org, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA)
         img_org_ed = img_org_ed - np.mean(img_org_ed)
+        img_original = cv2.resize(img_original, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA)
+        img_original = img_original - np.mean(img_original)
+
 
         # Calculate 2D FFT and normalize
         img_fft = fft.fftshift(fft.fft2(fft.fftshift(img_org_ed)))
         fft_argument = np.abs(img_fft)
         img_fft_norm = fft_argument/np.max(fft_argument)
 
+        # (Optional) sparse sampling
+        if sampling:
+            sample_mask = sparse_sampling()
+            img_fft_norm = np.multiply(img_fft_norm, sample_mask)
+
+
         # Seems to be required, otherwise images are saved as black -> Unclear why ?
         img_fft_norm = cv2.convertScaleAbs(img_fft_norm, alpha=(255.0))
 
         # Need to combine image to deal with tensorflow
-        combined_image = concat_images(img_org_ed, img_fft_norm)
+        combined_image = concat_images(img_original, img_fft_norm)
 
+        '''
         # If noise is on, we need to combine it also with the original image (w/o noise):
         if SAP_noise:
             img_nonoise = mpimg.imread(file)
@@ -117,17 +151,18 @@ def main():
             img_nonoise = cv2.resize(img_nonoise, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA)
             img_nonoise = img_nonoise - np.mean(img_nonoise)
             combined_image = concat_images(img_nonoise, combined_image)
+        '''
 
         ## Create directories and save images:
         # Save or display images > use cv2 instead of matplotlib, as this always saves as (64,64,4)
         # Already save them in test & train & validation datasets; seems random TODO: Improve/Cross-Check
         if save_images:
             if counter < 300: # Save to val
-                cv2.imwrite(f"Data/Ellipsoids/SAP/val/{image_name}{label}.jpg", combined_image)
+                cv2.imwrite(f"{PATH_out}val/{image_name}.jpg", combined_image)
             elif (counter >= 300) and (counter < 600):
-                cv2.imwrite(f"Data/Ellipsoids/SAP/test/{image_name}{label}.jpg", combined_image)
+                cv2.imwrite(f"{PATH_out}test/{image_name}.jpg", combined_image)
             else:
-                cv2.imwrite(f"Data/Ellipsoids/SAP/train/{image_name}{label}.jpg", combined_image)
+                cv2.imwrite(f"{PATH_out}train/{image_name}.jpg", combined_image)
 
         else:
             plt.imshow(img_org_ed)

@@ -82,5 +82,5 @@ def ellip(sx,sy,rad,inc,pa,sq):
         Tv[x**2 + ((y-z)/cosI)**2 < (sn*rad)**2] = (4 + abs(cs))/5
         if np.min(Tv) < np.max(Tv):
             draw(sx,sy,Tv,2,'sky',ceil=1,cmap='inferno')
-        #pl.pause(.01)
+        #pl.pause(.05)
     return Tv
