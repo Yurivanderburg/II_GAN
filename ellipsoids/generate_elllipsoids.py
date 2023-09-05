@@ -1,7 +1,10 @@
 import numpy as np
 import os
 import matplotlib.pyplot as pl
+import cv2
+import skimage
 import time
+from PIL import Image
 from functions import grids, ellip
 
 
