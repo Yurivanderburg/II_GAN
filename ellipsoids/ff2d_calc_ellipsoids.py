@@ -1,20 +1,19 @@
-import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 import numpy as np
-from scipy import fft, ndimage
+from scipy import fft
 import cv2
 import os
 
 # Params
 image_size = 64 #px
-PATH = "Data/original"
-PATH_out = "Data/Ellipsoids_sampled/"
-save_images = True
-grayscale = True # Only 1-color image
+PATH = "Data/original_new"
+PATH_out = "Data/Test4/"
+save_images = False
 SAP_noise = True # Salt and pepper noise
 sampling = True # Sparse sampling
 
 alpha = 0.005 # Salt and Pepper Noise probability
+N_ellip = 1 # Creates one centered ellipse
 
 
 # Try to concat images
@@ -40,15 +39,10 @@ def saltandpepper(image, prob):
     output = image.copy()
     if len(image.shape) == 2:
         black = 0
-        white = 255
+        white = 1
     else:
-        colorspace = image.shape[2]
-        if colorspace == 3:  # RGB
-            black = np.array([0, 0, 0], dtype='uint8')
-            white = np.array([255, 255, 255], dtype='uint8')
-        else:  # RGBA
-            black = np.array([0, 0, 0, 255], dtype='uint8')
-            white = np.array([255, 255, 255, 255], dtype='uint8')
+        raise ValueError('This image has multiple channels, which is not supported.')
+
     probs = np.random.random(output.shape[:2])
     output[probs < (prob / 2)] = black
     output[probs > 1 - (prob / 2)] = white
@@ -56,25 +50,59 @@ def saltandpepper(image, prob):
     return output
 
 
-def sparse_sampling():
+def make_grid(N, grid_size):
+    xlist = []
+    positions = []
+
+    for i in range(N+1):
+        if i != 0:
+            xlist.append(np.round((grid_size*(i/(N+1)))))
+
+    for i in xlist:
+        for j in xlist:
+            positions.append([i,j])
+
+    return np.array(positions)
+
+
+def sparse_sampling(n_ellipses, scaling=8):
     """
-    Add a mask that sparsely samples the FF2D image. Includes up-scaling and down-scaling to make the result smoother.
-    First version, where the ellipse is inclined by 45° (mathematically positive), with ellipse size of (8,4)
+    Adds a mask (0 or 1s) where the image is sampled. Can be either one centered ellipse, or a grid of ellipses
+    n_ellipses > 1: creates a nxn grid, so n_ellipses^2 samples
+    scaling: scales the image, such that the borders are smoother (default: 64 > 512px)
     """
-    img_size = image_size * 1
+    img_size = image_size * scaling
     mask = np.zeros(shape=(img_size, img_size))
-    center = (int(img_size / 2), int(img_size / 2))
-    axesLength = (int(img_size / 8), int(img_size / 16))
+    axesLength = (int(img_size / (3 * n_ellipses)), int(img_size / (5 * n_ellipses)))
     angle = 135
     startAngle = 0
     endAngle = 360
     color = 1
     thickness = -1
 
-    mask = cv2.ellipse(mask, center, axesLength, angle, startAngle, endAngle, color, thickness)
-    #mask = cv2.resize(mask, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA)
+    if n_ellipses == 1:
+        center = (int(img_size / 2), int(img_size / 2))
 
-    return mask
+        mask = cv2.ellipse(mask, center, axesLength, angle, startAngle, endAngle, color, thickness)
+        mask = cv2.resize(mask, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA)
+
+        return mask
+
+    else:
+        mask_raw = np.zeros(shape=(img_size, img_size))
+        mask_final = np.zeros(shape=(img_size, img_size))
+
+        points = make_grid(n_ellipses, img_size)
+
+        for i in range(len(points)):
+            center = (int(points[i, 0]), int(points[i, 1]))
+            # Add current ellipse
+            mask_final += cv2.ellipse(mask_raw, center, axesLength, angle, startAngle, endAngle, color, thickness)
+            mask_raw = np.zeros(shape=(img_size, img_size))
+
+        mask_final = cv2.resize(mask_final, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA)
+
+        return mask_final
 
 
 def main():
@@ -92,6 +120,10 @@ def main():
                 os.makedirs(f"{PATH_out}{folder}")
                 print(f"{PATH_out}{folder} created.")
 
+    # The mask for the sparse sampling can be outside the loop (more efficient)
+    if sampling:
+        sampling_mask = sparse_sampling(n_ellipses=N_ellip, scaling=8)
+
     for filename in os.listdir(PATH):
 
         # Load image
@@ -102,58 +134,37 @@ def main():
             continue
 
         image_name = filename[:-4]
-        img_org = mpimg.imread(file)
-
-        # (Optional) Convert to grayscale
-        if grayscale:
-            try:
-                img_org = cv2.cvtColor(img_org, cv2.COLOR_BGR2GRAY)
-            except:
-                print(f"Image {image_name} not converted to grayscale.")
-
-        img_original = img_org.copy()
+        image_original = np.load(file) # > input image
+        img_org = image_original.copy() # > ground truth
 
         # (Optional) Calculate Salt and Pepper noise
         if SAP_noise:
-            noise = saltandpepper(img_org, alpha)
-            img_org = cv2.add(img_org, noise)
+            image_original = saltandpepper(img_org, alpha)
 
+        # Resize to image_size and subtract the mean (not for ground truth though!!!)
+        img_ed = cv2.resize(image_original, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA)
+        img_ed = img_ed - np.mean(img_ed)
+        ground_truth = cv2.resize(img_org, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA)
 
-        # Resize to image_size and subtract the mean
-        img_org_ed = cv2.resize(img_org, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA)
-        img_org_ed = img_org_ed - np.mean(img_org_ed)
-        img_original = cv2.resize(img_original, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA)
-        img_original = img_original - np.mean(img_original)
-
-
-        # Calculate 2D FFT and normalize
-        img_fft = fft.fftshift(fft.fft2(fft.fftshift(img_org_ed)))
+        # Calculate 2D FFT
+        img_fft = fft.fftshift(fft.fft2(fft.fftshift(img_ed)))
         fft_argument = np.abs(img_fft)
-        img_fft_norm = fft_argument/np.max(fft_argument)
 
         # (Optional) sparse sampling
         if sampling:
-            sample_mask = sparse_sampling()
-            img_fft_norm = np.multiply(img_fft_norm, sample_mask)
+            fft_argument = np.multiply(fft_argument, sampling_mask)
 
+        # Normalization
+        img_fft_norm = fft_argument / np.max(fft_argument)
 
-        # Seems to be required, otherwise images are saved as black -> Unclear why ?
+        # The images are on float ([0,1]), but cv2 requires integer ([0, 255]):
         img_fft_norm = cv2.convertScaleAbs(img_fft_norm, alpha=(255.0))
+        ground_truth = cv2.convertScaleAbs(ground_truth, alpha=(255.0))
 
-        # Need to combine image to deal with tensorflow
-        combined_image = concat_images(img_original, img_fft_norm)
+        # Combine ground truth and input image for NN
+        combined_image = concat_images(ground_truth, img_fft_norm)
 
-        '''
-        # If noise is on, we need to combine it also with the original image (w/o noise):
-        if SAP_noise:
-            img_nonoise = mpimg.imread(file)
-            img_nonoise = cv2.cvtColor(img_nonoise, cv2.COLOR_BGR2GRAY)
-            img_nonoise = cv2.resize(img_nonoise, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA)
-            img_nonoise = img_nonoise - np.mean(img_nonoise)
-            combined_image = concat_images(img_nonoise, combined_image)
-        '''
-
-        ## Create directories and save images:
+        # Create directories and save images:
         # Save or display images > use cv2 instead of matplotlib, as this always saves as (64,64,4)
         # Already save them in test & train & validation datasets; seems random TODO: Improve/Cross-Check
         if save_images:
@@ -165,8 +176,8 @@ def main():
                 cv2.imwrite(f"{PATH_out}train/{image_name}.jpg", combined_image)
 
         else:
-            plt.imshow(img_org_ed)
-            print("Original image: ", np.mean(img_org_ed))
+            plt.imshow(ground_truth)
+            print("Original image: ", np.mean(ground_truth))
             plt.show()
             plt.imshow(img_fft_norm)
             print("FF2D image: ", np.mean(img_fft_norm))

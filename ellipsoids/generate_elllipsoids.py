@@ -65,7 +65,7 @@ def main():
                     # Draw ellipse and save both image and pure numpy array
                     ellipse = ellip(sx,sy,rad,inclination,pa,sq)
                     pl.imsave(f"{PATH}/images/ellipsoid_{counter}.jpg", ellipse)
-                    pl.imsave(f"{PATH}/ellipsoid_{counter}", ellipse)
+                    np.save(f"{PATH}/ellipsoid_{counter}", ellipse)
 
 
 
