@@ -1,20 +1,18 @@
 import numpy as np
 import os
 import matplotlib.pyplot as pl
-import cv2
-import skimage
 import time
-from PIL import Image
 from functions import grids, ellip
 
 
-PATH = "Data/Tests3"
+PATH = "Data/original_new"
 color_gradient = True
 
 
 def main():
     """
-    Function that generates ellipsoids of different size, angle and shape, and saves the images as .jpg images.
+    Function that generates ellipsoids of different size, angle and shape, and saves the images as .jpg images, as well
+    as pure numpy arrays
     """
 
     # Fixed parameters
@@ -36,10 +34,9 @@ def main():
     # sq: "thickness" in z-direction of the ellipsoid (pole-pole distance). Best between 0.5 and 1.2
 
     rad_ = np.arange(3e-9, 1.6e-8, 2e-9) # 7
-    #inclination_ = np.arange(0, 2*np.pi, np.pi/4)  # 4
-    inclination_ = [(1/2)*np.pi, (3/2)*np.pi]
+    inclination_ = np.arange(0, 2*np.pi, np.pi/4)  # 8
     pa_ = np.arange(0, 2*np.pi, np.pi/4)  # 8
-    sq_ = np.arange(0.6, 1.6, 0.1)  # 10
+    sq_ = np.arange(0.6, 1.6, 0.15)  # 7
 
 
 
@@ -65,9 +62,13 @@ def main():
             for pa in pa_:
                 for sq in sq_:
 
-                    # Draw ellipse
+                    # Draw ellipse and save both image and pure numpy array
                     ellipse = ellip(sx,sy,rad,inclination,pa,sq)
-                    pl.imsave(f"{PATH}/ellipsoid_{counter}.jpg", ellipse)
+                    pl.imsave(f"{PATH}/images/ellipsoid_{counter}.jpg", ellipse)
+                    pl.imsave(f"{PATH}/ellipsoid_{counter}", ellipse)
+
+
+
 
                     # Print progress every 50 steps
                     if (counter % 50) == 0:
