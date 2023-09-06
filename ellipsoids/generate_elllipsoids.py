@@ -5,7 +5,7 @@ import time
 from functions import grids, ellip
 
 
-PATH = "Data/original_new"
+PATH = "Data/original_new2"
 color_gradient = True
 
 
@@ -21,11 +21,17 @@ def main():
 
 
     # Variable parameters:
-    ## What has been used priviously:
+    ## First version
     #     rad_ = np.arange(3e-9, 1.6e-8, 2e-9) # 7
     #     inclination_ = np.arange(0,2*np.pi, np.pi/4)  # 8
     #     pa_ = np.arange(0, 2*np.pi, np.pi/4)  # 8
     #     sq_ = np.arange(0.6, 1.6, 0.1)  # 10
+
+    ## Second version
+    #   rad_ = np.arange(3e-9, 1.6e-8, 2e-9) # 7
+    #   inclination_ = np.arange(0, 2*np.pi, np.pi/4)  # 8
+    #   pa_ = np.arange(0, 2*np.pi, np.pi/4)  # 8
+    #   sq_ = np.arange(0.6, 1.6, 0.15)  # 7
 
     # Ellipse inputs: (sx,sy,rad,inc,pa,sq)
     # Rad: between 3e-9 and 1.5e-8
@@ -33,7 +39,7 @@ def main():
     # pa: Rotation around (x/y axis (not z axis!!); between 0 and 2pi
     # sq: "thickness" in z-direction of the ellipsoid (pole-pole distance). Best between 0.5 and 1.2
 
-    rad_ = np.arange(3e-9, 1.6e-8, 2e-9) # 7
+    rad_ = np.arange(1.1e-8, 1.6e-8, 2e-9) # 3
     inclination_ = np.arange(0, 2*np.pi, np.pi/4)  # 8
     pa_ = np.arange(0, 2*np.pi, np.pi/4)  # 8
     sq_ = np.arange(0.6, 1.6, 0.15)  # 7
@@ -51,7 +57,7 @@ def main():
     start = time.time()
 
     # Loop over variable parameters (center, axesLength, angle)
-    counter = 0
+    counter = 1792
     for rad in rad_:
         for inclination in inclination_:
 

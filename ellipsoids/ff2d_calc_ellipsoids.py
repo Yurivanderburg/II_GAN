@@ -7,13 +7,13 @@ import os
 # Params
 image_size = 64 #px
 PATH = "Data/original_new"
-PATH_out = "Data/Test4/"
-save_images = False
+PATH_out = "Data/Ellipsoids_sampled_5ellip/"
+save_images = True
 SAP_noise = True # Salt and pepper noise
 sampling = True # Sparse sampling
 
 alpha = 0.005 # Salt and Pepper Noise probability
-N_ellip = 1 # Creates one centered ellipse
+N_ellip = 5 # Creates one centered ellipse
 
 
 # Try to concat images
@@ -73,7 +73,6 @@ def sparse_sampling(n_ellipses, scaling=8):
     """
     img_size = image_size * scaling
     mask = np.zeros(shape=(img_size, img_size))
-    axesLength = (int(img_size / (3 * n_ellipses)), int(img_size / (5 * n_ellipses)))
     angle = 135
     startAngle = 0
     endAngle = 360
@@ -82,6 +81,7 @@ def sparse_sampling(n_ellipses, scaling=8):
 
     if n_ellipses == 1:
         center = (int(img_size / 2), int(img_size / 2))
+        axesLength = (int(img_size / 8), int(img_size / 16))
 
         mask = cv2.ellipse(mask, center, axesLength, angle, startAngle, endAngle, color, thickness)
         mask = cv2.resize(mask, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA)
@@ -91,6 +91,7 @@ def sparse_sampling(n_ellipses, scaling=8):
     else:
         mask_raw = np.zeros(shape=(img_size, img_size))
         mask_final = np.zeros(shape=(img_size, img_size))
+        axesLength = (int(img_size / (3 * n_ellipses)), int(img_size / (5 * n_ellipses)))
 
         points = make_grid(n_ellipses, img_size)
 
@@ -130,7 +131,7 @@ def main():
         file = os.path.join(PATH, filename)
 
         # Ignore .directory
-        if filename == ".directory":
+        if (filename == ".directory") or (filename == "images"):
             continue
 
         image_name = filename[:-4]
