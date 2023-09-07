@@ -7,13 +7,13 @@ import os
 # Params
 image_size = 64 #px
 PATH = "Data/original_new"
-PATH_out = "Data/Ellipsoids_sampled_5ellip/"
+PATH_out = "Data/Ellipsoids_sampled_6ellip/"
 save_images = True
 SAP_noise = True # Salt and pepper noise
 sampling = True # Sparse sampling
 
 alpha = 0.005 # Salt and Pepper Noise probability
-N_ellip = 5 # Creates one centered ellipse
+N_ellip = 6 # Creates one centered ellipse
 
 
 # Try to concat images
