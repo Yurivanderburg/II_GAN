@@ -1,7 +1,11 @@
 venv/
-Data/
 training_checkpoints/
 Documentation/
 .ipynb_checkpoints/
 .idea/
-ellipsoids/Data/
+Ellipsoids/Data
+Ellipses/Data
+Ellipsoids/models
+Ellipsoids/old
+Spiral_galaxies/Data
+Spiral_galaxies/models
