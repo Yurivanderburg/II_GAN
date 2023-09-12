@@ -5,11 +5,11 @@ import cv2
 import os
 
 # ------------------- Parameters ---------------------
-N_tele = 5 # Number of telescopes
+N_tele = 3 # Number of telescopes
 observing_time = 3 # hours
 light_source = [12.107, 10.85 * np.pi/180] # [declination, hour_angle] of the source
-image_size = 64 #px
-PATH_out = "Data/masks/"
+image_size = 256 #px
+PATH_out = "Data/masks/256px/"
 
 # Relative positions of the telescopes:
 positions_all = [[0, 0, 0], [52, 64, 0], [-92, 12, 0], [-80, 120, 0], [-196, 160, 0], [-216, 52, 0]]
@@ -50,7 +50,7 @@ def main():
     # Convert to grayscale and re-arrange pixels
     mask = cv2.cvtColor(mask, cv2.COLOR_BGR2GRAY)
     mask = np.where(mask < 1, 1, 0).astype(np.float32)
-    mask = cv2.resize(mask, dsize=(64, 64), interpolation=cv2.INTER_AREA)
+    mask = cv2.resize(mask, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA)
     mask = np.where(mask > 0, 1, 0)
 
     # Save mask as numpy array
