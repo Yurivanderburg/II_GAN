@@ -7,16 +7,16 @@ from functions import sap_noise, concat_images
 
 
 # Params
-image_size = 256 #px
+image_size = 128 #px
 PATH = "Data/original/"
-PATH_out = "Data/Ellipsoids_256px/"
-PATH_to_mask = "Data/masks/256px/"
+PATH_out = "Data/Ellipsoids_128px/"
+PATH_to_mask = "Data/masks/128px/"
 save_images = True
 SAP_noise = True # Salt and pepper noise
 sampling = True # Sparse sampling
 
 alpha = 0.005 # Salt and Pepper Noise probability
-N_tele = 3 # Creates one centered ellipse
+N_tele = 4 # Creates one centered ellipse
 
 
 def main():
