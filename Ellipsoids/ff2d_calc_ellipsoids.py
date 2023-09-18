@@ -8,15 +8,14 @@ from functions import sap_noise, concat_images
 
 # Params
 image_size = 128 #px
+N_tele = 3 # Number of telescopes
 PATH = "Data/original/"
-PATH_out = "Data/Ellipsoids_128px/"
-PATH_to_mask = "Data/masks/128px/"
+PATH_out = f"Data/Ellipsoids_{image_size}px_{N_tele}tele/"
+PATH_to_mask = f"Data/masks/{image_size}px/"
 save_images = True
 SAP_noise = True # Salt and pepper noise
 sampling = True # Sparse sampling
-
-alpha = 0.005 # Salt and Pepper Noise probability
-N_tele = 4 # Creates one centered ellipse
+alpha = 0.005 # Salt and Pepper Noise probabilitye
 
 
 def main():

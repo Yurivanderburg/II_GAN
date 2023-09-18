@@ -5,11 +5,11 @@ import cv2
 import os
 
 # ------------------- Parameters ---------------------
-N_tele = 4 # Number of telescopes
+N_tele = 3 # Number of telescopes
 observing_time = 3 # hours
 light_source = [12.107, 10.85 * np.pi/180] # [declination, hour_angle] of the source
 image_size = 128 #px
-PATH_out = "Data/masks/128px/"
+PATH_out = f"Data/masks/{image_size}px/"
 
 # Relative positions of the telescopes:
 positions_all = [[0, 0, 0], [52, 64, 0], [-92, 12, 0], [-80, 120, 0], [-196, 160, 0], [-216, 52, 0]]
@@ -55,7 +55,7 @@ def main():
 
     # Save mask as numpy array
     np.save(image_name, mask)
-
+    print("Sampling mask successfully saved.")
 
 if __name__ == "__main__":
     main()
