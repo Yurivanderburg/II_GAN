@@ -11,12 +11,14 @@ image_size = 512
 
 def main():
     """
-    Function that generates ellipsoids of different size, angle and shape, and saves the images as .jpg images, as well
-    as pure numpy arrays. These ellipses are created using different parameters:
+    Python script that generates ellipsoids of different size, angle and shape, and saves the images as .jpg images
+    and as pure numpy arrays. Might take a long time run!
+    Parameters:
     rad: size of the ellipsoid [3e-9 and 1.5e-8]
     inclination: Inclination of the ellipsoid [0, 2pi]
     pa: Rotation around x/y-axis [0, 2pi]
     sq: Thickness of the ellipsoid along z-axis [0.6, 1]
+    Output: .jpg image & .npx array
     """
 
     # Fixed parameters

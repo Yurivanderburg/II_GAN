@@ -6,16 +6,16 @@ import os
 from functions import sap_noise, concat_images
 
 
-# Params
-image_size = 128 #px
-N_tele = 3 # Number of telescopes
-PATH = "Data/original/"
+# -------------------------- Parameters -----------------------------
+image_size = 128  # px
+N_tele = 3  # Number of telescopes
+PATH_in = "Data/original/"
 PATH_out = f"Data/Ellipsoids_{image_size}px_{N_tele}tele/"
 PATH_to_mask = f"Data/masks/{image_size}px/"
 save_images = True
-SAP_noise = True # Salt and pepper noise
-sampling = True # Sparse sampling
-alpha = 0.005 # Salt and Pepper Noise probabilitye
+SAP_noise = True  # Salt and pepper noise
+sampling = True  # Sparse sampling
+alpha = 0.005  # Salt and Pepper Noise probability
 
 
 def main():
@@ -23,6 +23,7 @@ def main():
     Script that calculates the Power spectrum (2D-FFT) of an image (i.e. a stellar source). Then automatically creates
     training, testing and validation datasets.
     Includes optional sparse sampling (mask needs to be provided) and addition of Salt and Pepper noise.
+    Output: test, train and validation folders including merged images, ready to be used in the pix2pix model.
     """
     counter = 0
 
@@ -36,13 +37,13 @@ def main():
 
     # The mask for the sparse sampling can be outside the loop (more efficient)
     if sampling:
-        #sampling_mask = sparse_sampling(n_ellipses=N_ellip, image_size=image_size, scaling=8)
+        # sampling_mask = sparse_sampling(n_ellipses=N_ellip, image_size=image_size, scaling=8)
         sampling_mask = np.load(f"{PATH_to_mask}MASK_{N_tele}_telescopes.npy")
 
-    for filename in os.listdir(PATH):
+    for filename in os.listdir(PATH_in):
 
         # Load image
-        file = os.path.join(PATH, filename)
+        file = os.path.join(PATH_in, filename)
 
         # Ignore .directory
         if (filename == ".directory") or (filename == "images"):

@@ -5,10 +5,10 @@ import cv2
 import os
 
 # ------------------- Parameters ---------------------
-N_tele = 3 # Number of telescopes
-observing_time = 3 # hours
-light_source = [12.107, 10.85 * np.pi/180] # [declination, hour_angle] of the source
-image_size = 128 #px
+N_tele = 3  # Number of telescopes
+observing_time = 3  # hours
+light_source = [12.107, 10.85 * np.pi/180]  # [declination, hour_angle] of the source
+image_size = 128  # px
 PATH_out = f"Data/masks/{image_size}px/"
 
 # Relative positions of the telescopes:
@@ -19,6 +19,11 @@ pl.rcParams["figure.figsize"] = (6, 6)
 
 
 def main():
+    """
+    Generates the sparse sampling mask based on the Parameters given.
+    The positions correspond to MAGIC (first two) and LST telescopes.
+    Output: .npx array and .png image
+    """
 
     # Create directory if needed
     if not os.path.exists(PATH_out):
@@ -56,6 +61,7 @@ def main():
     # Save mask as numpy array
     np.save(image_name, mask)
     print("Sampling mask successfully saved.")
+
 
 if __name__ == "__main__":
     main()
