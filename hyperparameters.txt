@@ -1,0 +1,426 @@
+Hyperparameter Search:
+Runs on the Cluster (CPU only, unfortunately)
+
+Run1)
+- Ellipsoids v0.1 
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 50k
+- Model architecture: Basis w/o batchnorm layer
+- disc/gen training: 1
+=> Not very good
+
+
+Run2)
+- Ellipsoids v0.2
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 40k
+- Model architecture: Basis w/o batchnorm layer
+- disc/gen training: 5
+=> Already better
+
+
+Run3)
+- Ellipsoids v0.3
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 45k
+- Model architecture: Basis 
+- disc/gen training: 3
+=> Not so good as well... 
+
+
+Run4)
+- Ellipsoids v0.4
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 50k
+- Model architecture: Basis 
+- disc/gen training: 1
+
+--------------------------------------------
+Improved input data: Saved arrays with np.save -> pure arrays are stored
+
+Run5) TODO
+- Ellipsoids v0.5
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 60k
+- Model architecture: Basis 
+- disc/gen training: 1
+- N_ellipses = 1
+==>> Not sure if the first 5 checkpoints are really from this model, or from the other model...
+
+Run6) TODO
+- Ellipsoids v0.6
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: ???
+- Model architecture: Basis 
+- disc/gen training: 1
+- N_ellipses = 6^2 = 25
+
+
+============= Model v.0.7 =====================
+-> Fixed ground truth images and using MAGIC+CTA baseline layout
+
+Run 1)
+- Ellipsoids v0.7.1
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 60k
+- Model architecture: Basis (training size wrong though)
+- Disc/gen: 1
+- N_telescopes: 3
+
+
+Run 2)
+- Ellipsoids v0.7.2
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 60k
+- Model architecture: Basis
+- Disc/gen: 1
+- N_telescopes: 4
+
+
+Run 3)
+- Ellipsoids v0.7.3
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 50k
+- Model architecture: Basis
+- Disc/gen: 3
+- N_telescopes: 4
+
+
+Run 4)
+- Ellipsoids v0.7.4
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 40k
+- Model architecture: Basis
+- Disc/gen: 5
+- N_telescopes: 4
+
+
+Run 5)
+- Ellipsoids v0.7.5
+- Alpha: 0.005
+- Beta: 0.01
+- Steps: 45k
+- Model architecture: Basis
+- Disc/gen: 1
+- N_telescopes: 4
+
+
+Run 6)
+- Ellipsoids v0.7.6
+- Alpha: 0.005
+- Beta: 0.0025
+- Steps: 45k
+- Model architecture: Basis
+- Disc/gen: 1
+- N_telescopes: 4
+
+
+Run 7)
+- Ellipsoids v0.7.7
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 60k
+- Model architecture: Basis
+- Disc/gen: 2
+- N_telescopes: 4
+
+
+Run 8) -> Training continued in _2
+- Ellipsoids v0.7.8
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 60k (??)
+- Model architecture: Batch size of 4
+- Disc/gen: 1
+- N_telescopes: 4
+- Time: ~6min for 1k
+
+
+Run 9) -> Training continued in _2 
+- Ellipsoids v0.7.9
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 60k (??)
+- Model architecture: Batch size of 8
+- Disc/gen: 1
+- N_telescopes: 4
+- Time: ~11min for 1k > 8hrs for 40k
+=> OUTPUT IMAGES LOOK WAY BETTER!!!
+
+
+Run 10)
+- Ellipsoids v0.7.10
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 60k (??)
+- Model architecture: Learning rate of 1e-3
+- Disc/gen: 1
+o N_telescopes: 4
+
+
+Run 11)
+- Ellipsoids v0.7.11
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 60k (??)
+- Model architecture: Learning rate of 1e-5
+- Disc/gen: 1
+- N_telescopes: 4
+
+
+Run 12)
+- Ellipsoids v0.7.12
+- Alpha: 0.005
+- Beta: 0.1
+- Steps: 60k (??)
+- Model architecture: Basis
+- Disc/gen: 1
+- N_telescopes: 4
+
+
+Run 13) 
+- Ellipsoids v0.7.13
+- Alpha: 0.005
+- Beta: 0.0001
+- Steps: 60k (??)
+- Model architecture: Basis
+- Disc/gen: 1
+- N_telescopes: 4
+
+
+Run 14) 
+=> Combine the best of the best (Basis architecture)
+- Ellipsoids v0.7.14 
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 100k
+- Model architecture: Basis
+- Batch size: 1
+- Learning rate: 1e-5
+- Disc/gen: 2
+- N_telescopes: 4
+
+
+Run 15) 
+- Ellipsoids v0.7.15 
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 80k ?
+- Model architecture: Basis
+- Batch size: 4
+- Learning rate: 1e-5
+- Disc/gen: 2
+- N_telescopes: 4
+
+
+Run 16) 
+- Ellipsoids v0.7.16 
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 80k ?
+- Model architecture: Basis
+- Batch size: 4
+- Learning rate: 1e-5
+- Disc/gen: 1
+- N_telescopes: 4
+
+
+
+============= Model v.0.8 =====================
+-> Increased pixel size of images to 128px
+Naming scheme: ellipsoids_run8.1_a0.005_b0.005_discrep1_it60k_bs1_lr2em4_teles4_base
+
+
+
+Run 1)
+- Ellipsoids v0.8.1
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 60k
+- Model architecture: 3down layers in disc;
+- Batch size: 1
+- Learning rate: 2e-4
+- Disc/gen: 1
+- N_telescopes: 4
+
+
+Run 2) (Ran again, goal: 80k) 
+- Ellipsoids v0.8.2
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 60k
+- Model architecture: 3down layers in disc
+- Batch size: 4
+- Learning rate: 1e-5
+- Disc/gen: 2
+- N_telescopes: 4
+
+
+Run 3) (Ran again, goal: 80k)
+- Ellipsoids v0.8.3
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 60k
+- Model architecture: 3down layers in disc; +1 layer in each gen
+- Batch size: 4
+- Learning rate: 1e-5
+- Disc/gen: 2
+- N_telescopes: 4
+
+
+Run 4)  
+- Ellipsoids v0.8.4
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 60k
+- Model architecture: 3down layers in disc
+- Batch size: 1
+- Learning rate: 1e-5 
+- Disc/gen: 2
+- N_telescopes: 4
+
+
+Run 5) 
+- Ellipsoids v0.8.5
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 60k
+- Model architecture: 3down layers in disc; added layers in generator
+- Batch size: 1
+- Learning rate: 1e-5 
+- Disc/gen: 1
+- N_telescopes: 4
+
+
+Run 6)  
+- Ellipsoids v0.8.6
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 80k
+- Model architecture: 3down layers in disc; added layers in generator
+- Batch size: 1
+- Learning rate: 2e-4 
+- Disc/gen: 2 (WRONG IN LABEL!!!)
+- N_telescopes: 4 
+
+
+Run 7)  
+- Ellipsoids v0.8.7
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 80k
+- Model architecture: 3down layers in disc; added layers in generator
+- Batch size: 1
+- Learning rate: 2e-4 
+- Disc/gen: 1
+- N_telescopes: 4 
+
+
+Run 8) 
+- Ellipsoids v0.8.8
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 80k
+- Model architecture: 3down layers in disc; added layers in generator
+- Batch size: 1
+- Learning rate: 1e-3 
+- Disc/gen: 1
+- N_telescopes: 4 
+
+
+Run 9) 
+- Ellipsoids v0.8.9
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 80k
+- Model architecture: 3down layers in disc; added layer in generator;filtersize3
+- Batch size: 1
+- Learning rate: 2e-4 
+- Disc/gen: 1
+- N_telescopes: 4 
+
+
+Run 10) 
+- Ellipsoids v0.8.10
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 80k
+- Model architecture: 3down layers in disc; added layers in generator
+- Batch size: 1
+- Learning rate: 2e-4 
+- Disc/gen: 1
+- N_telescopes: 2 
+
+
+Run 11) 
+- Ellipsoids v0.8.11
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 80k
+- Model architecture: 3down layers in disc; added layers in generator
+- Batch size: 1
+- Learning rate: 2e-4 
+- Disc/gen: 1
+- N_telescopes: 3
+
+
+Run 12) TODO 
+- Ellipsoids v0.8.12
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 80k
+- Model architecture: 3down layers in disc; added layers in generator
+- Batch size: 2
+- Learning rate: 2e-4 
+- Disc/gen: 1
+- N_telescopes: 4
+
+
+Run 13) TODO 
+- Ellipsoids v0.8.13
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 80k
+- Model architecture: 3down layers in disc; added layers in generator; filtersize 5
+- Batch size: 1
+- Learning rate: 2e-4 
+- Disc/gen: 1
+- N_telescopes: 4
+=> Very nice performance!!!
+
+Run 14) TODO
+- Ellipsoids v0.8.14
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 100k
+- Model architecture: 3down layers in disc; added layers in generator
+- Batch size: 1
+- Learning rate: 1e-5 
+- Disc/gen: 2
+- N_telescopes: 2 
+
+
+TODO:
+- Calculate powerspectrum of predicted image, and take difference to input image. WITH sampling mask
+-> Might be degenerate
+-> Observable differece in ground truth and generated image
+=> Visually compare those two images
+=> Measure for S/N ratio
+
+
+
+- Find an automated way: plot both image & rotated by 180 degrees; look which is closer to gorund truth (maybe scalar product) and only plot this.
+
+- Spiral galaxy with 128 px (use best parameters from ellipsoid_v0.8) -> LOW PRIORITY
+
+- Dump ellipses models. 
