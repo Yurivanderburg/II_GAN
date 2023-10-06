@@ -125,8 +125,10 @@ def create_baseline_image(pos, time, source, image_name, lamda = 1):
             baseline = np.array(pos[i]) - np.array(pos[j])
             uv_plane = baseline_rotation(baseline, time, source)
             pl.plot(uv_plane[:, 0], uv_plane[:, 1], color="black")
+    pl.axis('off')
     pl.gca().set_aspect('equal')
-    pl.savefig(str(image_name+".png"), dpi=500)
+    pl.axis('square')
+    pl.savefig(str(image_name+".png"), bbox_inches='tight', pad_inches=0, dpi=500)
     pl.close()
     return None
 

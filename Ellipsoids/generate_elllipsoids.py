@@ -5,7 +5,7 @@ import time
 from functions import grids, ellip
 
 
-PATH = "Data/original"
+PATH = "Images_Report"
 image_size = 512
 
 
@@ -30,18 +30,23 @@ def main():
     #   inclination_ = np.arange(0, 2*np.pi, np.pi/4)  # 8
     #   pa_ = np.arange(0, 2*np.pi, np.pi/4)  # 8
     #   sq_ = np.arange(0.6, 1.6, 0.15)  # 7
-
+    """
     rad_ = np.arange(3e-9, 1.6e-8, 2e-9) # 7
     inclination_ = np.arange(0, 2*np.pi, np.pi/4)  # 8
     pa_ = np.arange(0, 2*np.pi, np.pi/4)  # 8
     sq_ = np.arange(0.5, 1, 0.1)  # 5
-
+    """
+    rad_ = [1.4e-8]
+    inclination_ = [3*np.pi/4]
+    pa_ = [np.pi]
+    sq_ = [0.7]
     # Create new directory (if it not already exists)
-    if not os.path.exists(PATH):
-        os.makedirs(PATH)
-        pl.pause(1)
-        os.makedirs(f"{PATH}/images")
-        print(f"Directory {PATH} created.")
+
+    paths = [PATH, f"{PATH}/images"]
+    for path in paths:
+        if not os.path.exists(path):
+            os.makedirs(path)
+            print(f"Directory {path} created.")
 
     # Estimate number of images:
     total = len(rad_)*len(pa_)*len(sq_) + 2*(len(rad_))

@@ -39,3 +39,6 @@ If you only want to see the results and saved checkpoints:
 
 The Spiral-Galaxy directory contains some early tests where the same model has been applied to Spiral Galaxies. There were some issues though, as the training dataset was too heterogenous. Might re-do some of these models. It also contains a script which automatically grabs any image from APOD which contains certain keywords in the description. 
 
+
+If you get an error when loading the checkpoint:
+- Check whether the model architecture (i.e. the filtersize (default: 4) and the number of layers is correct). 

@@ -8,13 +8,16 @@ from functions import sap_noise, concat_images
 
 # -------------------------- Parameters -----------------------------
 image_size = 128  # px
-N_tele = 3  # Number of telescopes
-PATH_in = "Data/original/"
-PATH_out = f"Data/Ellipsoids_{image_size}px_{N_tele}tele/"
-PATH_to_mask = f"Data/masks/{image_size}px/"
+N_tele = 4  # Number of telescopes
+# PATH_in = "Data/original/"
+PATH_in = "Images_Report/original/"
+# PATH_out = f"Data/Ellipsoids_{image_size}px_{N_tele}teleFIXED/"
+PATH_out = f"Images_Report2/"
+# PATH_to_mask = f"Data/masks/{image_size}px/"
+PATH_to_mask = "Images_Report/mask/"
 save_images = True
 SAP_noise = True  # Salt and pepper noise
-sampling = True  # Sparse sampling
+sampling = False  # Sparse sampling
 alpha = 0.005  # Salt and Pepper Noise probability
 
 
@@ -90,6 +93,7 @@ def main():
                 cv2.imwrite(f"{PATH_out}test/{image_name}.jpg", combined_image)
             else:
                 cv2.imwrite(f"{PATH_out}train/{image_name}.jpg", combined_image)
+            plt.imsave("Example.eps", np.log(img_fft_norm))
 
         else:
             plt.imshow(ground_truth)

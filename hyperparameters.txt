@@ -374,7 +374,7 @@ Run 11)
 - N_telescopes: 3
 
 
-Run 12) TODO 
+Run 12) 
 - Ellipsoids v0.8.12
 - Alpha: 0.005
 - Beta: 0.005
@@ -386,7 +386,7 @@ Run 12) TODO
 - N_telescopes: 4
 
 
-Run 13) TODO 
+Run 13) 
 - Ellipsoids v0.8.13
 - Alpha: 0.005
 - Beta: 0.005
@@ -398,7 +398,8 @@ Run 13) TODO
 - N_telescopes: 4
 => Very nice performance!!!
 
-Run 14) TODO
+
+Run 14)
 - Ellipsoids v0.8.14
 - Alpha: 0.005
 - Beta: 0.005
@@ -410,17 +411,22 @@ Run 14) TODO
 - N_telescopes: 2 
 
 
+Run 15) 
+- Ellipsoids v0.8.15
+- Alpha: 0.005
+- Beta: 0.005
+- Steps: 100k
+- Model architecture; added_layer; filtersize 5
+- Batch size: 1
+- Learning_rate: 2e-4
+- Disc/gen: 1
+- N_telescopes: 4
+- 5 different sources > 7000k training images!
+
+
+
 TODO:
-- Calculate powerspectrum of predicted image, and take difference to input image. WITH sampling mask
--> Might be degenerate
--> Observable differece in ground truth and generated image
-=> Visually compare those two images
-=> Measure for S/N ratio
+> Measure for S/N ratio
 
 
 
-- Find an automated way: plot both image & rotated by 180 degrees; look which is closer to gorund truth (maybe scalar product) and only plot this.
-
-- Spiral galaxy with 128 px (use best parameters from ellipsoid_v0.8) -> LOW PRIORITY
-
-- Dump ellipses models. 
