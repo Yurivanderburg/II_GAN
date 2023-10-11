@@ -8,7 +8,6 @@ from functions import grids, ellip
 PATH = "Images_Report"
 image_size = 512
 
-
 def main():
     """
     Python script that generates ellipsoids of different size, angle and shape, and saves the images as .jpg images
