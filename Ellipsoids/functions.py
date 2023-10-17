@@ -68,7 +68,7 @@ def draw(xc, yc, f, zoom, where, cmap='Greys_r', ceil=None, fceil=None, title=No
             fms = '%7.1e'
         else:
             fms = '%' + '.%i' % ip + 'f'
-    pl.colorbar(cs)  # ,format=fms)
+    pl.colorbar(cs) #,format=fms)
     if title:
         pl.title(title)
     pl.gca().set_aspect('equal')

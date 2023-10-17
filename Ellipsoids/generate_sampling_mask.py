@@ -7,7 +7,8 @@ import os
 # ------------------- Parameters ---------------------
 N_tele = 4  # Number of telescopes
 observing_time = 3  # hours
-light_source = [8.868, 19.846 * np.pi/180]  # [declination, hour_angle] of the source: Altair
+#light_source = [8.868, 19.846 * np.pi/180]  # [declination, hour_angle] of the source: Altair
+light_source = [14, 14 * np.pi/18]
 image_size = 128  # px
 # PATH_out = f"Data/masks/{image_size}px/"
 PATH_out = "Images_Report/mask/"
@@ -15,7 +16,7 @@ PATH_out = "Images_Report/mask/"
 # Relative positions of the telescopes:
 positions_all = [[0, 0, 0], [52, 64, 0], [-92, 12, 0], [-80, 120, 0], [-196, 160, 0], [-216, 52, 0]]
 positions = positions_all[:N_tele]
-image_name = f"{PATH_out}MASK_{N_tele}_telescopes"
+image_name = f"{PATH_out}MASK_{N_tele}_telescopesNEW"
 pl.rcParams["figure.figsize"] = (6, 6)
 
 

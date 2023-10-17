@@ -429,4 +429,16 @@ TODO:
 > Measure for S/N ratio
 
 
+Run for different batch sizes:
 
+Basic settings of run13: 
+
+Run 16) batchsize 2
+Run 17) batchsize 4 -> Aborted (takes too long)
+Run 18) batchsize 8 -> Aborted
+
+Run for different discreps:
+Run 19) Discrep 3
+Run 20) Discrep 6
+Run 21) Discrep 8
+ -> Aborted (takes too long -> Aborted (takes too long))
