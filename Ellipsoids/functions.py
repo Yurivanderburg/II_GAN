@@ -98,14 +98,14 @@ def baseline_rotation(baseline, h, source, lamda = 1):
     """
 
     d = source[0]
-    h0 = source[1]
+    h0 = source[1] # Hour angle -> Rad
     l = 28.757 * pi / 180  # La Palma: 28° 45' 25.79" N = +28.757
 
     R_d = np.array([[1, 0, 0], [0, cos(d), -sin(d)], [0, sin(d), cos(d)]])
     R_l = np.array([[1, 0, 0], [0, cos(l), sin(l)], [0, -sin(l), cos(l)]])
 
     # Observe for the duration h
-    h_ = np.arange((h0 - h / 2), (h0 + h / 2), 0.1)
+    h_ = np.arange((h0 - h / 2), (h0 + h / 2), 0.1) * pi/12
 
     result = []
     for i in range(len(h_)):

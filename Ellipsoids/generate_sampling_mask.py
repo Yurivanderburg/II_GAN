@@ -6,7 +6,7 @@ import os
 
 # ------------------- Parameters ---------------------
 N_tele = 4  # Number of telescopes
-observing_time = 3  # hours
+observing_time = 11.6  # hours
 #light_source = [8.868, 19.846 * np.pi/180]  # [declination, hour_angle] of the source: Altair
 light_source = [14, 14 * np.pi/18]
 image_size = 128  # px
