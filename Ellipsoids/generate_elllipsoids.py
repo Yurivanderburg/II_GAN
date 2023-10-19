@@ -35,7 +35,7 @@ def main():
     pa_ = np.arange(0, 2*np.pi, np.pi/4)  # 8
     sq_ = np.arange(0.5, 1, 0.1)  # 5
     """
-    rad_ = [1.4e-8]
+    rad_ = [1.4e-8] # should translate to ~0.6 and 3.3 mas
     inclination_ = [3*np.pi/4]
     pa_ = [np.pi]
     sq_ = [0.7]
