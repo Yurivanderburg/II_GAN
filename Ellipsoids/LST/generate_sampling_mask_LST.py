@@ -5,10 +5,10 @@ import cv2
 import os
 
 # ------------------- Parameters ---------------------
-observing_time = 3  # hours
+observing_time = 9  # hours
 light_source = [8.868, 19.846 * np.pi/180]  # [declination, hour_angle] of the source: Altair
 image_size = 128  # px
-PATH_out = "Data/LST-1/mask/"
+PATH_out = "Data/LST/mask/"
 
 # Relative positions of the submirrors: The center of the 'missing' mirror facet is the point (0,0) of the coordinate system; and we have the dimensions:
 d = 1.5 #m, flat-flat minimal diameter
@@ -16,7 +16,7 @@ D = np.round((2/np.sqrt(3))*d, 1) #m, maximal diameter
 t = 0.5*D #m, side length -> Equals maximal diameter/2
 
 positions = [[0, 3*t + 3*D, 0], [3*d, 2*t + 2*D, 0], [4*d, 0, 0], [2.5*d, -2.5*D - 2.5*t, 0], [-2.5*d, -2.5*D - 2.5*t, 0], [-5*d, 0, 0], [-4*d, 2*D + 2*t, 0]]
-image_name = f"{PATH_out}mask"
+image_name = f"{PATH_out}mask_{observing_time}h"
 pl.rcParams["figure.figsize"] = (6, 6)
 
 

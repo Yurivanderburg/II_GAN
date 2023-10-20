@@ -2,6 +2,7 @@ venv/
 Documentation/
 .ipynb_checkpoints/
 .idea/
+Ellipsoids/LST/Data
 Ellipsoids/Data
 Ellipsoids/models
 Ellipsoids/logs

@@ -3,14 +3,14 @@ import numpy as np
 from scipy import fft
 import cv2
 import os
-from functions import sap_noise, concat_images
+from functions_LST import sap_noise, concat_images
 
 
 # -------------------------- Parameters -----------------------------
 image_size = 128  # px
-PATH_in = "Data/original/"
-PATH_out = "Data/LST-1/"
-PATH_to_mask = "Data/LST-1/mask/"
+PATH_in = "../Data/original/"
+PATH_out = "Data/LST/Data_9h/"
+PATH_to_mask = "Data/LST/mask/"
 save_images = True
 SAP_noise = True  # Salt and pepper noise
 sampling = True  # Sparse sampling
@@ -37,7 +37,7 @@ def main():
     # The mask for the sparse sampling can be outside the loop (more efficient)
     if sampling:
         # sampling_mask = sparse_sampling(n_ellipses=N_ellip, image_size=image_size, scaling=8)
-        sampling_mask = np.load(f"{PATH_to_mask}mask.npy")
+        sampling_mask = np.load(f"{PATH_to_mask}mask_9h.npy")
 
     for filename in os.listdir(PATH_in):
 
