@@ -84,7 +84,7 @@ def ellip(sx,sy,rad,inc,pa,sq):
         z = sinI * cs * sq * rad
         Tv[x**2 + ((y-z)/cosI)**2 < (sn*rad)**2] = (4 + abs(cs))/5
         if np.min(Tv) < np.max(Tv):
-            draw(sx,sy,Tv,2,'sky',ceil=1,cmap='inferno')
+            draw(sx,sy,Tv,1,'sky',ceil=1,cmap='inferno')
         #pl.pause(.05)
     return Tv
 
@@ -125,7 +125,7 @@ def create_baseline_image(pos, time, source, image_name, lamda = 1):
             baseline = np.array(pos[i]) - np.array(pos[j])
             uv_plane = baseline_rotation(baseline, time, source)
             pl.plot(uv_plane[:, 0], uv_plane[:, 1], color="black")
-    pl.axis('off')
+    #pl.axis('off')
     pl.gca().set_aspect('equal')
     pl.axis('square')
     pl.savefig(str(image_name+".png"), bbox_inches='tight', pad_inches=0, dpi=500)

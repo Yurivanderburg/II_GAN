@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as pl
-from functions import create_baseline_image
+from functions_LST import create_baseline_image
 import cv2
 import os
 
@@ -36,7 +36,7 @@ def main():
     create_baseline_image(positions, observing_time, light_source, image_name)
     #pl.pause(0.5)
     mask_ = pl.imread(str(image_name + ".png"))
-   
+
     # Convert to grayscale and re-arrange pixels
     mask = cv2.cvtColor(mask_, cv2.COLOR_BGR2GRAY)
     mask = np.where(mask < 1, 1, 0).astype(np.float32)
