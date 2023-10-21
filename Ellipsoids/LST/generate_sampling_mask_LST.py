@@ -5,7 +5,7 @@ import cv2
 import os
 
 # ------------------- Parameters ---------------------
-observing_time = 9  # hours
+observing_time = 3  # hours
 light_source = [8.868, 19.846 * np.pi/180]  # [declination, hour_angle] of the source: Altair
 image_size = 128  # px
 PATH_out = "Data/LST/mask/"
