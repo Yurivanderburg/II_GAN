@@ -9,12 +9,12 @@ from functions import sap_noise, concat_images
 # -------------------------- Parameters -----------------------------
 image_size = 128  # px
 N_tele = 4  # Number of telescopes
-PATH_in = "Data/original/"
+PATH_in = "Data/Plots/original/"
 #PATH_in = "Images_Report/original/"
 # PATH_out = f"Data/Ellipsoids_{image_size}px_{N_tele}teleFIXED/"
-PATH_out = f"Images_Report2/"
+PATH_out = f"Data/Plots/"
 # PATH_to_mask = f"Data/masks/{image_size}px/"
-PATH_to_mask = "Images_Report/mask/"
+PATH_to_mask = "Data/Plots/"
 save_images = True
 SAP_noise = True  # Salt and pepper noise
 sampling = True  # Sparse sampling

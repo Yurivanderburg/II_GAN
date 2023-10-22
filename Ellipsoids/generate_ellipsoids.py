@@ -5,7 +5,7 @@ import time
 from functions import grids, ellip
 
 
-PATH = "TEST"
+PATH = "Data/Plots"
 image_size = 512
 
 def main():
