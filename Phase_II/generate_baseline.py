@@ -10,8 +10,8 @@ obs = observe()
 vb = vary_base()
 
 # observation time for Intensity Interferometry
-start = [2460311.20167, 2460312.20167, 2460313.20167]   # (Jan 1-2, 2024, 7pm)
-end = [2460311.70833, 2460312.70833, 2460313.70833]     # (Jan 2-3, 2023, 5am)
+start = [2460311.20167, 2460312.20167, 2460313.20167]   # (Jan 1-3, 2024, 7pm)
+end = [2460311.70833, 2460312.70833, 2460313.70833]     # (Jan 2-4, 2024, 5am)
 step = obs.obslen(start, end, 0.0104167)
 jd = obs.julday(start, end, step)
 
