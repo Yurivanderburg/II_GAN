@@ -6,9 +6,7 @@ import os
 import re
 
 plt.rcParams.update({'font.size': 10})
-plt.rcParams["figure.figsize"] = [12,8]
-text_kwargs = dict(ha='center', va='center', fontsize=12)
-text_kwarg = dict(ha='center', va='center', fontsize=18)
+plt.rcParams["figure.figsize"] = [12,6]
 plt.rcParams["font.weight"] = "bold"
 plt.rcParams["axes.labelweight"] = "bold"
 
@@ -29,13 +27,16 @@ gr_img = np.array(ground_img)       # The ground truth image of stellar object
 pr_img = np.array(pred_img)         # The predicted image of stellar object with trained GAN
 
 # for visualisation of ground truth and predicted image
+pic = 0
 for i in range(len(pr_img)):
     plt.subplot(1,2,1)
     plt.imshow(gr_img[i])
     plt.subplot(1,2,2)
     plt.imshow(pr_img[i])
-    plt.show()
-    
+    plt.savefig('result/image/image' + str(pic) + '.png')
+    #plt.show()
+    pic += 1
+   
 # Calculate moment only for one image
 im_g = gr_img[38]
 im_p = pr_img[38]
@@ -80,8 +81,8 @@ plt.title('The ellipse as ground truth', fontweight='bold')
 plt.subplot(1,2,2)
 plt.imshow(im_p)
 plt.title('The reconstructed ellipse with GAN', fontweight='bold')
-plt.savefig('images.png')
-plt.show()
+plt.savefig('result/images.png')
+#plt.show()
 plt.close()
 
 
@@ -105,10 +106,15 @@ plt.plot(mx_p, my_p, 'o', color='magenta',markersize=10)
 plt.arrow(mx_p, my_p, Sx_p, 0, color='darkcyan', head_width=2, head_length=15)
 plt.arrow(mx_p, my_p, 0, Sy_p, color='blue', head_width=2, head_length=15)
 plt.title('The reconstructed ellipse with GAN', fontweight='bold')
-plt.savefig('reconstruction.png')
-plt.show()
+plt.savefig('result/reconstruction.png')
+#plt.show()
 plt.close()
 
+plt.rcParams.update({'font.size': 12})
+plt.rcParams["figure.figsize"] = [8,8]
+plt.rcParams['axes.facecolor']='ivory'
+plt.rcParams["font.weight"] = "bold"
+plt.rcParams["axes.labelweight"] = "bold"
 # visualise the moments of each generated images
 list_g = []
 list_p = []
@@ -121,10 +127,10 @@ for i in range(len(gr_img)):
 Mth_g = []
 Mth_p = []
 m_name = ['Monopole', 'X-Centroid', 'Y-Centroid', '2nd Moment $\mu_{11}$', '2nd Moment $\mu_{20}$', '2nd Moment $\mu_{02}$', '3rd Moment $\mu_{30}$','3rd Moment $\mu_{03}$','3rd Moment $\mu_{21}$', '3rd Moment $\mu_{12}$']
+pic = 0
 for i in range(len(list_g[0])):
     Mth_g = [M[i] for M in list_g]
     Mth_p = [M[i] for M in list_p]
-    plt.rcParams['axes.facecolor']='ivory'
     for j in range(len(Mth_g)):
         plt.plot(Mth_g[j], Mth_p[j], 'o', markeredgecolor='blue', markersize=8, markeredgewidth=1.5)
 
@@ -132,12 +138,16 @@ for i in range(len(list_g[0])):
     plt.ylabel('The Predicted Image')
     plt.title(f'{m_name[i]} for Stellar object', fontweight='bold')
     plt.gca().set_aspect('equal')
-    plt.show()
+    plt.savefig('result/moments/mom' + str(pic) + '.png')
+    #plt.show()
+    plt.clf()
+    pic += 1
     
 
 # the reconstructed image with moments
 w = md.ellip(im_p, mx_p, my_p, alpha_p, a_p, e_p)
 plt.imshow(w)
 plt.title(f'The reconstructed Stellar object using moments of 2nd order', fontweight='bold')
-plt.show()
-
+plt.savefig('result/ellipse.png')
+#plt.show()
+plt.clf()

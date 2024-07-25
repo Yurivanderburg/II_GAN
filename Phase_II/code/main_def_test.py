@@ -10,16 +10,34 @@ fn.para(img_size=128)
 
 # check the signal on observational plane and captured one using baseline of a stellar object
 base = np.load("base_npy/base.npy") 
-train_image = np.load("ellip_npy/ellipse0.npy")
+train_image = np.load("ellip_npy/ellipse6018.npy")
 train_image = cv2.resize(train_image, dsize=(128, 128), interpolation=cv2.INTER_AREA)
 print('base shape', np.shape(base))
 print('image shape', np.shape(train_image))
 fft = np.abs(fft.fftshift(fft.fft2(fft.fftshift(train_image))))
 # the signal on observational plane
 plt.imshow(fft)
-plt.show()
+plt.gca().set_aspect('equal')
+plt.axis('off')
+plt.savefig('ft/ft.jpg')
+#plt.show()
+
+plt.imshow(np.log(fft))
+plt.gca().set_aspect('equal')
+plt.axis('off')
+plt.savefig('ft/ft_log.jpg')
+#plt.show()
+
+'''
 # the signal captured with baseline on observational plane
 output = np.multiply(fft, base) 
+plt.imshow(output)
+plt.show()
+
+# The full fourier transformation on ground of stellar object and the captured one with baselines
+plt.subplot(1,2,1)
+plt.imshow(fft)
+plt.subplot(1,2,2)
 plt.imshow(output)
 plt.show()
 
@@ -66,7 +84,4 @@ print('down sampling result of an input image, observed signal', down_result.sha
 up_model = fn.upsample(3, 4, apply_dropout=True)
 up_result = up_model(down_result)
 print('up sampling result of down sampled image', up_result.shape)
-
-
-
-
+'''
