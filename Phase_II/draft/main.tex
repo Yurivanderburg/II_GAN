@@ -1,0 +1,37 @@
+\documentclass[fleqn,usenatbib,twocolumn]{mnras}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage{enumerate}
+\usepackage{caption,subcaption}
+\usepackage{comment}
+\captionsetup{compatibility=false}
+\usepackage{animate}
+\usepackage{amsmath} % For \text and many other math symbols
+\usepackage{amssymb} % For \mathbb
+\usepackage{amsfonts} % For \mathbb
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\norm}[2]{\left\lVert#1\right\rVert}
+
+\title{Image reconstruction of stellar objects with Intensity Interferometry using Generative Adversarial Networks}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+In current astronomy, the simulation of Intensity Interferometry is demonstrating significant advancements in the high-precision resolution of stellar objects at optical wavelengths. Despite these achievements, phase retrieval remains challenging due to photon correlation. This paper proposes the application of a conditional Generative Adversarial Network (GAN) to address this issue of image reconstruction with Intensity Interferometry. Here, the GAN effectively reconstructs the shape, size, and brightness distribution of a fast-rotating star by utilizing sparsely sampled, phase-subtracted Fourier transforms of the star. This innovative approach promises to enhance the capabilities of Intensity Interferometry for image reconstruction in addition to estimating the parameters with high precision in astronomical observations.
+\end{abstract}
+\input{intro}
+\input{II}
+\input{GAN}
+\input{ParaGan}
+\input{Result}
+\input{conclusion}
+
+\bibliographystyle{mnras}
+\bibliography{refs.bib}
+
+\end{document}
