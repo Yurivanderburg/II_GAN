@@ -135,7 +135,7 @@ It can now be shown that the global optimum of equation (\ref{eq:GAN_reformulate
 	\caption{The number of telescopes has a very impact on the model performance. If there are only two telescopes (1 baseline), both discriminator and generator are not trained smoothly: One gains a big advantage over the other. The result of four telescopes (6 baselines) is a lot better because the loss functions change only slightly with increasing steps.}
 	\label{fig:Plot_telescopes_loss}
 \end{figure*}
-GANs can be extended to a conditional model \citep{mirza2014conditional}. In this case, both generator and discriminator receive extra information $y$, such that the value function of the conditional GAN (cGAN) can be expressed as:
+GAN can be extended to a conditional model \citep{mirza2014conditional}. In this case, both generator and discriminator receive extra information $y$, such that the value function of the conditional GAN (cGAN) can be expressed as:
 \begin{equation}
 	\centering
 	\begin{aligned}
@@ -145,24 +145,24 @@ GANs can be extended to a conditional model \citep{mirza2014conditional}. In thi
 	\label{eq:conditional_GAN}
 \end{equation}
 
-Furthermore, \citep{isola2017image} observed that combining the cGAN given in equation \ref{eq:conditional_GAN} with the traditional L1-loss improves results, as the generator tries to be close to the ground truth. Hence, the function that is minimized as:
+Furthermore, \cite{isola2017image} observed that combining the cGAN given in equation \ref{eq:conditional_GAN} with the traditional L1-loss improves results, as the generator tries to be close to the ground truth. Hence, the function that is minimized as:
 \begin{equation}
 	\centering
 	L_{tot} = \arg \min_{G} \max_{D} V(D, G) + \lambda \cdot L_1(G)
 	\label{eq:total_gen_loss}
 \end{equation}
-where $\lambda$ = 100 and $L_1(g)$ is given by equation (\ref{eq:l1_loss})
+where $\lambda$ = 100 and $L_1(G)$ is given as
 \begin{equation}
 	\centering
-	L_1(g) = \mathbb{E}_{x,y,z} \left[ ||{y - G(x,z)}||_1 \right]
+	L_1(G) = \mathbb{E}_{x,y,z} \left[ ||{y - G(x,z)}||_1 \right]
 	\label{eq:l1_loss}
 \end{equation}
 
-This type of network is shown to be very robust, as it has been applied to several problems. Examples include creating colored images from grayscale images, creating images of facades based on architectural labels, changing from day to night in different pictures, and predicting a map based on satellite data. A longer list of applications is given in \citep{isola2017image}. 
+This type of network is shown to be very robust, as it has been applied to several problems. Examples include creating colored images from grayscale images, creating images of facades based on architectural labels, changing from day to night in different pictures, and predicting a map based on satellite data. A longer list of applications is given in \cite{isola2017image}. 
 
 
 \subsection{Generator}
-The used generator in this paper is a common U-Net convolutional network \citep{ronneberger2015u}. It consists of a contracting part, reducing the image size, and an expansive part, where the image is enlarged. The contracting part consists of repeated application of alternating convolutional layers and rectified linear unit (ReLU) layers. The expansion consists of repeated convolution, batch normalization, and ReLU layers. The first contracting step also includes a dropout layer \citep{isola2017image} 
+The used generator in this paper is a common U-Net convolutional network \citep{ronneberger2015u}. It consists of a contracting part, reducing the image size, and an expansive part, where the image is enlarged. The contracting part consists of repeated application of alternating convolutional layers and rectified linear unit (ReLU) layers. The expansion consists of repeated convolution, batch normalization, and ReLU layers. The first contracting step also includes a dropout layer \citep{isola2017image}.
 
 \subsection{Discriminator}
 The discriminator that has been taken here, named PatchGAN, does not work globally but rather classifies single patches as real or fake. The overall result is then estimated based on the average. The model architecture is as follows: zero padding, convolution, batch-norm, ReLu, zero-padding, and convolution \citep{isola2017image}.
