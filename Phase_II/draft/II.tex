@@ -12,7 +12,7 @@ where $\tau$ is the time delay between both telescopes. If the light source is c
 	g^{(2)} = 1 + \frac{\Delta f}{\Delta \nu} \abs{V_{12}}^2
 	\label{eqn:HBT2}
 \end{equation}
-here, $\Delta f$ is the electronic bandwidth, $\Delta \nu$ is the optical bandwidth, and $\Delta f \ll \Delta \nu$ \citep{acciari2020optical}. $V_{12}$ is the Fourier transform of the source brightness distribution and is called complex visibility. Eqn.~\ref{eqn:HBT2} carry the information about the source's structure and shape. However, the phase information is lost due to the involvement of the absolute value of $V_{12}$. In observational astronomy, the correlation is often expressed in terms of the normalized contrast, given by:
+here, $\Delta f$ is the electronic bandwidth, $\Delta \nu$ is the optical bandwidth, and $\Delta f \ll \Delta \nu$ \citep{acciari2020optical}. $V_{12}$ is the Fourier transform of the source brightness distribution and is called complex visibility. Eqn.~\ref{eqn:HBT2} carry the information about the source's structure and shape. However, it loses the phase information due to the presence of only the absolute value of $V_{12}$. In observational astronomy, the correlation in intensity is often expressed in terms of the normalized contrast, given by :
 \begin{equation}
 	c = \frac{\left\langle \left( I_1(t) - \left\langle I_1 \right\rangle \right) \cdot \left( I_2(t + \tau) - \left\langle I_2 \right\rangle \right) \right\rangle}{\langle I_1(t) \rangle \cdot \langle I_2(t) \rangle} = g^{(2)} - 1
 \end{equation}
@@ -37,7 +37,7 @@ It must be noted that the calculation of Pearson's correlation coefficient is no
 \end{equation}
 One must also correct for a non-constant gain of the PMTs, as well as the moon. The latter can be done by measuring the background light with an additional PMT with no mirrors focused on it \citep{acciari2020optical}.
 
-The significance of the signal can be expressed as the signal-to-noise ratio (SNR), which depends on many factors. However, most importantly, it is proportional to the absolute value of visibility, which itself depends on the distance between the telescopes \citep{acciari2020optical} 
+The significance of the signal is expressed as the signal-to-noise ratio (SNR), which depends on many factors. However, most importantly, SNR is proportional to the absolute value of visibility, which itself depends on the distance between the telescopes \citep{acciari2020optical} 
 \begin{equation}
 	SNR = A \cdot \alpha \cdot q \cdot n \cdot \abs{V_{12}}^{2}(d) \cdot \sqrt{b_v} \cdot F^{-1} \cdot \sqrt{\frac{T}{2}} \cdot \sigma.
 	\label{eq:SNR}
@@ -52,13 +52,13 @@ Here, $A$ is the total mirror area, $\alpha$ the quantum efficiency of the PMTs,
 \begin{figure}
 	\centering
 	\includegraphics[width=0.8\linewidth]{fig/ellipse/ellipse6018.jpg}
-	\caption{This figure shows the simulated fast-rotating star. The brightness is highest at the pole, and gravitational darkening is present at the equator.}
+	\caption{This figure shows one of the simulated fast-rotating stars. The brightness is highest at the pole and lowest at the equator due to the presence of high-speed rotation of the star. This effect is named gravitational darkening in astronomy.}
 	\label{fig:image}
 \end{figure}
 \subsection{Baseline considerations}
-The measurement of the size of stellar objects through absolute visibility depends on the distance between the telescopes, which is called the baseline $B$. 
+The measurement of the size of stellar objects through absolute visibility depends on the distance between the telescopes, which is called the baseline $B$
 \begin{equation}
-	V_{12}(B) = \frac{c(B)}{c(0)}
+	V_{12}(B) = \frac{c(B)}{c(0)}.
 	\label{eq:angular_size_meas}
 \end{equation}
 However, this work needs a good SNR value for high precision of measurement, so the large covered observational plane with telescopes is a necessity for II \citep{acciari2020optical, abeysekara2020demonstration}. If the source is at the zenith, the coordinates in the Fourier plane ($u,v$) are given by:
@@ -106,4 +106,4 @@ As the number of baselines increases non-linearly, II benefits greatly from a la
 \subsection{An Object: Fast Rotating Stars}
 In our work, we simulate a single fast-rotating star to test image reconstruction with II in intersection with the Generative Adversarial Networks (GAN). Fast rotation causes stars to take on an oblate shape, flattening at the poles and bulging at the equator due to the existence of stronger centrifugal force \citep{von1924radiative, 1999A&A...347..185M}. Fig.~\ref{fig:image} shows one of the simulations of a fast-rotating star, where the star takes on an elliptical shape with brightness distributed across the object. The brightness is maximum at the poles and minimum at the equator, a phenomenon known as gravity darkening \citep{lucy1967gravity}. This effect was first observed in the fast-rotating star Regulus through interferometric and spectroscopic data from the Center for High Angular Resolution Astronomy (CHARA) Array \citep{mcalister2005first}. These stars are crucial for understanding a variety of astrophysical processes and help to understand the stellar evolution, internal structure, and rotational dynamics over time.
 
-Intensity Interferometry (II) detects the photon from the stellar objects, and the correlation of it results in squared visibility (explained in subsection.\ref{sec:signal}). According to Van Cittert Zernike's theorem, this signal is the Fourier transform of brightness distribution in the sky. Fig.~\ref {fig:ft} visualize this statement for the source shown in Fig.~\ref{fig:image} using II on linear and logarithmic scales. However, current observational techniques are unable to capture the full signal, and only partial data can be collected with a single night's simulation, which has been shown in Fig.~\ref{fig:ft_base}. It is the covered observational plane using the baselines shown in Fig.~\ref{fig:teles} on linear and logarithmic scales, respectively. However, the upcoming CTAO can promise to greatly expand the observable portion of the visibility plane for stellar objects, offering new insights into the mysteries of the universe.
+Intensity Interferometry (II) detects the photon from the stellar objects, and the correlation of it results in squared visibility (explained in subsection.\ref{sec:signal}). According to Van Cittert Zernike's theorem, this signal is the Fourier transform of brightness distribution in the sky. Fig.~\ref {fig:ft} visualize this statement for the source shown in Fig.~\ref{fig:image} using II on linear and logarithmic scales. However, current observational techniques are unable to capture the full signal, and only partial data can be collected with a single night's simulation, which has been shown in Fig.~\ref{fig:ft_base}. It is the covered observational plane using the baselines shown in Fig.~\ref{fig:teles} on linear and logarithmic scales, respectively. However, the instrumentation of existing and upcoming CTAO shows the possibility of covering the maximum observable portion of the visibility plane for stellar objects, offering high resolution to understand the stellar structure and its evolution with time.

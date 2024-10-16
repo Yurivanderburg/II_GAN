@@ -22,7 +22,7 @@
 	\caption{This set of figures shows the result of GAN for II. The left panels are signals using six baselines, which work as input for GAN. The first middle panel is the real image, also called ground truth, and GAN tries to mimic it during the training. The second middle panel is the reconstructed image, also called the predicted image, with trained GAN, and the end panel is the difference between the ground truth and the predicted image.}
 	\label{fig:GAN}
 \end{figure*}
-Here, we discuss the parameters for the GAN structure, which is trained to reconstruct the image of stellar objects using II. Due to the adversarial nature of GAN, where the generator and discriminator compete in a min-max game, careful tuning of key parameters ensures that both networks converge properly.
+Here, we discuss the parameters for the GAN structure, which is trained to reconstruct the image of stellar objects using II. Due to the adversarial nature of GAN, where the generator and discriminator compete in a min-max game, careful tuning of key parameters ensures that both networks are in good term to train the model.
 
 \subsection{Data preparation}
 First, we simulate fast-rotating stars, which are modeled as oblate spheroids with different radii and oblateness between 0.5 and 1. Different viewed angles have also been considered, with the effect of gravity darkening being linear dependence. The traced ellipses arise when integrating over the hour angle of the source. For the hyperparameter tuning and comparison of different telescopes, the total hour angle is about 11.5 hours. The ellipses are plotted and converted into grayscale images, resized, and stored as pure arrays to simplify further analysis. 
