@@ -1,0 +1,49 @@
+\documentclass[10pt]{beamer}
+
+\usetheme{metropolis}
+
+\usepackage{graphicx}
+\usepackage{xspace}
+
+\def\numpost#1{$^{#1}\;$}
+\def\numpre#1{$^{#1}\!$}
+
+\def\twopanels#1#2{\only<#1>{%
+    \includegraphics[height=.33\linewidth]{figs/images#2.png}
+    \includegraphics[height=.33\linewidth]{figs/correl#2.png}}}
+
+\def\imwid#1#2{\includegraphics[width=#1\linewidth]{fig/#2}}
+
+\title{Generative AI for Image Reconstruction:\\
+  A First Attempt}
+
+\date{}
+
+\author{Y. van~der~Burg,\numpost1 N. Rai,\numpost2
+  S. Basak,\numpost2, S. Sarangi,\numpost3 P. Saha,\numpost1 }
+
+\institute{\numpre1 Uni Zurich CH, \numpre2 IISER-TVM India, 
+  \numpre3 CUTM India}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{How many?}
+\only<1>{\hbox to \hsize{\hss\imwid{1.2}{image_0}\hss}%
+         \hbox to \hsize{\hss\imwid{1.2}{image_16}\hss}}
+\only<2>{\hbox to \hsize{\hss\imwid{1.2}{image_35}\hss}%
+         \hbox to \hsize{\hss\imwid{1.2}{image_38}\hss}}
+\only<3>{\hbox to \hsize{\hss\imwid{1.2}{image_42}\hss}%
+         \hbox to \hsize{\hss\imwid{1.2}{image_47}\hss}}
+\end{frame}
+
+\begin{frame}{}
+\centering
+\only<1>{\imwid{.4}{ellipse4678}\quad\imwid{.4}{ellipse5972}}%
+\only<2>{\imwid{.4}{ellipse6018}\quad\imwid{.4}{ellipse6098}}%
+\only<3>{\imwid{.4}{ellipse6018}\quad\imwid{.4}{ft_log}}%
+\only<4>{\imwid{.4}{ellipse6018}\quad\imwid{.4}{ft_log_base}}
+\end{frame}
+
+\end{document}
