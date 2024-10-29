@@ -13,9 +13,10 @@
     \includegraphics[height=.33\linewidth]{figs/correl#2.png}}}
 
 \def\imwid#1#2{\includegraphics[width=#1\linewidth]{fig/#2}}
+\def\imht#1#2{\includegraphics[width=#1\vsize]{fig/#2}}
 
 \title{Generative AI for Image Reconstruction:\\
-  A First Attempt}
+  a First Attempt}
 
 \date{}
 
@@ -29,13 +30,18 @@
 
 \maketitle
 
-\begin{frame}{How many?}
-\only<1>{\hbox to \hsize{\hss\imwid{1.2}{image_0}\hss}%
-         \hbox to \hsize{\hss\imwid{1.2}{image_16}\hss}}
-\only<2>{\hbox to \hsize{\hss\imwid{1.2}{image_35}\hss}%
-         \hbox to \hsize{\hss\imwid{1.2}{image_38}\hss}}
-\only<3>{\hbox to \hsize{\hss\imwid{1.2}{image_42}\hss}%
-         \hbox to \hsize{\hss\imwid{1.2}{image_47}\hss}}
+\begin{frame}{Can we adapt this?}
+\centering
+\imwid{0.8}{Isola-fig}
+\vskip5pt 
+\texttt{https://phillipi.github.io/pix2pix/}    
+\end{frame}
+
+\begin{frame}{Gravity Darkening}
+\centering
+\hbox to \hsize{\hss\imwid{1.2}{regulus_che11}\hss}
+\vskip5pt 
+Che et al (2009) using CHARA
 \end{frame}
 
 \begin{frame}{}
@@ -44,6 +50,58 @@
 \only<2>{\imwid{.4}{ellipse6018}\quad\imwid{.4}{ellipse6098}}%
 \only<3>{\imwid{.4}{ellipse6018}\quad\imwid{.4}{ft_log}}%
 \only<4>{\imwid{.4}{ellipse6018}\quad\imwid{.4}{ft_log_base}}
+\vskip4pt
+\visible<4>{The training set has 60\thinspace 000 of these.}
+\end{frame}
+
+\begin{frame}
+\centering
+\imwid{0.45}{Plot_N_telescopes_gen_total_loss}%
+\imwid{0.45}{Plot_N_telescopes_disc_loss}%
+\end{frame}
+
+\begin{frame}{Results}
+\only<1>{\hbox to \hsize{\hss\imwid{1.2}{image_0}\hss}%
+         \hbox to \hsize{\hss\imwid{1.2}{image_16}\hss}}
+\only<2>{\hbox to \hsize{\hss\imwid{1.2}{image_35}\hss}%
+         \hbox to \hsize{\hss\imwid{1.2}{image_38}\hss}}
+\only<3>{\hbox to \hsize{\hss\imwid{1.2}{image_42}\hss}%
+         \hbox to \hsize{\hss\imwid{1.2}{image_47}\hss}}
+\end{frame}
+
+
+\begin{frame}{Recovery of Multipoles}
+\centering
+\imht{0.7}{mom0}
+\vfil
+Monopole is well recovered.
+\end{frame}
+
+\begin{frame}{Recovery of Multipoles}
+\centering
+\only<1>{\imht{0.7}{mom3}}%
+\only<2>{\imht{0.7}{mom4}}%
+\only<3>{\imht{0.7}{mom5}}
+\vfil
+Second moment is also well recovered.
+\end{frame}
+
+\begin{frame}{Recovery of Multipoles}
+\centering
+\only<1>{\imht{0.7}{mom6}}%
+\only<2>{\imht{0.7}{mom7}}%
+\only<3>{\imht{0.7}{mom8}}%
+\only<4>{\imht{0.7}{mom9}}
+\vfil
+Third moment is less good.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+\item<1->{Adapting an off-the-shelf code gives encouraging results for
+  reconstructing gravity-darkening using ${}^4C_2$ baselines.}
+\item<2>{Next step: simulations of interacting binaries as training set?}
+\end{itemize}
 \end{frame}
 
 \end{document}
