@@ -54,7 +54,16 @@ Che et al (2009) using CHARA
 \visible<4>{The training set has 60\thinspace 000 of these.}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{A cGAN}
+
+\begin{itemize}
+\item One network (the generator) produces images from
+  sparse II data.
+\item A second network (the discriminator) separates good and bad
+  images.
+\item These are trained alternately.
+\end{itemize}   
+
 \centering
 \imwid{0.45}{Plot_N_telescopes_gen_total_loss}%
 \imwid{0.45}{Plot_N_telescopes_disc_loss}%
@@ -100,7 +109,8 @@ Third moment is less good.
 \begin{itemize}
 \item<1->{Adapting an off-the-shelf code gives encouraging results for
   reconstructing gravity-darkening using ${}^4C_2$ baselines.}
-\item<2>{Next step: simulations of interacting binaries as training set?}
+\item<2->{Interpretion of loss functions desirable.}
+\item<3>{Next step: simulations of interacting binaries as training set?}
 \end{itemize}
 \end{frame}
 
