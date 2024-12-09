@@ -137,7 +137,7 @@ class gan_fun():
 
           generated_loss = loss_object(tf.zeros_like(disc_generated_output), disc_generated_output) # loss due to prove that Generator is not producing correct result
 
-          total_disc_loss = real_loss + generated_loss                                   # total loss in Discriminator
+          total_disc_loss = real_loss + generated_loss                                    # total loss in Discriminator
 
           return total_disc_loss
          
