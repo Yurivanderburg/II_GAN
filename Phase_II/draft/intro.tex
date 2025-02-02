@@ -1,13 +1,74 @@
 \section{Introduction}
 
-Intensity Interferometry (II) emerged in the 1970s as a groundbreaking technique for measuring the diameters, orbits, and limb-darkening coefficients of 32 stars in single/binary/multiple star systems \cite{brown1974intensity}. Despite these significant achievements, the method did not gain widespread adoption due to the then-required highly sensitive photon detectors and sophisticated data analysis techniques. However, advancements in computational methods and modern electronics, which now offer time resolution of detectors in the nanoseconds (ns) range, have renewed II as a feasible technique in comparison to the limitation of amplitude interferometry for resolving astrophysical objects at visible wavelengths. Current simulations with ns resolution of photon detectors show that II is effective in achieving high precision measurement of parameters for stellar objects \citep{10.1093/mnras/stab2391, 10.1093/mnras/stac2433}. However, despite these technological advancements, II faces a significant limitation in terms of phase loss and the absence of complete reconstruction of the brightness distribution of stellar sources.
+Intensity Interferometry (II) \textcolor{blue}{was first reported by Hanbury Brown and Twiss (HBT) during the 1950s \citep{brown1954lxxiv, HBT56} as a \textquotedblleft new type of interferometry\textquotedblright \ to measure stellar parameters such as angular diameter, orbits, limb darkening coefficients etc. Later theoretical results reported by 
+\cite{brown1957interferometry, brown1958interferometry}, 
+and those of \cite{glauber1963quantum} and 
+\cite{MandelWolf1995, Hecht2002} demonstrated the deeper 
+physical properties of photon correlations that lay at the 
+core of II and also laid the foundation of Quantum Optics.}
+By the 1970s, \st{as a groundbreaking} \textcolor{blue}
+{with the results of stellar parameter measurements of 32 stars 
+in single and multistar systems, 
+carried out by Hanbury Brown and his collaborators \citep{hanbury1974angular} at the historic Narrabri Stellar Intensity Interferometer (NSII), Australia,  
+II had emerged as an alternative technique 
+for measuring stellar parameters.}\st{diameters, orbits, and limb-darkening 
+coefficients of 32 stars the N-body system.} Despite these significant achievements,
+the method did not gain 
+widespread adoption \textcolor{blue}{during several following decades due to unavailability of} the required 
+sensitive photon detectors and sophisticated data analysis 
+\textcolor{blue}{devices}\st{techniques}. 
+However, \textcolor{blue}{subsequent} advancements in computational 
+methods and in modern electronics, which currently offer time resolution of detectors in the nanoseconds (ns) to picoseconds (ps) range, have renewed 
+II as a feasible technique for resolving astrophysical objects at visible wavelengths. Recent 
+ simulations deploying ns-resolution photon detectors show that II 
+ \st{is} \textcolor{blue}{could be} effective 
+ in achieving high precision measurement of parameters for stellar objects 
+ \citep{10.1093/mnras/stab2391, 10.1093/mnras/stac2433}. 
 
-Several theoretical and computational approaches to phase reconstruction with II have been proposed. \cite{gamo1963triple} introduced the concept of triple-intensity correlation, which \cite{goldberger1963use} further applied in an experiment to observe scattered particles in microscopic systems. Sato conducted experiments to measure the diameter and phase of asymmetrical objects, suggesting that triple correlation could extend II to image stellar bodies \citep{sato1978imaging, sato1979computer, sato1981adaptive}. Despite its potential, the sensitivity of the signal to noise poses a significant challenge for this approach.
+In addition to measurement of physical parameters of star systems, a fundamental motivation of optical astronomy is to obtain the sky intensity distribution of the source using the information observed on the ground. In the context of II, the task is to construct the image of the source from the intensity correlations observed by a set of pairs of telescopes (light buckets) on the ground.  \textcolor{blue}{However, with the basic observable of II being the electromagnetic field intensity, and not the field strength},
+ a significant aspect of \textcolor{blue}{this method} is the loss of phase information. \st{Consequently, a} A full 
+ reconstruction of the brightness distribution of a source with II 
+ necessitates phase information. Therefoere the task is to reconstruct the phase of the signal. 
 
-Later \cite{holmes2010two} proposed an alternative method, utilizing the Cauchy-Riemann relations to reconstruct 1-D images and extending this to 2-D images across a range of signal-to-noise (SNR) values. This algorithm was applied to simulated data of stellar objects using II, considering existing and forthcoming Imaging Cherenkov Telescope Arrays (ICTAs) with a large number of telescopes \citep{nunez2010stellar, nunez2012high, nunez2012imaging}. Despite these theoretical advances, practical application to actual observational data of stellar objects with II has yet to be achieved. The introduction of a novel image reconstruction technique with II will advance the field of optical astronomy.
+Several theoretical and computational approaches to phase reconstruction 
+with II have been proposed. \cite{gamo1963triple} introduced the concept 
+of triple-intensity correlation, which \cite{goldberger1963use} further 
+applied in an experiment to observe scattered particles in microscopic systems. 
+Sato conducted experiments to measure the diameter and phase of asymmetrical 
+objects, suggesting that triple correlation could extend II to image stellar 
+bodies \citep{sato1978imaging, sato1979computer, sato1981adaptive}. \textcolor{blue}{However, achieving a good signal-to-noise ratio (SNR) still poses a significant challenge for this approach.}
 
-Currently, Artificial Intelligence (AI) is applied to high-volume data to reduce human computing resources and time effort. New analysis techniques using Machine Learning (ML) applications on observed data are playing at the front to reveal the astronomical mystery. In radio morphologies, the supervised and unsupervised algorithm is used to distinguish the radio components from the infrared source \citep{wu2019radio, galvin2020cataloguing}. Recently, the image reconstruction of the M87 black hole using Generative Adversarial Networks (GANs) has been performed \citep{10.1093/mnras/stad3797}. There is also a need to introduce the application of ML to II data, which will aim to overcome the limitations of image reconstruction and provide high-resolution optical astronomy. 
+Gerchberg and Saxton suggested an iterative method \cite{GerchbergSaxton1972}to determine the phase of from the image and diffraction plane pictures. This method relies on good initial estimates and may struggle with slow convergence issues otherwise. Fienup suggested a Hybrid Input-Output algorithm that introduced feedback mechanisms to improve convergence rate and robustness, particularly in noisy environments.
 
-In this paper, we propose an alternative approach for image reconstruction of stellar objects with II using conditional GAN (cGAN) \citep{goodfellow2014generative}. We consider four ICTAs and perform a one-night simulation for a fast-rotating star. The predicted image by a trained GAN shows promising results for reconstructing the image's shape and size. Image moments evaluate the predicted image and demonstrate that the size and shape of the fast-rotating star are reconstructed. However, the brightness distribution recovers only up to the third-order moment. We expect even greater precision in image reconstruction by including more telescopes, especially in recovering higher-order image moments. It holds great promise, pushing the boundaries of high-resolution optical astronomy and opening up new possibilities for studying stellar objects with remarkable detail.
+Later \cite{holmes2010two} proposed an alternative method, utilizing the 
+Cauchy-Riemann relations to reconstruct 1-D images and extending this to 
+2-D images across a range of signal-to-noise (SNR) values. This algorithm 
+was applied to simulated data of stellar objects using II, considering 
+existing and forthcoming Imaging Cherenkov Telescope Arrays (IACTs) with 
+a large number of telescopes 
+\citep{nunez2010stellar, nunez2012high, nunez2012imaging}. This method faces challenge of computational complexity in attempting to generalize to higher dimensions. 
 
-This paper is organized as follows: The first section discusses Intensity Interferometry following its signal and noise for fast-rotating stars along the Earth's rotation. The second section introduces the GAN formulation and its structure. The third section details the parameter selection for training the GAN to reconstruct the image. After that, the fourth section presents the results of trained GAN visually using image moments. At the end, there is a conclusion of the entire result.
+Li etal suggested a flexible iterative Regularization method \citep{Li2014} of incorporating prior information (e.g., sparsity, smoothness, or non-negativity), reducing the ill-posedness of the phase retrieval problem. This method is more robust against noise and stabilizes the solution against artefacts and spurious solutions. This method faces challenges of choice of regularization parameter, computational complexity and sensitivity to initial guess.  
+
+The Transport-of-Intensity Equation (TIE) method, a non-interferometric technique and first suggested by Teague \citep{Teague1983} relates the intensity variations along the optical axis and phase of the optical fields. It enabled phase retrieval from intensity measurements at multiple planes. Zhang et al suggested a method \citep{Zhang2020} of obtaining a \textquotedblleft universal solution \textquotedblright to TIE using \textquotedblleft maximum intensity assumption \textquotedblleft, hence converting the TIE into a Poisson equation and then by solving it iteratively. Recent work of Kirisits et al \citep{Kirisits2024} have explored hybrid methods combining TIE with other equations, such as the Transport of Phase Equation (TPE). These approaches leverage the strengths of both equations to improve phase retrieval accuracy. This method has universal applicability in the sense that it works for arbitrarily shaped apertures, handles non-uniform illumination and inhomogeneous boundary conditions. This method guarantees convergence although the speed of convergence is dependent on initial guess quality. The final results are dependent on boundary conditions.
+
+\textcolor{red}{With non-linearlity built into its grains, neural networks and deep learning were obvious choice to look for as an option to use. There have been these works.. involving deep learning, GAN.........{\bf Reference and brief description of other pieces of work using NN and Deep Learning to be inserted here!!}}
+
+In this paper, we propose an alternative approach using Generative 
+Adversarial Networks (GANs) \citep{goodfellow2014generative} to reconstruct 
+images of stellar objects using II. We consider four Imaging Cherenkov 
+Telescope Arrays (IACTs) located in the Northern Hemisphere and perform 
+a one-night simulation for a fast-rotating star. The predicted image using 
+a trained GAN shows promising results for reconstructing the image's shape and 
+size.The evaluation of the predicted image is conducted using image moments, 
+demonstrating that the size and shape of the fast-rotating star are 
+reconstructed. However, the brightness distribution recovers only at the 
+third-order moment.
+
+This paper is organized as follows: The first section discusses 
+Intensity Interferometry following its signal and noise for fast-rotating 
+stars along the Earth's rotation. The second section introduces the GAN 
+formulation and its structure. Following the third section details the 
+parameter selection for training the GAN to reconstruct the image. 
+After that, the fourth section presents the results of trained GAN visually 
+and using image moments. At the end, there is a discussion of the entire result.
