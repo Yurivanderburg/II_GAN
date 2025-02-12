@@ -7,7 +7,7 @@ R. Hanbury Brown and Robert Q. Twiss (HBT) carried out the first experiments dem
 \textcolor{blue}{In the remaining part of this section, we present a brief conceptual procedure of how an array of Cherenkov telescopes is used to carry out II observations and generate Signal-to-Noise Ratio (SNR) from these observations.}
 
 \subsection{The signal for II}\label{sec:signal}
-As a simple example, let us consider the pair of IACTs at MAGIC. Let us imagine that the two telescopes, namely, MAGIC-I and MAGIC-II are pointed to a star. \textcolor{red}{My comment: As our model has 4 hypothetical IACTs and we are not taking any specific properties of the MAGIC telescopes into the calculations or into the model, it would be better to avoid using the specific names of MAGIC facility.This portion can be easily rewritten without the mention of MAGIC.}Let them simultaneously measure the intensity of radiation $I_1(t)$ a  and $I_2(t)$ respectively. These signals from the respective detectors are cross-correlated and averaged over time and yield the \textcolor{blue}{second order ($n=2$) correlation of these intensities as}  \citep{acciari2020optical, dravins2013optical}
+As a simple example, let us consider the pair of IACTs. Let us imagine that the two telescopes are pointed to a star. Let them simultaneously measure the intensity of radiation $I_1(t)$ a  and $I_2(t)$ respectively. These signals from the respective detectors are cross-correlated and averaged over time and yield the \textcolor{blue}{second order ($n=2$) correlation of these intensities as}  \citep{acciari2020optical, dravins2013optical}
 \begin{equation}
 	g^{(2)}= \frac{\left\langle I_1(t) \cdot I_2(t + \tau) \right\rangle}{\langle I_1(t) \rangle \cdot \langle I_2(t) \rangle} 
 	\label{eqn:HBT}
@@ -17,17 +17,22 @@ where $\tau$ is the time delay between the telescopes. \st{If the light source i
 	g^{(2)} = 1 + \frac{\Delta f}{\Delta \nu} \abs{V_{12}}^2
 	\label{eqn:HBT2}
 \end{equation}
-where, $\Delta f$ is the electronic bandwidth \textcolor{blue}{of the photon detectors (that measure the intensities and typically lie in range $\sim 100 {\mathrm {MHz}}$)} and $\Delta {\mathrm {\nu}}$ is the optical bandwidth \textcolor{blue}{of radiation over which the intensities are measured}\footnote{\textcolor{blue}{Typically, filters with bandwidths in the range $\Delta \lambda \sim 20 nm - 50 nm$ corresponding to $\Delta \nu \sim 10^{15}$ Hz are used.} . In eq.(\ref{eqn:HBT2}), $V_{12}$, referred to as the complex visibility fuction, is the Fourier transform of the source brightness distribution and is given by
+where, $\Delta f$ is the electronic bandwidth \textcolor{blue}{of the photon detectors (that measure the intensities and typically lie in range $\sim 100 {\mathrm {MHz}}$)} and $\Delta {\mathrm {\nu}}$ is the optical bandwidth of radiation over which the intensities are measured.\footnote{\textcolor{blue}{Typically, filters with bandwidths in the range $\Delta \lambda \sim 20 nm - 50 nm$ corresponding to $\Delta \nu \sim 10^{15}$ Hz are used.}} In eq.(\ref{eqn:HBT2}), $V_{12}$, referred to as the complex visibility fuction, is the Fourier transform of the source brightness distribution and is given by
 \begin{equation}
-\vert V_{12} \vert = 2 \frac{J_1(\pi \ d \ {\theta}/{\lambda})}{\pi\  d \ {\theta}/{\lambda}}
+ V_{12} = 2 \frac{J_1(2 \pi d \theta)}{(2 \pi d \theta)}
 \label{eqn:absvisib}
 \end{equation}
-with $d$, $\theta$ and $\lambda$ being the baseline, the angular diameter of the star and the optical wavelength of the filter used in observation.
-It is obvious from eq(\ref{eqn:absvisib}) that $\vert V_{12} \vert$ carries the information of the angular diameter of the star.} However, the phase information is lost \st{due to the involvement of the absolute value of $V_{12}$}\textcolor{blue}{as we measure the absolute value $\vert V_{12} \vert$}. In observational astronomy, the correlation is often expressed in terms of the normalized contrast, given by:
+where $\theta$ is the angular diameter of the star and d is the radial coordinate in the usual interferometric $(u , v) = (x/\lambda, y/\lambda)$ plane with the optical wavelength $\lambda$ of the filter used in observation. It is obvious from eqn(\ref{eqn:absvisib}) that $V_{12}$ carries the information of the angular diameter of the star. However, the phase information is lost \st{due to the involvement of the absolute value of $V_{12}$}\textcolor{blue}{as we measure the absolute value $\vert V_{12} \vert^2$}. In observational astronomy, the correlation is often expressed in terms of the normalized contrast, given by:
 \begin{equation}
 	c = \frac{\left\langle \left( I_1(t) - \left\langle I_1 \right\rangle \right) \cdot \left( I_2(t + \tau) - \left\langle I_2 \right\rangle \right) \right\rangle}{\langle I_1(t) \rangle \cdot \langle I_2(t) \rangle} = g^{(2)} - 1
 \end{equation}
-where, $\left\langle I_1 \right\rangle$ and $\left\langle I_2 \right\rangle$ are the mean intensity from two telescopes.
+where, $\left\langle I_1 \right\rangle$ and $\left\langle I_2 \right\rangle$ are the mean intensity from two telescopes. So, the signal measured by electronic bandwidth  $\Delta f$ of photon detector of II in the optical bandwidth of observational radiation $\Delta {\mathrm {\nu}}$ is
+\begin{equation}
+	c = g^{(2)} - 1 = \frac{\Delta f}{\Delta \nu} \abs{V_{12}}^2
+	\label{eq:signal}
+\end{equation}
+$\abs{V_{12}}^2$ is a function of baseline $d = \sqrt{u^2 + v^2}$ on observational plane. So the strength of the signal is increased using large number of baselines.
+
 
 \textcolor{red}{Insert text (may be one more paragraph) to extend the expression for $g^{(2)}$ or $c$ to include the signals from more number of baselines. This will be important because we are considering a set of 4 IACTs in our model and therefore 6 baselines.}
 
@@ -79,25 +84,23 @@ where, $\left\langle I_1 \right\rangle$ and $\left\langle I_2 \right\rangle$ are
 \end{figure*}
 The primary purpose of IACTs is the study of high energy gamma rays (with energy $E\ \geq 30$ GeV) reaching the Earth from cosmic sources, entering the Earth's atmosphere and seeding the Cherenkov showers in the upper atmosphere due to multiple scattering. These telescopes have an array of mirrors that focus the light onto a set of photo-multiplier tubes (PMTs) \cite{aleksic2016major}. 
 \textcolor{blue}{In the simulation model adopted here, a set of four IACTs with similar properties each are considered. The positional configuration of these IACTs is shown in fig.~\ref{fig:teles}. The optical signal guided into a PMT is filtered using a spectral filter with chosen mean observational wavelength $\lambda$ and corresponding bandpass $\Delta \lambda$. 
-Use of filters helps in not only reducing back ground noise, but in improving the signal quality and the efficiency of the PMTs also. Filtering background sky light becomes even more significant in II observations as these observations are carried out around full moon nights. Needless to mention that light of the stellar source is focused on the PMT during the II observations.} 
-\st{In II observations, the light of a stellar source is focused on a single PMT, which has a filter in front. The purpose of this filter is to efficiently transmit light around mean observational frequency, which protects the PMTs from excessive light. It is necessary, as II observations are mainly done during full moon nights, where it is too bright for Very High Energy $\gamma$-ray observations.} The optical signal of the PMTs is transmitted through optical fibers, converted to an electrical signal, and digitized \cite{acciari2020optical}. The measurable observable is the Pearson's correlation coefficient:
-\begin{equation}
-	\rho(\tau) = \frac{\left\langle \left( I_1(t) - \left\langle I_1 \right\rangle \right) \cdot \left( I_2(t + \tau) - \left\langle I_2 \right\rangle \right) \right\rangle}{\sqrt{\langle \left( I_1(t) - \langle I_1 \rangle \right)^2 \rangle} \cdot \sqrt{\langle \left( I_2(t) - \langle I_2 \rangle \right) ^2 \rangle}}
-	\label{eqn:pearson}
-\end{equation}
-Since $I_1$ and $I_2$ are proportional to the direct current of the PMTs ($DC_i$), the normalized contrast can be calculated as in equation \ref{eq:norm_contrast2}. One must also correct for a non-constant gain of the PMTs, as well as the moon. The latter can be done by measuring the background light with an additional PMT with no mirrors focused on it \cite{acciari2020optical}. 
-\begin{equation}
-	c \propto \frac{\rho}{\sqrt{\left(DC_1 \cdot DC_2 \right)}}
-	\label{eq:norm_contrast2}
-\end{equation}
-It must be noted that the calculation of Pearson's correlation coefficient is non-trivial: MAGIC makes use of the convolution theorem for discrete Fourier transforms because it is computationally more efficient.
+Use of filters helps in not only reducing back ground noise, but in improving the signal quality and the efficiency of the PMTs also. Filtering background sky light becomes even more significant in II observations as these observations are carried out around full moon nights. Needless to mention that light of the stellar source is focused on the PMT during the II observations.}
 
-The significance of the signal can be expressed as the signal-to-noise ratio (SNR), which depends on many factors. However, most importantly, it is proportional to the absolute value of visibility, which itself depends on the distance between the telescopes, shown in equation (\ref{eq:SNR}) \cite{acciari2020optical}.  
+The significance of the signal can be expressed as the signal-to-noise ratio (SNR), which depends on many factors. However, most importantly, it does not depend on optical bandwidth $\Delta {\mathrm {\nu}}$ of radiation for two telescope correlation. The explanation of independence of SNR from  $\Delta {\mathrm {\nu}}$ is given in the end of subsection 4.1 of \cite{10.1093/mnras/stab2391}.  
 \begin{equation}
-	SNR = A \cdot \alpha \cdot q \cdot n \cdot \abs{V_{12}}^{2}(d) \cdot \sqrt{b_v} \cdot F^{-1} \cdot \sqrt{\frac{T}{2}} \cdot \sigma
+	SNR = A \cdot \alpha \cdot q \cdot n \cdot F^{-1} \cdot \sigma \cdot \sqrt{\frac{T \Delta f}{2}} \cdot \abs{V_{12}}^{2}
 	\label{eq:SNR}
 \end{equation}
-here, $A$ is the total mirror area, $\alpha$ the quantum efficiency of the PMTs, $q$ the quantum efficiency of the optics, $n$ the differential photon flux from the source, and $b_v$ the cross-correlation bandwidth. The noise of the PMTs is accounted for with $F$, $T$ denotes the observation time, and $\sigma$ is the normalized spectral distribution of the light (including filters) \cite{acciari2020optical}. While most of the parameters can be optimized with hardware, the only way to obtain a better SNR is to increase the observation time with fixed telescopes.  
+here, $A$ is the total mirror area, $\alpha$ the quantum efficiency of the PMTs, $q$ the quantum efficiency of the remaining optics, and $n$ the differential photon flux from the source. The excess noise factor of the PMTs is accounted with $F$, $T$ denotes the observation time, and $\sigma$ is the normalized spectral distribution of the light (including filters) \cite{acciari2020optical}. The signal (S) and noise (N) can be understand using eqns.\ref{eq:signal} and \ref{eq:SNR} as
+\begin{equation}
+	S = \frac{\Delta f}{\Delta \nu} \abs{V_{12}}^2
+\end{equation}
+and
+\begin{equation}
+	N = (A \cdot \alpha \cdot q \cdot n \cdot F \cdot \sigma \cdot \Delta \nu)^{-1}\sqrt{\frac{2 \Delta f}{T}}
+\end{equation}
+While most of the parameters can be optimized with hardware, the only way to obtain a better SNR is to increase the observation time T with fixed telescopes. 
+ 
 \textcolor{red}{Points to be discussed: 
 \begin{itemize}
 \item{Should/Can the final expression for SNR in eq.(\ref{eq:SNR}) be written in terms of $\rho(\tau)$ of eq.(\ref{eqn:pearson}) or $c$ (\ref{eq:norm_contrast2}) in stead of $\vert V_{12}\vert^2$?}
@@ -115,14 +118,14 @@ The measurement of the size of stellar objects through absolute visibility depen
 \end{comment}
 If the source is at the zenith, the coordinates in the Fourier plane ($u,v$) are given by:
 \begin{equation}
-	(u,v) = \frac{1}{\lambda} (d_N, d_E)
+	(u,v) = \frac{1}{\lambda} (d_E, d_N)
 \end{equation}
-where $d_N$ and $d_E$ are the baselines expressed in north and east coordinates. 
+where $d_E$ and $d_N$ are the baselines expressed in north and east coordinates. 
 \textcolor{blue}{But not all sources are at the zenith, and the telescopes are stationary and may also have different relative altitudes $d_A$ depending on the available terrain. Therefore, the Earth's rotation needs to be factored in for covering the maximum observational plane through the rotated baselines. 
 For a given stellar source with declination $\delta$, hour-angle $h$ observed by telescopes at latitude $l$, equation (\ref{eq:baseline_rot}) provides the rotated
 baselines for a given pair of telescopes \citep{dravins2013optical, saha2020theory}
 \begin{equation}
-\begin{pmatrix} u\\ v\\ w\\ \end{pmatrix} = R_x(\delta) \cdot R_y(h) \cdot R_x(-l) \begin{pmatrix} d_N\\ d_E\\ d_A\\ \end{pmatrix}
+\begin{pmatrix} u\\ v\\ w\\ \end{pmatrix} = R_x(\delta) \cdot R_y(h) \cdot R_x(-l) \begin{pmatrix} d_E \\ d_N \\ d_A \\ \end{pmatrix}
 	\label{eq:baseline_rot}
 \end{equation}
 }
