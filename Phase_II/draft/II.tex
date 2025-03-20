@@ -32,19 +32,6 @@ where, $\left\langle I_1 \right\rangle$ and $\left\langle I_2 \right\rangle$ den
 \end{equation}
 $\abs{V_{12}}^2$ is a function of baseline $d = \sqrt{u^2 + v^2}$ on observational plane. Consequently, the strength of the signal is enhanced by employing a large number of baselines.
 
-%%%%%%%%%%%%%%My commnets (Block-1 of 4) starts here%%%%
-\textcolor{red}{Considering a set of 4 IACTs in our model, there are 6 unique baselines available for measurement. Consequently, the overall correlation, denoted as $g^{(2)}$ (or equivalently, the normalized contrast $c$), can be extended to incorporate the signals from all these baselines. For example, if $c_{ij}$ represents the correlation measured between telescope $i$ and telescope $j$, the total correlation can be expressed as an average over the 6 baselines:}
-\begin{equation}
-g^{(2)} = \frac{1}{6}\sum_{i<j} c_{ij}
-\end{equation}
-\textcolor{red}{Alternatively, if the signal contributions from each baseline are weighted by a factor $w_{ij}$ to account for differences in baseline length or noise characteristics, the overall correlation can be written as:}
-\begin{equation}
-g^{(2)} = \frac{1}{6}\frac{\sum_{i<j} w_{ij} c_{ij}}{\sum_{i<j} w_{ij}}
-\end{equation}
-\textcolor{red}{This averaging process not only increases the effective signal strength by combining data from multiple baselines, but also improves the overall signal-to-noise ratio, thereby enhancing the reliability of the reconstructed image. The redundancy provided by the additional baselines helps mitigate the impact of noise and systematic errors, leading to a more robust determination of the source's brightness distribution.
-}
-%%%%%%%%%%%%My comments Block-1 of 4) ends here%%%%%%%%%%
-
 \subsection{The Signal-to-Noise Ratio for II}
 \begin{figure}
 	\centering
@@ -107,15 +94,6 @@ and
 \end{equation}
 While most of the parameters can be optimized with hardware, the only way to achieve a better SNR with fixed telescopes is to increase the observation time $T$.
 
-
-%%%%%%%%%%%%%%%%My Comment Text (Block 2 of 4) begins%%%%%%%%%
-\textcolor{red}{Points to be discussed: 
-\begin{itemize}
-\item{Should/Can the final expression for SNR in eq.(\ref{eq:SNR}) be written in terms of $\rho(\tau)$ of eq.(\ref{eqn:pearson}) or $c$ (\ref{eq:norm_contrast2}) in stead of $\vert V_{12}\vert^2$?}
-\item{It would be better to generalize the eq.(\ref{eq:norm_contrast2}) to include the signals from all the baseline pairs.}
-\end{itemize}}
-%%%%%%%%%%%%%%%%%My Comments Text (Block 2 of 4 ends here)%%%%
-
 \subsection{Baseline considerations}
 The measurement of the size of stellar objects via absolute visibility depends on the distance between the telescopes, known as the baseline $d$.
 \begin{equation}
@@ -145,6 +123,3 @@ In our work presented here, we simulate a single fast-rotating star to test imag
 
 Intensity Interferometry measures (or counts) the photons arriving at the telescopes from the stellar object. The correlation of these photon arrivals at the telescopes yields the squared visibility (explained in subsection.\ref{sec:signal}). According to Van Cittert Zernike's theorem, this signal is the Fourier transform of the brightness distribution in the sky. Fig.\ref{fig:ft} represents the Fourier Transform of the source shown in fig.\ref{fig:image} using II, displayed on both linear and logarithmic scales. In order to observe a real stellar source, however, one would need to receive photons from every point on the surface of the source, which would require an infinite number of baselines observing the source over a sufficiently long duration—an obviously unfeasible demand. In practice, we have a finite number of baselines corresponding to the finite number $N_T$ of telescopes at our disposal and a limited observation schedule. Therefore, as a pilot, we have simulated the II observation of a sky source over one night's duration. Using this finite amount of signal from one night's observation, we have trained a Generative Adversarial Network (GAN) to construct the image of the source.
 
-%%%%%%%%%%%%%%%%%%%My comments (Block 4 of 4) starts%%%%%%%%%%
-\textcolor{red}{My comments: Suppose we do more simulations with say 8 and 16 telescopes covering the same effective ground area, but obviously with more (28 and 120 to be exact) baselines respectively. We can then, perhaps, evolve/suggest some kind of measure (or scale) of quality in resultant image reconstruction with number of telescopes. May be some form of ratios of the SNRs would provide a good comparison. {\bf How much more computationally expensive would it become?}}
-%%%%%%%%%%%%%%%%%%My comments (Block 4 of 4) end here%%%%%%%%%
