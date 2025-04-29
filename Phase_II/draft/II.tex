@@ -6,22 +6,22 @@ In the early decades of the current century, proposals emerged to utilize Imagin
 The remainder of this section presents a brief conceptual overview of how an array of Cherenkov telescopes is used to perform II observations and derive the Signal-to-Noise Ratio (SNR) from these measurements.
 
 \subsection{The signal for II}\label{sec:signal}
-As a simple example, let us consider a pair of IACTs pointed at a star. Suppose the two telescopes simultaneously measure the intensity of radiation $I_1(t)$ and $I_2(t)$, respectively. The signals from these detectors are cross-correlated and averaged over time, yielding the second order ($n=2$) correlation of these intensities as \citep{acciari2020optical, dravins2013optical}
+As a simple example, let us consider a pair of IACTs pointed at a star. Suppose the two telescopes simultaneously measure the intensity of radiation $I_1(t)$ and $I_2(t)$, respectively. The signals from these detectors are cross-correlated and averaged over time, yielding the second order ($n=2$) correlation of these intensities as \citep[cf.~][]{acciari2020optical, dravins2013optical}
 \begin{equation}
 	g^{(2)}= \frac{\left\langle I_1(t) \cdot I_2(t + \tau) \right\rangle}{\langle I_1(t) \rangle \cdot \langle I_2(t) \rangle} 
 	\label{eqn:HBT}
 \end{equation}
-where $\tau$ is the time delay between the telescopes. For spatially coherent and randomly polarized light, eq.(\ref{eqn:HBT}) reduces to the Siegert relation \citep{acciari2020optical}.
+where $\tau$ is the time delay between the telescopes. For spatially coherent and randomly polarized light, eq.~(\ref{eqn:HBT}) reduces to the relation \citep[sometimes called the Siegert relation, see e.g.~][]{acciari2020optical}.
 \begin{equation}
 	g^{(2)} = 1 + \frac{\Delta f}{\Delta \nu} \abs{V_{12}}^2
 	\label{eqn:HBT2}
 \end{equation}
-where $\Delta f$ is the electronic bandwidth of the photon detectors (which measure the intensities and typically operate in the range $\sim 100 {\mathrm {MHz}}$) and $\Delta {\mathrm {\nu}}$ is the optical bandwidth of the radiation over which the intensities are measured.\footnote{Typically, filters with bandwidths in the range $\Delta \lambda \sim 20,\mathrm{nm} - 50,\mathrm{nm}$, corresponding to $\Delta \nu \sim 10^{15}$ Hz, are used.} In eq.(\ref{eqn:HBT2}), $V_{12}$, referred to as the complex visibility function, is the Fourier transform of the source brightness distribution and is given by
+where $\Delta f$ is the electronic bandwidth of the photon detectors (which measure the intensities.  Values of $\Delta\nu\sim 1\,\mathrm{THz}$ and $\Delta f \sim 1\,\mathrm{GHz}$ are typical of recent work.  In eq.~(\ref{eqn:HBT2}), $V_{12}$, referred to as the complex visibility function, is the Fourier transform of the source brightness distribution. For a uniform disk it is given by
 \begin{equation}
  V_{12} = 2 \frac{J_1(2 \pi d \theta)}{(2 \pi d \theta)}
 \label{eqn:absvisib}
 \end{equation}
-where $\theta$ is the angular diameter of the star and $d$ is the radial coordinate in the conventional interferometric $(u , v) = (x/\lambda, y/\lambda)$ plane, with $\lambda$ representing the optical wavelength of the filter used for observation. It is evident from eqn(\ref{eqn:absvisib}) that $V_{12}$ contains information about the star's angular diameter. However, the phase information is lost since we measure only the absolute value $\vert V_{12} \vert^2$. In observational astronomy, the correlation is often expressed in terms of the normalized contrast, given by:
+where $\theta$ is the angular diameter of the star and $d$ is the radial coordinate in the conventional interferometric $(u , v) = (x/\lambda, y/\lambda)$ plane, with $\lambda$ representing the optical wavelength of the filter used for observation. It is evident from eq.~(\ref{eqn:absvisib}) that $V_{12}$ contains information about the star's angular diameter. However, the phase information is lost since we measure only the absolute value $\vert V_{12} \vert^2$. In observational astronomy, the correlation is often expressed in terms of the normalized contrast, given by:
 \begin{equation}
 	c = \frac{\left\langle \left( I_1(t) - \left\langle I_1 \right\rangle \right) \cdot \left( I_2(t + \tau) - \left\langle I_2 \right\rangle \right) \right\rangle}{\langle I_1(t) \rangle \cdot \langle I_2(t) \rangle} = g^{(2)} - 1
 \end{equation}
@@ -104,13 +104,13 @@ For achieving a good SNR with a given telescope configuration, covering the larg
 \begin{equation}
 	(u,v) = \frac{1}{\lambda} (d_E, d_N)
 \end{equation}
-where $d_E$ and $d_N$ are the baselines expressed in east and north coordinates. However, not all sources are at the zenith, and the telescopes are stationary and may also have different relative altitudes $d_A$ depending on the available terrain. Therefore, the Earth's rotation must be taken into account to cover the maximum observational plane using rotated baselines. For a given stellar source with declination $\delta$ and hour-angle $h$, as observed by telescopes at latitude $l$, equation (\ref{eq:baseline_rot}) provides the rotated baselines for a given pair of telescopes \citep{dravins2013optical, saha2020theory}.
+where $d_E$ and $d_N$ are the baselines expressed in east and north coordinates. However, not all sources are at the zenith, and the telescopes are stationary and may also have different relative altitudes $d_A$ depending on the available terrain. Therefore, the Earth's rotation must be taken into account to cover the maximum observational plane using rotated baselines. For a given stellar source with declination $\delta$ and hour-angle $h$, as observed by telescopes at latitude $l$, equation (\ref{eq:baseline_rot}) provides the rotated baselines for a given pair of telescopes \citep[see e.g., eqs.~8--10 from][]{2020MNRAS.498.4577B}.
 \begin{equation}
 \begin{pmatrix} u\\ v\\ w\\ \end{pmatrix} = R_x(\delta) \cdot R_y(h) \cdot R_x(-l) \begin{pmatrix} d_E \\ d_N \\ d_A \\ \end{pmatrix}
 	\label{eq:baseline_rot}
 \end{equation}
 
-The three rotation matrices $R_i$ correspond to the fundamental representation of the SO(3) group \cite{saha2020theory}. Fig.\ref{fig:base} shows the track of six baselines generated from the telescopes (fig.\ref{fig:teles}) due to Earth's rotation. Since every pair of telescopes traces an ellipse in the Fourier plane, the total number of ellipses scales as follows: 
+Fig.\ref{fig:base} shows the track of six baselines generated from the telescopes (fig.\ref{fig:teles}) due to Earth's rotation. Since every pair of telescopes traces an ellipse in the Fourier plane, the total number of ellipses scales as follows: 
 \begin{equation}
 	\label{eq:N_telescopes}
 	\mathcal{N} = \frac{N_T \cdot (N_T -1)}{2}
