@@ -1,7 +1,7 @@
-\section{The Reconstructed Image with GAN}
+\section{Images Reconstructed by the GAN}
 In this section, we begin by discussing phase retrieval using hyperparameters, as mentioned earlier, followed by an analysis in which multiple sources are trained simultaneously. The best performance for image reconstruction has been observed with a learning rate of \(2 \cdot 10^{-4}\), a kernel size of 5×5, and equal noise percentages applied to both the original and generated images. A batch size of 1 is used, and equal training is provided to both the Discriminator and the Generator.
 
-\subsection{The Predicted Image with Trained GAN}
+\subsection{Predicted Image from the Trained GAN}
 Figure~\ref{fig:GAN} demonstrates the success of the GAN in training a model for Intensity Interferometry (II) to reconstruct images of fast-rotating stars. The GAN was trained on the training datasets for 60,000 steps and subsequently tested on various validation datasets to produce predicted images of a fast-rotating star. In Fig.~\ref{fig:GAN}, four combined images illustrate the GAN's performance in reconstructing the star’s shape, size, and brightness distribution using II.
 \begin{itemize}
 \item{The left panel shows the signals collected from six baselines, which serve as the input for the Generator during training.}
@@ -9,7 +9,7 @@ Figure~\ref{fig:GAN} demonstrates the success of the GAN in training a model for
 \item{The second middle panel presents the reconstructed, or predicted, image produced by the trained GAN, highlighting its success in image reconstruction.}
 \item{The right panel shows the difference between the ground truth and the predicted image, with a smaller difference indicating higher precision in image reconstruction.}
 \end{itemize}
-The predicted images in Fig.~\ref{fig:GAN} yield positive results, accurately conveying visual information about the source's size, shape, and brightness distribution across its surface using only six baselines. However, further improvements can be achieved by increasing the number of telescopes to maximize coverage of the (u, v) plane, making the existing and upcoming Cherenkov Telescope Array Observatory (CTAO) an ideal candidate for this approach.
+The predicted images in Fig.~\ref{fig:GAN} yield positive results, accurately conveying visual information about the source's size, shape, and brightness distribution across its surface using only six baselines. However, further improvements can be achieved by increasing the number of telescopes to maximize coverage of the $(u, v)$ plane, making the existing and upcoming Cherenkov Telescope Array Observatory (CTAO) an ideal candidate for this approach.
 \subsection{Evaluation of GAN using Moments}
 The reconstructed images are visually compelling, demonstrating the GAN's effectiveness in using II to reconstruct images. However, visual assessment alone is insufficient; statistical evaluation is necessary to rigorously validate the results. To achieve this, we employ image moments as a statistical method. Image moments capture key properties of the reconstructed objects—such as shape, size, and intensity distribution—by quantifying features like position, orientation, and brightness distribution. By comparing the moments of the GAN-generated images to those of the ground truth, we can objectively assess the consistency and accuracy of the reconstruction. This approach provides a reliable framework for evaluating reconstruction quality, as image moments can reveal subtle differences in geometric and intensity properties that might not be apparent through visual inspection alone.
 
@@ -19,7 +19,7 @@ The raw moment $M_{ij}$ of an image I(x, y) is defined as \citep{hu1962visual}
 	\label{eqn:Mom}
 \end{equation}
 
-The zeroth order raw moment, known as the monopole, represents the total intensity of an image. It is computed by summing all pixel values across the image, yielding an overall intensity measure. In this context, analyzing the monopole provides the total flux of fast-rotating stars. According to eqn.~\ref{eqn:Mom}, the monopole of an image is calculated as:
+The zeroth order raw moment, or monopole, represents the total intensity of an image. It is computed by summing all pixel values across the image, yielding an overall intensity measure. In this context, analyzing the monopole provides the total flux of fast-rotating stars. According to eqn.~\ref{eqn:Mom}, the monopole of an image is calculated as:
 \begin{equation}
 	M_{00} = \sum_{x} \sum_{y} I(x, y).
 \end{equation}
