@@ -13,7 +13,7 @@ The predicted images in Fig.~\ref{fig:GAN} yield positive results, accurately co
 \subsection{Evaluation of GAN using Moments}
 The reconstructed images are visually compelling, demonstrating the GAN's effectiveness in using II to reconstruct images. However, visual assessment alone is insufficient; statistical evaluation is necessary to rigorously validate the results. To achieve this, we employ image moments as a statistical method. Image moments capture key properties of the reconstructed objects—such as shape, size, and intensity distribution—by quantifying features like position, orientation, and brightness distribution. By comparing the moments of the GAN-generated images to those of the ground truth, we can objectively assess the consistency and accuracy of the reconstruction. This approach provides a reliable framework for evaluating reconstruction quality, as image moments can reveal subtle differences in geometric and intensity properties that might not be apparent through visual inspection alone.
 
-The raw moment $M_{ij}$ of an image I(x, y) is defined as \citep{hu1962visual}
+The raw moment $M_{ij}$ of an image $I(x, y)$ is defined as \citep{hu1962visual}
 \begin{equation}
 	M_{ij} = \sum_{x} \sum_{y} x^i y^j I(x, y).
 	\label{eqn:Mom}
