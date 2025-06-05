@@ -45,11 +45,33 @@ for filename in os.listdir(path_in):
     image_name = filename[:-4]                                                                        # save or display images > use cv2 instead of matplotlib, this always saves as (64,64,4)
     if save_images:
             if counter < 150:
-               cv2.imwrite('val/' + image_name + '.jpg', combined_image)
+               im = plt.imshow(combined_image, cmap='gray')
+               plt.colorbar(shrink=0.55)
+               plt.gca().set_aspect('equal')
+               plt.axis('off')
+               plt.savefig('val/' + image_name + '.jpg')
+               plt.clf()
+               plt.close()
+               #cv2.imwrite('val/' + image_name + '.jpg', combined_image)
             elif (counter >= 150) and (counter < 300):
-               cv2.imwrite('test/' + image_name + '.jpg', combined_image)
+               im = plt.imshow(combined_image, cmap='gray')
+               plt.colorbar(shrink=0.55)
+               plt.gca().set_aspect('equal')
+               plt.axis('off')
+               #plt.show()
+               plt.savefig('test/' + image_name + '.jpg')
+               plt.clf()
+               plt.close()
+               #cv2.imwrite('test/' + image_name + '.jpg', combined_image)
             else:
-               cv2.imwrite('train/' + image_name + '.jpg', combined_image)
+               im = plt.imshow(combined_image, cmap='gray')
+               plt.colorbar(shrink=0.55)
+               plt.gca().set_aspect('equal')
+               plt.axis('off')
+               plt.savefig('train/' + image_name + '.jpg')
+               plt.clf()
+               plt.close()
+               #cv2.imwrite('train/' + image_name + '.jpg', combined_image)
 
     else:
             plt.imshow(ground_truth)
