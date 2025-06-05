@@ -52,22 +52,22 @@ yt = distance[:,1]           # baselines in north direction
 zt = distance[:,2]           # baseline in up
 
 
-# plot the covered (u,v) plane with baselines
+# plot the covered (u,v) plane with baselines (comment out the lines for the visualizations of baseline only)
 plt.close()
 plt.rcParams.update({'font.size': 15})
 plt.rcParams["figure.figsize"] = [12,8]
 plt.rcParams["font.weight"] = "bold"
 plt.rcParams["axes.labelweight"] = "bold"
 st = np.cumsum(step)
-color = ['cornflowerblue', 'orange', 'cyan', 'olive', 'red', 'purple']
+#color = ['cornflowerblue', 'orange', 'cyan', 'olive', 'red', 'purple']
 for k in range(0, len(xt), 1):
-    plt.plot(xt[k,:], yt[k,:], 'o', markeredgecolor='blue', markersize=6, markeredgewidth=1.5, color=color[k], )
+    plt.plot(xt[k,:], yt[k,:], '.', color='black')#, 'o', markeredgecolor='blue', markersize=6, markeredgewidth=1.5, color=color[k], )
     
-#plt.axis('off')
+plt.axis('off')
 plt.gca().set_aspect('equal')
-plt.xlabel('Along East in meter')
-plt.ylabel('Along North in meter')
-plt.title('The covered observational (u, v) plane', fontweight='bold')
+#plt.xlabel('Along East in meter')
+#plt.ylabel('Along North in meter')
+#plt.title('The covered observational (u, v) plane', fontweight='bold')
 plt.savefig('base/baseline.png')#, bbox_inches='tight', pad_inches=0, dpi=500)
 
 

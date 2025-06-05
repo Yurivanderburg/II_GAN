@@ -88,7 +88,7 @@ class ellipsoid():
                   fms = '%7.1e'
               else:
                   fms = '%' + '.%i' % ip + 'f'
-          plt.colorbar(cs) #,format=fms)
+          #plt.colorbar(cs) #,format=fms)
           #plt.axis('off')
           if title:
              plt.title(title)

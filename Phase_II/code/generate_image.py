@@ -19,13 +19,27 @@ for r in rad:
            i += 0.07
         if (i == 0) or (i == np.pi):
            ellipse = ep.ellip(sx, sy, r, i, 0, 1)
-           plt.imsave('ellip_image/ellipse' + str(pic) + '.jpg', ellipse)
-           np.save('ellip_npy/ellipse' + str(pic) + '.npy', ellipse)
+           img = plt.imshow(ellipse)
+           plt.colorbar(img) 
+           plt.axis('off')
+           plt.savefig(f'ellip_image/ellipse{pic}.jpg')
+           plt.close()
+           np.save(f'ellip_npy/ellipse{pic}.npy', ellipse)
            pic += 1
+           #plt.imsave('ellip_image/ellipse' + str(pic) + '.jpg', ellipse)
+           #np.save('ellip_npy/ellipse' + str(pic) + '.npy', ellipse)
+           #pic += 1
         else:
            for p in pa:
                for s in sq:
                    ellipse = ep.ellip(sx, sy, r, i, p, s)
-                   plt.imsave('ellip_image/ellipse' + str(pic) + '.jpg', ellipse)
-                   np.save('ellip_npy/ellipse' + str(pic) + '.npy', ellipse)
+                   img = plt.imshow(ellipse)
+                   plt.colorbar(img) 
+                   plt.axis('off')
+                   plt.savefig(f'ellip_image/ellipse{pic}.jpg')
+                   plt.close()
+                   np.save(f'ellip_npy/ellipse{pic}.npy', ellipse)
                    pic += 1
+                   #plt.imsave('ellip_image/ellipse' + str(pic) + '.jpg', ellipse)
+                   #np.save('ellip_npy/ellipse' + str(pic) + '.npy', ellipse)
+                   #pic += 1

@@ -10,40 +10,58 @@ fn.para(img_size=128)
 
 # check the signal on observational plane and captured one using baseline of a stellar object
 base = np.load("base_npy/base.npy") 
-train_image = np.load("ellip_npy/ellipse6018.npy")
+train_image = np.load("ellip_npy/ellipse1612.npy")
 train_image = cv2.resize(train_image, dsize=(128, 128), interpolation=cv2.INTER_AREA)
 print('base shape', np.shape(base))
 print('image shape', np.shape(train_image))
 fft = np.abs(fft.fftshift(fft.fft2(fft.fftshift(train_image))))
 # the signal on observational plane
-plt.imshow(fft)
+img = plt.imshow(fft)
+plt.colorbar(img)
 plt.gca().set_aspect('equal')
 plt.axis('off')
 plt.savefig('ft/ft.jpg')
 #plt.show()
 
-plt.imshow(np.log(fft))
+plt.close()
+img1 = plt.imshow(np.log(fft))
+plt.colorbar(img1)
 plt.gca().set_aspect('equal')
 plt.axis('off')
 plt.savefig('ft/ft_log.jpg')
 #plt.show()
 
-'''
+plt.close()
 # the signal captured with baseline on observational plane
 output = np.multiply(fft, base) 
-plt.imshow(output)
+img2 = plt.imshow(output)
+plt.colorbar(img2)
+plt.gca().set_aspect('equal')
+plt.axis('off')
+plt.savefig('ft/ft_base.jpg')
 plt.show()
 
+plt.close()
+# the signal captured with baseline on log observational plane
+img3 = plt.imshow(np.log10(output+1e-7))
+plt.colorbar(img3)
+plt.gca().set_aspect('equal')
+plt.axis('off')
+plt.savefig('ft/ft_log_base.jpg')
+plt.show()
+
+'''
+plt.close()
 # The full fourier transformation on ground of stellar object and the captured one with baselines
 plt.subplot(1,2,1)
 plt.imshow(fft)
 plt.subplot(1,2,2)
 plt.imshow(output)
-plt.show()
+#plt.show()
 
 
 # check the spliting of image (sky and observational) is working
-sample_input, sample_real = fn.load('train/ellipse1693.jpg')                         # load the image to be trained in float32 tensor
+sample_input, sample_real = fn.load('train/ellipse1612.jpg')                         # load the image to be trained in float32 tensor
 print(np.shape(sample_input))
 pic = 0
 for i in [sample_input, sample_real]:

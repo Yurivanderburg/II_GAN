@@ -23,14 +23,12 @@ sample_input, sample_real = fn.load('train/ellipse1541.jpg')                    
 generator = mfn.Generator()
 tf.keras.utils.plot_model(generator, to_file='testing_image/generator.png', show_shapes=True, dpi=64) # structure of Generator according to the neuron
 
-
 gen_output = generator(sample_input[tf.newaxis, ...], training=True)                                  # test the Generator to generate image using input signal (visibility) 
 plt.imshow(gen_output[0, ...])
 plt.savefig('testing_image/gen.png')
 
 discriminator = mfn.Discriminator()
 tf.keras.utils.plot_model(discriminator, to_file='testing_image/discriminator.png', show_shapes=True, dpi=64) # structure of Discriminator according to the neuron
-
 
 disc_out = discriminator([sample_input[tf.newaxis, :], gen_output], training=False)                   # test the discrimator to predict the image (result) based on signal and generated imgae as input.
 plt.imshow(disc_out[0, ..., -1], vmin=-10, vmax=10, cmap='RdBu_r')
