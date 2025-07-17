@@ -33,32 +33,32 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
 	\caption{Merged image, which includes the original and the sparsely sampled Fourier plane. It is exactly what the GAN receives. }
 	\label{fig:GANinput}
 \end{figure}
-\begin{figure}
+\begin{figure*}[hbt]
 	\centering
-	\begin{subfigure}{\linewidth}
+	\begin{subfigure}{0.5\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{fig/analysis/Plot_learning_rate_disc_loss.pdf}
 		\caption{Discriminator loss for three different learning rates. }
 		\label{fig:Plot_learning_rate_discloss}
 	\end{subfigure}\hfill
-	\begin{subfigure}{\linewidth}
+	\begin{subfigure}{0.5\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{fig/analysis/Plot_learning_rate_gen_total_loss.pdf}
 		\caption{Total generator loss for different learning rates (eqn. (\ref{eq:total_gen_loss})).}
 		\label{fig:Plot_learning_rate_genloss}
 	\end{subfigure}\hfill
-	\caption{Generator and discriminator losses for three different learning rates. The upper figure shows the total discriminator loss, and the lower figure shows the total generator loss. There is no significant difference, but the highest learning rate might be prone to outliers. }
+	\caption{Generator and discriminator losses for three different learning rates. The left figure shows the total discriminator loss, and the right figure shows the total generator loss. There is no significant difference, but the highest learning rate might be prone to outliers. }
 	\label{fig:Plot_learning_rate_loss}
-\end{figure}
-\begin{figure}
+\end{figure*}
+\begin{figure*}[hbt]
 	\centering
-	\begin{subfigure}{\linewidth}
+	\begin{subfigure}{0.5\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{fig/analysis/Plot_Kernel_size_disc_loss.pdf}
 		\caption{Discriminator loss for three different kernel sizes. }
 		\label{fig:Plot_kernel_size_discloss}
 	\end{subfigure}\hfill
-	\begin{subfigure}{\linewidth}
+	\begin{subfigure}{0.5\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{fig/analysis/Plot_Kernel_size_gen_total_loss.pdf}
 		\caption{Total generator loss for three different kernel sizes.}
@@ -66,8 +66,8 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
 	\end{subfigure}\hfill
 	\caption{Generator and discriminator losses for three different kernel sizes in the convolutional layers. Here, the smallest kernel size has many outliers, while the largest kernel size seems to be the most stable.}
 	\label{fig:Plot_kernel_size_loss}
-\end{figure}
-\begin{figure*}
+\end{figure*}
+\begin{figure*}[hbt]
 	\centering
 	\begin{subfigure}{0.5\linewidth}
 		\centering
@@ -84,7 +84,7 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
 	\caption{Effect of the Salt and Pepper noise introduced in the images. Different ratios between $\alpha$ and $\beta$ are shown. There is no significant effect. Please note that these results are from training on 64-pixel images.}
 	\label{fig:Plot_noise_loss}
 \end{figure*}
-\begin{figure*}
+\begin{figure*}[hbt]
 	\centering
 	\begin{subfigure}{0.5\linewidth}
 		\centering
@@ -101,7 +101,7 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
 	\caption{Loss functions for two different batch sizes. Large batch sizes seem to be more robust, but they also increase training time significantly. }
 	\label{fig:Plot_batchsize_loss}
 \end{figure*}
-\begin{figure*}
+\begin{figure*}[hbt]
 	\centering
 	\begin{subfigure}{0.5\linewidth}
 		\centering
@@ -118,7 +118,7 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
 	\caption{The amount of Discriminator training has a high impact on the Discriminator score. The Discriminator repetition indicates the factor by which the Discriminator is trained more with respect to the Generator.}
 	\label{fig:Plot_discrep_loss}
 \end{figure*}
-\begin{figure*}
+\begin{figure*}[hbt]
 	\centering
 	\begin{subfigure}{0.5\linewidth}
 		\centering
