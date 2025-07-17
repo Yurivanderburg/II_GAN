@@ -1,15 +1,13 @@
 \section{Intensity Interferometry (II) with IACT arrays}
 \begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{fig/baseline.png}
-	\caption{The tracking of baselines with four telescopes arranged in fig.~\ref{fig:teles} for one night of observation.}
-	\label{fig:base}
+  \includegraphics[width=\linewidth]{fig/baseline.png}
+  \caption{The tracking of baselines with four telescopes arranged in fig.~\ref{fig:teles} for one night of observation.}
+  \label{fig:base}
 \end{figure}
 \begin{figure}[hbt]
-	\centering
-	\includegraphics[width=\linewidth]{fig/ellipse/ellipse1612.jpg}
-	\caption{This figure shows the simulated fast rotating star. The brightness is highest at the pole and there is gravitational darkening at the equator.}
-	\label{fig:image}
+  \includegraphics[width=\linewidth]{fig/ellipse/ellipse1612.jpg}
+  \caption{This figure shows the simulated fast rotating star. The brightness is highest at the pole and there is gravitational darkening at the equator.}
+  \label{fig:image}
 \end{figure}
 \begin{figure*}
 	%\begin{subfigure}{0.5\linewidth}
@@ -27,14 +25,14 @@ This section presents a brief conceptual overview of how an array of telescopes 
 \begin{figure*}
 	%\centering
 	%\begin{subfigure}{0.5\linewidth}
-		\includegraphics[width=.49\linewidth]{fig/ft/ft_base.jpg}\hfil
+  \includegraphics[width=.49\linewidth]{fig/ft/ft_base.jpg}\hfil
 		%\caption{The signal as samples by the baselines.}
 	%\end{subfigure}\hfill
 	%\begin{subfigure}{0.5\linewidth}
-		\includegraphics[width=.49\linewidth]{fig/ft/ft_log_base.jpg}
+  \includegraphics[width=.49\linewidth]{fig/ft/ft_log_base.jpg}
 		%\caption{The logarithmic signal as sampled by the baselines.}
 	%\end{subfigure}
-	\caption{The left panel shows the absolute value of the two-dimensional Fast Fourier Transform of fig.~\ref{fig:image} measured by baselines shown in fig.~\ref{fig:teles}. The right panel shows the same on logarithmic scale}
+  \caption{The left panel shows the absolute value of the two-dimensional Fast Fourier Transform of Fig.~\ref{fig:image} measured by baselines shown in Fig.~\ref{fig:teles}. The right panel shows the same on logarithmic scale}
 	\label{fig:ft_base}
 \end{figure*}
 \subsection{The signal for II}\label{sec:signal}
@@ -43,17 +41,17 @@ As a simple example, let us consider a pair of IACTs pointed at a star. Suppose 
 	g^{(2)}= \frac{\left\langle I_1(t) \cdot I_2(t + \tau) \right\rangle}{\langle I_1(t) \rangle \cdot \langle I_2(t) \rangle} 
 	\label{eqn:HBT}
 \end{equation}
-where $\tau$ is the time delay between the telescopes. For spatially coherent and randomly polarized light, eq.~(\ref{eqn:HBT}) reduces to the relation \citep[sometimes called the Siegert relation, see e.g.,][]{acciari2020optical}.
+where $\tau$ is the time delay between the telescopes. For spatially coherent and randomly polarized light, Eq.~\eqref{eqn:HBT} reduces to the relation \citep[sometimes called the Siegert relation, see e.g.,][]{acciari2020optical}.
 \begin{equation}
 	g^{(2)} = 1 + \frac{\Delta f}{\Delta \nu} \abs{V_{12}}^2
 	\label{eqn:HBT2}
 \end{equation}
-where $\Delta f$ is the electronic bandwidth of the photon detectors which measure the intensities.  Values of $\Delta\nu\sim 1\,\mathrm{THz}$ and $\Delta f \sim 1\,\mathrm{GHz}$ are typical of recent work.  In eq.~(\ref{eqn:HBT2}), $V_{12}$, referred to as the complex visibility function, is the Fourier transform of the source brightness distribution. For a uniform disk it is given by
+where $\Delta f$ is the electronic bandwidth of the photon detectors which measure the intensities.  Values of $\Delta\nu\sim 1\,\mathrm{THz}$ and $\Delta f \sim 1\,\mathrm{GHz}$ are typical of recent work.  In Eq.~\eqref{eqn:HBT2}, $V_{12}$, referred to as the complex visibility function, is the Fourier transform of the source brightness distribution. For a uniform disk it is given by
 \begin{equation}
  V_{12} = 2 \frac{J_1(\pi\theta_D b)}{(\pi\theta_D b)}
 \label{eqn:absvisib}
 \end{equation}
-where $\theta_D$ is the angular diameter of the star and $b$ is the radial coordinate in the conventional interferometric $(u , v) = (x/\lambda, y/\lambda)$ plane, with $\lambda$ representing the optical wavelength of the filter used for observation. It is evident from eq.~(\ref{eqn:absvisib}) that $V_{12}$ contains information about the star's angular diameter. However, the phase information is lost since we measure only the absolute value $\vert V_{12} \vert^2$. In observational astronomy, the correlation is often expressed in terms of the normalized contrast, given by:
+where $\theta_D$ is the angular diameter of the star and $b$ is the radial coordinate in the conventional interferometric $(u , v) = (x/\lambda, y/\lambda)$ plane, with $\lambda$ representing the optical wavelength of the filter used for observation. It is evident from Eq.~\eqref{eqn:absvisib} that $V_{12}$ contains information about the star's angular diameter. However, the phase information is lost since we measure only the absolute value $\vert V_{12} \vert^2$. In observational astronomy, the correlation is often expressed in terms of the normalized contrast, given by:
 \begin{equation}
 	c = \frac{\left\langle \left( I_1(t) - \left\langle I_1 \right\rangle \right) \cdot \left( I_2(t + \tau) - \left\langle I_2 \right\rangle \right) \right\rangle}{\langle I_1(t) \rangle \cdot \langle I_2(t) \rangle} = g^{(2)} - 1
 \end{equation}
@@ -109,10 +107,9 @@ As the number of baselines increases non-linearly, Intensity Interferometry (II)
 \subsection{Fast Rotating Stars: The Objects Considered}
 In our work presented here, we simulate a single fast-rotating star to test image reconstruction using a GAN. Fast rotation causes stars to adopt an oblate shape, flattening at the poles and bulging at the equator due to the stronger centrifugal force \citep[e.g.,][]{von1924radiative, 1999A&A...347..185M}. Fig.~\ref{fig:image} shows a fictitious image qualitatively representing a fast-rotating star, with brightness distributed across its surface. The brightness is highest at the poles and lowest at the equator, a phenomenon known as gravity darkening \citep{lucy1967gravity}. This effect was first observed through interferometric and spectroscopic data from the CHARA Array for the fast-rotating star Regulus \cite{mcalister2005first}. Fast-rotating stars are important test cases for understanding various astrophysical processes, including stellar evolution, internal structure, and dynamical behavior over time.
 
-Intensity Interferometry counts the photons arriving at the telescopes from the stellar object. The correlation of these photon arrivals at the telescopes yields the squared visibility Eq.~\eqref{eq:angular_size_meas}, as explained in subsection~\ref{sec:signal}. Fig.\ref{fig:ft} shows the signal from the source shown in Fig.~\ref{fig:image} using II, displayed on both linear and logarithmic scales. In practice, only a small part of this information is available, because one has a finite number of baselines corresponding to the finite number $N_T$ of telescopes at our disposal and a limited observation schedule. Therefore, we have simulated the II observation of a sky source by four telescopes (correlated in pairs) over one night. Using this modest amount of signal from one night's observation, we have trained a cGAN to construct the image of the source.
+Intensity Interferometry counts the photons arriving at the telescopes from the stellar object. The correlation of these photon arrivals at the telescopes yields the squared visibility Eq.~\eqref{eq:angular_size_meas}, as explained in subsection~\ref{sec:signal}. Fig.~\ref{fig:ft} shows the signal from the source shown in Fig.~\ref{fig:image} using II, displayed on both linear and logarithmic scales. In practice, only a small part of this information is available, because one has a finite number of baselines corresponding to the finite number $N_T$ of telescopes at our disposal and a limited observation schedule. Therefore, we have simulated the II observation of a sky source by four telescopes (correlated in pairs) over one night. Using this modest amount of signal from one night's observation, we have trained a cGAN to construct the image of the source.
 \begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{fig/ellipse1612.jpg}
-	\caption{Merged image, which includes the original and the sparsely sampled Fourier plane. It is exactly what the GAN receives. }
-	\label{fig:GANinput}
+  \includegraphics[width=\linewidth]{fig/ellipse1612.jpg}
+  \caption{Merged image, which includes the original and the sparsely sampled Fourier plane. It is exactly what the GAN receives.}
+  \label{fig:GANinput}
 \end{figure}

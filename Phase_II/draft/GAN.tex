@@ -11,7 +11,7 @@
 		%\caption{Total generator loss for different learning rates (eqn. (\ref{eq:total_gen_loss})).}
 	%	\label{fig:Plot_learning_rate_genloss}
 	%\end{subfigure}\hfill
-	\caption{Generator and discriminator losses for three different learning rates. The left figure shows the total discriminator loss, and the right figure shows the total generator loss. There is no significant difference, but the highest learning rate might be prone to outliers. }
+	\caption{Discriminator and Generator losses for three different learning rates. The left panel shows the total discriminator loss, and the right figure shows the total generator loss (Eq.~\ref{eq:total_gen_loss}).  There is no significant difference, but the highest learning rate might be prone to outliers.}
 	\label{fig:Plot_learning_rate_loss}
 \end{figure*}
 Generative Adversarial Networks (GANs) were introduced by \cite{goodfellow2014generative}. The underlying concept is straightforward: it involves two competing networks. The first network, known as the Generator, produces new images based on an input image. These will be referred to as generated images. The second network, the Discriminator, attempts to distinguish between the generated image (predicted image) and the real image (ground truth).
@@ -53,7 +53,7 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
   %\caption{Total generator loss for three different kernel sizes.}
   %\label{fig:Plot_kernel_size_genloss}
   %\end{subfigure}\hfill
-  \caption{Generator and discriminator losses for three different kernel sizes in the convolutional layers. Here, the smallest kernel size has many outliers, while the largest kernel size seems to be the most stable.}
+  \caption{Generator and discriminator losses (left and right panels respectively) for three different kernel sizes in the convolutional layers. Here, the smallest kernel size has many outliers, while the largest kernel size seems to be the most stable.}
 	\label{fig:Plot_kernel_size_loss}
 \end{figure*}
 \begin{figure*}
@@ -96,7 +96,7 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
   %\caption{Generator losses for different Discriminator training.}
   %\label{fig:Plot_discrep_genloss}
   %\end{subfigure}\hfill
-  \caption{The amount of Discriminator training has a high impact on the Discriminator score. The Discriminator repetition indicates the factor by which the Discriminator is trained more with respect to the Generator.}
+  \caption{The left panel shows the Discriminator loss for different Discriminator training, while the right panel shows the Generator losses for different Discriminator training.  The amount of Discriminator training has a high impact on the Discriminator score. The Discriminator repetition indicates the factor by which the Discriminator is trained more with respect to the Generator.}
 	\label{fig:Plot_discrep_loss}
 \end{figure*}
 \begin{figure*}
@@ -110,7 +110,7 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
   %\caption{Generator loss for different amount of telescopes.}
   %\label{fig:Plot_telescopes_genloss}
   %\end{subfigure}\hfill
-  \caption{The number of telescopes has a very impact on the model performance. If there are only two telescopes (1 baseline), both Discriminator and Generator are not trained smoothly: One gains a big advantage over the other. The result of four telescopes (6 baselines) is a lot better because the loss functions change only slightly with increasing steps.}
+  \caption{Discriminator loss (left panel) and Generator loss (right panel) for different numbers of telescopes.  The number of telescopes has a very impact on the model performance. If there are only two telescopes (1 baseline), both Discriminator and Generator are not trained smoothly: One gains a big advantage over the other. The result of four telescopes (6 baselines) is a lot better because the loss functions change only slightly with increasing steps.}
 	\label{fig:Plot_telescopes_loss}
 \end{figure*}
 
