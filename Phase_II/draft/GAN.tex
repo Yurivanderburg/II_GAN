@@ -1,18 +1,16 @@
 \section{Generative Adversarial Networks}
 \begin{figure*}[hbt]
-	\centering
-	\begin{subfigure}{0.5\linewidth}
-		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_learning_rate_disc_loss.pdf}
-		\caption{Discriminator loss for three different learning rates. }
-		\label{fig:Plot_learning_rate_discloss}
-	\end{subfigure}\hfill
-	\begin{subfigure}{0.5\linewidth}
-		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_learning_rate_gen_total_loss.pdf}
+	%\centering
+	%\begin{subfigure}{0.5\linewidth}
+	\includegraphics[width=.49\textwidth]{fig/analysis/Plot_learning_rate_disc_loss.pdf}\hfil
+	%\caption{Discriminator loss for three different learning rates. }
+	%	\label{fig:Plot_learning_rate_discloss}
+	%\end{subfigure}\hfill
+	%\begin{subfigure}{0.5\linewidth}
+	\includegraphics[width=.49\textwidth]{fig/analysis/Plot_learning_rate_gen_total_loss.pdf}
 		\caption{Total generator loss for different learning rates (eqn. (\ref{eq:total_gen_loss})).}
-		\label{fig:Plot_learning_rate_genloss}
-	\end{subfigure}\hfill
+	%	\label{fig:Plot_learning_rate_genloss}
+	%\end{subfigure}\hfill
 	\caption{Generator and discriminator losses for three different learning rates. The left figure shows the total discriminator loss, and the right figure shows the total generator loss. There is no significant difference, but the highest learning rate might be prone to outliers. }
 	\label{fig:Plot_learning_rate_loss}
 \end{figure*}
@@ -45,88 +43,74 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
 	\label{eq:Disc_optimum}
 \end{equation}
 \begin{figure*}[hbt]
-	\centering
-	\begin{subfigure}{0.5\linewidth}
-		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_Kernel_size_disc_loss.pdf}
-		\caption{Discriminator loss for three different kernel sizes. }
-		\label{fig:Plot_kernel_size_discloss}
-	\end{subfigure}\hfill
-	\begin{subfigure}{0.5\linewidth}
-		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_Kernel_size_gen_total_loss.pdf}
-		\caption{Total generator loss for three different kernel sizes.}
-		\label{fig:Plot_kernel_size_genloss}
-	\end{subfigure}\hfill
-	\caption{Generator and discriminator losses for three different kernel sizes in the convolutional layers. Here, the smallest kernel size has many outliers, while the largest kernel size seems to be the most stable.}
+  %\begin{subfigure}{0.5\linewidth}
+  \includegraphics[width=.49\textwidth]{fig/analysis/Plot_Kernel_size_disc_loss.pdf}
+  %\caption{Discriminator loss for three different kernel sizes. }
+  %\label{fig:Plot_kernel_size_discloss}
+  %\end{subfigure}\hfill
+  %\begin{subfigure}{0.5\linewidth}
+  \includegraphics[width=.49\textwidth]{fig/analysis/Plot_Kernel_size_gen_total_loss.pdf}
+  %\caption{Total generator loss for three different kernel sizes.}
+  %\label{fig:Plot_kernel_size_genloss}
+  %\end{subfigure}\hfill
+  \caption{Generator and discriminator losses for three different kernel sizes in the convolutional layers. Here, the smallest kernel size has many outliers, while the largest kernel size seems to be the most stable.}
 	\label{fig:Plot_kernel_size_loss}
 \end{figure*}
 \begin{figure*}[hbt]
-	\centering
-	\begin{subfigure}{0.5\linewidth}
-		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_noise_factor_disc_loss.pdf}
-		\caption{Discriminator loss for different noise percentages.}
-		\label{fig:Plot_noise_discloss}
-	\end{subfigure}\hfill
-	\begin{subfigure}{0.5\linewidth}
-		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_noise_factor_gen_total_loss.pdf}
-		\caption{Generator losses for different noise percentages.}
-		\label{fig:Plot_noise_genloss}
-	\end{subfigure}\hfill
-	\caption{Effect of the Salt and Pepper noise introduced in the images. Different ratios between $\alpha$ and $\beta$ are shown. There is no significant effect. Please note that these results are from training on 64-pixel images.}
+  %\begin{subfigure}{0.5\linewidth}
+  \includegraphics[width=.49\textwidth]{fig/analysis/Plot_noise_factor_disc_loss.pdf}
+  %\caption{Discriminator loss for different noise percentages.}
+  %\label{fig:Plot_noise_discloss}
+  %\end{subfigure}\hfill
+  %\begin{subfigure}{0.5\linewidth}
+  %\centering
+  \includegraphics[width=.49\textwidth]{fig/analysis/Plot_noise_factor_gen_total_loss.pdf}
+  %\caption{Generator losses for different noise percentages.}
+  %\label{fig:Plot_noise_genloss}
+  %\end{subfigure}\hfill
+  \caption{Effect of the Salt and Pepper noise introduced in the images. Different ratios between $\alpha$ and $\beta$ are shown. There is no significant effect. Please note that these results are from training on 64-pixel images.}
 	\label{fig:Plot_noise_loss}
 \end{figure*}
 \begin{figure*}[hbt]
-	\centering
-	\begin{subfigure}{0.5\linewidth}
-		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_Batchsize_disc_loss.pdf}
-		\caption{Discriminator loss for different batch sizes.}
-		\label{fig:Plot_batchsize_discloss}
-	\end{subfigure}\hfill
-	\begin{subfigure}{0.5\linewidth}
-		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_Batchsize_gen_total_loss.pdf}
-		\caption{Generator losses for different batch sizes.}
-		\label{fig:Plot_batchsize_genloss}
-	\end{subfigure}\hfill
-	\caption{Loss functions for two different batch sizes. Large batch sizes seem to be more robust, but they also increase training time significantly. }
+  %\begin{subfigure}{0.5\linewidth}
+  \includegraphics[width=.49\textwidth]{fig/analysis/Plot_Batchsize_disc_loss.pdf}\hfill
+  %\caption{Discriminator loss for different batch sizes.}
+  %\label{fig:Plot_batchsize_discloss}
+  %\end{subfigure}\hfill
+  %\begin{subfigure}{0.5\linewidth}
+  \includegraphics[width=.49\textwidth]{fig/analysis/Plot_Batchsize_gen_total_loss.pdf}
+  %\caption{Generator losses for different batch sizes.}
+  %\label{fig:Plot_batchsize_genloss}
+  %\end{subfigure}\hfill
+  \caption{Loss functions for two different batch sizes. Large batch sizes seem to be more robust, but they also increase training time significantly. }
 	\label{fig:Plot_batchsize_loss}
 \end{figure*}
 \begin{figure*}[hbt]
-	\centering
-	\begin{subfigure}{0.5\linewidth}
-		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_Disc_rep_disc_loss.pdf}
-		\caption{Discriminator loss for different Discriminator training.}
-		\label{fig:Plot_discrep_discloss}
-	\end{subfigure}\hfill
-	\begin{subfigure}{0.5\linewidth}
-		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_Disc_rep_gen_total_loss.pdf}
-		\caption{Generator losses for different Discriminator training.}
-		\label{fig:Plot_discrep_genloss}
-	\end{subfigure}\hfill
-	\caption{The amount of Discriminator training has a high impact on the Discriminator score. The Discriminator repetition indicates the factor by which the Discriminator is trained more with respect to the Generator.}
+  %\begin{subfigure}{0.5\linewidth}
+  \includegraphics[width=.49\textwidth]{fig/analysis/Plot_Disc_rep_disc_loss.pdf}\hfil
+  %\caption{Discriminator loss for different Discriminator training.}
+  %\label{fig:Plot_discrep_discloss}
+  %\end{subfigure}\hfill
+  %\begin{subfigure}{0.5\linewidth}
+  \includegraphics[width=.49\textwidth]{fig/analysis/Plot_Disc_rep_gen_total_loss.pdf}
+  %\caption{Generator losses for different Discriminator training.}
+  %\label{fig:Plot_discrep_genloss}
+  %\end{subfigure}\hfill
+  \caption{The amount of Discriminator training has a high impact on the Discriminator score. The Discriminator repetition indicates the factor by which the Discriminator is trained more with respect to the Generator.}
 	\label{fig:Plot_discrep_loss}
 \end{figure*}
 \begin{figure*}[hbt]
-	\centering
-	\begin{subfigure}{0.5\linewidth}
-		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_N_telescopes_disc_loss.pdf}
-		\caption{Discriminator loss for different amounts of telescopes.}
-		\label{fig:Plot_telescopes_discloss}
-	\end{subfigure}\hfill
-	\begin{subfigure}{0.5\linewidth}
-		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_N_telescopes_gen_total_loss.pdf}
-		\caption{Generator loss for different amount of telescopes.}
-		\label{fig:Plot_telescopes_genloss}
-	\end{subfigure}\hfill
-	\caption{The number of telescopes has a very impact on the model performance. If there are only two telescopes (1 baseline), both Discriminator and Generator are not trained smoothly: One gains a big advantage over the other. The result of four telescopes (6 baselines) is a lot better because the loss functions change only slightly with increasing steps.}
+  %\begin{subfigure}{0.5\linewidth}
+  \includegraphics[width=.49\textwidth]{fig/analysis/Plot_N_telescopes_disc_loss.pdf}\hfil
+  %\caption{Discriminator loss for different amounts of telescopes.}
+  %\label{fig:Plot_telescopes_discloss}
+  %\end{subfigure}\hfill
+  %\begin{subfigure}{0.5\linewidth}
+  \includegraphics[width=\textwidth]{fig/analysis/Plot_N_telescopes_gen_total_loss.pdf}\hfil
+  %\caption{Generator loss for different amount of telescopes.}
+  %\label{fig:Plot_telescopes_genloss}
+  %\end{subfigure}\hfill
+  \caption{The number of telescopes has a very impact on the model performance. If there are only two telescopes (1 baseline), both Discriminator and Generator are not trained smoothly: One gains a big advantage over the other. The result of four telescopes (6 baselines) is a lot better because the loss functions change only slightly with increasing steps.}
 	\label{fig:Plot_telescopes_loss}
 \end{figure*}
 
