@@ -1,5 +1,5 @@
 \section{Intensity Interferometry (II) with IACT arrays}
-\begin{figure}[hbt]
+\begin{figure}
 	\centering
 	\includegraphics[width=\linewidth]{fig/baseline.png}
 	\caption{The tracking of baselines with four telescopes arranged in fig.~\ref{fig:teles} for one night of observation.}
@@ -11,7 +11,7 @@
 	\caption{This figure shows the simulated fast rotating star. The brightness is highest at the pole and there is gravitational darkening at the equator.}
 	\label{fig:image}
 \end{figure}
-\begin{figure*}[hbt]
+\begin{figure*}
 	%\begin{subfigure}{0.5\linewidth}
 		\includegraphics[width=.49\linewidth]{fig/ft/ft.jpg}\hfil
 	%\caption{The signal (absolute value of the Fourier transform of the source).}
@@ -24,7 +24,7 @@
 	\label{fig:ft}
 \end{figure*}
 This section presents a brief conceptual overview of how an array of telescopes is used to perform II observations, and explains the Signal-to-Noise Ratio (SNR) from these measurements.
-\begin{figure*}[hbt]
+\begin{figure*}
 	%\centering
 	%\begin{subfigure}{0.5\linewidth}
 		\includegraphics[width=.49\linewidth]{fig/ft/ft_base.jpg}\hfil
@@ -110,7 +110,7 @@ As the number of baselines increases non-linearly, Intensity Interferometry (II)
 In our work presented here, we simulate a single fast-rotating star to test image reconstruction using a GAN. Fast rotation causes stars to adopt an oblate shape, flattening at the poles and bulging at the equator due to the stronger centrifugal force \citep[e.g.,][]{von1924radiative, 1999A&A...347..185M}. Fig.~\ref{fig:image} shows a fictitious image qualitatively representing a fast-rotating star, with brightness distributed across its surface. The brightness is highest at the poles and lowest at the equator, a phenomenon known as gravity darkening \citep{lucy1967gravity}. This effect was first observed through interferometric and spectroscopic data from the CHARA Array for the fast-rotating star Regulus \cite{mcalister2005first}. Fast-rotating stars are important test cases for understanding various astrophysical processes, including stellar evolution, internal structure, and dynamical behavior over time.
 
 Intensity Interferometry counts the photons arriving at the telescopes from the stellar object. The correlation of these photon arrivals at the telescopes yields the squared visibility Eq.~\eqref{eq:angular_size_meas}, as explained in subsection~\ref{sec:signal}. Fig.\ref{fig:ft} shows the signal from the source shown in Fig.~\ref{fig:image} using II, displayed on both linear and logarithmic scales. In practice, only a small part of this information is available, because one has a finite number of baselines corresponding to the finite number $N_T$ of telescopes at our disposal and a limited observation schedule. Therefore, we have simulated the II observation of a sky source by four telescopes (correlated in pairs) over one night. Using this modest amount of signal from one night's observation, we have trained a cGAN to construct the image of the source.
-\begin{figure}[hbt]
+\begin{figure}
 	\centering
 	\includegraphics[width=\linewidth]{fig/ellipse1612.jpg}
 	\caption{Merged image, which includes the original and the sparsely sampled Fourier plane. It is exactly what the GAN receives. }

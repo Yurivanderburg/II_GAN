@@ -1,5 +1,5 @@
 \section{Generative Adversarial Networks}
-\begin{figure*}[hbt]
+\begin{figure*}
 	%\centering
 	%\begin{subfigure}{0.5\linewidth}
 	\includegraphics[width=.49\textwidth]{fig/analysis/Plot_learning_rate_disc_loss.pdf}\hfil
@@ -42,7 +42,7 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
 	D^*_G(x) = \frac{p_{\rm data}(x)}{p_{\rm data}(x) + p_g(g)}
 	\label{eq:Disc_optimum}
 \end{equation}
-\begin{figure*}[hbt]
+\begin{figure*}
   %\begin{subfigure}{0.5\linewidth}
   \includegraphics[width=.49\textwidth]{fig/analysis/Plot_Kernel_size_disc_loss.pdf}
   %\caption{Discriminator loss for three different kernel sizes. }
@@ -56,7 +56,7 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
   \caption{Generator and discriminator losses for three different kernel sizes in the convolutional layers. Here, the smallest kernel size has many outliers, while the largest kernel size seems to be the most stable.}
 	\label{fig:Plot_kernel_size_loss}
 \end{figure*}
-\begin{figure*}[hbt]
+\begin{figure*}
   %\begin{subfigure}{0.5\linewidth}
   \includegraphics[width=.49\textwidth]{fig/analysis/Plot_noise_factor_disc_loss.pdf}
   %\caption{Discriminator loss for different noise percentages.}
@@ -71,7 +71,7 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
   \caption{Effect of the Salt and Pepper noise introduced in the images. Different ratios between $\alpha$ and $\beta$ are shown. There is no significant effect. Please note that these results are from training on 64-pixel images.}
 	\label{fig:Plot_noise_loss}
 \end{figure*}
-\begin{figure*}[hbt]
+\begin{figure*}
   %\begin{subfigure}{0.5\linewidth}
   \includegraphics[width=.49\textwidth]{fig/analysis/Plot_Batchsize_disc_loss.pdf}\hfill
   %\caption{Discriminator loss for different batch sizes.}
@@ -85,7 +85,7 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
   \caption{Loss functions for two different batch sizes. Large batch sizes seem to be more robust, but they also increase training time significantly. }
 	\label{fig:Plot_batchsize_loss}
 \end{figure*}
-\begin{figure*}[hbt]
+\begin{figure*}
   %\begin{subfigure}{0.5\linewidth}
   \includegraphics[width=.49\textwidth]{fig/analysis/Plot_Disc_rep_disc_loss.pdf}\hfil
   %\caption{Discriminator loss for different Discriminator training.}
@@ -99,7 +99,7 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
   \caption{The amount of Discriminator training has a high impact on the Discriminator score. The Discriminator repetition indicates the factor by which the Discriminator is trained more with respect to the Generator.}
 	\label{fig:Plot_discrep_loss}
 \end{figure*}
-\begin{figure*}[hbt]
+\begin{figure*}
   %\begin{subfigure}{0.5\linewidth}
   \includegraphics[width=.49\textwidth]{fig/analysis/Plot_N_telescopes_disc_loss.pdf}\hfil
   %\caption{Discriminator loss for different amounts of telescopes.}
