@@ -1,4 +1,21 @@
 \section{Generative Adversarial Networks}
+\begin{figure*}[hbt]
+	\centering
+	\begin{subfigure}{0.5\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{fig/analysis/Plot_learning_rate_disc_loss.pdf}
+		\caption{Discriminator loss for three different learning rates. }
+		\label{fig:Plot_learning_rate_discloss}
+	\end{subfigure}\hfill
+	\begin{subfigure}{0.5\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{fig/analysis/Plot_learning_rate_gen_total_loss.pdf}
+		\caption{Total generator loss for different learning rates (eqn. (\ref{eq:total_gen_loss})).}
+		\label{fig:Plot_learning_rate_genloss}
+	\end{subfigure}\hfill
+	\caption{Generator and discriminator losses for three different learning rates. The left figure shows the total discriminator loss, and the right figure shows the total generator loss. There is no significant difference, but the highest learning rate might be prone to outliers. }
+	\label{fig:Plot_learning_rate_loss}
+\end{figure*}
 Generative Adversarial Networks (GANs) were introduced by \cite{goodfellow2014generative}. The underlying concept is straightforward: it involves two competing networks. The first network, known as the Generator, produces new images based on an input image. These will be referred to as generated images. The second network, the Discriminator, attempts to distinguish between the generated image (predicted image) and the real image (ground truth).
 
 Through the alternating training of these networks, the generated images gradually become indistinguishable from the real images. Essentially, this process constitutes a two-player min-max game --- a classic problem in game theory. The original formulation of GANs is given by:
@@ -27,29 +44,6 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
 	D^*_G(x) = \frac{p_{\rm data}(x)}{p_{\rm data}(x) + p_g(g)}
 	\label{eq:Disc_optimum}
 \end{equation}
-\begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{fig/ellipse1612.jpg}
-	\caption{Merged image, which includes the original and the sparsely sampled Fourier plane. It is exactly what the GAN receives. }
-	\label{fig:GANinput}
-\end{figure}
-\begin{figure*}[hbt]
-	\centering
-	\begin{subfigure}{0.5\linewidth}
-		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_learning_rate_disc_loss.pdf}
-		\caption{Discriminator loss for three different learning rates. }
-		\label{fig:Plot_learning_rate_discloss}
-	\end{subfigure}\hfill
-	\begin{subfigure}{0.5\linewidth}
-		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_learning_rate_gen_total_loss.pdf}
-		\caption{Total generator loss for different learning rates (eqn. (\ref{eq:total_gen_loss})).}
-		\label{fig:Plot_learning_rate_genloss}
-	\end{subfigure}\hfill
-	\caption{Generator and discriminator losses for three different learning rates. The left figure shows the total discriminator loss, and the right figure shows the total generator loss. There is no significant difference, but the highest learning rate might be prone to outliers. }
-	\label{fig:Plot_learning_rate_loss}
-\end{figure*}
 \begin{figure*}[hbt]
 	\centering
 	\begin{subfigure}{0.5\linewidth}
