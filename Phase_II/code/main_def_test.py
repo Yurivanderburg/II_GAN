@@ -52,6 +52,7 @@ plt.axis('off')
 plt.savefig('ft/ft_log_base.jpg')
 plt.show()
 
+
 '''
 plt.close()
 # The full fourier transformation on ground of stellar object and the captured one with baselines
