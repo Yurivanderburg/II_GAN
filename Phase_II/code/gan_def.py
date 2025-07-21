@@ -282,22 +282,22 @@ class gan_fun():
           Fitting the training data with test data.
           """
           
-          example_input, example_target = next(iter(test_ds.take(1)))                          # Unpacking a dataset (input signal and ground truth) with iterating and next to test the model
+          example_input, example_target = next(iter(test_ds.take(1)))                           # Unpacking a dataset (input signal and ground truth) with iterating and next to test the model
           start = time.time()
         
           #generator = self.Generator()                                                         # Generator model
           #discriminator = self.Discriminator()                                                 # Discriminator model
-          generator_optimizer = tf.keras.optimizers.Adam(self.learning_rate, beta_1 = 0.5)     # Generator Optimizer using the Adam algorithm
-          discriminator_optimizer = tf.keras.optimizers.Adam(self.learning_rate, beta_1 = 0.5) # Discriminator Optimizer using the Adam algorithm   
+          generator_optimizer = tf.keras.optimizers.Adam(self.learning_rate, beta_1 = 0.5)      # Generator Optimizer using the Adam algorithm
+          discriminator_optimizer = tf.keras.optimizers.Adam(self.learning_rate, beta_1 = 0.5)  # Discriminator Optimizer using the Adam algorithm   
                  
           checkpoint_dir = "models/models/ellipsoids_run8.15_a0.005_b0.005_discrep1_itk_bs1_lr2em4_teles4_addedlayers_filtersize5_MS/" # name of the folder and file to save the summary
           
           checkpoint_prefix = os.path.join(checkpoint_dir, "ckpt")
           checkpoint = tf.train.Checkpoint(generator_optimizer=generator_optimizer,
-                                           discriminator_optimizer=discriminator_optimizer,    # A Checkpoint object can be constructed to save either
-                                           generator=model1, discriminator=model2)   # a single or group of trackable objects to a checkpoint file.
+                                           discriminator_optimizer=discriminator_optimizer,     # A Checkpoint object can be constructed to save either
+                                           generator=model1, discriminator=model2)              # a single or group of trackable objects to a checkpoint file.
           counter = 0
-          for step, (input_image, target) in train_ds.repeat().take(steps).enumerate():        # Unpacking a dataset (input signal and ground truth) with iterating and next to train the model
+          for step, (input_image, target) in train_ds.repeat().take(steps).enumerate():         # Unpacking a dataset (input signal and ground truth) with iterating and next to train the model
               if (step) % 1000 == 0:
                  display.clear_output(wait=True)
  
@@ -310,7 +310,7 @@ class gan_fun():
                  counter += 1
                  print(f"Step: {step//1000}k")
                  
-              self.train_step(model1, model2, input_image, target, step)            # training the model using both network, signal and target
+              self.train_step(model1, model2, input_image, target, step)                        # training the model using both network, signal and target
  
               # Training step
               if (step+1) % 10 == 0:

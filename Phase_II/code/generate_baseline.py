@@ -79,5 +79,3 @@ mask = np.where(mask < 1, 1, 0).astype(np.float32)                              
 mask = cv2.resize(mask, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA) # gives the best results
 mask = np.where(mask > 0, 1, 0)
 np.save("base_npy/base", mask)                                                        # Save mask as numpy array
-
-

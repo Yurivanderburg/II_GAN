@@ -38,7 +38,9 @@ for filename in os.listdir(path_in):
     
     # the images are on float ([0,1]), but cv2 requires integer ([0, 255]):
     img_fft_norm = cv2.convertScaleAbs(img_fft_norm, alpha=(255.0))
+    img_fft_norm = img_fft_norm/img_fft_norm.max()
     ground_truth = cv2.convertScaleAbs(ground_truth, alpha=(255.0))
+    ground_truth = ground_truth/ground_truth.max()
     
     combined_image = ps.add_image(ground_truth, img_fft_norm)                                         # combine ground truth and input image (power spectrum)
     

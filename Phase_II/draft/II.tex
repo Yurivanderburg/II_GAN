@@ -109,7 +109,7 @@ In our work presented here, we simulate a single fast-rotating star to test imag
 
 Intensity Interferometry counts the photons arriving at the telescopes from the stellar object. The correlation of these photon arrivals at the telescopes yields the squared visibility Eq.~\eqref{eq:angular_size_meas}, as explained in subsection~\ref{sec:signal}. Fig.~\ref{fig:ft} shows the signal from the source shown in Fig.~\ref{fig:image} using II, displayed on both linear and logarithmic scales. In practice, only a small part of this information is available, because one has a finite number of baselines corresponding to the finite number $N_T$ of telescopes at our disposal and a limited observation schedule. Therefore, we have simulated the II observation of a sky source by four telescopes (correlated in pairs) over one night. Using this modest amount of signal from one night's observation, we have trained a cGAN to construct the image of the source.
 \begin{figure}
-  \includegraphics[width=\linewidth]{fig/ellipse1612.jpg}
+  \includegraphics[width=\linewidth]{fig/ellipse1612.png}
   \caption{Merged image, which includes the original and the sparsely sampled Fourier plane. It is exactly what the GAN receives.}
   \label{fig:GANinput}
 \end{figure}
