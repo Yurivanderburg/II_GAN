@@ -38,15 +38,16 @@ for filename in os.listdir(path_in):
     
     # the images are on float ([0,1]), but cv2 requires integer ([0, 255]):
     img_fft_norm = cv2.convertScaleAbs(img_fft_norm, alpha=(255.0))
-    img_fft_norm = img_fft_norm/img_fft_norm.max()
+    #img_fft_norm = img_fft_norm/img_fft_norm.max()
     ground_truth = cv2.convertScaleAbs(ground_truth, alpha=(255.0))
-    ground_truth = ground_truth/ground_truth.max()
+    #ground_truth = ground_truth/ground_truth.max()
     
     combined_image = ps.add_image(ground_truth, img_fft_norm)                                         # combine ground truth and input image (power spectrum)
     
     image_name = filename[:-4]                                                                        # save or display images > use cv2 instead of matplotlib, this always saves as (64,64,4)
     if save_images:
             if counter < 150:
+               '''
                im = plt.imshow(combined_image, cmap='gray')
                plt.colorbar(shrink=0.55)
                plt.gca().set_aspect('equal')
@@ -54,8 +55,10 @@ for filename in os.listdir(path_in):
                plt.savefig('val/' + image_name + '.jpg')
                plt.clf()
                plt.close()
-               #cv2.imwrite('val/' + image_name + '.jpg', combined_image)
+               '''
+               cv2.imwrite('val/' + image_name + '.jpg', combined_image)
             elif (counter >= 150) and (counter < 300):
+               '''
                im = plt.imshow(combined_image, cmap='gray')
                plt.colorbar(shrink=0.55)
                plt.gca().set_aspect('equal')
@@ -64,8 +67,10 @@ for filename in os.listdir(path_in):
                plt.savefig('test/' + image_name + '.jpg')
                plt.clf()
                plt.close()
-               #cv2.imwrite('test/' + image_name + '.jpg', combined_image)
+               '''
+               cv2.imwrite('test/' + image_name + '.jpg', combined_image)
             else:
+               '''
                im = plt.imshow(combined_image, cmap='gray')
                plt.colorbar(shrink=0.55)
                plt.gca().set_aspect('equal')
@@ -73,7 +78,8 @@ for filename in os.listdir(path_in):
                plt.savefig('train/' + image_name + '.jpg')
                plt.clf()
                plt.close()
-               #cv2.imwrite('train/' + image_name + '.jpg', combined_image)
+               '''
+               cv2.imwrite('train/' + image_name + '.jpg', combined_image)
 
     else:
             plt.imshow(ground_truth)

@@ -149,7 +149,7 @@ class gan_fun():
           Output : Either predicted image or its 180 rotation depending on mean square error
           """       
            
-          prediction = prediction*0.5 + 0.5
+          prediction = prediction
           prediction_rot = prediction[0, ::-1, ::-1, 0]                                   # 180 degree rotated image
           prediction = prediction[0, :, :, 0]                                             # predicted image
           groundtruth = groundtruth[0, :, :, 0]                                           # ground image
@@ -211,6 +211,8 @@ class gan_fun():
               plt.subplot(1, N_images, i+1)
               plt.title(title[i])
               plt.imshow(display_list[i]*0.5 + 0.5)                                       # Getting the pixel values in the [0, 1] range to plot:
+              plt.colorbar(shrink=0.85)
+              plt.gca().set_aspect('equal')
               plt.axis('off')
               
           # Save the plots

@@ -53,7 +53,7 @@ plt.savefig('ft/ft_log_base.jpg')
 plt.show()
 
 
-'''
+
 plt.close()
 # The full fourier transformation on ground of stellar object and the captured one with baselines
 plt.subplot(1,2,1)
@@ -105,4 +105,4 @@ print('down sampling result of an input image, observed signal', down_result.sha
 up_model = fn.upsample(3, 4, apply_dropout=True)
 up_result = up_model(down_result)
 print('up sampling result of down sampled image', up_result.shape)
-'''
+
