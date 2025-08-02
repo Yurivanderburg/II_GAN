@@ -16,7 +16,7 @@ urlcolor=cyan]{hyperref}
 \title{Generative AI for image reconstruction\\ in Intensity Interferometry: a first attempt}
 
 \author{Km Nitu Rai,$^{1,2}$, Yuri van der Burg$^{3}$, Soumen
-  Basak$^{1}$, Prasenjit Saha,$^{3}$ and Subrata Sarangi$^{4,5}$}
+  Basak$^{1}$, {Prasenjit Saha\altaffilmark{3,*}}, and Subrata Sarangi$^{4,5}$}
 
 \affiliation{$^{1}$School of Physics, Indian Institute of Science
   Education and Research Thiruvananthapuram, Maruthamala PO, Vithura,
@@ -31,6 +31,9 @@ urlcolor=cyan]{hyperref}
   Technology and Management, Odisha-752050, India.}
 
 \affiliation{$^5$ Visiting Associate, Inter-University Centre for Astronomy and Astrophysics, Post Bag 4, Ganeshkhind, Pune 411 007, Maharashtra, India.}
+
+\altaffiltext{*}{Corresponding author; email: \href{mailto:psaha@physik.uzh.ch}{psaha@physik.uzh.ch}}
+
 
 \begin{abstract}
 In the last few years Intensity Interferometry (II) has made significant strides in achieving high-precision resolution of stellar objects at optical wavelengths. Despite these advancements, phase retrieval remains a major challenge due to the nature of photon correlation. This paper explores the application of a conditional Generative Adversarial Network (cGAN) to tackle the problem of image reconstruction in Intensity Interferometry. This approach successfully reconstructs the shape, size, and brightness distribution of a fast-rotating star from sparsely sampled, spatial power spectrum of the source, corresponding to II with four telescopes.  Although this particular example could also be addressed using parameter fitting, the results suggest that with larger arrays much more complicated systems could be reconstructed by applying machine-learning techniques to II.
@@ -48,7 +51,7 @@ In the last few years Intensity Interferometry (II) has made significant strides
 \textbf{Acknowledgment:} One of the authors (SS) gratefully acknowledges the computing facilities and the local hospitality extended to him by the Inter-University Centre for Astronomy and Astrophysics (IUCAA), Pune, India under its Visiting Associate Programme during the preparation of this manuscript.
 \end{acknowledgements}
 
-\bibliographystyle{aasjournal}
+\bibliographystyle{aa}
 \bibliography{refs}
 
 \end{document}
