@@ -1,10 +1,5 @@
-\documentclass[twocolumn]{emulateapj}
-
+\documentclass[linenumbers, twocolumn]{aastex701}
 \usepackage{amsmath}
-\usepackage[colorlinks=true,
-linkcolor=blue,
-citecolor=blue,
-urlcolor=cyan]{hyperref}
 
 
 \newcommand{\mias}{$\SI{}{\micro{\rm as}}$}
@@ -13,30 +8,33 @@ urlcolor=cyan]{hyperref}
 
 \begin{document}
 
-\title{Generative AI for image reconstruction\\ in Intensity Interferometry: a first attempt}
+\title{Generative AI for image reconstruction in Intensity Interferometry: a first attempt}
 
-\author{Km Nitu Rai,$^{1,2}$, Yuri van der Burg$^{3}$, Soumen
-  Basak$^{1}$, Prasenjit Saha$^{3}$, and Subrata Sarangi$^{4,5}$}
+\author{Km Nitu Rai}
+\affiliation{School of Physics, Indian Institute of Science Education and Research Thiruvananthapuram, Maruthamala PO, Vithura, Thiruvananthapuram 695551, Kerala, India.}
+\affiliation{Aryabhatta Research Institute of Observational Sciences, Manora Peak, Nainital 263129, India.}
+\email{niturai201296@gmail.com}  
 
-\affiliation{$^{1}$School of Physics, Indian Institute of Science
-  Education and Research Thiruvananthapuram, Maruthamala PO, Vithura,
-  Thiruvananthapuram 695551, Kerala, India.}
+\author{Yuri van der Burg} 
+\affiliation{Physik-Institut, University of Zurich,	Winterthurerstrasse 190, 8057 Zurich, Switzerland.}
+\email{yuri.vanderburg@uzh.ch}
 
-\affiliation{$^{2}$Aryabhatta Research Institute of Observational Sciences, Manora Peak, Nainital 263129, India.}
+\author{Soumen Basak}
+\affiliation{School of Physics, Indian Institute of Science Education and Research Thiruvananthapuram, Maruthamala PO, Vithura, Thiruvananthapuram 695551, Kerala, India.}
+\email{sbasak2006@gmail.com}
 
-\affiliation{$^{3}$Physik-Institut, University of Zurich,
-  Winterthurerstrasse 190, 8057 Zurich, Switzerland.}
+\author{Prasenjit Saha}
+\affiliation{Physik-Institut, University of Zurich,	Winterthurerstrasse 190, 8057 Zurich, Switzerland.}
+\email{psaha@physik.uzh.ch}
 
-\affiliation{$^{4}$School of Applied Sciences, Centurion University of
-  Technology and Management, Odisha-752050, India.}
-
-\affiliation{$^5$ Visiting Associate, Inter-University Centre for Astronomy and Astrophysics, Post Bag 4, Ganeshkhind, Pune 411 007, Maharashtra, India.}
+\author{Subrata Sarangi}
+\affiliation{School of Applied Sciences, Centurion University of	Technology and Management, Odisha-752050, India.}
+\affiliation{Visiting Associate, Inter-University Centre for Astronomy and Astrophysics, Post Bag 4, Ganeshkhind, Pune 411 007, Maharashtra, India.}
+\email{ssarangi.itech@gmail.com}
 
 \begin{abstract}
 In the last few years Intensity Interferometry (II) has made significant strides in achieving high-precision resolution of stellar objects at optical wavelengths. Despite these advancements, phase retrieval remains a major challenge due to the nature of photon correlation. This paper explores the application of a conditional Generative Adversarial Network (cGAN) to tackle the problem of image reconstruction in Intensity Interferometry. This approach successfully reconstructs the shape, size, and brightness distribution of a fast-rotating star from sparsely sampled, spatial power spectrum of the source, corresponding to II with four telescopes.  Although this particular example could also be addressed using parameter fitting, the results suggest that with larger arrays much more complicated systems could be reconstructed by applying machine-learning techniques to II.
 \end{abstract}
-
-\maketitle
 
 \input{intro}
 \input{II}
@@ -48,7 +46,7 @@ In the last few years Intensity Interferometry (II) has made significant strides
 \textbf{Acknowledgment:} One of the authors (SS) gratefully acknowledges the computing facilities and the local hospitality extended to him by the Inter-University Centre for Astronomy and Astrophysics (IUCAA), Pune, India under its Visiting Associate Programme during the preparation of this manuscript.
 \end{acknowledgements}
 
-\bibliographystyle{aa}
+\bibliographystyle{aasjournalv7}
 \bibliography{refs}
 
 \end{document}

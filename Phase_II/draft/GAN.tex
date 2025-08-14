@@ -32,7 +32,7 @@
 \begin{figure*}
 	\includegraphics[width=.49\textwidth]{fig/analysis/Plot_N_telescopes_disc_loss.pdf}\hfil
 	\includegraphics[width=0.49\textwidth]{fig/analysis/Plot_N_telescopes_gen_total_loss.pdf}\hfil
-	\caption{Discriminator loss (left panel) and Generator loss (right panel) for different numbers of telescopes.  The number of telescopes has a very significant impact on the model performance. If there are only two telescopes (1 baseline), both Discriminator and Generator are not trained smoothly: One gains a big advantage over the other. The result of four telescopes (6 baselines) is a lot better because the loss functions change only slightly with increasing steps.}
+	\caption{Discriminator and Generator loss for different numbers of telescopes.  It has a very significant impact on the model performance. If there are only two telescopes, both Discriminator and Generator are not trained smoothly. The result of four telescopes is a lot better because the loss functions change only slightly with increasing steps.}
 	\label{fig:Plot_telescopes_loss}
 \end{figure*}
 Generative Adversarial Networks (GANs) were introduced by \cite{goodfellow2014generative}. The underlying concept is straightforward: it involves two competing networks. The first network, known as the Generator, produces new images based on an input image. These will be referred to as generated images. The second network, the Discriminator, attempts to distinguish between the generated image (predicted image) and the real image (ground truth).
