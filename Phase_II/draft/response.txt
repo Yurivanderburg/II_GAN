@@ -35,6 +35,8 @@ Counter-argument: We can justify the choice of gravity-darkened stars.
 |  translates to getting fringe visibilities but not fringe phases in the uv
 |  plane.
 
+Clarify that we mean phase of the complex visibility.
+
 |  - On the second page, there is quite a long discussion of the problem of
 |  phase retrieval, including many citations. This is good, though perhaps a
 |  little long and could be condensed. But there needs to be a clearer
@@ -46,6 +48,8 @@ Counter-argument: We can justify the choice of gravity-darkened stars.
 |  must be constrained by the even modes through regularization/priors. This
 |  idea needs to be discussed.
 
+Revise text.
+
 |  - I think we are seeing the Hermitian symmetry issue in Figure 13: while
 |  the GANs do reasonable reconstructions of the equator-on gravity-darkened
 |  stars, in the third and separately in the final examples, you see a pole-on
@@ -55,6 +59,8 @@ Counter-argument: We can justify the choice of gravity-darkened stars.
 |  pixelized residuals back to baselines, and where differences are used in
 |  images, use a diverging colourmap like coolwarm or seismic rather than
 |  viridis.
+
+Asymmetry is recovered in some cases: investigate!
 
 |  - Figures should be explained fully in their captions, rather than the
 |  layout explained like Figure 13 in Sec 5.1.
@@ -86,12 +92,16 @@ train on the sampling used.
 |  14-16 too. (The labels in those figures don't need "The" in "The Ground
 |  Truth").
 
+Merge figs 4 and 5, also 14-16.
+
 |  - Figure 6 is too small to be easily legible - could this be a two-column
 |  figure, with a clearer colourmap? Anyway - this is likely to need to be
 |  explained clearly to an astronomer reader, as it may be confusing why the
 |  ground truth and observations are merged. A block diagram is essential,
 |  showing as a sequence of operations what the workflow is for training and
 |  what the workflow is for inference.
+
+Improve this.
 
 |  - Figures 7-12 occupy a great space with very narrow lines that are hard to
 |  read, and do not appear to be especially informative in their current form.
@@ -102,12 +112,16 @@ train on the sampling used.
 |  as a function of hyperparameters, rather than this quite confusing set of
 |  figures.
 
+Revise these figures.
+
 |  - Section 4.2 refers to a TensorFlow tutorial, and mentions that
 |  modifications are essential - what are the modifications? It doesn't appear
 |  to be explained in the subsequent sections. Is any of the paper's code
 |  being provided open-source? It is more or less essential for a methods
 |  paper mainly about software to provide the code in an appropriate open
 |  source format, for reproducibility and extensibility.
+
+Give github repo, maybe give most recent version a DOI.
 
 |  - gravitational darkening -> gravity darkening
 
@@ -126,8 +140,9 @@ train on the sampling used.
 |  of gravity darkening, which is in the simulations.
 
 Counter-argument: yes the centroids are showing noise -- all values
-are around (63.5,63.5) which is the centre of the field -- but
-absolute centroid is not a measurable quantity in interferometry
+are around (63.5,63.5) which is the centre of the field -- but it is
+not important, because absolute centroid is not a measurable quantity
+in interferometry.
 
 |  - No information is provided in the paper about computer systems. What
 |  hardware was used (CPUs? GPUs?), and how long did it take for training and
