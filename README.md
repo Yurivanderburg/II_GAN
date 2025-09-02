@@ -1,5 +1,15 @@
 # II_Project
 
+> ⚠️ **Project Update**
+>
+> This repository contains the **original development version** of the project.  
+> A cleaned-up version is maintained in a separate repository (currently private),  
+> where active development continues and to which I also contribute.
+>
+> This codebase is related to the work described in:  
+> *https://arxiv.org/abs/2508.03398*  
+
+
 Code used in the Researing Intership in Intensity Interferometry, where I adapted the pix2pix GAN (Generative Adversarial Network) to work on the phase retrieval problem, specifially on the power spectrum from a fast-rotating star. 
 
 
