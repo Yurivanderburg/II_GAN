@@ -72,6 +72,8 @@ Asymmetry is recovered in some cases: investigate!
 |  interferometry and their corresponding equations, that could perhaps be
 |  condensed.
 
+The equations have been condensed now.
+
 |  - In Figure 2 we have a single sparse sampling map. It appears to be used
 |  in all of the other figures throughout the paper. How well does the network
 |  perform with different uv sampling? If it's trained only on one, I would

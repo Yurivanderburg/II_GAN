@@ -46,21 +46,12 @@ where $\tau$ is the time delay between the telescopes. For spatially coherent an
 	g^{(2)} = 1 + \frac{\Delta f}{\Delta \nu} \abs{V_{12}}^2
 	\label{eqn:HBT2}
 \end{equation}
-where $\Delta f$ is the electronic bandwidth of the photon detectors which measure the intensities and $\Delta \nu$ is the frequency bandwidth of the filters employed in the telescopes to observe the star.  Values of $\Delta\nu\sim 1\,\mathrm{THz}$ and $\Delta f \sim 1\,\mathrm{GHz}$ are typical of recent work.  In Eq.~\eqref{eqn:HBT2}, $V_{12}$, referred to as the complex visibility function, is the Fourier transform of the source brightness distribution. For a uniform disk source representing the star, it is given by
-\begin{equation}
- V_{12} = 2 \frac{J_1(\pi\theta_D b)}{(\pi\theta_D b)}
-\label{eqn:absvisib}
-\end{equation}
-where $\theta_D$ is the angular diameter of the star and $b$ is the radial coordinate in the conventional interferometric $(u , v) = (x/\lambda, y/\lambda)$ plane, with $\lambda$ representing the optical wavelength of the filter used for observation. It is evident from Eq.~\eqref{eqn:absvisib} that $V_{12}$ contains information about the star's angular diameter. However, the phase information is lost since we measure only the absolute value $\vert V_{12} \vert^2$. In observational astronomy, the correlation is often expressed in terms of the normalized contrast, given by:
-\begin{equation}
-	c = \frac{\left\langle \left( I_1(t) - \left\langle I_1 \right\rangle \right) \cdot \left( I_2(t + \tau) - \left\langle I_2 \right\rangle \right) \right\rangle}{\langle I_1(t) \rangle \cdot \langle I_2(t) \rangle} = g^{(2)} - 1
-\end{equation}
-where, $\left\langle I_1 \right\rangle$ and $\left\langle I_2 \right\rangle$ denote the mean intensities from the two telescopes. Therefore, the signal measured by the photon detectors in II, operating with an electronic bandwidth $\Delta f$ within the optical bandwidth $\Delta {\mathrm {\nu}}$ of the observational (filtered) radiation, is
+where $\Delta f$ is the electronic bandwidth of the photon detectors which measure the intensities and $\Delta \nu$ is the frequency bandwidth of the filters employed in the telescopes to observe the star.  Values of $\Delta\nu\sim 1\,\mathrm{THz}$ and $\Delta f \sim 1\,\mathrm{GHz}$ are typical of recent work.  In Eq.~\eqref{eqn:HBT2}, $V_{12}$, referred to as the complex visibility function, is the Fourier transform of the source brightness distribution. It contains information about the star's angular diameter. However, the phase information is lost since we measure only the absolute value $\vert V_{12} \vert^2$. In observational astronomy, the correlation is often expressed in terms of the normalized contrast, given by:
 \begin{equation}
 	c = g^{(2)} - 1 = \frac{\Delta f}{\Delta \nu} \abs{V_{12}}^2
 	\label{eq:signal}
 \end{equation}
-with $\abs{V_{12}}^2$ being a function of baseline $b = \sqrt{u^2 + v^2}$ on the observational plane. This implies the strength of the signal would be enhanced if a larger number of baselines or pairs of telescopes are employed.
+with $\abs{V_{12}}^2$ being a function of baseline $b = \sqrt{u^2 + v^2}$ on the observational plane $(u, v)$. This implies the strength of the signal would be enhanced if a larger number of baselines or pairs of telescopes are employed.
 
 \subsection{The Signal-to-Noise Ratio for II}
 The primary purpose of IACTs is to study high-energy gamma rays (with energy $E\ \geq 30$ GeV) arriving from cosmic sources, entering the Earth's atmosphere, and initiating Cherenkov showers in the upper atmosphere due to multiple scattering. These telescopes feature an array of mirrors that focus light onto a set of photo-multiplier tubes \citep[PMTs, see e.g.,][]{aleksic2016major}. In the simulation model adopted here, we consider a set of four IACTs, each with similar properties. The positional configuration of these IACTs is shown in Fig.~\ref{fig:teles}. The optical signal directed to a PMT is filtered using a spectral filter with a chosen mean observational wavelength $\lambda$ and corresponding bandpass $\Delta \lambda$. The use of filters not only reduces background noise but also improves the signal quality and the efficiency of the PMTs. Filtering background skylight becomes even more significant in II observations, as, currently, these are carried out during full moon nights when the primary function of the IACTs (of observing Cherenkov Showers) is rendered infeasible. It is important to note that the light from the stellar source is focused on a PMT attached with each of the telescopes during II observations.
@@ -70,15 +61,7 @@ The significance of the signal can be expressed in terms of the signal-to-noise 
 	SNR = A \cdot \alpha \cdot q \cdot n \cdot F^{-1} \cdot \sigma \cdot \sqrt{\frac{T \Delta f}{2}} \cdot \abs{V_{12}}^{2}
 	\label{eq:SNR}
 \end{equation}
-Here, $A$ is the total mirror area, $\alpha$ is the quantum efficiency of the PMTs, $q$ is the throughput of the remaining optics, and $n$ is the differential photon flux from the source. The excess noise factor of the PMTs is represented by $F$, $T$ denotes the observation time, and $\sigma$ is the normalized spectral distribution of the light (including filters) \citep[e.g.,][]{acciari2020optical}. The signal ($S$) and noise ($N$) can be inferred using eqns.\ref{eq:signal} and \ref{eq:SNR} as:
-\begin{equation}
-	S = \frac{\Delta f}{\Delta \nu} \abs{V_{12}}^2
-\end{equation}
-and
-\begin{equation}
-	N = (A \cdot \alpha \cdot q \cdot n \cdot F \cdot \sigma \cdot \Delta \nu)^{-1}\sqrt{\frac{2 \Delta f}{T}}.
-\end{equation}
-While most of the parameters can be optimized with hardware, the only way to achieve a better SNR with fixed telescopes that is at the disposal of the astronomer is to increase the observation time $T$.
+Here, $A$ is the total mirror area, $\alpha$ is the quantum efficiency of the PMTs, $q$ is the throughput of the remaining optics, and $n$ is the differential photon flux from the source. The excess noise factor of the PMTs is represented by $F$, $T$ denotes the observation time, and $\sigma$ is the normalized spectral distribution of the light (including filters) \citep[e.g.,][]{acciari2020optical}.
 
 \subsection{Baseline considerations}
 The measurement of the size of stellar objects via squared visibility depends on the distance between the telescopes, known as the baseline $b$.
