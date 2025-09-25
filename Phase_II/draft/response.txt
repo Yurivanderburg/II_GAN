@@ -35,7 +35,8 @@ Counter-argument: We can justify the choice of gravity-darkened stars.
 |  translates to getting fringe visibilities but not fringe phases in the uv
 |  plane.
 
-Clarify that we mean phase of the complex visibility.
+Clarify that we mean phase of the complex visibility. However, we have rephrased the line
+to be more clear.
 
 |  - On the second page, there is quite a long discussion of the problem of
 |  phase retrieval, including many citations. This is good, though perhaps a
@@ -156,4 +157,4 @@ in interferometry.
 |  for inference? It is important to quantify computational performance.
 
 The information is provided and we use CPU for training. This work has used 2 nodes with 96 threads each,
-which takes around 9 hour to train the model.
+which takes around 20 hours to train the model with 100000 training steps.
