@@ -1,5 +1,18 @@
 \section{Generative Adversarial Networks}
-
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{fig/analysis/Discrep_Runs_Losses_disc_loss.png}
+	\includegraphics[width=\linewidth]{fig/analysis/Discrep_Runs_Losses_gen_total_loss.png}
+	\caption{The number of episodes of Discriminator training per every episode of Generator training (termed Discriminator repetition or Disc. rep.), understandably, has a higher impact on the Discriminator loss than on the Generator loss. The left	and the right panel show this effect on the square root of cumulative mean of Discriminator loss and the Generator loss respectively.}
+	\label{fig:Plot_discrep_loss}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{fig/analysis/Telescope_Runs_Losses_disc_loss.png}
+	\includegraphics[width=\linewidth]{fig/analysis/Telescope_Runs_Losses_gen_total_loss.png}
+	\caption{The square root of cumulative mean of Discriminator and Generator loss for different numbers of telescopes. It has a very significant impact on the model performance. If there are only two telescopes, both Discriminator and Generator are not trained smoothly. The result of four telescopes is a lot better because the cumulative mean of loss functions is smaller compare to other parameters.}
+	\label{fig:Plot_telescopes_loss}
+\end{figure}
 Generative Adversarial Networks (GANs) were introduced by \cite{goodfellow2014generative}. The underlying concept is straightforward: it involves two competing networks. The first network, known as the Generator, produces new images based on an input image. These will be referred to as generated images. The second network, the Discriminator, attempts to distinguish between the generated image (predicted image) and the real image (ground truth) using Discriminator loss function.
 
 Through the alternating training of these networks, the generated images gradually become indistinguishable from the real images. Essentially, this process constitutes a two-player min-max game --- a classic problem in game theory. The original formulation of GANs is given by:

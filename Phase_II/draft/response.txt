@@ -95,7 +95,9 @@ train on the sampling used.
 |  14-16 too. (The labels in those figures don't need "The" in "The Ground
 |  Truth").
 
-Merge figs 4 and 5, also 14-16.
+Both figs 4 and 5 is merged and only linear scale is there. Now the visibility 
+pattern is visible as we choose smaller source shown in fig~3. 
+The labels in fig 14-16 have been modified now.
 
 |  - Figure 6 is too small to be easily legible - could this be a two-column
 |  figure, with a clearer colourmap? Anyway - this is likely to need to be
@@ -115,7 +117,7 @@ Improve this.
 |  as a function of hyperparameters, rather than this quite confusing set of
 |  figures.
 
-Revise these figures.
+Figures and text accordingly have been revised.
 
 |  - Section 4.2 refers to a TensorFlow tutorial, and mentions that
 |  modifications are essential - what are the modifications? It doesn't appear
