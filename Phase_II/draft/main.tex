@@ -1,6 +1,22 @@
 \documentclass[linenumbers, twocolumn]{aastex701}
 \usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows.meta, positioning, calc}
 
+\tikzset{
+	block/.style={
+		rectangle,
+		draw,
+		rounded corners,
+		minimum height=1cm,
+		minimum width=3cm,
+		align=center
+	},
+	arrow/.style={
+		thick,
+		-{Stealth}
+	}
+}
 
 \newcommand{\mias}{$\SI{}{\micro{\rm as}}$}
 \newcommand{\abs}[1]{\left|#1\right|}

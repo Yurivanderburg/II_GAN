@@ -62,3 +62,71 @@ All the selected hyperparameters to train the model is summarized in the given t
 	\end{tabular}
 \end{table}
 
+The process to train the model is summarized here:
+\begin{figure*}[htbp]
+	\centering
+	\begin{tikzpicture}[node distance=0.9cm]
+		
+		% Data pipeline
+		\node[block, fill=blue!15] (data) {Ground Truth \\ (Create $N$ Images of Stellar Objects)};
+		\node[block, fill=red!10, below=of data] (pre) {Simulation \\ (Intensity Interferometry (II) Data)};
+		\node[block, fill=green!20, below=of pre, minimum width=5cm] (split) {Input Dataset (Merge of Ground Truth \\ and Simulation of II) Split \\ (Training, Validation, Testing)};
+		
+		% Split branches
+		\node[block, fill=green!15, below left=0.6cm and 2.5cm of split] (train) {Training Set \\ (Learn Model Parameters)};
+		\node[block, fill=yellow!20, below=0.6cm of split] (val) {Validation Set \\ (Tune Hyperparameters)};
+		\node[block, fill=orange!20, below right=0.6cm and 2.5cm of split] (test) {Testing Set \\ (Final Evaluation)};
+		
+		% Model training big box
+		\node[block, fill=orange!20, below=3cm of val, minimum width=10cm, minimum height=1.2cm] (mod) {Train the Model \\ (Generator + Discriminator)};
+		
+		% Generator side (left)
+		\node[block, fill=cyan!15, below=1.2cm of mod, xshift=-3.5cm] (noise) {Random Noise $z$};
+		\node[block, fill=green!20, below=of noise] (gen) {Generator $G(z)$};
+		\node[block, fill=blue!10, below=of gen] (fake) {Generated Image};
+		\node[block, fill=purple!20, below=of fake] (gloss) {Generator Loss \\ (Update $G$)};
+		
+		% Discriminator side (right)
+		\node[block, fill=yellow!20, below=1.2cm of mod, xshift=+3.5cm] (real) {Real Image \\ (From Training Set)};
+		\node[block, fill=orange!20, below=of real] (disc) {Discriminator $D(x)$};
+		\node[block, fill=red!20, below=of disc] (out) {Output: Real/Fake};
+		\node[block, fill=purple!30, below=of out] (dloss) {Discriminator Loss \\ (Update $D$)};
+		
+		% Final result block
+		\node[block, fill=teal!20, below=4.2cm of val, minimum width=5cm] (res) {Result / Evaluation \\ (Performance Metrics: Accuracy)};
+		
+		% Connections for data pipeline
+		\draw[arrow] (data) -- (pre);
+		\draw[arrow] (pre) -- (split);
+		\draw[arrow] (split.south west) |- (train.north);
+		\draw[arrow] (split.south) -- (val.north);
+		\draw[arrow] (split.south east) |- (test.north);
+		\draw[arrow] (train.south) |- (mod.north);
+		
+		% GAN arrows
+		\draw[arrow] (mod) -- (noise);
+		\draw[arrow] (mod) -- (real);
+		\draw[arrow] (noise) -- (gen);
+		\draw[arrow] (gen) -- (fake);
+		\draw[arrow] (fake.east) -- ++(0.5,0) |- (disc.west);
+		\draw[arrow] (real) -- (disc);
+		\draw[arrow] (disc) -- (out);
+		
+		% Feedback loops
+		\draw[arrow] (out.south west) -- ++(-3,0) |- (gloss.east);
+		\draw[arrow] (gloss.west) -- ++(-3,0) |- (gen.west);
+		\draw[arrow] (out.south east) -- ++(3,0) |- (dloss.east);
+		\draw[arrow] (dloss.east) -- ++(3,0) |- (disc.east);
+		
+		% Validation & Testing to Result
+		\draw[arrow] (val.south) -- (res.north);
+		\draw[arrow] (test.south) -- (res.north);
+		
+	\end{tikzpicture}
+	\caption{The cGAN-based image reconstruction block diagram. Data is split into training (used for GAN optimization), validation (for hyperparameter tuning), and testing (for final evaluation). The GAN training loop optimizes Generator and Discriminator, while validation and testing feed into performance evaluation metrics.}
+	\label{fig:gan_block}
+\end{figure*}
+
+
+
+

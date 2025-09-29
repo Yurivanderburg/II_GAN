@@ -106,7 +106,8 @@ The labels in fig 14-16 have been modified now.
 |  showing as a sequence of operations what the workflow is for training and
 |  what the workflow is for inference.
 
-Improve this.
+Figure 6 is bigger now and have been explained that why it is merge.
+There is also a block diagram created which explain the image reconstruction using GAN.
 
 |  - Figures 7-12 occupy a great space with very narrow lines that are hard to
 |  read, and do not appear to be especially informative in their current form.
