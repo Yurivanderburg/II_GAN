@@ -7,7 +7,7 @@
 	\includegraphics[width=\linewidth]{fig/testing_image/image_10.png}
 	\includegraphics[width=\linewidth]{fig/testing_image/image_12.png}
 	\includegraphics[width=\linewidth]{fig/testing_image/image_15.png}
-\caption{Example results of image reconstruction using the GAN model along with the II observations simulated in this work. Each row in this figure represents the results for a hypothetical fast-rotating star. Going from left to right in each row, the first panel represents the simulated $(u,v)$ plane II signals obtained using the six baselines (of Fig.\ref{fig:ft_base}). This image is presented, as the input, to the trained GAN to produce a predicted image. The second panel is the real image of the star, also called the ground truth. The third panel is the reconstructed image, or the predicted image, produced by the trained GAN model . The fourth and the last panel is the difference between the ground truth and the predicted image in the $(u,v)$ plane. The uniform background color in the difference panel suggests that the network is picking up white noise from the $(u,v)$ plane. }
+\caption{Example results of image reconstruction using the GAN model along with the II observations simulated in this work. Each row in this figure represents the results for a hypothetical fast-rotating star. Going from left to right in each row, the first panel represents the simulated $(u,v)$ plane II signals obtained using the six baselines (right panel of of fig.\ref{fig:ft}). This image is presented, as the input, to the trained GAN to produce a predicted image. The second panel is the real image of the star, also called the ground truth. The third panel is the reconstructed image, or the predicted image, produced by the trained GAN model . The fourth and the last panel is the difference between the ground truth and the predicted image in the $(u,v)$ plane. The uniform background color in the difference panel suggests that the network is picking up white noise from the $(u,v)$ plane. }
 	\label{fig:GAN}
 \end{figure*}
 Here, we discuss the parameters of the GAN architecture used for reconstructing images of stellar objects using II. Given the adversarial nature of GANs, where the Generator and Discriminator engage in a min-max game, careful tuning of key parameters is critical to ensure that both networks are well-balanced for effective training.
@@ -17,9 +17,9 @@ First, we simulate fast-rotating stars, modelling them as oblate spheroids with 
 
 Next, Salt and Pepper noise is introduced usually at a rate of 0.5\%. Then, the images are resized and their mean is subtracted. A two-dimensional Fast Fourier Transform, along with a Fourier shift, is applied, yielding a complex number for each pixel. Since II does not measure phase, the absolute value is calculated (as shown in Fig.~\ref{fig:ft} on both linear and logarithmic scales for visualization). 
 
-Next, sparse sampling is introduced via pixel-wise multiplication between the absolute-valued Fourier-transformed image (Fig.~\ref{fig:ft}) and the sparse sampling map (Fig.~\ref{fig:base}). The result is a map in the Fourier plane featuring several ellipses, which is also referred to as the sparse sampling map (Fig.~\ref{fig:ft_base}). This map represents the sparse sampling of the signal space (Fig.~\ref{fig:ft}) corresponding to the source (Fig.~\ref{fig:image}) observed with four telescopes (Fig.~\ref{fig:teles}). 
+Next, sparse sampling is introduced via pixel-wise multiplication between the absolute-valued Fourier-transformed image (Fig.~\ref{fig:ft}) and the sparse sampling map (Fig.~\ref{fig:base}). The result is a map in the Fourier plane featuring several ellipses, which is also referred to as the sparse sampling map (right panel of fig.~\ref{fig:ft}). This map represents the sparse sampling of the signal space (Fig.~\ref{fig:ft}) corresponding to the source (Fig.~\ref{fig:image}) observed with four telescopes (Fig.~\ref{fig:teles}). 
 
-Finally, the pixels are normalized and converted to 8-bit integers. This image represents the sparsely sampled phaseless visibility as it can be measured with II. The image shown in Fig.~\ref{fig:ft_base} serves as the input for the GAN, which also requires the corresponding ground truth image. Consequently, the simulated stars are resized using the same algorithm and converted to 8-bit integers to reduce bias. The GAN must have access to the ground truth corresponding to each input image; therefore, the input and ground truth images are merged side-by-side (as shown in Fig.~\ref{fig:GANinput}) and used to train the GAN. This procedure is applied to all simulated stars, with 10\% used as test data, 10\% as validation data, and the remaining 80\% as training data.
+Finally, the pixels are normalized and converted to 8-bit integers. This image represents the sparsely sampled phaseless visibility as it can be measured with II. The image shown in right panel of fig.~\ref{fig:ft} serves as the input for the GAN, which also requires the corresponding ground truth image. Consequently, the simulated stars are resized using the same algorithm and converted to 8-bit integers to reduce bias. The GAN must have access to the ground truth corresponding to each input image; therefore, the input and ground truth images are merged side-by-side (as shown in Fig.~\ref{fig:GANinput}) and used to train the GAN. This procedure is applied to all simulated stars, with 10\% used as test data, 10\% as validation data, and the remaining 80\% as training data.
 
 
 \subsection{GAN Architecture}
@@ -28,14 +28,105 @@ The GAN used in this work is based on pix2pix, which utilizes a conditional GAN 
 \subsection{Hyperparameter Tuning}
 The GAN used in this work depends on several parameters, which are explained briefly below \citep[for a more in-depth discussion, see][]{murphy2022probabilistic}.
 
-The learning rate of the optimizer determines how much the model updates its parameters with each iteration. A learning rate that is too small may lead to underfitting, while one that is too large can render the model unstable. Therefore, selecting an appropriate learning rate is crucial \citep{murphy2022probabilistic}. Fig.~\ref{fig:Plot_learning_rate_loss} illustrates the effect of different learning rates on both the Generator and Discriminator losses. As expected, lower learning rates result in fewer outliers in the loss functions, indicating more stable updates. Although all models eventually stabilize at a similar level, lower learning rates are preferred.
+The learning rate of the optimizer determines how much the model updates its parameters with each iteration. A learning rate that is too small may lead to underfitting, while one that is too large can render the model unstable. Therefore, selecting an appropriate learning rate is crucial \citep{murphy2022probabilistic}. 
 
-The kernel size refers to the dimensions of the convolutional kernel used in the network, determining how many pixels are combined to produce a new pixel. A larger kernel size can capture features spanning several pixels, but it may also incorporate unrelated features. As shown in Fig.~\ref{fig:Plot_kernel_size_loss}, the kernel size does not have a significant impact on the loss functions; however, smaller kernel sizes tend to produce more outliers, suggesting that either the Generator or Discriminator may gain an advantage. Therefore, a kernel size of 5 is preferred.
+The kernel size refers to the dimensions of the convolutional kernel used in the network, determining how many pixels are combined to produce a new pixel. A larger kernel size can capture features spanning several pixels, but it may also incorporate unrelated features. 
 
-The amount of noise is controlled by two parameters, ``alpha" and ``beta", which indicate the percentage of pixels altered to either white or black — hence the term Salt and Pepper noise. Here, ``alpha" is applied to the real image, while ``beta" is applied to the generated image. Different ratios (``alpha/beta") can lead to varying model performance; however, our results indicate that distinct noise rates do not significantly affect the loss functions. Figure~\ref{fig:Plot_noise_loss} shows the loss functions for smaller images ($64 \times 64$), and due to the negligible impact, this analysis was not repeated for larger images.
+The amount of noise is controlled by two parameters, ``alpha" and ``beta", which indicate the percentage of pixels altered to either white or black, hence the term Salt and Pepper noise. Here, ``alpha" is applied to the real image, while ``beta" is applied to the generated image. Different ratios (``alpha/beta") can lead to varying model performance; however, our results indicate that distinct noise rates do not significantly affect the loss functions. 
 
-The batch size defines the number of images processed simultaneously by the network. Smaller batch sizes have been observed to improve generalization \citep{prince2023understanding}. As illustrated in Fig.~\ref{fig:Plot_batchsize_loss}, processing two images at once results in fewer outliers. However, because a larger batch size significantly increases training time, a batch size of 1 is used.
+The batch size defines the number of images processed simultaneously by the network. Smaller batch sizes have been observed to improve generalization \citep{prince2023understanding}. However, because a larger batch size significantly increases training time, a batch size of 1 is used.
 
-When training GANs, one strategy to potentially boost performance is to give the Discriminator an advantage by increasing its number of training steps before returning to the Generator's training. While this can lower the Discriminator loss—as shown in Fig.~\ref{fig:Plot_discrep_loss}—it also increases training time and leads to a slight rise in the Generator loss. Since the generated images do not noticeably improve with additional Discriminator training, both networks are typically trained with the same number of steps.
+When training GANs, one strategy to potentially boost performance is to give the Discriminator an advantage by increasing its number of training steps before returning to the Generator's training. While this can lower the Discriminator loss, as shown in Fig.~\ref{fig:Plot_discrep_loss}, it also increases training time and leads to a slight rise in the Generator loss. Since the generated images do not noticeably improve with additional Discriminator training, both networks are typically trained with the same number of steps.
 
 Finally, the degree of sparse sampling can be varied to provide the model with access to more pixels. Increasing the number of telescopes results in more baselines and, consequently, more available pixels. Fig.~\ref{fig:Plot_telescopes_loss} shows the loss functions for different numbers of telescopes. There is a significant disparity in performance, partly because the relationship between telescopes and baselines is not linear. For example, the Fourier plane can be sampled along six tracks when using four telescopes, as compared to only one track if using only two telescopes. In the case of two telescopes, both the Generator and Discriminator exhibit less smooth training, as indicated by the outliers. Performance improves with three telescopes and becomes very promising with four. Overall, the degree of sparse sampling appears to have the most pronounced effect of all the hyperparameters.
+
+All the selected hyperparameters to train the model is summarized in the given table:
+\begin{table}[ht]
+	\centering
+	\caption{Selected hyperparameters used for training the model.}
+	\label{tab:hyperparameters}
+	\begin{tabular}{ll}
+		\hline
+		\textbf{Hyperparameter} & \textbf{Value} \\
+		\hline
+		Learning rate           & 2e-4 \\
+		Kernel size             & 5 \\
+		Alpha/Beta              & 1 \\
+		Batch size              & 1 \\
+		Buffer Size             & 1400 \\
+		Discriminator repetition  & 1 \\
+		No. of Telescope        & 4 \\
+		Output Channels         & 1 \\
+		Lambda                  & 100 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+The process to train the model is summarized here:
+\begin{figure*}[htbp]
+	\centering
+	\begin{tikzpicture}[node distance=0.9cm]
+		
+		% Data pipeline
+		\node[block, fill=blue!15] (data) {Ground Truth \\ (Create $N$ Images of Stellar Objects)};
+		\node[block, fill=red!10, below=of data] (pre) {Simulation \\ (Intensity Interferometry (II) Data)};
+		\node[block, fill=green!20, below=of pre, minimum width=5cm] (split) {Input Dataset (Merge of Ground Truth \\ and Simulation of II) Split \\ (Training, Validation, Testing)};
+		
+		% Split branches
+		\node[block, fill=green!15, below left=0.6cm and 2.5cm of split] (train) {Training Set \\ (Learn Model Parameters)};
+		\node[block, fill=yellow!20, below=0.6cm of split] (val) {Validation Set \\ (Tune Hyperparameters)};
+		\node[block, fill=orange!20, below right=0.6cm and 2.5cm of split] (test) {Testing Set \\ (Final Evaluation)};
+		
+		% Model training big box
+		\node[block, fill=orange!20, below=3cm of val, minimum width=10cm, minimum height=1.2cm] (mod) {Train the Model \\ (Generator + Discriminator)};
+		
+		% Generator side (left)
+		\node[block, fill=cyan!15, below=1.2cm of mod, xshift=-3.5cm] (noise) {Random Noise $z$};
+		\node[block, fill=green!20, below=of noise] (gen) {Generator $G(z)$};
+		\node[block, fill=blue!10, below=of gen] (fake) {Generated Image};
+		\node[block, fill=purple!20, below=of fake] (gloss) {Generator Loss \\ (Update $G$)};
+		
+		% Discriminator side (right)
+		\node[block, fill=yellow!20, below=1.2cm of mod, xshift=+3.5cm] (real) {Real Image \\ (From Training Set)};
+		\node[block, fill=orange!20, below=of real] (disc) {Discriminator $D(x)$};
+		\node[block, fill=red!20, below=of disc] (out) {Output: Real/Fake};
+		\node[block, fill=purple!30, below=of out] (dloss) {Discriminator Loss \\ (Update $D$)};
+		
+		% Final result block
+		\node[block, fill=teal!20, below=4.2cm of val, minimum width=5cm] (res) {Result / Evaluation \\ (Performance Metrics: Accuracy)};
+		
+		% Connections for data pipeline
+		\draw[arrow] (data) -- (pre);
+		\draw[arrow] (pre) -- (split);
+		\draw[arrow] (split.south west) |- (train.north);
+		\draw[arrow] (split.south) -- (val.north);
+		\draw[arrow] (split.south east) |- (test.north);
+		\draw[arrow] (train.south) |- (mod.north);
+		
+		% GAN arrows
+		\draw[arrow] (mod) -- (noise);
+		\draw[arrow] (mod) -- (real);
+		\draw[arrow] (noise) -- (gen);
+		\draw[arrow] (gen) -- (fake);
+		\draw[arrow] (fake.east) -- ++(0.5,0) |- (disc.west);
+		\draw[arrow] (real) -- (disc);
+		\draw[arrow] (disc) -- (out);
+		
+		% Feedback loops
+		\draw[arrow] (out.south west) -- ++(-3,0) |- (gloss.east);
+		\draw[arrow] (gloss.west) -- ++(-3,0) |- (gen.west);
+		\draw[arrow] (out.south east) -- ++(3,0) |- (dloss.east);
+		\draw[arrow] (dloss.east) -- ++(3,0) |- (disc.east);
+		
+		% Validation & Testing to Result
+		\draw[arrow] (val.south) -- (res.north);
+		\draw[arrow] (test.south) -- (res.north);
+		
+	\end{tikzpicture}
+	\caption{The cGAN-based image reconstruction block diagram. Data is split into training (used for GAN optimization), validation (for hyperparameter tuning), and testing (for final evaluation). The GAN training loop optimizes Generator and Discriminator, while validation and testing feed into performance evaluation metrics.}
+	\label{fig:gan_block}
+\end{figure*}
+
+
+
+
