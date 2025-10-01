@@ -55,7 +55,7 @@ zt = distance[:,2]           # baseline in up
 # plot the covered (u,v) plane with baselines (comment out the lines for the visualizations of baseline only)
 plt.close()
 plt.rcParams.update({'font.size': 15})
-plt.rcParams["figure.figsize"] = [12,8]
+plt.rcParams["figure.figsize"] = [8,8]
 plt.rcParams["font.weight"] = "bold"
 plt.rcParams["axes.labelweight"] = "bold"
 st = np.cumsum(step)

@@ -1,18 +1,18 @@
 \section{Intensity Interferometry (II) with IACT arrays}
 \begin{figure}
   \includegraphics[width=\linewidth]{fig/baseline.png}
-  \caption{The tracks of the baselines provided by the four telescopes arranged in fig.~\ref{fig:teles} for one night of observation.}
+  \caption{The tracks of the baselines due to Earth rotation (discribed in sec.~\ref{sec:earth}) provided by the four telescopes arranged in fig.~\ref{fig:teles} for one night of observation. The increased number of telescopes will creates more baselines, so the coverage of more observational plane and better image reconstruction.}
   \label{fig:base}
 \end{figure}
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{fig/ellipse/ellipse1612.png}
-  \caption{This figure shows the simulated fast rotating star. The brightness is highest at the poles and there is gravity darkening along the equator. There is 31460 images has been created with different parameters.}
+  \caption{This figure shows one of the simulated fast rotating star. The brightness is highest at the poles and there is gravity darkening along the equator. There is 31460 images has been created with different parameters to train the model.}
   \label{fig:image}
 \end{figure}
 \begin{figure*}
 	\includegraphics[width=.49\linewidth]{fig/ft/ft.jpg}\hfil
 	\includegraphics[width=.49\linewidth]{fig/ft/ft_base.jpg}
-	\caption{Absolute value of the two-dimensional Fast Fourier Transform of the source depicted in Fig.~\ref{fig:image} on linear scale (left panel). It represent the intensity interferometric ($u,v$) plane image of the source that would be obtained by an infinite number of baselines (or infinite number of telescopes observing the source). The right panel shows the absolute value of the two-dimensional Fast Fourier Transform of the source depicted in Fig.~\ref{fig:image} and measured along the tracks shown in Fig.~\ref{fig:base} covered by the baselines shown in Fig.~\ref{fig:teles}. This figure reflects the sparse nature of the signal received by the realistic finite number of telescopes and baselines sampled from the full ($u,v$) plane signal space of left figures. Both figures are normalized to the maximum pixel value in the respective figures.}
+	\caption{The left panel shows the absolute value of the two-dimensional Fast Fourier Transform of the source depicted in Fig.~\ref{fig:image}. It represents the intensity interferometric ($u,v$) plane image of the source that would be obtained by an infinite number of baselines (or an infinite number of telescopes observing the source). The right panel shows the absolute value of the same source measured along the tracks shown in Fig.~\ref{fig:base}. This figure reflects the sparse nature of the signal received by a realistic finite number of telescopes and baselines sampled from the full ($u,v$) plane signal space, as shown in the left figures. Both figures are plotted on a linear scale and normalized to the maximum pixel value in each respective figure.}
 	\label{fig:ft}
 \end{figure*}
 This section presents a brief conceptual overview of how an array of telescopes is used to perform II observations, and explains the Signal-to-Noise Ratio (SNR) from these measurements.
@@ -44,7 +44,7 @@ The significance of the signal can be expressed in terms of the signal-to-noise 
 \end{equation}
 Here, $A$ is the total mirror area, $\alpha$ is the quantum efficiency of the PMTs, $q$ is the throughput of the remaining optics, and $n$ is the differential photon flux from the source. The excess noise factor of the PMTs is represented by $F$, $T$ denotes the observation time, and $\sigma$ is the normalized spectral distribution of the light (including filters) \citep[e.g.,][]{acciari2020optical}.
 
-\subsection{Baseline considerations}
+\subsection{Baseline considerations}\label{sec:earth}
 The measurement of the size of stellar objects via squared visibility depends on the distance between the telescopes, known as the baseline $b$.
 \begin{equation}
 	|V_{12}(b)|^2 = \frac{c(b)}{c(0)}
@@ -75,6 +75,6 @@ Intensity Interferometry counts the photons arriving at the telescopes from the 
 \begin{figure*}
    \centering
   \includegraphics[width=0.85\linewidth]{fig/ellipse1612.jpg}
-  \caption{Merged image, which includes the original and the sparsely sampled Fourier plane. It is exactly what the GAN receives. The grey scale of the figure is normalized to the brightest pixel in the image.}
+  \caption{This merged image shows the input for GAN. The left figure is the simulated source, which act as a ground truth for GAN while training the model. The right figure shows the signal from the same simulated source observed by the baselines (fig.~\ref{fig:base}), which is the reason both images is merged to provide GAN as input so that it can make the prediction after being trained. The grey scale of the figure is normalized to the brightest pixel in the image.}
   \label{fig:GANinput}
 \end{figure*}

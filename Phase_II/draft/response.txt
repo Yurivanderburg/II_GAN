@@ -63,11 +63,16 @@ Revise text.
 
 Asymmetry is recovered in some cases: investigate!
 
+
 |  - Figures should be explained fully in their captions, rather than the
 |  layout explained like Figure 13 in Sec 5.1.
 
+Each figure's captions have been revised now.
+
 |  - This discussion of phase retrieval should be separated in the
 |  introduction from the discussion of GANs.
+
+It has been separated now.
 
 |  - There is quite an extensive lit review on the core ideas of intensity
 |  interferometry and their corresponding equations, that could perhaps be

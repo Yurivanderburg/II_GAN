@@ -61,8 +61,9 @@ class aper():
           n = np.imag(base)
           x, y = np.meshgrid(xcord, ycord)
           plt.close()
-          plt.rcParams.update({'font.size': 14})
-          plt.rcParams["figure.figsize"] = [12,12]
+          plt.rcParams.update({'font.size': 12})
+          plt.rcParams["figure.figsize"] = [8,8]
+          plt.rcParams['axes.facecolor']='ivory'
           plt.rcParams["font.weight"] = "bold"
           plt.rcParams["axes.labelweight"] = "bold"
           for j in range(len(Tposi)):
@@ -72,15 +73,17 @@ class aper():
                  w = self.circ(x-east[j], y-north[j], radii)
               else:
                  w = self.aper(x-east[j], y-north[j], radii, width, orien)
-              plt.contour(x, y, w, colors='darkgrey')
+              plt.contour(x, y, w, colors='darkred')
               tel = Tname[j]
-              plt.annotate(tel,  xy = (east[j], north[j]), size=10, color='black', fontweight='bold')
+              plt.annotate(tel,  xy = (east[j], north[j]), size=10, color='blue', fontweight='bold')
           for i in range(len(e)):   
               plt.plot(e[i], n[i], '--')
           plt.xlabel('East in meter')
           plt.ylabel('North in meter')
           plt.title("Position of Telescopes", fontweight='bold')
-          plt.savefig(fname)
+          plt.gca().set_aspect('equal')
+          plt.tight_layout()
+          plt.savefig(fname, bbox_inches='tight', pad_inches=0, dpi=200)
           
 
       def baseline(self, Tposi, Tname):
