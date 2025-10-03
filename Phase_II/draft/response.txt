@@ -49,7 +49,7 @@ to be more clear.
 |  must be constrained by the even modes through regularization/priors. This
 |  idea needs to be discussed.
 
-Revise text.
+Text has been revised.
 
 |  - I think we are seeing the Hermitian symmetry issue in Figure 13: while
 |  the GANs do reasonable reconstructions of the equator-on gravity-darkened
@@ -62,6 +62,9 @@ Revise text.
 |  viridis.
 
 Asymmetry is recovered in some cases: investigate!
+We increased the number of training, validation and testing dataset. 
+Also we increase the training time from 60k to 100k and result has 
+been improvised. The difference plot is now in 1-D.
 
 
 |  - Figures should be explained fully in their captions, rather than the

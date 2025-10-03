@@ -6,6 +6,7 @@ import tensorflow as tf
 import numpy as np
 import datetime
 import time
+import csv
 import cv2
 import os
 
@@ -230,8 +231,16 @@ class gan_fun():
              plt.savefig(f"{plot_name}.eps", format='eps', dpi=500)
              plt.savefig(f"{plot_name}.png")
              
+             # save arrays as .npy
+             np.save(f"{plot_name}_input.npy",   test_input[0].numpy())
+             np.save(f"{plot_name}_target.npy",  target[0].numpy())
+             np.save(f"{plot_name}_prediction.npy", prediction)
+
+             if show_diff:
+                np.save(f"{plot_name}_difference.npy", difference)
+             
                          
-      def train_step(self, model1, model2, input_image, target, step):
+      def train_step(self, model1, model2, input_image, target, summary_writer, step):
           """
           Train the input image i.e. visibility data with a target imgae in given number of step.
           
@@ -250,9 +259,26 @@ class gan_fun():
 
           generator_optimizer = tf.keras.optimizers.Adam(self.learning_rate, beta_1 = 0.5)          # Generator Optimizer using the Adam algorithm
           discriminator_optimizer = tf.keras.optimizers.Adam(self.learning_rate, beta_1 = 0.5)      # Discriminator Optimizer using the Adam algorithm
-          log_dir="logs/"                                                                           # name of the main folder
-          checkpoint_dir = "models/models/ellipsoids_run8.15_a0.005_b0.005_discrep1_itk_bs1_lr2em4_teles4_addedlayers_filtersize5_MS/"
-          summary_writer = tf.summary.create_file_writer(log_dir + "fit/" + datetime.datetime.now().strftime(f"%Y%m%d-%H%M%S_{checkpoint_dir[9:]}")) # create file to save summary
+          # Logging dirs
+          # Run name from hyperparameters
+          run_name = (
+                      f"cGAN_b{self.beta}_disc{self.disc_train_iterations}_"
+                      f"bs{1}_lr{self.learning_rate}_f{self.filtersize}"
+                     )
+
+          # --- Directories ---
+          checkpoint_dir = os.path.join("models", run_name)
+          os.makedirs(checkpoint_dir, exist_ok=True)
+
+          log_dir = os.path.join("logs", "fit", run_name)
+          os.makedirs(log_dir, exist_ok=True)
+          summary_writer = tf.summary.create_file_writer(log_dir)
+
+          # CSV logger
+          csv_path = os.path.join(log_dir, "losses.csv")
+          with open(csv_path, "w", newline="") as f:
+              writer = csv.writer(f)
+              writer.writerow(["step", "gen_total_loss", "gen_gan_loss", "gen_l1_loss", "disc_loss"])
                                   
           with tf.GradientTape() as gen_tape:
                gen_output = model1(input_image, training=True)                                      # output of Generator using signal as input
@@ -278,6 +304,8 @@ class gan_fun():
                tf.summary.scalar('gen_gan_loss', gen_gan_loss, step=step//1000)         
                tf.summary.scalar('gen_l1_loss', gen_l1_loss, step=step//1000)
                tf.summary.scalar('disc_loss', disc_loss, step=step//1000)
+               
+          return gen_total_loss, gen_gan_loss, gen_l1_loss, disc_loss
  
       def fit(self, model1, model2, train_ds, test_ds, steps):
           """
@@ -290,7 +318,21 @@ class gan_fun():
           #generator = self.Generator()                                                         # Generator model
           #discriminator = self.Discriminator()                                                 # Discriminator model
           generator_optimizer = tf.keras.optimizers.Adam(self.learning_rate, beta_1 = 0.5)      # Generator Optimizer using the Adam algorithm
-          discriminator_optimizer = tf.keras.optimizers.Adam(self.learning_rate, beta_1 = 0.5)  # Discriminator Optimizer using the Adam algorithm   
+          discriminator_optimizer = tf.keras.optimizers.Adam(self.learning_rate, beta_1 = 0.5)  # Discriminator Optimizer using the Adam algorithm  
+          
+          # Run name from hyperparameters
+          run_name = (
+                      f"cGAN_b{self.beta}_disc{self.disc_train_iterations}_"
+                      f"bs{1}_lr{self.learning_rate}_f{self.filtersize}"
+                     )
+
+          # --- Directories ---
+          checkpoint_dir = os.path.join("models", run_name)
+          os.makedirs(checkpoint_dir, exist_ok=True)
+
+          log_dir = os.path.join("logs", "fit", run_name)
+          os.makedirs(log_dir, exist_ok=True)
+          summary_writer = tf.summary.create_file_writer(log_dir)
                  
           checkpoint_dir = "models/models/ellipsoids_run8.15_a0.005_b0.005_discrep1_itk_bs1_lr2em4_teles4_addedlayers_filtersize5_MS/" # name of the folder and file to save the summary
           
@@ -298,28 +340,34 @@ class gan_fun():
           checkpoint = tf.train.Checkpoint(generator_optimizer=generator_optimizer,
                                            discriminator_optimizer=discriminator_optimizer,     # A Checkpoint object can be constructed to save either
                                            generator=model1, discriminator=model2)              # a single or group of trackable objects to a checkpoint file.
+                                           
+          csv_path = os.path.join(log_dir, "losses.csv")
           counter = 0
-          for step, (input_image, target) in train_ds.repeat().take(steps).enumerate():         # Unpacking a dataset (input signal and ground truth) with iterating and next to train the model
-              if (step) % 1000 == 0:
-                 display.clear_output(wait=True)
- 
-                 if step != 0:
-                    print(f'Time taken for 1000 steps: {time.time()-start:.2f} sec\n')
- 
-                 start = time.time()
-                 
-                 self.generate_images(model1, example_input, example_target, show_diff = True, sampling = True, save_image = True, counter = counter)               # Generate images for Generator using input signal and ground truth
-                 counter += 1
-                 print(f"Step: {step//1000}k")
-                 
-              self.train_step(model1, model2, input_image, target, step)                        # training the model using both network, signal and target
- 
-              # Training step
-              if (step+1) % 10 == 0:
-                 print('.', end='', flush=True)
-                 
- 
-              # Save (checkpoint) the model every 5k steps
+          for step, (input_image, target) in enumerate(train_ds.repeat().take(steps)):
+              gen_total_loss, gen_gan_loss, gen_l1_loss, disc_loss = self.train_step(
+                    model1, model2, input_image, target, summary_writer, step
+              )
+
+              # Write to CSV every 100 steps
+              if step % 100 == 0:
+                  with open(csv_path, "a", newline="") as f:
+                      writer = csv.writer(f)
+                      writer.writerow([step, float(gen_total_loss), float(gen_gan_loss),
+                                        float(gen_l1_loss), float(disc_loss)])
+
+              if step % 1000 == 0:
+                  display.clear_output(wait=True)
+                  if step != 0:
+                      print(f'Time taken for 1000 steps: {time.time()-start:.2f} sec\n')
+                  start = time.time()
+                  self.generate_images(model1, example_input, example_target,
+                                        show_diff=True, sampling=True, save_image=True, counter=counter)
+                  counter += 1
+                  print(f"Step: {step//1000}k")
+
+              if (step + 1) % 10 == 0:
+                  print('.', end='', flush=True)
+
               if (step + 1) % 5000 == 0:
-                 checkpoint.save(file_prefix=checkpoint_prefix)
+                  checkpoint.save(file_prefix=checkpoint_prefix)
 

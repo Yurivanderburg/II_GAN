@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
-import numpy as np
-from scipy import fft
 from image_noise import Pimage
+from scipy import fft
+import numpy as np
+import random
 import cv2
 import os
 
@@ -46,40 +47,47 @@ for filename in os.listdir(path_in):
     
     image_name = filename[:-4]                                                                        # save or display images > use cv2 instead of matplotlib, this always saves as (64,64,4)
     if save_images:
-            if counter < 150:
-               '''
-               im = plt.imshow(combined_image, cmap='gray')
-               plt.colorbar(shrink=0.55)
-               plt.gca().set_aspect('equal')
-               plt.axis('off')
-               plt.savefig('val/' + image_name + '.jpg')
-               plt.clf()
-               plt.close()
-               '''
-               cv2.imwrite('val/' + image_name + '.jpg', combined_image)
-            elif (counter >= 150) and (counter < 300):
-               '''
-               im = plt.imshow(combined_image, cmap='gray')
-               plt.colorbar(shrink=0.55)
-               plt.gca().set_aspect('equal')
-               plt.axis('off')
-               #plt.show()
-               plt.savefig('test/' + image_name + '.jpg')
-               plt.clf()
-               plt.close()
-               '''
-               cv2.imwrite('test/' + image_name + '.jpg', combined_image)
-            else:
-               '''
-               im = plt.imshow(combined_image, cmap='gray')
-               plt.colorbar(shrink=0.55)
-               plt.gca().set_aspect('equal')
-               plt.axis('off')
-               plt.savefig('train/' + image_name + '.jpg')
-               plt.clf()
-               plt.close()
-               '''
-               cv2.imwrite('train/' + image_name + '.jpg', combined_image)
+       # Choose randomly where to save
+       rnd = random.random()  # returns float in [0,1)
+       plt.figure(figsize=(8, 8))
+       if rnd < 0.1:  # 10% for validation
+            save_path = os.path.join("val", image_name + ".jpg")
+            '''
+            im = plt.imshow(combined_image, cmap='gray', aspect='equal')
+            cbar = plt.colorbar(im, shrink=0.45, fraction=0.046, pad=0.04)
+            cbar.ax.tick_params(labelsize=12, width=1.5)
+            plt.axis('off')
+            plt.tight_layout(pad=1.0)
+            plt.savefig(f'val/{image_name}.jpg', dpi=300, bbox_inches='tight', pad_inches=0.1)
+            plt.clf()
+            plt.close()
+            '''
+       elif rnd < 0.2:  # next 10% for testing
+            save_path = os.path.join("test", image_name + ".jpg")
+            '''
+            im = plt.imshow(combined_image, cmap='gray', aspect='equal')
+            cbar = plt.colorbar(im, shrink=0.45, fraction=0.046, pad=0.04)
+            cbar.ax.tick_params(labelsize=12, width=1.5)
+            plt.axis('off')
+            plt.tight_layout(pad=1.0)
+            plt.savefig(f'test/{image_name}.jpg', dpi=300, bbox_inches='tight', pad_inches=0.1)
+            plt.clf()
+            plt.close()
+            '''
+       else:  # remaining 80% for training
+            '''
+            im = plt.imshow(combined_image, cmap='gray', aspect='equal')
+            cbar = plt.colorbar(im, shrink=0.45, fraction=0.046, pad=0.04)
+            cbar.ax.tick_params(labelsize=12, width=1.5)
+            plt.axis('off')
+            plt.tight_layout(pad=1.0)
+            plt.savefig(f'train/{image_name}.jpg', dpi=300, bbox_inches='tight', pad_inches=0.1)
+            plt.clf()
+            plt.close()
+            '''
+            save_path = os.path.join("train", image_name + ".jpg")
+
+       cv2.imwrite(save_path, combined_image)
 
     else:
             plt.imshow(ground_truth)

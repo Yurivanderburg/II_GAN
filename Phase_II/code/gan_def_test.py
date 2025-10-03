@@ -55,10 +55,10 @@ except tf.errors.InvalidArgumentError:
 test_dataset = test_dataset.map(fn.load_image_test)
 test_dataset = test_dataset.batch(BATCH_SIZE)
 
-mfn.fit(generator, discriminator, train_dataset, test_dataset, steps=60000)
+mfn.fit(generator, discriminator, train_dataset, test_dataset, steps=100000)
 
 counter = 0
-for inp, tar in test_dataset.take(20):
+for inp, tar in test_dataset.take(100):
     mfn.generate_images(generator, inp, tar, show_diff = True, sampling = True, save_image = True, counter = counter)
     counter += 1
     
