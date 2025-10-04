@@ -75,6 +75,6 @@ Intensity Interferometry counts the photons arriving at the telescopes from the 
 \begin{figure*}
    \centering
   \includegraphics[width=0.85\linewidth]{fig/ellipse1612.jpg}
-  \caption{This merged image shows the input for GAN. The left figure is the simulated source, which act as a ground truth for GAN while training the model. The right figure shows the signal from the same simulated source observed by the baselines (fig.~\ref{fig:base}) with salt and paper noise, which is the reason both images is merged to provide GAN as input so that it can make the prediction after being trained. The grey scale of the figure is normalized to the brightest pixel in the image.}
+  \caption{Example of the input used for training the GAN model. The left panel shows the simulated source image, which serves as the ground truth during training, while the right panel represents the corresponding intensity distribution obtained from the same simulated source using the telescope baselines (see Fig.~\ref{fig:base}) with added salt-and-pepper noise. Together, these images form a training pair, where the GAN learns to reconstruct a predicted image (modeling of observed signal) similar to ground truth (left) from the noisy baseline signal (right). The grayscale in both images is normalized to the brightest pixel.}
   \label{fig:GANinput}
 \end{figure*}
