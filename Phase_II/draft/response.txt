@@ -21,10 +21,22 @@
 Counter-argument: We can justify the choice of gravity-darkened stars.
 
 1. Other image-reconstruction methods have been used with Michelson
-   interferometry for this type of source.
+   interferometry for this type of source. 
+   
+The response to this in the Introduction:
+
+Image reconstruction in gravity darkened fast rotating stars has long been examined using various methods in MI \citep{vanBelle2001, DomicianodeSouza2003, DomicianodeSouza2005, Monnier2007, Pedretti2009, Zhao2009, Martinez2021}.
+
 
 2. SII has recently measured ellipticity, so gravity-darkening is a
    natural next step.
+
+
+The response to this in the Introduction:
+
+Recently photosphere oblateness of $\gamma$-Cassiopeia \citep{2025arXiv250615027A} has been measured at the VERITAS observatory using II. These results, and especially, that by Archer et al. \cite{2025arXiv250615027A}  put our work in context. Thus our simulation is a natural next step of the work of Archer et al and others.
+
+
 
 |  - On the first page: "However, because the primary observable in 69 II is
 |  the electromagnetic field intensity rather than the 70 field amplitude, the
