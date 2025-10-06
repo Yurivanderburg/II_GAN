@@ -18,7 +18,7 @@
 \usepackage{color}
 %\usepackage[normalem]{ulem}
 \usepackage{soul}
-\usepackage{ulem}
+%\usepackage{ulem}
 \usepackage{comment}
 
 \newcommand{\abs}[1]{\left|#1\right|}
@@ -283,30 +283,30 @@ $\abs{V_{12}}^2$ is a function of baseline $d = \sqrt{u^2 + v^2}$ on observation
 \subsection{The Signal-to-Noise Ratio for II}
 \begin{figure}
 	\centering
-	\includegraphics[width=\linewidth]{fig/telescope.png}
+	\includegraphics[width=\linewidth]{../fig/telescope.png}
 	\caption{The telescope configuration with similar properties each used to simulate the signal for II.}
 	\label{fig:teles}
 \end{figure}
 \begin{figure}
 	\centering
-	\includegraphics[width=\linewidth]{fig/baseline.png}
+	\includegraphics[width=\linewidth]{../fig/baseline.png}
 	\caption{The tracking of baselines with four telescopes arranged in fig.~\ref{fig:teles} for one night of observation.}
 	\label{fig:base}
 \end{figure}
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\linewidth]{fig/ellipse/ellipse6018.jpg}
+	\includegraphics[width=0.8\linewidth]{../fig/ellipse/ellipse6018.jpg}
 	\caption{This figure shows the simulated fast rotating star. The brightness is highest at the pole and there is gravitational darkening at the equator.}
 	\label{fig:image}
 \end{figure}
 \begin{figure*}
 	\centering
 	\begin{subfigure}{0.5\linewidth}
-		\includegraphics[width=\linewidth]{fig/ft/ft.jpg}
+		\includegraphics[width=\linewidth]{../fig/ft/ft.jpg}
 		\caption{The fourier transform of source.}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.5\linewidth}
-		\includegraphics[width=\linewidth]{fig/ft/ft_log.jpg}
+		\includegraphics[width=\linewidth]{../fig/ft/ft_log.jpg}
 		\caption{The logarithmic fourier transform of source.}
 	\end{subfigure}
 	\caption{Absolute value of the two-dimensional Fast Fourier Transform of fig.~\ref{fig:image} measured by Intensity Interferometry, and observation of maximum (u, v) plane with finite number of baselines can be completed with help of earth's rotation.}
@@ -315,11 +315,11 @@ $\abs{V_{12}}^2$ is a function of baseline $d = \sqrt{u^2 + v^2}$ on observation
 \begin{figure*}
 	\centering
 	\begin{subfigure}{0.5\linewidth}
-		\includegraphics[width=\linewidth]{fig/ft/ft_base.jpg}
+		\includegraphics[width=\linewidth]{../fig/ft/ft_base.jpg}
 		\caption{The fourier transform with baselines.}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.5\linewidth}
-		\includegraphics[width=\linewidth]{fig/ft/ft_log_base.jpg}
+		\includegraphics[width=\linewidth]{../fig/ft/ft_log_base.jpg}
 		\caption{The logarithmic fourier transform with baselines.}
 	\end{subfigure}
 	\caption{The left panel shows the absolute value of the two-dimensional Fast Fourier Transform of fig.~\ref{fig:image} measured by baselines shown in fig.~\ref{fig:teles}. The right panel shows the same on logarithmic scale}
@@ -439,7 +439,7 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
 \end{equation}
 \begin{figure}
 	\centering
-	\includegraphics[width=\linewidth]{fig/ellipsoid_0.jpg}
+	\includegraphics[width=\linewidth]{../fig/ellipsoid_0.jpg}
 	\caption{Merged image, which includes the original and the sparsely sampled Fourier plane. It is exactly what the GAN receives. }
 	\label{fig:GANinput}
 \end{figure}
@@ -447,13 +447,13 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
 	\centering
 	\begin{subfigure}{\linewidth}
 		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_learning_rate_disc_loss.pdf}
+		\includegraphics[width=\textwidth]{../fig/analysis/Plot_learning_rate_disc_loss.pdf}
 		\caption{Discriminator loss for three different learning rates. }
 		\label{fig:Plot_learning_rate_discloss}
 	\end{subfigure}\hfill
 	\begin{subfigure}{\linewidth}
 		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_learning_rate_gen_total_loss.pdf}
+		\includegraphics[width=\textwidth]{../fig/analysis/Plot_learning_rate_gen_total_loss.pdf}
 		\caption{Total generator loss for different learning rates (eqn. (\ref{eq:total_gen_loss})).}
 		\label{fig:Plot_learning_rate_genloss}
 	\end{subfigure}\hfill
@@ -464,13 +464,13 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
 	\centering
 	\begin{subfigure}{\linewidth}
 		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_Kernel_size_disc_loss.pdf}
+		\includegraphics[width=\textwidth]{../fig/analysis/Plot_Kernel_size_disc_loss.pdf}
 		\caption{Discriminator loss for three different kernel sizes. }
 		\label{fig:Plot_kernel_size_discloss}
 	\end{subfigure}\hfill
 	\begin{subfigure}{\linewidth}
 		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_Kernel_size_gen_total_loss.pdf}
+		\includegraphics[width=\textwidth]{../fig/analysis/Plot_Kernel_size_gen_total_loss.pdf}
 		\caption{Total generator loss for three different kernel sizes.}
 		\label{fig:Plot_kernel_size_genloss}
 	\end{subfigure}\hfill
@@ -481,13 +481,13 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
 	\centering
 	\begin{subfigure}{0.5\linewidth}
 		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_noise_factor_disc_loss.pdf}
+		\includegraphics[width=\textwidth]{../fig/analysis/Plot_noise_factor_disc_loss.pdf}
 		\caption{Discriminator loss for different noise percentages.}
 		\label{fig:Plot_noise_discloss}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.5\linewidth}
 		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_noise_factor_gen_total_loss.pdf}
+		\includegraphics[width=\textwidth]{../fig/analysis/Plot_noise_factor_gen_total_loss.pdf}
 		\caption{Generator losses for different noise percentages.}
 		\label{fig:Plot_noise_genloss}
 	\end{subfigure}\hfill
@@ -498,13 +498,13 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
 	\centering
 	\begin{subfigure}{0.5\linewidth}
 		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_Batchsize_disc_loss.pdf}
+		\includegraphics[width=\textwidth]{../fig/analysis/Plot_Batchsize_disc_loss.pdf}
 		\caption{Discriminator loss for different batch sizes.}
 		\label{fig:Plot_batchsize_discloss}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.5\linewidth}
 		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_Batchsize_gen_total_loss.pdf}
+		\includegraphics[width=\textwidth]{../fig/analysis/Plot_Batchsize_gen_total_loss.pdf}
 		\caption{Generator losses for different batch sizes.}
 		\label{fig:Plot_batchsize_genloss}
 	\end{subfigure}\hfill
@@ -515,13 +515,13 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
 	\centering
 	\begin{subfigure}{0.5\linewidth}
 		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_Disc_rep_disc_loss.pdf}
+		\includegraphics[width=\textwidth]{../fig/analysis/Plot_Disc_rep_disc_loss.pdf}
 		\caption{Discriminator loss for different Discriminator training.}
 		\label{fig:Plot_discrep_discloss}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.5\linewidth}
 		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_Disc_rep_gen_total_loss.pdf}
+		\includegraphics[width=\textwidth]{../fig/analysis/Plot_Disc_rep_gen_total_loss.pdf}
 		\caption{Generator losses for different Discriminator training.}
 		\label{fig:Plot_discrep_genloss}
 	\end{subfigure}\hfill
@@ -532,13 +532,13 @@ where \(D^{*}_{G}\) denotes the optimum of the discriminator for a given fixed g
 	\centering
 	\begin{subfigure}{0.5\linewidth}
 		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_N_telescopes_disc_loss.pdf}
+		\includegraphics[width=\textwidth]{../fig/analysis/Plot_N_telescopes_disc_loss.pdf}
 		\caption{Discriminator loss for different amounts of telescopes.}
 		\label{fig:Plot_telescopes_discloss}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.5\linewidth}
 		\centering
-		\includegraphics[width=\textwidth]{fig/analysis/Plot_N_telescopes_gen_total_loss.pdf}
+		\includegraphics[width=\textwidth]{../fig/analysis/Plot_N_telescopes_gen_total_loss.pdf}
 		\caption{Generator loss for different amount of telescopes.}
 		\label{fig:Plot_telescopes_genloss}
 	\end{subfigure}\hfill
@@ -609,22 +609,22 @@ The effectiveness of the Discriminator is measured by its ability to distinguish
 \DIFaddend \begin{figure*}
 	\centering
 	\begin{subfigure}{\linewidth}
-		\includegraphics[width=\linewidth]{fig/testing_image/image_0.png}
+		\includegraphics[width=\linewidth]{../fig/testing_image/image_0.png}
 	\end{subfigure}
 	\begin{subfigure}{\linewidth}
-		\includegraphics[width=\linewidth]{fig/testing_image/image_16.png}
+		\includegraphics[width=\linewidth]{../fig/testing_image/image_16.png}
 	\end{subfigure}
 	\begin{subfigure}{\linewidth}
-		\includegraphics[width=\linewidth]{fig/testing_image/image_35.png}
+		\includegraphics[width=\linewidth]{../fig/testing_image/image_35.png}
 	\end{subfigure}
 	\begin{subfigure}{\linewidth}
-		\includegraphics[width=\linewidth]{fig/testing_image/image_38.png}
+		\includegraphics[width=\linewidth]{../fig/testing_image/image_38.png}
 	\end{subfigure}
 	\begin{subfigure}{\linewidth}
-		\includegraphics[width=\linewidth]{fig/testing_image/image_42.png}
+		\includegraphics[width=\linewidth]{../fig/testing_image/image_42.png}
 	\end{subfigure}
 	\begin{subfigure}{\linewidth}
-		\includegraphics[width=\linewidth]{fig/testing_image/image_47.png}
+		\includegraphics[width=\linewidth]{../fig/testing_image/image_47.png}
 	\end{subfigure}
 	\caption{This set of figures shows the result of GAN for II. The left panels are signals using six baselines, which work as input for GAN. The first middle panel is the real image, also called ground truth, and GAN tries to mimic it during the training. The second middle panel is the reconstructed image, also called the predicted image, with trained GAN, and the end panel is the difference between the ground truth and the predicted image.}
 	\label{fig:GAN}
@@ -636,17 +636,17 @@ First, we simulate fast-rotating stars, modeling them as oblate spheroids with v
 \begin{figure*}
 	\centering
 	\begin{subfigure}{0.33\linewidth}
-		\includegraphics[width=\linewidth]{fig/moments/mom0.png}
+		\includegraphics[width=\linewidth]{../fig/moments/mom0.png}
 		\caption{The monopole.}
 		\label{fig:mom1}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.33\linewidth}
-		\includegraphics[width=\linewidth]{fig/moments/mom1.png}
+		\includegraphics[width=\linewidth]{../fig/moments/mom1.png}
 		\caption{The centroids along x direction.}
 		\label{fig:mom2}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.33\linewidth}
-		\includegraphics[width=\linewidth]{fig/moments/mom2.png}
+		\includegraphics[width=\linewidth]{../fig/moments/mom2.png}
 		\caption{The centroids along y direction.}
 		\label{fig:mom3}
 	\end{subfigure}\hfill
@@ -656,17 +656,17 @@ First, we simulate fast-rotating stars, modeling them as oblate spheroids with v
 \begin{figure*}
 	\centering
 	\begin{subfigure}{0.33\linewidth}
-		\includegraphics[width=\linewidth]{fig/moments/mom3.png}
+		\includegraphics[width=\linewidth]{../fig/moments/mom3.png}
 		\caption{The 2nd order moment $\mu_{11}$.}
 		\label{fig:mom4}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.33\linewidth}
-		\includegraphics[width=\linewidth]{fig/moments/mom4.png}
+		\includegraphics[width=\linewidth]{../fig/moments/mom4.png}
 		\caption{The 2nd order moment $\mu_{20}$.}
 		\label{fig:mom5}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.33\linewidth}
-		\includegraphics[width=\linewidth]{fig/moments/mom5.png}
+		\includegraphics[width=\linewidth]{../fig/moments/mom5.png}
 		\caption{The 2nd order moment $\mu_{02}$.}
 		\label{fig:mom6}
 	\end{subfigure}\hfill
@@ -676,22 +676,22 @@ First, we simulate fast-rotating stars, modeling them as oblate spheroids with v
 \begin{figure*}
 	\centering
 	\begin{subfigure}{0.50\linewidth}
-		\includegraphics[width=\linewidth]{fig/moments/mom6.png}
+		\includegraphics[width=\linewidth]{../fig/moments/mom6.png}
 		\caption{The 3rd order moment $\mu_{30}$.}
 		\label{fig:mom7}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.50\linewidth}
-		\includegraphics[width=\linewidth]{fig/moments/mom7.png}
+		\includegraphics[width=\linewidth]{../fig/moments/mom7.png}
 		\caption{The 3rd order moment $\mu_{03}$.}
 		\label{fig:mom8}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.50\linewidth}
-		\includegraphics[width=\linewidth]{fig/moments/mom8.png}
+		\includegraphics[width=\linewidth]{../fig/moments/mom8.png}
 		\caption{The 3rd order moment $\mu_{21}$.}
 		\label{fig:mom9}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.50\linewidth}
-		\includegraphics[width=\linewidth]{fig/moments/mom9.png}
+		\includegraphics[width=\linewidth]{../fig/moments/mom9.png}
 		\caption{The 3rd order moment $\mu_{12}$.}
 		\label{fig:mom10}
 	\end{subfigure}\hfill
