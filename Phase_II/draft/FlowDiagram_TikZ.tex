@@ -1,0 +1,238 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage[margin=0.7in, left=0.7in]{geometry}
+\usetikzlibrary{arrows, arrows.meta, positioning}
+
+\tikzset{
+  block/.style = {draw, rectangle, minimum height=1.5em, rounded corners, minimum width=3em, align=center},
+  arrow/.style = {->, thick},
+  d-arrow/.style={thick, dashed, ->, >=stealth, color=blue}, % dashed arrow style
+}
+
+% \tikzset{
+%   block/.style={rectangle, draw, text centered, rounded corners, minimum height=1cm},
+%   arrow/.style={thick, ->, >=stealth},
+%   d-arrow/.style={thick, dashed, ->, >=stealth, color=blue}, % dashed arrow style
+% }
+
+\begin{document}
+%\title{Flow Diagram of the Conditional GAN}
+%\date{}
+%\maketitle
+%\vspace{-5 cm}
+\begin{figure}[htbp]
+%\centering
+\begin{center}
+\begin{tikzpicture}[node distance=0.7cm]
+    
+% % Data pipeline
+
+%Nodes
+% %\node[block, fill=red!20, anchor=north east]
+%   (Lat-vector) at ([xshift= 4cm,yshift=1cm]current bounding box.north east)
+%   {Random Noise $z$:\\(Latent Vector)};
+
+% Row-1
+\node[block, fill=red!20, minimum width = 3 cm, minimum height = 1 cm] (Lat-vector) {Random Noise $z$ \\(Latent Vector)};
+
+\node[block, fill = yellow!15, right= 1.5 cm of Lat-vector, minimum width=3 cm, minimum height=1.2cm] (gen) {{\large \bf{Generator}} \\$log(G(z|y))$};
+
+% Row-2
+\node[block, fill = yellow!10, below = 1cm of gen, minimum width=3 cm, minimum height=1.2cm] (gen-out) {Generated (Fake) Image $\hat x$};
+
+\node[block, fill=red!10, left=of gen-out, minimum width = 3 cm, minimum height = 1 cm] (II-sim) {(Additional Info Labels $y$:\\ Simulated II Observation \\ of the Stellar Object)};
+
+\node[block, fill=blue!15, left=of II-sim, minimum width = 3 cm, minimum height = 1 cm] (gr-truth) {Real Image $x$: Model Images of \\ Stellar Object (here, FRS)};
+
+% Row-3
+\node[block, fill=green!20, below = of II-sim, minimum width=5cm] (Input-dataset) {Creation of Input Dataset \\ (Merging of Real Images $x$ OR Generated Images $\hat x$ \\ AND II Simulation Data $y$)};
+
+% Row-4
+\node[block, fill=green!20, below= 1 cm of Input-dataset, minimum width=5cm] (split) {Split Dataset \\ (Training, Validation, Testing)};
+
+% Row-5
+\node[block, fill=green!15, below left= 1 cm and 0.1 cm of split] (train) {Training Set \\ (Learning Model Parameters)};
+
+\node[block, fill=green!10, below= 1 cm of split] (val) {Validation Set \\ (Tuning Hyperparameters)};
+
+\node[block, fill=green!05, below right= 1 cm and 0.1 cm of split] (test) {Testing Set \\ (For Final Evaluation)};
+
+% Row-6
+\node[block, fill = blue!20, below left= 2.5 cm and 1cm of val, minimum width=3 cm, minimum height=1.2cm] (disc) {{\large \bf{Discriminator}} \\ $log (D^*(x|y))$};
+
+% Row-7
+\node[block, fill = blue!10, below = 1cm of disc, minimum width=3 cm, minimum height=1.2cm] (disc-out) {Binary Decision \\ Real Image OR Fake Image};
+
+\node[block, fill= yellow!10, below = 10 cm of gen-out, minimum width=5 cm, minimum height=1.2cm] (gen-loss) {{\large{\bf {Generator Loss}}}\\ Update $ log(G(z|y)) \equiv log(1-(D^*(G(z|y)|y)) $};
+
+% Row-8
+\node[block, fill= blue!10, below = 1cm of disc-out, minimum width=3 cm, minimum height=1.2cm] (disc-loss) {{\large {\bf {Discriminator Loss}}}\\ Update $log(D^*(x|y))$};
+
+% Row-9
+\node[block, fill=teal!20, below= 10 cm of val, minimum width=5cm] (res) {Result / Evaluation \\ (Performance Metrics: Accuracy)};
+
+% % Connections
+\draw[arrow] (Lat-vector) -- (gen);
+\draw[arrow] (gen) -- (gen-out);
+\draw[arrow] (gen-out.south) |- (Input-dataset.east);
+\draw[arrow] (gr-truth) -- (II-sim);
+\draw[arrow] (gr-truth.south) |- (Input-dataset.west);
+\draw[arrow] (II-sim) -- (Input-dataset);
+\draw[arrow] (Input-dataset) -- (split);
+
+\draw[arrow] (split.west) -| (train.north);
+\draw[arrow] (split.south) -- (val.north);
+\draw[arrow] (split.east) -| (test.north);
+\path (train.south) ++(0,-0.5) coordinate (p1)
+      (p1) ++(0.3,0) coordinate (p2);
+\draw[arrow] (train.south) -- (p1) -- (p2) -- (disc.north);
+\draw[arrow] (val) |- (disc);
+\draw[arrow] (disc) -- (disc-out);
+\draw[arrow] (disc-out) -- (disc-loss)
+
+% \path (disc-loss.south) ++(0,-1.0) coordinate (p3)
+%       (p3) ++(-3.0,0) coordinate (p4)
+%       (p4) ++(0,+8.0) coordinate (p5)
+%       (p5) ++(2.5, 0) coordinate (p6)
+%       (p6) ++(0,-1.3) coordinate (p7);
+% \draw[d-arrow] (disc-loss.south) -- (p3) -- (p4) 
+% -- (p5) 
+% node[pos=1.0,left=10pt, text=blue, font=\large, rotate=90]{ Discriminator Training \\ / Updating Discriminator Parameters}
+% -- (p6) -- (p7);
+
+% \path (disc-loss.south) ++(0,-1.0) coordinate (p3)
+%       (p3) ++(-3.0,0) coordinate (p4)
+%       (p4) ++(0,+8.0) coordinate (p5)
+%       (p5) ++(2.5, 0) coordinate (p6)
+%       (p6) ++(0,-1.3) coordinate (p7);
+
+% \draw[d-arrow]
+%   (disc-loss.south) -- (p3) -- (p4)
+%   -- node[midway, left=15pt, text=blue, font=\large, rotate=90, align=center]
+%      {Discriminator Training\\Updating Discriminator Parameters}
+%   (p5) -- (p6) -- (p7);
+
+\path (disc-loss.south) ++(0,-1.0) coordinate (p3)
+      (p3) ++(-3.0,0) coordinate (p4)
+      (p4) ++(0,+8.0) coordinate (p5)
+      (p5) ++(2.5, 0) coordinate (p6)
+      (p6) ++(0,-1.3) coordinate (p7);
+
+% Draw up to p4 first
+\draw[d-arrow]
+  (disc-loss.south) -- (p3) -- (p4);
+
+% Now draw the vertical dashed segment with centered label
+\draw[d-arrow]
+  (p4) -- node[pos=0.9, left=15pt, text=blue, font=\large, rotate=90, align=center]
+     {Discriminator Training\\Updating Discriminator Parameters}
+  (p5);
+
+% Finish the loop
+\draw[d-arrow]
+  (p5) -- (p6) -- (p7);
+
+
+
+\path (disc-out.east) ++ (2.0,0) coordinate (p8)
+      (p8) ++(0,1.0) coordinate (p9);
+\draw[arrow] (disc-out.east) -- (p8) -- (p9) -- (gen-loss.west);
+\path (gen-loss.south) ++(0,-1.0) coordinate (p10)
+      (p10) ++(4.5,0) coordinate (p11)
+      (p11) ++(0,15) coordinate (p12);
+\draw[d-arrow] (gen-loss.south) -- (p10) -- (p11) 
+-- node[midway, right=10pt, text=blue, font = \large, rotate=90, anchor=center] {Generator Training/ updating Generator Parameters}
+(p12) -- (gen.east);
+
+\path (test.south) ++(0,-3.4) coordinate (p13)
+      (p13) ++(-4.5,0) coordinate (p14);
+\draw[arrow] (test.south) -- (p13) -- (p14) -- (res.north);
+      
+      
+
+
+
+
+
+% \node[block, fill=blue!15, minimum width = 3 cm, minimum height = 1 cm] (gr-truth) {Real Image $x$: Model Images of \\ Stellar Object (here, FRS)};
+% \node[block, fill=red!10, right=of gr-truth, minimum width = 3 cm, minimum height = 1 cm] (II-sim) {(Additional Info Labels $y$:\\ Simulated II Observation \\ of the Stellar Object)};
+% \node[block, fill=red!20, right=of II-sim, minimum width = 3 cm, minimum height = 1 cm] (Lat-vector) {Random Noise $z$:(Latent Vector)};
+% \node[block, fill=green!20, below right = 1 cm and 0.1 cm of gr-truth, minimum width=5cm] (Input-dataset) {Creation of Input Dataset \\ (Merging of Ground Truth Images\\ and II Simulation Data)};
+% \node[block, fill=green!20, below=of Input-dataset, minimum width=5cm] (split) {Split Dataset \\ (Training, Validation, Testing)};
+
+
+% \node[block, fill=green!15, below left=0.6cm and 0.1 cm of split] (train) {Training Set \\ (Learning Model Parameters)};
+% \node[block, fill=green!10, below=of split] (val) {Validation Set \\ (Tuning Hyperparameters)};
+% \node[block, fill=green!05, below right=0.6cm and 0.5 cm of split] (test) {Testing Set \\ (For Final Evaluation)};
+
+% \node[block, fill = blue!15, below left= 3 cm and 0.1 cm of val, minimum width=5 cm, minimum height=1.2cm] (disc) {Discriminator \\ $log (D^*(x|y))$};
+
+% \node[block, fill = blue!10, below = 1cm of disc, minimum width=5 cm, minimum height=1.2cm] (disc-out) {Binary Decision \\ Real Image OR Fake Image};
+
+% \node[block, fill= blue!10, below = 1cm of disc-out, minimum width=5 cm, minimum height=1.2cm] (disc-loss) {Discriminator Loss\\ Update $log(D^*(x|y))$};
+
+% \node[block, fill = yellow!15, below right = 1 cm and 0.5 cm of val, minimum width=5 cm, minimum height=1.2cm] (gen) {Generator \\$G(z|y) \equiv log(1-(D^*(G(z|y)|y))$};
+
+% \node[block, fill = yellow!10, below = 1cm of gen, minimum width=5 cm, minimum height=1.2cm] (gen-out) {Generated (Fake) Image};
+
+% \node[block, fill= yellow!10, below = 1cm of gen-out, minimum width=5 cm, minimum height=1.2cm] (gen-loss) {Generator Loss\\ Update $G(z|y)$};
+
+% % Final result block
+% \node[block, fill=teal!20, below= 10 cm of val, minimum width=5cm] (res) {Result / Evaluation \\ (Performance Metrics: Accuracy)};
+
+% % Connections
+% \draw[arrow] (gr-truth) -- (II-sim);
+% \draw[arrow] (gr-truth.south) |- (Input-dataset.west);
+% \draw[arrow] (II-sim) -- (Input-dataset);
+% \draw[arrow] (Input-dataset) -- (split); 
+% \draw[arrow] (Input-dataset) -- (split);
+
+% \draw[arrow] (split.west) -| (train.north);
+% \draw[arrow] (split.south) -- (val.north);
+% \draw[arrow] (split.east) -| (test.north);
+% \path (train.south) ++(0,-0.5) coordinate (p1)
+%       (p1) ++(0.2,0) coordinate (p2);
+% \draw[arrow] (train.south) -- (p1) -- (p2) -- (disc.north);
+% \draw[arrow] (val) |- (disc);
+% \draw[arrow] (disc) -- (disc-out);
+% \draw[arrow] (disc-out) -- (disc-loss)
+
+% \path (disc-loss.south) ++(0,-1.0) coordinate (p3)
+%       (p3) ++(-3.0,0) coordinate (p4)
+%       (p4) ++(0,+8.0) coordinate (p5)
+%       (p5) ++(2.5, 0) coordinate (p6)
+%       (p6) ++(0,-1.3) coordinate (p7);
+% \draw[d-arrow] (disc-loss.south) -- (p3) -- (p4) 
+% -- (p5) 
+% node[pos=1.0,left=7pt, text=blue, font=\large, rotate=90]{Iteration / Updating Discriminator Parameters}
+% -- (p6) -- (p7);
+
+% \path(II-sim.south) ++ (0,-0.5) coordinate (p8)
+%      (p8) ++ (7.0,0) coordinate (p9)
+%      (p9) ++ (0, -5.5) coordinate (p10)
+%      (p10) ++ (-1.5,0) coordinate (p11)
+%      (p11) ++ (0, -0.6) coordinate (p12);
+% \draw[arrow] (II-sim.south) -- (p8) -- (p9) -- (p10) -- (p11) -- (p12); 
+
+% \path(Lat-vector.south) ++ (0, -0.4) coordinate (p13)
+%      (p13) ++ (2.0,0) coordinate (p14)
+%      (p14) ++ (0,-5.9) coordinate (p15)
+%      (p15) ++ (-1.5,0) coordinate (p16)
+%      (p16) ++ (0,-0.5) coordinate (p17);
+% \draw[arrow] (Lat-vector.south) -- (p13) -- (p14) -- (p15) -- (p16) -- (p17);
+% \draw[arrow] (gen) -- (gen-out);
+% \draw[arrow] (gen-out) -- (gen-loss);
+% \path (gen-out.west) ++ (-1.0,0) coordinate (p18)
+%       (p18) ++ (0,0.1) coordinate (p19)
+%       (p19) ++ (-4.1,0) coordinate (p20);
+% \draw[arrow] (gen-out.west) -- (p18) -- (p19) -- (p20);
+%\draw[arrow] (gen-out.west) -- (disc);
+
+
+
+
+\end{tikzpicture}
+\end{center}
+\end{figure}
+
+\end{document}
