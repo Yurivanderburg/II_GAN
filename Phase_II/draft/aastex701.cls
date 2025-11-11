@@ -90,7 +90,7 @@
 %%%                            for much functionality;
 %%%                       2) To support the existing functionalities utilized the RevTeX4-2 macros 
 %%%
-\ProvidesClass{aastex7}%%%
+\ProvidesClass{aastex701}%%%
  [2025/05/09 Version 7.0.1/AAS markup document class]%
 {}
 \ClassInfo{aastex}{%
