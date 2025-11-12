@@ -74,6 +74,10 @@ We increased the number of training, validation and testing dataset.
 Also we increase the training time from 60k to 100k and result has 
 been improvised. The difference plot is now in 1-D.
 
+The loss of phase (or Hermitian symmetry) means that we cannot the
+truth and its 180-degree-rotated twin.  Asymmetric profiles can,
+however, still be reconstructed.
+
 |  - Figures should be explained fully in their captions, rather than the
 |  layout explained like Figure 13 in Sec 5.1.
 
