@@ -18,7 +18,8 @@
 |  tractable, such as for complex scenes (spotted stars, or disks, for
 |  instance).
 
-Counter-argument: We can justify the choice of gravity-darkened stars.
+In this first attempt, is seems reasonable to consider only
+gravity-darkened stars, for the following reasons.
 
 1. Other image-reconstruction methods have been used with Michelson
    interferometry for this type of source. 
@@ -27,16 +28,12 @@ The response to this in the Introduction:
 
 Image reconstruction in gravity darkened fast rotating stars has long been examined using various methods in MI \citep{vanBelle2001, DomicianodeSouza2003, DomicianodeSouza2005, Monnier2007, Pedretti2009, Zhao2009, Martinez2021}.
 
-
 2. SII has recently measured ellipticity, so gravity-darkening is a
    natural next step.
-
 
 The response to this in the Introduction:
 
 Recently photosphere oblateness of $\gamma$-Cassiopeia \citep{2025arXiv250615027A} has been measured at the VERITAS observatory using II. These results, and especially, that by Archer et al. \cite{2025arXiv250615027A}  put our work in context. Thus our simulation is a natural next step of the work of Archer et al and others.
-
-
 
 |  - On the first page: "However, because the primary observable in 69 II is
 |  the electromagnetic field intensity rather than the 70 field amplitude, the
@@ -73,11 +70,13 @@ Text has been revised.
 |  images, use a diverging colourmap like coolwarm or seismic rather than
 |  viridis.
 
-Asymmetry is recovered in some cases: investigate!
 We increased the number of training, validation and testing dataset. 
 Also we increase the training time from 60k to 100k and result has 
 been improvised. The difference plot is now in 1-D.
 
+The loss of phase (or Hermitian symmetry) means that we cannot the
+truth and its 180-degree-rotated twin.  Asymmetric profiles can,
+however, still be reconstructed.
 
 |  - Figures should be explained fully in their captions, rather than the
 |  layout explained like Figure 13 in Sec 5.1.
@@ -103,9 +102,9 @@ The equations have been condensed now.
 |  to have to train your image reconstruction model separately for every
 |  single observation.
 
-Counter-argument: the (u,v) sampling for any given data set is fixed
-and known, so if computationally feasible [which it is] you do want to
-train on the sampling used.
+The (u,v) sampling for any given data set is fixed and known.
+Training the network for a single observing run is a tolerable
+computational cost.  Hence we train on the sampling used.
 
 |  - Figures 4 and 5 could be merged to illustrate ideas better; the linear
 |  stretch doesn't really tell us anything. What is the story being told here?
@@ -147,7 +146,8 @@ Figures and text accordingly have been revised.
 |  paper mainly about software to provide the code in an appropriate open
 |  source format, for reproducibility and extensibility.
 
-Give github repo, maybe give most recent version a DOI.
+The sections have been modified now and the code is published on GitHub with 
+DOI: https://doi.org/10.5281/zenodo.17598807
 
 |  - gravitational darkening -> gravity darkening
 
