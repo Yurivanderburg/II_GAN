@@ -1,7 +1,7 @@
 \section{Generative Adversarial Networks}
 \begin{figure*}
 \centering
-\includegraphics[width=0.75\linewidth]{fig/FlowDiagram_TikZ.png}
+\includegraphics[width=\linewidth]{fig/FlowDiagram_TikZ.png}
 \caption{A schematic representation of the features of a cGAN model used in this work and the iterative process of its training, validation and testing. The process constitutes four broad stages: (1) choice of an appropriate GAN architecture including both the Discriminator and the Generator (not shown in this figure) (2) preparation of the Training, Validation and Testing datasets and (3) Training and Validation of the Model (4) Testing and Evaluation of the Model. The stages (2), (3) and (4) are depicted in this figure. The datasets are prepared in three broad steps: (i) generating the ``ground truth'' images of fictitious fast-rotators $x$, the sparse II images $y$ used as the ``condition'' images in the Model and the generated images $z$ sampled from a Normal Distribution (ii)merging these images into individual files with $(x|y)$ and/ or $(z|y)$ (as seen in an illustrated sample in Fig.(\ref{fig:GANinput})) and generating the full dataset in this process, and finally (iii) partitioning the full dataset into Training Set, Validation Set and the Testing Set. After the iterative training of the Model and its validation process is complete (``Nash point'' of the Minimax Game is reached), the Model is tested using the Testing Set and evaluated.}
 \label{fig:FlowDiagram}
 \end{figure*}
