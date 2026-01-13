@@ -40,7 +40,7 @@ gravity-darkened stars, for the following reasons.
 1. Other image-reconstruction methods have been used with Michelson
    Interferometry for this type of source. 
    
-   This is now noted in in the Introduction: "Image reconstruction in
+   This is now noted in the Introduction: "Image reconstruction in
    gravity darkened fast rotating stars has long been examined using
    various methods in MI \citep{vanBelle2001, DomicianodeSouza2003,
    DomicianodeSouza2005, Monnier2007, Pedretti2009, Zhao2009,
