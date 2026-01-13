@@ -9,7 +9,23 @@
 |  sampling.
 |  Kind regards,
 |  The Reviewer
-|  
+
+The revised version makes substantial improvements.  Responses to
+individual comments are below, but the main revisions are the following.
+
+-- The simulations have been re-done with a larger training set, to
+   demonstrate that surface features can be recovered.
+
+-- The explanation of the method has been improved, including adding a
+   block diagram (Fig 6).
+
+-- The figures showing the loss function and hyperparameter dependence
+   have been redesigned to be more concise.
+
+-- The summary of existing image-reconstruction algorithms relevant to
+   intensity interferometry has been split into a new section.
+
+
 |  Comments
 |
 |  - Rapidly rotating stars can be fit analytically to these data. It may be
@@ -22,18 +38,22 @@ In this first attempt, is seems reasonable to consider only
 gravity-darkened stars, for the following reasons.
 
 1. Other image-reconstruction methods have been used with Michelson
-   interferometry for this type of source. 
+   Interferometry for this type of source. 
    
-The response to this in the Introduction:
-
-Image reconstruction in gravity darkened fast rotating stars has long been examined using various methods in MI \citep{vanBelle2001, DomicianodeSouza2003, DomicianodeSouza2005, Monnier2007, Pedretti2009, Zhao2009, Martinez2021}.
+   This is now noted in in the Introduction: "Image reconstruction in
+   gravity darkened fast rotating stars has long been examined using
+   various methods in MI \citep{vanBelle2001, DomicianodeSouza2003,
+   DomicianodeSouza2005, Monnier2007, Pedretti2009, Zhao2009,
+   Martinez2021}."
 
 2. SII has recently measured ellipticity, so gravity-darkening is a
-   natural next step.
-
-The response to this in the Introduction:
-
-Recently photosphere oblateness of $\gamma$-Cassiopeia \citep{2025arXiv250615027A} has been measured at the VERITAS observatory using II. These results, and especially, that by Archer et al. \cite{2025arXiv250615027A}  put our work in context. Thus our simulation is a natural next step of the work of Archer et al and others.
+   natural next step.  This is also now noted in the Introduction:
+   "Recently photosphere oblateness of $\gamma$-Cassiopeia
+   \citep{2025arXiv250615027A} has been measured at the VERITAS
+   observatory using II. These results, and especially, that by Archer
+   et al. \cite{2025arXiv250615027A} put our work in context. Thus our
+   simulation is a natural next step of the work of Archer et al and
+   others."
 
 |  - On the first page: "However, because the primary observable in II is
 |  the electromagnetic field intensity rather than the field amplitude, the
@@ -44,8 +64,7 @@ Recently photosphere oblateness of $\gamma$-Cassiopeia \citep{2025arXiv250615027
 |  translates to getting fringe visibilities but not fringe phases in the uv
 |  plane.
 
-Clarify that we mean phase of the complex visibility. However, we have rephrased the line
-to be more clear.
+We have rephrased the line to be more clear.
 
 |  - On the second page, there is quite a long discussion of the problem of
 |  phase retrieval, including many citations. This is good, though perhaps a
@@ -114,9 +133,9 @@ computational cost.  Hence we train on the sampling used.
 |  14-16 too. (The labels in those figures don't need "The" in "The Ground
 |  Truth").
 
-Both figs 4 and 5 is merged and only linear scale is there. Now the visibility 
-pattern is visible as we choose smaller source shown in fig~3. 
-The labels in fig 14-16 have been modified now.
+Both figs 4 and 5 are merged and only a linear scale is used. Now the
+visibility pattern is visible as we choose a smaller source shown in
+fig~3.  The labels in fig 14-16 have been modified now.
 
 |  - Figure 6 is too small to be easily legible - could this be a two-column
 |  figure, with a clearer colourmap? Anyway - this is likely to need to be
@@ -125,8 +144,10 @@ The labels in fig 14-16 have been modified now.
 |  showing as a sequence of operations what the workflow is for training and
 |  what the workflow is for inference.
 
-Figure 6 is bigger now and have been explained that why it is merge.
-There is also a block diagram created which explain the image reconstruction using GAN.
+The old figure 6 has been made bigger now and merged with figure 5.
+
+The new figure 6 is a block diagram created which explain the image
+reconstruction using cGAN.
 
 |  - Figures 7-12 occupy a great space with very narrow lines that are hard to
 |  read, and do not appear to be especially informative in their current form.
@@ -146,12 +167,13 @@ Figures and text accordingly have been revised.
 |  paper mainly about software to provide the code in an appropriate open
 |  source format, for reproducibility and extensibility.
 
-The sections have been modified now and the code is published on GitHub with 
-DOI: https://doi.org/10.5281/zenodo.17598807
+The sections have been modified now.
+
+The code is now published on GitHub with a DOI given at the end of the paper.
 
 |  - gravitational darkening -> gravity darkening
 
-Modified
+Corrected.
 
 |  - The sentence referring to the "ground truth, which the Discriminator uses
 |  to distinguish between real images and those generated by the Generator.
@@ -161,8 +183,8 @@ Modified
 |  be clearer. The discriminator doesn't have access to the ground truth, the
 |  discriminator has to distinguish between simulated and ground-truth data.
 
-It has been rephrased and clear now. Yes, the Discriminator doesn't have access to the ground truth.
-Even Discriminator loss function use Ground truth and generated images to give feedback to the Discriminator
+It has been rephrased now.  The Discriminator loss function uses the
+ground truth during training.
 
 |  - There appears to be no correlation between the x and y centroids of the
 |  star relative to the ground truth. This would be a serious problem? It
@@ -170,14 +192,15 @@ Even Discriminator loss function use Ground truth and generated images to give f
 |  moments. This may be related to section 5.3 which seems to lack any account
 |  of gravity darkening, which is in the simulations.
 
-Counter-argument: yes the centroids are showing noise -- all values
-are around (63.5,63.5) which is the centre of the field -- but it is
-not important, because absolute centroid is not a measurable quantity
-in interferometry.
+The x and y centroids are clustered within a few pixels of the center
+of the field.  The scatter appeared large in the old version, because
+the origin was set at a corner, putting the field center at (63.5,63.5)
+rather than (0,0).  This has been fixed now.
 
 |  - No information is provided in the paper about computer systems. What
 |  hardware was used (CPUs? GPUs?), and how long did it take for training and
 |  for inference? It is important to quantify computational performance.
 
-The information is provided and we use CPU for training. This work has used 2 nodes with 96 threads each,
-which takes around 20 hours to train the model with 100000 training steps.
+The information is now provided and we use CPU for training. This work
+has used 2 nodes with 96 threads each, which takes around 20 hours to
+train the model with 100000 training steps.
