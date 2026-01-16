@@ -1,17 +1,12 @@
-|  Reviewer:
-|  Dear Editor,
-|  Thank you for sending me this manuscript by Rai et al on image
-|  reconstruction from intensity interferometry. It addresses an important
-|  topic, and may after major revision be suitable for publication in AJ. At a
-|  high level, the paper does not demonstrate that the GAN presented actually
-|  recovers much of the information about the stars presented; or that it
-|  would be able to reconstruct images of other objects or with different uv
-|  sampling.
-|  Kind regards,
-|  The Reviewer
+Reviewer:
+Dear Editor,
 
-The revised version makes substantial improvements.  Responses to
-individual comments are below, but the main revisions are the following.
+Thank you for sending me this manuscript by Rai et al on image reconstruction from intensity interferometry. It addresses an important topic, and may after major revision be suitable for publication in AJ. At a high level, the paper does not demonstrate that the GAN presented actually recovers much of the information about the stars presented; or that it would be able to reconstruct images of other objects or with different uv sampling.
+
+Kind regards,
+The Reviewer
+
+The revised version makes substantial improvements.  Responses to individual comments are below, but the main revisions are the following.
 
 -- The simulations have been re-done with a larger training set, to
    demonstrate that surface features can be recovered.
@@ -26,181 +21,74 @@ individual comments are below, but the main revisions are the following.
    intensity interferometry has been split into a new section.
 
 
-|  Comments
-|
-|  - Rapidly rotating stars can be fit analytically to these data. It may be
-|  worth considering an example of an astrophysical source that would be more
-|  interesting to fit, where the data analysis problem is less analytically
-|  tractable, such as for complex scenes (spotted stars, or disks, for
-|  instance).
+|  Comments and Responses to it---
 
-In this first attempt, is seems reasonable to consider only
-gravity-darkened stars, for the following reasons.
+(C) - Rapidly rotating stars can be fit analytically to these data. It may be worth considering an example of an astrophysical source that would be more interesting to fit, where the data analysis problem is less analytically tractable, such as for complex scenes (spotted stars, or disks, for instance).
 
-1. Other image-reconstruction methods have been used with Michelson
-   Interferometry for this type of source. 
-   
-   This is now noted in the Introduction: "Image reconstruction in
-   gravity darkened fast rotating stars has long been examined using
-   various methods in MI \citep{vanBelle2001, DomicianodeSouza2003,
-   DomicianodeSouza2005, Monnier2007, Pedretti2009, Zhao2009,
-   Martinez2021}."
+(R) In this first attempt, is seems reasonable to consider only gravity-darkened stars, for the following reasons.
 
-2. SII has recently measured ellipticity, so gravity-darkening is a
-   natural next step.  This is also now noted in the Introduction:
-   "Recently photosphere oblateness of $\gamma$-Cassiopeia
-   \citep{2025arXiv250615027A} has been measured at the VERITAS
-   observatory using II. These results, and especially, that by Archer
-   et al. \cite{2025arXiv250615027A} put our work in context. Thus our
-   simulation is a natural next step of the work of Archer et al and
-   others."
+1. Other image-reconstruction methods have been used with Michelson Interferometry for this type of source. This is now noted in the Introduction: "Image reconstruction in gravity darkened fast rotating stars has long been examined using various methods in MI \citep{vanBelle2001, DomicianodeSouza2003, DomicianodeSouza2005, Monnier2007, Pedretti2009, Zhao2009, Martinez2021}."
 
-|  - On the first page: "However, because the primary observable in II is
-|  the electromagnetic field intensity rather than the field amplitude, the
-|  phase of the interferometric signal is lost." This is not unique to
-|  intensity interferometry - you also only measure the field amplitudes in
-|  normal interferometry too. What is different about intensity interferometry
-|  is you measure electromagnetic field intensity correlations, which
-|  translates to getting fringe visibilities but not fringe phases in the uv
-|  plane.
+2. SII has recently measured ellipticity, so gravity-darkening is a natural next step.  This is also now noted in the Introduction: "Recently photosphere oblateness of $\gamma$-Cassiopeia \citep{2025arXiv250615027A} has been measured at the VERITAS observatory using II. These results, and especially, that by Archer et al. \cite{2025arXiv250615027A} put our work in context. Thus our simulation is a natural next step of the work of Archer et al and others."
 
-We have rephrased the line to be more clear.
+(C) - On the first page: "However, because the primary observable in II is the electromagnetic field intensity rather than the field amplitude, the phase of the interferometric signal is lost." This is not unique to intensity interferometry - you also only measure the field amplitudes in normal interferometry too. What is different about intensity interferometry is you measure electromagnetic field intensity correlations, which translates to getting fringe visibilities but not fringe phases in the uv plane.
 
-|  - On the second page, there is quite a long discussion of the problem of
-|  phase retrieval, including many citations. This is good, though perhaps a
-|  little long and could be condensed. But there needs to be a clearer
-|  statement of why phase retrieval matters - the Fourier transform is
-|  Hermitian, and the consequence is that image modes that have even symmetry
-|  under inversion are encoded strictly in amplitudes, and with odd symmetry
-|  under inversion in phases. The result is that it intensity interferometry
-|  strictly contains no information about odd modes of the image and these
-|  must be constrained by the even modes through regularization/priors. This
-|  idea needs to be discussed.
+(R) We have rephrased the line to be more clear.
 
-Text has been revised.
+(C) - On the second page, there is quite a long discussion of the problem of phase retrieval, including many citations. This is good, though perhaps a little long and could be condensed. But there needs to be a clearer statement of why phase retrieval matters - the Fourier transform is Hermitian, and the consequence is that image modes that have even symmetry under inversion are encoded strictly in amplitudes, and with odd symmetry under inversion in phases. The result is that it intensity interferometry strictly contains no information about odd modes of the image and these must be constrained by the even modes through regularization/priors. This idea needs to be discussed.
 
-|  - I think we are seeing the Hermitian symmetry issue in Figure 13: while
-|  the GANs do reasonable reconstructions of the equator-on gravity-darkened
-|  stars, in the third and separately in the final examples, you see a pole-on
-|  star with significant asymmetry in the ground-truth image, which the GANs
-|  completely miss. In this figure, the Difference image is illegible; you
-|  should try to unravel this into a residuals plot in 1D by mapping those
-|  pixelized residuals back to baselines, and where differences are used in
-|  images, use a diverging colourmap like coolwarm or seismic rather than
-|  viridis.
+(R) Text has been revised.
 
-We increased the number of training, validation and testing dataset. 
-Also we increase the training time from 60k to 100k and result has 
-been improvised. The difference plot is now in 1-D.
+(C) - I think we are seeing the Hermitian symmetry issue in Figure 13: while the GANs do reasonable reconstructions of the equator-on gravity-darkened stars, in the third and separately in the final examples, you see a pole-on star with significant asymmetry in the ground-truth image, which the GANs completely miss. In this figure, the Difference image is illegible; you should try to unravel this into a residuals plot in 1D by mapping those pixelized residuals back to baselines, and where differences are used in images, use a diverging colourmap like coolwarm or seismic rather than viridis.
 
-The loss of phase (or Hermitian symmetry) means that we cannot the
-truth and its 180-degree-rotated twin.  Asymmetric profiles can,
-however, still be reconstructed.
+(R) We increased the number of training, validation and testing dataset. Also we increase the training time from 60k to 100k and result has been improvised. The difference plot is now in 1-D.
 
-|  - Figures should be explained fully in their captions, rather than the
-|  layout explained like Figure 13 in Sec 5.1.
+The loss of phase (or Hermitian symmetry) means that we cannot the truth and its 180-degree-rotated twin.  Asymmetric profiles can, however, still be reconstructed.
 
-Each figure's captions have been revised now.
+(C) - Figures should be explained fully in their captions, rather than the layout explained like Figure 13 in Sec 5.1.
 
-|  - This discussion of phase retrieval should be separated in the
-|  introduction from the discussion of GANs.
+(R) Each figure's captions have been revised now.
 
-It has been separated now.
+(C) - This discussion of phase retrieval should be separated in the introduction from the discussion of GANs.
 
-|  - There is quite an extensive lit review on the core ideas of intensity
-|  interferometry and their corresponding equations, that could perhaps be
-|  condensed.
+(R) It has been separated now.
 
-The equations have been condensed now.
+(C) - There is quite an extensive lit review on the core ideas of intensity interferometry and their corresponding equations, that could perhaps be condensed.
 
-|  - In Figure 2 we have a single sparse sampling map. It appears to be used
-|  in all of the other figures throughout the paper. How well does the network
-|  perform with different uv sampling? If it's trained only on one, I would
-|  expect very poorly - and it's extremely important to test this and think of
-|  ways to extend to a more flexible sampling, because you really don't want
-|  to have to train your image reconstruction model separately for every
-|  single observation.
+(R) The equations have been condensed now.
 
-The (u,v) sampling for any given data set is fixed and known.
-Training the network for a single observing run is a tolerable
-computational cost.  Hence we train on the sampling used.
+(C) - In Figure 2 we have a single sparse sampling map. It appears to be used in all of the other figures throughout the paper. How well does the network perform with different uv sampling? If it's trained only on one, I would expect very poorly - and it's extremely important to test this and think of ways to extend to a more flexible sampling, because you really don't want to have to train your image reconstruction model separately for every single observation.
 
-|  - Figures 4 and 5 could be merged to illustrate ideas better; the linear
-|  stretch doesn't really tell us anything. What is the story being told here?
-|  I would also suggest the authors consider how their subplots are arranged
-|  to make better use of space and avoid small figures embedded in large areas
-|  of white space. This comment about spatial arrangement applies to Figures
-|  14-16 too. (The labels in those figures don't need "The" in "The Ground
-|  Truth").
+(R) The (u,v) sampling for any given data set is fixed and known. Training the network for a single observing run is a tolerable computational cost.  Hence we train on the sampling used.
 
-Both figs 4 and 5 are merged and only a linear scale is used. Now the
-visibility pattern is visible as we choose a smaller source shown in
-fig~3.  The labels in fig 14-16 have been modified now.
+(C) Figures 4 and 5 could be merged to illustrate ideas better; the linear stretch doesn't really tell us anything. What is the story being told here? I would also suggest the authors consider how their subplots are arranged to make better use of space and avoid small figures embedded in large areas of white space. This comment about spatial arrangement applies to Figures 14-16 too. (The labels in those figures don't need "The" in "The Ground Truth").
 
-|  - Figure 6 is too small to be easily legible - could this be a two-column
-|  figure, with a clearer colourmap? Anyway - this is likely to need to be
-|  explained clearly to an astronomer reader, as it may be confusing why the
-|  ground truth and observations are merged. A block diagram is essential,
-|  showing as a sequence of operations what the workflow is for training and
-|  what the workflow is for inference.
+(R) Both figs 4 and 5 are merged and only a linear scale is used. Now the visibility pattern is visible as we choose a smaller source shown in fig~3.  The labels in fig 14-16 have been modified now.
 
-The old figure 6 has been made bigger now and merged with figure 5.
+(C) - Figure 6 is too small to be easily legible - could this be a two-column figure, with a clearer colourmap? Anyway - this is likely to need to be explained clearly to an astronomer reader, as it may be confusing why the ground truth and observations are merged. A block diagram is essential, showing as a sequence of operations what the workflow is for training and what the workflow is for inference.
 
-The new figure 6 is a block diagram created which explain the image
-reconstruction using cGAN.
+(R) The old figure 6 has been made bigger now and merged with figure 5. The new figure 6 is a block diagram created which explain the image reconstruction using cGAN.
 
-|  - Figures 7-12 occupy a great space with very narrow lines that are hard to
-|  read, and do not appear to be especially informative in their current form.
-|  The loss functions bounce all over the place and just these trace plots vs
-|  epoch don't really tell us anything. If you want to make arguments about
-|  stability in training vs hyperparameters, it might be better to extract and
-|  parametrize the variability (eg mean, std, skewness moments) and plot this
-|  as a function of hyperparameters, rather than this quite confusing set of
-|  figures.
+(C) - Figures 7-12 occupy a great space with very narrow lines that are hard to read, and do not appear to be especially informative in their current form. The loss functions bounce all over the place and just these trace plots vs epoch don't really tell us anything. If you want to make arguments about stability in training vs hyperparameters, it might be better to extract and parametrize the variability (eg mean, std, skewness moments) and plot this as a function of hyperparameters, rather than this quite confusing set of figures.
 
-Figures and text accordingly have been revised.
+(R) Figures and text accordingly have been revised.
 
-|  - Section 4.2 refers to a TensorFlow tutorial, and mentions that
-|  modifications are essential - what are the modifications? It doesn't appear
-|  to be explained in the subsequent sections. Is any of the paper's code
-|  being provided open-source? It is more or less essential for a methods
-|  paper mainly about software to provide the code in an appropriate open
-|  source format, for reproducibility and extensibility.
+(C) - Section 4.2 refers to a TensorFlow tutorial, and mentions that modifications are essential - what are the modifications? It doesn't appear to be explained in the subsequent sections. Is any of the paper's code being provided open-source? It is more or less essential for a methods paper mainly about software to provide the code in an appropriate open source format, for reproducibility and extensibility.
 
-The sections have been modified now.
+(R) The sections have been modified now. The code is now published on GitHub with a DOI given at the end of the paper.
 
-The code is now published on GitHub with a DOI given at the end of the paper.
+(C) - gravitational darkening -> gravity darkening
 
-|  - gravitational darkening -> gravity darkening
+(R) Corrected.
 
-Corrected.
+(C) - The sentence referring to the "ground truth, which the Discriminator uses to distinguish between real images and those generated by the Generator. During training, the GAN aims to replicate these ground truth images." seems to be confused about GANs in theory. The references to this throughout the paper, including in the context of the merged data, need to be clearer. The discriminator doesn't have access to the ground truth, the discriminator has to distinguish between simulated and ground-truth data.
 
-|  - The sentence referring to the "ground truth, which the Discriminator uses
-|  to distinguish between real images and those generated by the Generator.
-|  During training, the GAN aims to replicate these ground truth images."
-|  seems to be confused about GANs in theory. The references to this
-|  throughout the paper, including in the context of the merged data, need to
-|  be clearer. The discriminator doesn't have access to the ground truth, the
-|  discriminator has to distinguish between simulated and ground-truth data.
+(R) It has been rephrased now.  The Discriminator loss function uses the ground truth during training.
 
-It has been rephrased now.  The Discriminator loss function uses the
-ground truth during training.
+(C) - There appears to be no correlation between the x and y centroids of the star relative to the ground truth. This would be a serious problem? It seems to do ok on the second moments, but no recovery at all of the third moments. This may be related to section 5.3 which seems to lack any account of gravity darkening, which is in the simulations.
 
-|  - There appears to be no correlation between the x and y centroids of the
-|  star relative to the ground truth. This would be a serious problem? It
-|  seems to do ok on the second moments, but no recovery at all of the third
-|  moments. This may be related to section 5.3 which seems to lack any account
-|  of gravity darkening, which is in the simulations.
+(R) The x and y centroids are clustered within a few pixels of the center of the field.  The scatter appeared large in the old version, because the origin was set at a corner, putting the field center at (63.5,63.5) rather than (0,0).  This has been fixed now.
 
-The x and y centroids are clustered within a few pixels of the center
-of the field.  The scatter appeared large in the old version, because
-the origin was set at a corner, putting the field center at (63.5,63.5)
-rather than (0,0).  This has been fixed now.
+(C) - No information is provided in the paper about computer systems. What hardware was used (CPUs? GPUs?), and how long did it take for training and for inference? It is important to quantify computational performance.
 
-|  - No information is provided in the paper about computer systems. What
-|  hardware was used (CPUs? GPUs?), and how long did it take for training and
-|  for inference? It is important to quantify computational performance.
-
-The information is now provided and we use CPU for training. This work
-has used 2 nodes with 96 threads each, which takes around 20 hours to
-train the model with 100000 training steps.
+(R) The information is now provided and we use CPU for training. This work has used 2 nodes with 96 threads each, which takes around 20 hours to train the model with 100000 training steps.
