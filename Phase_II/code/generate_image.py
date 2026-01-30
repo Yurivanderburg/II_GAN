@@ -7,7 +7,7 @@ ep = ellipsoid()
  
 # fixed the parameters
 sx, sy, x, y = ep.grids(1e-10, 512, 1e-6)   # N = 512, shape of the image (255, 255) as np.arange is used in grids
-rad = np.arange(3e-9, 1.6e-8, 1e-10)
+rad = np.arange(3e-9, 1.6e-8, 2e-10)
 inc = np.arange(0, 2*np.pi, np.pi/4)
 pa = np.arange(0, 2*np.pi, np.pi/4)
 sq = np.arange(0.5, 1, 0.1)
@@ -29,3 +29,5 @@ for r in rad:
                    plt.imsave('ellip_image/ellipse' + str(pic) + '.jpg', ellipse)
                    np.save('ellip_npy/ellipse' + str(pic) + '.npy', ellipse)
                    pic += 1
+                   
+print("finished")

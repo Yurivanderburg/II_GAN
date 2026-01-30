@@ -186,8 +186,7 @@ class gan_fun():
           Returns:
           --------
           None
-          """
-          
+          """          
           prediction = model(test_input, training = True)
           if show_diff:
              plt.figure(figsize=(15, 3))
@@ -234,7 +233,7 @@ class gan_fun():
              # save arrays as .npy
              np.save(f"{plot_name}_input.npy",   test_input[0].numpy())
              np.save(f"{plot_name}_target.npy",  target[0].numpy())
-             np.save(f"{plot_name}_prediction.npy", prediction)
+             np.save(f"{plot_name}_prediction.npy", prediction.numpy())
 
              if show_diff:
                 np.save(f"{plot_name}_difference.npy", difference)
@@ -279,15 +278,17 @@ class gan_fun():
           with open(csv_path, "w", newline="") as f:
               writer = csv.writer(f)
               writer.writerow(["step", "gen_total_loss", "gen_gan_loss", "gen_l1_loss", "disc_loss"])
-                                  
+                    
+          # calculate the Generator loss function using training dataset as input for Generator and generated image also dataset for Discriminator              
           with tf.GradientTape() as gen_tape:
                gen_output = model1(input_image, training=True)                                      # output of Generator using signal as input
                disc_generated_output = model2([input_image, gen_output], training=True)             # output of Discriminator using signal and generated image from Generator as input
                gen_total_loss, gen_gan_loss, gen_l1_loss = self.generator_loss(disc_generated_output, gen_output, target) # calculate the Generator loss
           
-          generator_gradients = gen_tape.gradient(gen_total_loss, model1.trainable_variables)        # calculate gradients for generator to optimize the error (loss)
-          generator_optimizer.apply_gradients(zip(generator_gradients, model1.trainable_variables))  # apply gradients to optimizer to reduce the loss
+          generator_gradients = gen_tape.gradient(gen_total_loss, model1.trainable_variables)       # calculate gradients for generator to optimize the error (loss)
+          generator_optimizer.apply_gradients(zip(generator_gradients, model1.trainable_variables)) # apply gradients to optimizer to reduce the loss
  
+          # Calculate the Discriminator loss function using training dataset as well as testing and validation dataset
           # Loop over discriminator separately --> increases relative training of discriminator
           for i in range(self.disc_train_iterations):
               with tf.GradientTape() as disc_tape:
@@ -315,8 +316,6 @@ class gan_fun():
           example_input, example_target = next(iter(test_ds.take(1)))                           # Unpacking a dataset (input signal and ground truth) with iterating and next to test the model
           start = time.time()
         
-          #generator = self.Generator()                                                         # Generator model
-          #discriminator = self.Discriminator()                                                 # Discriminator model
           generator_optimizer = tf.keras.optimizers.Adam(self.learning_rate, beta_1 = 0.5)      # Generator Optimizer using the Adam algorithm
           discriminator_optimizer = tf.keras.optimizers.Adam(self.learning_rate, beta_1 = 0.5)  # Discriminator Optimizer using the Adam algorithm  
           

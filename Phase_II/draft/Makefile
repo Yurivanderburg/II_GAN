@@ -6,7 +6,7 @@ run:
 	@rm -r main.aux main.bbl main.blg main.log main.out
 
 redblue:
-	latexdiff --flatten AJsubmitted/main.tex main.tex > redblue.tex
+	latexdiff --flatten comp/main.tex main.tex > redblue.tex
 	pdflatex redblue
 	bibtex redblue
 	pdflatex redblue

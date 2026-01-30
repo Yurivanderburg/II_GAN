@@ -1,0 +1,318 @@
+\begin{thebibliography}{}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\href{#1}{#1}}
+\providecommand{\dodoi}[1]{doi:~\href{http://doi.org/#1}{\nolinkurl{#1}}}
+\providecommand{\doeprint}[1]{\href{http://ascl.net/#1}{\nolinkurl{http://ascl.net/#1}}}
+\providecommand{\doarXiv}[1]{\href{https://arxiv.org/abs/#1}{\nolinkurl{https://arxiv.org/abs/#1}}}
+
+% type= article
+\bibitem[{M. Abadi~et al.(2016)Abadi~et al.}]{abadi2016tensorflow}
+Abadi~et al., M. 2016, \bibinfo{title}{Tensorflow: Large-scale machine learning
+  on heterogeneous distributed systems,} arXiv preprint arXiv:1603.04467
+
+% type= article
+\bibitem[{S. {Abe et al.}(2024){Abe et al.}}]{2024MNRAS.529.4387A}
+{Abe et al.}, S. 2024, \bibinfo{title}{{Performance and first measurements of
+  the MAGIC stellar intensity interferometer},} MNRAS, 529, 4387
+
+% type= article
+\bibitem[{V.~A. Acciari~et al.(2020)Acciari~et al.}]{acciari2020optical}
+Acciari~et al., V.~A. 2020, \bibinfo{title}{Optical intensity interferometry
+  observations using the MAGIC imaging atmospheric Cherenkov telescopes,}
+  MNRAS, 491, 1540
+
+% type= article
+\bibitem[{A. {Acharyya et al.}(2024){Acharyya et al.}}]{2024ApJ...966...28A}
+{Acharyya et al.}, A. 2024, \bibinfo{title}{{An Angular Diameter Measurement of
+  {\ensuremath{\beta}} UMa via Stellar Intensity Interferometry with the
+  VERITAS Observatory},} The Astrophysical Journal, 966, 28
+
+% type= article
+\bibitem[{J. Aleksi{\'c}~et al.(2016)Aleksi{\'c}~et al.}]{aleksic2016major}
+Aleksi{\'c}~et al., J. 2016, \bibinfo{title}{The major upgrade of the MAGIC
+  telescopes, Part II: A performance study using observations of the Crab
+  Nebula,} Astroparticle Physics, 72, 76
+
+% type= article
+\bibitem[{A. {Archer} {et~al.}(2025){Archer}, {Aufdenberg}, {Bangale},
+  {Bartkoske}, {Benbow}, {Buckley}, {Chen}, {Chin}, {Christiansen}, {Chromey},
+  {Duerr}, {Escobar Godoy}, {Feldman}, {Feng}, {Filbert}, {Fortson}, {Furniss},
+  {Hanlon}, {Hervet}, {Hinrichs}, {Holder}, {Hughes}, {Humensky}, {Jin},
+  {Johnson}, {Kertzman}, {Kherlakian}, {Kieda}, {Korzoun}, {LeBohec}, {Lisa},
+  {Lundy}, {Maier}, {Matthews}, {Moriarty}, {Mukherjee}, {Ning}, {Ong},
+  {Pandey}, {Pohl}, {Pueschel}, {Quinn}, {Rabinowitz}, {Ragan}, {Reynolds},
+  {Ribeiro}, {Roache}, {Rose}, {Sadeh}, {Saha}, {Santander}, {Scott},
+  {Sembroski}, {Shang}, {Tak}, {Tucci}, {Valverde}, {Vassiliev}, {Williams},
+  {Wong}, \& {The VERITAS Collaboration}}]{2025arXiv250615027A}
+{Archer}, A., {Aufdenberg}, J.~P., {Bangale}, P., {et~al.} 2025,
+  \bibinfo{title}{{Measurement of the photosphere oblateness of $γ$
+  Cassiopeiae via Stellar Intensity Interferometry with the VERITAS
+  Observatory},} arXiv e-prints, arXiv:2506.15027,
+  \dodoi{10.48550/arXiv.2506.15027}
+
+% type= article
+\bibitem[{S. {Baumgartner et al.}(2020){Baumgartner et
+  al.}}]{2020MNRAS.498.4577B}
+{Baumgartner et al.}, S. 2020, \bibinfo{title}{{Towards a polarization
+  prediction for LISA via intensity interferometry},} MNRAS, 498, 4577
+
+% type= article
+\bibitem[{D. Coccomini~et al.(2021)Coccomini~et
+  al.}]{coccomini2021lightweightgan}
+Coccomini~et al., D. 2021, \bibinfo{title}{Generatiive Adversarial Networks for
+  Astronomical Images Generation,} arXiv preprint arXiv:2122.11578
+
+% type= article
+\bibitem[{D. {Dravins et al.}(2013){Dravins et al.}}]{2013APh....43..331D}
+{Dravins et al.}, D. 2013, \bibinfo{title}{{Optical intensity interferometry
+  with the Cherenkov Telescope Array},} Astroparticle Physics, 43, 331,
+  \dodoi{10.1016/j.astropartphys.2012.04.017}
+
+% type= article
+\bibitem[{J. Fienup(1982)Fienup}]{Fienup1982}
+Fienup, J. 1982, \bibinfo{title}{Phase retrieval algorithms: a comparison,}
+  Applied Optics, 21, 2758
+
+% type= article
+\bibitem[{H. Gamo(1963)Gamo}]{gamo1963triple}
+Gamo, H. 1963, \bibinfo{title}{Triple correlator of photoelectric fluctuations
+  as a spectroscopic tool,} Journal of Applied Physics, 34, 875
+
+% type= article
+\bibitem[{R.~W. Gerchberg(1972)Gerchberg}]{GerchbergSaxton1972}
+Gerchberg, R.~W. 1972, \bibinfo{title}{A practical algorithm for the
+  determination of phase from image and diffraction plane pictures,} Optik, 35,
+  237
+
+% type= article
+\bibitem[{R.~J. Glauber(1963)Glauber}]{glauber1963quantum}
+Glauber, R.~J. 1963, \bibinfo{title}{The quantum theory of optical coherence,}
+  Physical Review, 130, 2529
+
+% type= article
+\bibitem[{M.~L. Goldberger~et al.(1963)Goldberger~et al.}]{goldberger1963use}
+Goldberger~et al., M.~L. 1963, \bibinfo{title}{Use of intensity correlations to
+  determine the phase of a scattering amplitude,} Physical Review, 132, 2764
+
+% type= article
+\bibitem[{I. Goodfellow~et al.(2014)Goodfellow~et
+  al.}]{goodfellow2014generative}
+Goodfellow~et al., I. 2014, \bibinfo{title}{Generative adversarial nets,}
+  Advances in neural information processing systems, 27
+
+% type= article
+\bibitem[{R. Hanbury~Brown \& R.~Q. Twiss(1956)Hanbury~Brown \& Twiss}]{HBT56}
+Hanbury~Brown, R., \& Twiss, R.~Q. 1956, \bibinfo{title}{A Test of a New Type
+  of Stellar Interferometer on Sirius,} Nature, 178, 1046
+
+% type= article
+\bibitem[{R. Hanbury Brown~et al.(1954)Hanbury Brown~et al.}]{brown1954lxxiv}
+Hanbury Brown~et al., R. 1954, \bibinfo{title}{LXXIV. A new type of
+  interferometer for use in radio astronomy,} The London, Edinburgh, and Dublin
+  Philosophical Magazine and Journal of Science, 45, 663
+
+% type= article
+\bibitem[{R. Hanbury Brown~et al.(1957)Hanbury Brown~et
+  al.}]{brown1957interferometry}
+Hanbury Brown~et al., R. 1957, \bibinfo{title}{Interferometry of the intensity
+  fluctuations in light-I. Basic theory: the correlation between photons in
+  coherent beams of radiation,} Proceedings of the Royal Society of London.
+  Series A. Mathematical and Physical Sciences, 242, 300
+
+% type= article
+\bibitem[{R. Hanbury Brown~et al.(1958)Hanbury Brown~et
+  al.}]{brown1958interferometry}
+Hanbury Brown~et al., R. 1958, \bibinfo{title}{Interferometry of the intensity
+  fluctuations in light. II. An experimental test of the theory for partially
+  coherent light,} Proceedings of the Royal Society of London. Series A.
+  Mathematical and Physical Sciences, 243, 291
+
+% type= article
+\bibitem[{R. Hanbury Brown~et al.(1974)Hanbury Brown~et
+  al.}]{hanbury1974angular}
+Hanbury Brown~et al., R. 1974, \bibinfo{title}{The angular diameters of 32
+  stars,} Monthly Notices of the Royal Astronomical Society, 167, 121
+
+% type= book
+\bibitem[{E. Hecht(2002)Hecht}]{Hecht2002}
+Hecht, E. 2002, Optics (Addison Wesley)
+
+% type= inproceedings
+\bibitem[{R. Holmes~et al.(2010)Holmes~et al.}]{holmes2010two}
+Holmes~et al., R. 2010, \bibinfo{title}{Two-dimensional image recovery in
+  intensity interferometry using the Cauchy-Riemann relations,} in Adaptive
+  Coded Aperture Imaging, Non-Imaging, and Unconventional Imaging Sensor
+  Systems II, Vol. 7818, SPIE, 175--185
+
+% type= article
+\bibitem[{M.-K. Hu(1962)Hu}]{hu1962visual}
+Hu, M.-K. 1962, \bibinfo{title}{Visual pattern recognition by moment
+  invariants,} IRE transactions on information theory, 8, 179
+
+% type= article
+\bibitem[{J.~D. Hunter(2007)Hunter}]{4160265}
+Hunter, J.~D. 2007, \bibinfo{title}{Matplotlib: A 2D Graphics Environment,}
+  Computing in Science \& Engineering, 9, 90, \dodoi{10.1109/MCSE.2007.55}
+
+% type= inproceedings
+\bibitem[{P. Isola~et al.(2017)Isola~et al.}]{isola2017image}
+Isola~et al., P. 2017, \bibinfo{title}{Image-to-image translation with
+  conditional adversarial networks,} in Proceedings of the IEEE conference on
+  computer vision and pattern recognition, 1125--1134
+
+% type= article
+\bibitem[{C. Kirisits~et al.(2024)Kirisits~et al.}]{Kirisits2024}
+Kirisits~et al., C. 2024, \bibinfo{title}{Using the Transport of Intensity and
+  the Transport of Phase Equation for Phase Retrieval,} arXiv preprint
+  arXiv:2406.14143v2
+
+% type= article
+\bibitem[{J. Le~Bohec(2006)Le~Bohec}]{LeBohec2006}
+Le~Bohec, S;~Holder, J. 2006, \bibinfo{title}{Optical Intensity Interferometry
+  with Atmospheric Cerenkov Telescope Arrays,} The Astrophysical Journal, 649,
+  399
+
+% type= book
+\bibitem[{M. Leonard~et al.(1995)Leonard~et al.}]{MandelWolf1995}
+Leonard~et al., M. 1995, Optical Coherence and Quantum Optics (Cambridge
+  University Press)
+
+% type= inproceedings
+\bibitem[{X. Li~et al.(2014)Li~et al.}]{Li2014}
+Li~et al., X. 2014, \bibinfo{title}{Phase retrieval using regularization method
+  in intensity correlation imaging,} in Imaging Spectroscopy, Telescopes and
+  Large Optics, Vol. 9298, SPIE, 92981G1--G7
+
+% type= article
+\bibitem[{L.~B. Lucy(1967)Lucy}]{lucy1967gravity}
+Lucy, L.~B. 1967, \bibinfo{title}{Gravity-darkening for stars with convective
+  envelopes,} Zeitschrift f{\"u}r Astrophysik, Vol. 65, p. 89, 65, 89
+
+% type= article
+\bibitem[{A. {Maeder}(1999){Maeder}}]{1999A&A...347..185M}
+{Maeder}, A. 1999, \bibinfo{title}{Stellar evolution with rotation IV: von
+  Zeipel's theorem and anisotropic losses of mass and angular momentum,}
+  Astronomy \& Astrophysics, 347, 185
+
+% type= article
+\bibitem[{H.~A. McAlister~et al.(2005)McAlister~et al.}]{mcalister2005first}
+McAlister~et al., H.~A. 2005, \bibinfo{title}{First results from the CHARA
+  array. I. An interferometric and spectroscopic study of the fast rotator
+  $\alpha$ Leonis (Regulus),} The Astrophysical Journal, 628, 439
+
+% type= article
+\bibitem[{M. Mirza~et al.(2014)Mirza~et al.}]{mirza2014conditional}
+Mirza~et al., M. 2014, \bibinfo{title}{Conditional generative adversarial
+  nets,} arXiv preprint arXiv:1411.1784
+
+% type= book
+\bibitem[{K.~P. Murphy(2022)Murphy}]{murphy2022probabilistic}
+Murphy, K.~P. 2022, Probabilistic machine learning: an introduction (MIT press)
+
+% type= article
+\bibitem[{M. Mustafa~et al.(2019)Mustafa~et al.}]{mustafa2019cosmogan}
+Mustafa~et al., M. 2019, \bibinfo{title}{CosmoGAN: creating high-fidelity weak
+  lensing convergnece maps using Generative Adversarial Networks,}
+  Computational Astrophysics and Cosmology, 6, 1
+
+% type= inproceedings
+\bibitem[{P.~D. Nu{\~n}ez~et al.(2010)Nu{\~n}ez~et al.}]{nunez2010stellar}
+Nu{\~n}ez~et al., P.~D. 2010, \bibinfo{title}{Stellar intensity interferometry:
+  Imaging capabilities of air Cherenkov telescope arrays,} in Optical and
+  Infrared Interferometry II, Vol. 7734, SPIE, 458--467
+
+% type= article
+\bibitem[{P.~D. Nu{\~n}ez~et al.(2012{\natexlab{a}})Nu{\~n}ez~et
+  al.}]{nunez2012high}
+Nu{\~n}ez~et al., P.~D. 2012{\natexlab{a}}, \bibinfo{title}{High angular
+  resolution imaging with stellar intensity interferometry using air Cherenkov
+  telescope arrays,} Monthly Notices of the Royal Astronomical Society, 419,
+  172
+
+% type= article
+\bibitem[{P.~D. Nu{\~n}ez~et al.(2012{\natexlab{b}})Nu{\~n}ez~et
+  al.}]{nunez2012imaging}
+Nu{\~n}ez~et al., P.~D. 2012{\natexlab{b}}, \bibinfo{title}{Imaging
+  submilliarcsecond stellar features with intensity interferometry using air
+  Cherenkov telescope arrays,} Monthly Notices of the Royal Astronomical
+  Society, 424, 1006
+
+% type= book
+\bibitem[{S.~J. Prince(2023)Prince}]{prince2023understanding}
+Prince, S.~J. 2023, Understanding deep learning (MIT press)
+
+% type= article
+\bibitem[{K.~N. Rai~et al.(2021)Rai~et al.}]{10.1093/mnras/stab2391}
+Rai~et al., K.~N. 2021, \bibinfo{title}{{Radius measurement in binary stars:
+  simulations of intensity interferometry},} Monthly Notices of the Royal
+  Astronomical Society, 507, 2813, \dodoi{10.1093/mnras/stab2391}
+
+% type= article
+\bibitem[{K.~N. Rai~et al.(2022)Rai~et al.}]{10.1093/mnras/stac2433}
+Rai~et al., K.~N. 2022, \bibinfo{title}{{Simulations of astrometric planet
+  detection in Alpha Centauri by intensity interferometry},} Monthly Notices of
+  the Royal Astronomical Society, 516, 2864, \dodoi{10.1093/mnras/stac2433}
+
+% type= inproceedings
+\bibitem[{O. Ronneberger~et al.(2015)Ronneberger~et al.}]{ronneberger2015u}
+Ronneberger~et al., O. 2015, \bibinfo{title}{U-net: Convolutional networks for
+  biomedical image segmentation,} in Medical image computing and
+  computer-assisted intervention--MICCAI 2015: 18th international conference,
+  Munich, Germany, October 5-9, 2015, proceedings, part III 18, Springer,
+  234--241
+
+% type= article
+\bibitem[{T. Sato~et al.(1978)Sato~et al.}]{sato1978imaging}
+Sato~et al., T. 1978, \bibinfo{title}{Imaging system using an intensity triple
+  correlator,} Applied optics, 17, 2047
+
+% type= article
+\bibitem[{T. Sato~et al.(1979)Sato~et al.}]{sato1979computer}
+Sato~et al., T. 1979, \bibinfo{title}{Computer controlled image sensor and its
+  application,} Applied Optics, 18, 485
+
+% type= article
+\bibitem[{T. Sato~et al.(1981)Sato~et al.}]{sato1981adaptive}
+Sato~et al., T. 1981, \bibinfo{title}{Adaptive techniques for precise detection
+  of the coherence function by an intensity triple correlator,} Applied Optics,
+  20, 2055
+
+% type= article
+\bibitem[{K. Schawinski~et al.(2017)Schawinski~et
+  al.}]{schawinski2017galaxypics}
+Schawinski~et al., K. 2017, \bibinfo{title}{Generative adversarial networks
+  recover features in astrophysical images of galaxies beyond the deconvolution
+  limit,} MNRAS, 467, L110
+
+% type= article
+\bibitem[{M.~R. Teague(1980)Teague}]{teague1980image}
+Teague, M.~R. 1980, \bibinfo{title}{Image analysis via the general theory of
+  moments,} Josa, 70, 920
+
+% type= article
+\bibitem[{M.~R. Teague(1983)Teague}]{Teague1983}
+Teague, M.~R. 1983, \bibinfo{title}{Deterministic phase retrieval: a Green's
+  function solution,} Journal of Opticala Society of America, 73, 1434
+
+% type= article
+\bibitem[{P. Virtanen~et al.(2020)Virtanen~et al.}]{virtanen2020scipy}
+Virtanen~et al., P. 2020, \bibinfo{title}{SciPy 1.0: fundamental algorithms for
+  scientific computing in Python,} Nature methods, 17, 261
+
+% type= article
+\bibitem[{N. {Vogel et al.}(2025){Vogel et al.}}]{2025MNRAS.537.2334V}
+{Vogel et al.}, N. 2025, \bibinfo{title}{{Simultaneous two-colour intensity
+  interferometry with H.E.S.S},} MNRAS, 537, 2334
+
+% type= article
+\bibitem[{H. Von~Zeipel(1924)Von~Zeipel}]{von1924radiative}
+Von~Zeipel, H. 1924, \bibinfo{title}{The radiative equilibrium of a rotating
+  system of gaseous masses,} Monthly Notices of the Royal Astronomical Society,
+  Vol. 84, p. 665-683, 84, 665
+
+% type= article
+\bibitem[{J. Zhang~et al.(2020)Zhang~et al.}]{Zhang2020}
+Zhang~et al., J. 2020, \bibinfo{title}{On a universal solution to the
+  transport-of-intensity equation,} Opt. Lett., 45, 3649
+
+\end{thebibliography}

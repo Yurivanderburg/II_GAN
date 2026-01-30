@@ -17,7 +17,7 @@ BATCH_SIZE = 1                                                                  
 BUFFER_SIZE = 1400
 
 # the spliting of image (sky and observational) 
-sample_input, sample_real = fn.load('train/ellipse1541.jpg')                                          # load the image to be trained in float32 tensor
+sample_input, sample_real = fn.load('val/ellipse1512.jpg')                                          # load the image to be trained in float32 tensor
 
 # Converts a Keras model to dot format and save to a file.
 generator = mfn.Generator()

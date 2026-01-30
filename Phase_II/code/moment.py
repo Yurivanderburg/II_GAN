@@ -19,9 +19,10 @@ class mom():
           """
     
           height, width = img.shape
-          x = np.arange(0, width)
-          y = np.arange(0, height)
+          x = np.linspace(-64, 64, width)
+          y = np.linspace(-64, 64, height)
           x, y = np.meshgrid(x, y)
+
     
           # monopole
           M00 = np.sum(img)
@@ -41,6 +42,22 @@ class mom():
           mu12 = np.sum((x-mx) * (y-my)**2 * img)/M00
 
           return M00, mx, my, mu11, mu20, mu02, mu30, mu03, mu21, mu12
+          
+      def asym(self, img):
+
+          # Rotate by 180 degrees
+          img180 = img[::-1, ::-1]
+
+          # Residual
+          resi = img - img180
+
+          # Monopole (total flux)
+          M00 = np.sum(img)
+
+          # Asymmetry statistic
+          A = np.sum(np.abs(resi)) / M00
+
+          return A
           
       def akar(self, mu11, mu20, mu02):
           """

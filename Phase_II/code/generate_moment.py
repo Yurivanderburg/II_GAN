@@ -17,12 +17,13 @@ pr_img = "testing_image/testing_image_1/"
 data_path = os.path.join(pr_img, "image_*_prediction.npy")
 files2 = glob.glob(data_path)
 files2.sort(key=lambda x: [int(c) if c.isdigit() else c for c in re.split(r'(\d+)', x)])  # Natural sort by numeric part
-print(gr_img)
+
 ground_img = []
 pred_img = []
 # Loop over both lists together
 for f1, f2 in zip(files1, files2):
     data1 = np.load(f1)   # load ground truth
+    data1 = data1.squeeze()
     data2 = np.load(f2)   # load prediction
     ground_img.append(data1)
     pred_img.append(data2)
@@ -30,7 +31,9 @@ for f1, f2 in zip(files1, files2):
 # Convert lists to arrays
 gr_img = np.array(ground_img)
 pr_img = np.array(pred_img)
-print('gr', gr_img.shape)
+
+print(gr_img.shape)
+
 plt.rcParams.update({'font.size': 12})
 plt.rcParams["figure.figsize"] = [6,6]
 plt.rcParams['axes.facecolor']='ivory'
@@ -41,21 +44,18 @@ plt.rcParams["axes.labelweight"] = "bold"
 list_g = []
 list_p = []
 for i in range(len(gr_img)):
-    print('gr', gr_img.shape)
-    im_g = gr_img[i].squeeze()   # (128,128)
-    im_p = pr_img[i].squeeze()   # (128,128)
-    print('im_gr', im_g.shape)
+    gr = gr_img[i]
+    pr = pr_img[i]
+    im_g = (gr*0.5 + 0.5)   # (128,128) (the scaling factor is for 0 to 1 from -1 to 1)
+    im_p = (pr*0.5 + 0.5)   # (128,128)
     list_g.append(md.mom_def(im_g))
     list_p.append(md.mom_def(im_p))
-    
-list_g = list_g
 
 Mth_g = []
 Mth_p = []
 m_name = ['Monopole', 'X-Centroid', 'Y-Centroid', '2nd Moment $\mu_{11}$', 
           '2nd Moment $\mu_{20}$', '2nd Moment $\mu_{02}$', '3rd Moment $\mu_{30}$', 
           '3rd Moment $\mu_{03}$','3rd Moment $\mu_{21}$', '3rd Moment $\mu_{12}$']
-'''
 pic = 0
 for i in range(len(list_g[0])):
     Mth_g = [M[i] for M in list_g]
@@ -73,4 +73,3 @@ for i in range(len(list_g[0])):
     #plt.show()
     plt.clf()
     pic += 1 
-'''

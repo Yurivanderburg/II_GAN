@@ -1,0 +1,89 @@
+\section{Intensity Interferometry (II) with IACT arrays}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{fig/telescope.png}
+	\caption{\textbf{A schematic representation of a hypothetical observation facility with an the array of four Cherenkov Telescopes (IACTs) whose relative positions approximately mimic those at VERITAS. This array is used in simulating the II observation of the fast rotators. Each of the telescopes has a diameter of 12m. The baselines provided by the array are of the order of 100m.}}
+	\label{fig:teles}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{fig/baseline.png}
+  \caption{The tracks of the baselines due to Earth rotation (described in sec.~\ref{sec:earth}) provided by the hypothetical observation facility of four telescopes arranged in fig.~\ref{fig:teles} for one night of observation. \textbf{The number of baselines scales as square of number of telescopes in the array thus leading to greater coverage of the observational plane and better image reconstruction prospects.}} 
+\label{fig:base}
+\end{figure}
+
+\begin{figure}[hbt]
+  \includegraphics[width=\linewidth]{fig/ellipse/ellipse1612.png}
+  \caption{This figure shows one of the simulated fast rotating stars (FRS). The brightness is highest at the poles; gravity darkening visible along the equator. \textbf{A total of 31460 such images of FRS with different parameter values have been generated to train the model.}}
+  \label{fig:image}
+\end{figure}
+\begin{figure*}
+	\includegraphics[width=.49\linewidth]{fig/ft/ft.jpg}\hfil
+	\includegraphics[width=.49\linewidth]{fig/ft/ft_base.jpg}
+	\caption{The left panel shows the absolute value of the two-dimensional Fast Fourier Transform of the source depicted in Fig.~\ref{fig:image}. It represents the intensity interferometric ($u,v$) plane image of the source that would be obtained by an infinite number of baselines (or an infinite number of telescopes observing the source). \textbf{The right panel shows the absolute value of the same source measured along the tracks shown in Fig.~\ref{fig:base}. This figure reflects the sparse nature of the signal received by a realistic finite number of telescopes and baselines sampled from the full ($u,v$) plane signal space, as shown in the figure on the left panel. Both figures are plotted on a linear scale and normalized to the maximum pixel value in each respective figure.}}
+	\label{fig:ft}
+\end{figure*}
+This section presents a brief conceptual overview of how an array of telescopes is used to perform II observations, and explains the Signal-to-Noise Ratio (SNR) from these measurements.
+\subsection{The signal for II}\label{sec:signal}
+As a simple example, let us consider a pair of IACTs pointed at a star. Suppose the two telescopes simultaneously measure the intensity of radiation $I_1(t)$ and $I_2(t)$, respectively. The signals from these detectors are cross-correlated and averaged over time, yielding the second order ($n=2$) correlation of these intensities as \citep[cf.][]{acciari2020optical, 2013APh....43..331D}
+\begin{equation}
+	g^{(2)}= \frac{\left\langle I_1(t) \cdot I_2(t + \tau) \right\rangle}{\langle I_1(t) \rangle \cdot \langle I_2(t) \rangle} 
+	\label{eqn:HBT}
+\end{equation}
+where $\tau$ is the time delay between the telescopes. For spatially coherent and randomly polarized light, Eq.~\eqref{eqn:HBT} reduces to the relation \citep[sometimes called the Siegert relation, see e.g.,][]{acciari2020optical}.
+\begin{equation}
+	g^{(2)} = 1 + \frac{\Delta f}{\Delta \nu} \abs{V_{12}}^2
+	\label{eqn:HBT2}
+\end{equation}
+where $\Delta f$ is the electronic bandwidth of the photon detectors which measure the intensities and $\Delta \nu$ is the frequency bandwidth of the filters employed in the telescopes to observe the star.  Values of $\Delta\nu\sim 1\,\mathrm{THz}$ and $\Delta f \sim 1\,\mathrm{GHz}$ are typical of recent work.  In Eq.~\eqref{eqn:HBT2}, $V_{12}$, referred to as the complex visibility function, is the Fourier transform of the source brightness distribution. It contains information about the star's angular diameter. However, the phase information is lost since we measure only the absolute value $\vert V_{12} \vert^2$. In observational astronomy, the correlation is often expressed in terms of the normalized contrast, given by:
+\begin{equation}
+	c = g^{(2)} - 1 = \frac{\Delta f}{\Delta \nu} \abs{V_{12}}^2
+	\label{eq:signal}
+\end{equation}
+with $\abs{V_{12}}^2$ being a function of baseline $b = \sqrt{u^2 + v^2}$ on the observational plane $(u, v)$. This implies the strength of the signal would be enhanced if a larger number of baselines or pairs of telescopes are employed.
+
+\subsection{The Signal-to-Noise Ratio for II}
+The primary purpose of IACTs is to study high-energy gamma rays (with energy $E\ \geq 30$ GeV) arriving from cosmic sources, entering the Earth's atmosphere, and initiating Cherenkov showers in the upper atmosphere due to multiple scattering. These telescopes feature an array of mirrors that focus light \textbf{received from a sky source onto their respective set of photo-multiplier tubes \citep[PMTs, see e.g.,][]{aleksic2016major} with appropriate specifications needed for II observations}. In the simulation model adopted here, we consider a set of four IACTs, each with similar properties. The positional configuration of these IACTs is shown in Fig.~\ref{fig:teles}. The optical signal directed to a PMT is filtered using a spectral filter with a chosen mean observational wavelength $\lambda$ and corresponding bandpass $\Delta \lambda$. The use of filters not only reduces background noise but also improves the signal quality and the efficiency of the PMTs. Filtering background skylight becomes even more significant in II observations, as, currently, these are carried out during full moon nights when the primary function of the IACTs (of observing Cherenkov Showers) is rendered infeasible. It is important to note that the light from the stellar source is focused on a PMT attached with each of the telescopes during II observations.
+
+The significance of the signal can be expressed in terms of the signal-to-noise ratio (SNR), which depends on many factors. However, most importantly, it does not depend on the optical bandwidth $\Delta {\mathrm {\nu}}$ of the radiation for a two-telescope correlation. The explanation for the independence of the SNR from $\Delta {\mathrm {\nu}}$ is provided in several works \citep[e.g., subsection 4.1 of][]{10.1093/mnras/stab2391}.  The Signal-to-Noise is given by
+\begin{equation}
+	SNR = A \cdot \alpha \cdot q \cdot n \cdot F^{-1} \cdot \sigma \cdot \sqrt{\frac{T \Delta f}{2}} \cdot \abs{V_{12}}^{2}
+	\label{eq:SNR}
+\end{equation}
+Here, $A$ is the total mirror area, $\alpha$ is the quantum efficiency of the PMTs, $q$ is the throughput of the remaining optics, and $n$ is the differential photon flux from the source. The excess noise factor of the PMTs is represented by $F$, $T$ denotes the observation time, and $\sigma$ is the normalized spectral distribution of the light (including filters) \citep[e.g.,][]{acciari2020optical}.
+
+\subsection{Baseline considerations}\label{sec:earth}
+The measurement of the size of stellar objects via squared visibility depends on the distance between the telescopes, known as the baseline $b$.
+\begin{equation}
+	|V_{12}(b)|^2 = \frac{c(b)}{c(0)}
+	\label{eq:angular_size_meas}
+\end{equation}
+For achieving a good SNR with a given telescope configuration, covering as much as possible of the interferometric plane is always desirable. If the source is at the zenith, the coordinates in the Fourier plane ($u,v$) are given by:
+\begin{equation}
+	(u,v) = \frac{1}{\lambda} (b_E, b_N)
+\end{equation}
+where $b_E$ and $b_N$ are, respectively, the baselines expressed in east and north coordinates. However, the sources can be anywhere on the sky, and the telescopes are stationary and may also have different relative altitudes $b_A$ depending on the available terrain. \textbf{In order to gather maximum possible information on the source during the observation session and to cover as much of the observational plane as possible during such sessions}, Earth's rotation must be taken into account using rotated baselines.  For a given stellar source with declination $\delta$ and hour-angle $h$, as observed by telescopes located at latitude $l$, equation (\ref{eq:baseline_rot}) provides the rotated baselines for a given pair of telescopes \citep[see e.g., eqs.~8--10 from][]{2020MNRAS.498.4577B} \textbf{with the $R$-matrices representing the respective rotation operations.}
+\begin{equation}
+\begin{pmatrix} u\\ v\\ w\\ \end{pmatrix} = R_x(\delta) \cdot R_y(h) \cdot R_x(-l) \begin{pmatrix} b_E \\ b_N \\ b_A \\ \end{pmatrix}
+	\label{eq:baseline_rot}
+\end{equation}
+
+Fig.~\ref{fig:base} shows the track of six baselines generated from the telescopes (Fig.~\ref{fig:teles}) due to the Earth's rotation. Since every pair of telescopes traces an ellipse in the Fourier plane, the total number of ellipses scales as
+\begin{equation}
+	\label{eq:N_telescopes}
+	\mathcal{N} = \tfrac12 N_T \cdot (N_T -1)
+\end{equation}
+where $N_T$ is the number of telescopes considered.
+As the number of baselines increases non-linearly, Intensity Interferometry (II) benefits greatly from a large number of telescopes. The CTAO can offer many more baselines --- \cite{2013APh....43..331D} considered the telescope configurations then being planned and showed how it would provide a dense coverage of the interference plane.
+
+\subsection{A Fictitious Fast Rotating Star: Our Test Case}
+In our work presented here, \textbf{we attempt image reconstruction of a fast-rotating star using its simulated Intensity Interferometric observation in a cGAN architecture. Fast-rotating stars are important test cases for understanding various astrophysical processes, including stellar evolution, internal structure, and dynamical behaviour over time}. Fast rotation causes stars to adopt an oblate shape, flattening at the poles and bulging at the equator due to the stronger centrifugal force \citep[e.g.,][]{von1924radiative, 1999A&A...347..185M}. Fig.~\ref{fig:image} shows an image qualitatively representing a fictitious fast-rotating star, \textbf{with brightness (and, therefore, the effective surface temperature)} distributed across its surface. The brightness \textbf{(effective temperature)} is highest at the poles and lowest at the equator, a phenomenon known as gravity darkening \citep{lucy1967gravity}. \textbf{First direct interferometric detection of stellar photospheric oblateness (of Altair) was pioneered by \cite{vanBelle2001} using the Palomar Testbed Interferometer (PTI) and the Navy Prototype Optical Interferometer (NPOI). Gravity darkening due to fast rotation} was first observed through interferometric and spectroscopic data from the CHARA Array for the fast-rotating star Regulus \citep{mcalister2005first}.  \textbf{As pointed out earlier, these two pieces  of work, all using Michelson Interferometry, make a subset of several others \citep{vanBelle2001, DomicianodeSouza2003, mcalister2005first, DomicianodeSouza2005, Monnier2007, Pedretti2009, Zhao2009, Martinez2021}. The first observation of photospheric oblateness (of $\gamma$ Cassiopeiae or $\gamma$-Cas) using Intensity Interfereometry (II) has been recently carried out at VERITAS observatory and is reported by \cite{Archer-arXiv-2025}. Reportage of such observations of other $\gamma$-Cas like targets and other class of FRS by Cherenkov Telescope arrays, such as  the MAGIC array, are expected by 2026. In addition, observation and measurement of gravity darkening using II is the natural next step and is yet to be reported. In this context, our work of reconstructing the image of FRSs from their II-simulated observations using cGAN is an attempt at solving this inverse problem along with mitigation of loss of phase information in II.} 
+
+II counts the photons arriving at the telescopes from the stellar object. The correlation of these photon arrivals at the telescopes yields the squared visibility Eq.~\eqref{eq:angular_size_meas}, as explained in subsection~\ref{sec:signal}. \textbf{The left panel of fig.~\ref{fig:ft}} shows the signal from the source shown in Fig.~\ref{fig:image} using II, displayed \textbf{on linear scales.  A point} to note here is that this figure represents the signal from the source that would be recorded by an infinite number of baselines provided by an infinite number of telescopes on the interferometric plane. In practice, only a small part of this information is available (as seen in right panel of Fig.~\ref{fig:ft}), because one has a finite number of baselines corresponding to the finite number $N_T$ of telescopes at our disposal and a limited observation schedule. We have simulated the II observation of the fictitious star by \textbf{a hypothetical observation facility having an array of four IACTs with their relative positions approximating those at VERITAS} (correlated with baselines as seen in Fig.~\ref{fig:teles}) over one night. Using this modest amount of signal from one night's observation, we have trained a cGAN to construct the image of the source.
+\begin{figure*}
+   \centering
+  \includegraphics[width=0.85\linewidth]{fig/ellipse1612.jpg}
+  \caption{\textbf{An illustrative example of the input used for training the cGAN model. The picture on the left shows the source image, which serves as the ground truth or the real data ($x$), as mentioned in the Flow Diagram (Fig.\ref{fig:FlowDiagram} discussed later during the training). The picture on  the right represents the simulated II observation pattern of the source (on the left) using a hypothetical observation facility having as array of four IACTs (see Fig.~\ref{fig:teles}) and the tracks of the six telescope baselines (see Fig.~\ref{fig:base}) generated  by these four IACTs due to Earth's rotation during the observation session. This pattern referred to as $y$, in the Flow Diagram (Fig.\ref{fig:FlowDiagram} discussed later) forms the ``condition" during the training to which the GAN model has to conform. Salt-and-pepper noise is added to this pattern for enhancing the robustness of the cGAN model. Together, these images form a training pair, where the GAN learns to reconstruct a predicted image (modeling of observed signal) similar to ground truth (left) from the noisy baseline signal (right). The grayscale in both images is normalized to the brightest pixel.}}
+  \label{fig:GANinput}
+\end{figure*}

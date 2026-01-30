@@ -4,8 +4,7 @@ import numpy as np
 class Pimage():
       """
       Add the ellipsoid and its power spectrum also add some noise
-      """
-      
+      """     
       def add_image(self, img_a, img_b):
           """
           combine two color image in form of nd_array side by side

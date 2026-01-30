@@ -1,0 +1,2450 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.28)  15 JAN 2026 11:41
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**redblue
+(./redblue.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21> (./aastex701.cls
+Document Class: aastex701 2025/05/09 Version 7.0.1/AAS markup document class
+Class aastex Info: 
+
+ Original \LaTeX2.09 style by Chris Biemesderfer (chris@seagoat.com). 
+ Adapted to \LaTeXe by A. Ogawa (ogawa@teleport.com)
+ emulateapj.cls included, Copyright 2000-2015 Alexey Vikhlinin 
+ Rewrite and update of emulateapj.cls, revised and enhanced with table macros, 
+gridlines, draft watermark,
+ track changes, new `modern' style and much more, by Amy Hendrickson,
+ (amyh@texnology.com, http://www.texnology.com) 
+ 
+  on input line 113.
+\bibbaselineskip=\skip47
+LaTeX Info: Redefining \@centercr on input line 497.
+Class aastex701 Info: Repairing broken LaTeX eqnarray on input line 558.
+\eqncolsep=\skip48
+Class aastex701 Info: Repairing hyperref-unfriendly LaTeX definition of \mpfoot
+note on input line 586.
+\intertabularlinepenalty=\count185
+\@tbpen=\count186
+\@arstrutbox@hline=\box50
+Class aastex701 Info: Repairing broken LaTeX \@xbitor on input line 1711.
+Class aastex701 Info: Making \typeout \long on input line 1976.
+ltxfront[2022/06/05 4.2f frontmatter package (AO,DPC,MD)]
+\c@affil=\count187
+\c@collab=\count188
+\absbox=\box51
+ltxgrid[2022/06/05 4.2f page grid package (portions licensed from W. E. Baxter 
+web at superscript.com)]
+\c@linecount=\count189
+\output@latex=\toks16
+\box@size@1=\box52
+\box@size@2=\box53
+\@protection@box=\box54
+\@topmark@saved=\toks17
+\footins@saved=\box55
+\footins@recovered=\box56
+\column@recovered=\box57
+\pagesofar=\box58
+\footsofar=\box59
+\pagegrid@col=\count190
+Class aastex701 Info: Overriding \@vspace, \@vspacer, \@no@pgbk, \@newline, and
+ \\  on input line 5420.
+\c@part=\count191
+\c@section=\count192
+\c@subsection=\count193
+\c@subsubsection=\count194
+\c@paragraph=\count195
+\c@subparagraph=\count196
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\c@figure=\count197
+\fbox@1=\box60
+\c@table=\count198
+\fbox@2=\box61
+\c@video=\count199
+\fbox@4=\box62
+(/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty
+Package: textcase 2019/09/14 v1.00 Text only upper/lower case changing (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip51
+\bibsep=\skip52
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count266
+)
+Class aastex701 Info: Repairing natbib's \BibitemShut on input line 6962.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks18
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/generic/epsf/epsf.sty
+This is `epsf.tex' v2.7.4 <14 February 2011>
+\epsffilein=\read2
+\epsfframemargin=\dimen138
+\epsfframethickness=\dimen139
+\epsfrsize=\dimen140
+\epsftmp=\dimen141
+\epsftsize=\dimen142
+\epsfxsize=\dimen143
+\epsfysize=\dimen144
+\pspoints=\dimen145
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen146
+\Gin@req@width=\dimen147
+)
+\rptnum=\count267
+\rptloopnum=\count268
+\fncount=\count269
+\endfncount=\count270
+\c@front@matter@foot@note=\count271
+\keys@width=\skip53
+\c@lastfootnote=\count272
+\tempsectnum=\count273
+\ackbox=\box63
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\contribbox=\box64
+\c@remember@figure@num=\count274
+\c@remember@table@num=\count275
+\bibskip=\skip54
+\bibindent=\dimen148
+\plot@width=\skip55
+\c@table@save=\count276
+\@abovenoteskip=\dimen149
+\table@note@skip=\skip56
+\deluxe@table@width=\skip57
+\@d@t@a=\skip58
+\c@deluxe@table@num=\count277
+\LTcapwidth=\dimen150
+\abovedeluxetableskip=\skip59
+\belowdeluxetableskip=\skip60
+\lastrowheight=\dimen151
+\DT@p@ftn=\toks20
+\pt@column=\count278
+\pt@ncol=\count279
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip61
+\LTright=\skip62
+\LTpre=\skip63
+\LTpost=\skip64
+\LTchunksize=\count280
+\LTcapwidth=\dimen152
+\LT@head=\box65
+\LT@firsthead=\box66
+\LT@foot=\box67
+\LT@lastfoot=\box68
+\LT@gbox=\box69
+\LT@cols=\count281
+\LT@rows=\count282
+\c@LT@tables=\count283
+\c@LT@chunks=\count284
+\LT@p@ftn=\toks21
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+)
+\@linkdim=\dimen153
+\Hy@linkcounter=\count285
+\Hy@pagecounter=\count286
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
+File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel la
+nguages
+)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count287
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `bookmarks' set `true' on input line 4073.
+Package hyperref Info: Option `pdfnewwindow' set `true' on input line 4073.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4073.
+Package hyperref Info: Option `final' set `true' on input line 4073.
+Package hyperref Info: Hyper figures OFF on input line 4192.
+Package hyperref Info: Link nesting OFF on input line 4197.
+Package hyperref Info: Hyper index ON on input line 4200.
+Package hyperref Info: Plain pages OFF on input line 4207.
+Package hyperref Info: Backreferencing OFF on input line 4212.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4445.
+LaTeX Info: Redefining \href on input line 4715.
+\c@Hy@tempcnt=\count288
+LaTeX Info: Redefining \url on input line 4804.
+\XeTeXLinkMargin=\dimen154
+
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count289
+\Field@Width=\dimen155
+\Fld@charsize=\dimen156
+Package hyperref Info: Hyper figures OFF on input line 6076.
+Package hyperref Info: Link nesting OFF on input line 6081.
+Package hyperref Info: Hyper index ON on input line 6084.
+Package hyperref Info: backreferencing OFF on input line 6091.
+Package hyperref Info: Link coloring ON on input line 6094.
+Package hyperref Info: Link coloring with OCG OFF on input line 6101.
+Package hyperref Info: PDF/A mode OFF on input line 6106.
+LaTeX Info: Redefining \ref on input line 6146.
+LaTeX Info: Redefining \pageref on input line 6150.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count290
+\c@Item=\count291
+\c@Hfootnote=\count292
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2021-06-07 v7.00m Hyperref driver for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count293
+\c@bookmark@seq@number=\count294
+
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip65
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen157
+\ar@mcellbox=\box70
+\extrarowheight=\dimen158
+\NC@list=\toks22
+\extratabsurround=\skip66
+\backup@length=\skip67
+\ar@cellbox=\box71
+)
+\colcount=\count295
+\firstcolcount=\count296
+\secondcolcount=\count297
+\thirdcolcount=\count298
+\columncount=\count299
+\howmanyDs=\count300
+\firsthowmanyDs=\count301
+\secondhowmanyDs=\count302
+\PartsOfTable=\count303
+\columnoneandtwo=\count304
+\colnumsused=\count305
+\loopnum=\count306
+\totalcolumncount=\count307
+\totalcolumns=\count308
+\firsttablebox=\box72
+\secondtablebox=\box73
+\thirdtablebox=\box74
+\deluxetablecnt=\count309
+\toprulebelowsep=\dimen159
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+\c@r@tfl@t=\count310
+\rotFPtop=\skip68
+\rotFPbot=\skip69
+\rot@float@box=\box75
+\rot@mess@toks=\toks23
+)
+\zdeluxetablecnt=\count311
+\longtablebox=\box76
+\aassplitbox=\box77
+\movetabledown=\dimen160
+\maxtablewidth=\dimen161
+\savetabskip=\dimen162
+\tempcounter=\count312
+\colheadcount=\count313
+\rotatetablebox=\box78
+\tempallauthorcnt=\count314
+\printallauthorcnt=\count315
+\refchangenumber=\count316
+\listchangenum=\count317
+
+(/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box79
+\UL@hyphenbox=\box80
+\UL@skip=\skip70
+\UL@hook=\toks24
+\UL@height=\dimen163
+\UL@pe=\count318
+\UL@pixel=\dimen164
+\ULC@box=\box81
+Package: ulem 2019/11/18
+\ULdepth=\dimen165
+)
+\entriesinthiscollab=\count319
+\allentries=\count320
+\allauthorcnt=\count321
+\cofirstauthorcnt=\count322
+\AuthorCollaborationLimit=\count323
+\largestAffilNum=\count324
+\totalentries=\count325
+\docollabnum=\count326
+\@docollabnum=\count327
+\tempauthornumber=\count328
+\countauthors=\count329
+\testnum=\count330
+\restauentries=\count331
+\tempauthorminusone=\count332
+\affilnum=\count333
+\c@affilcount=\count334
+\numauthors=\count335
+\collabnum=\count336
+\collabnamebox=\box82
+\widetext@top=\box83
+\widetext@bot=\box84
+\currwidth=\dimen166
+\interactbox=\box85
+\movetableright=\dimen167
+
+(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count337
+\output=\toks25
+\linenoprevgraf=\count338
+\linenumbersep=\dimen168
+\linenumberwidth=\dimen169
+\c@linenumber=\count339
+\c@pagewiselinenumber=\count340
+\c@LN@truepage=\count341
+\c@internallinenumber=\count342
+\c@internallinenumbers=\count343
+\quotelinenumbersep=\dimen170
+\bframerule=\dimen171
+\bframesep=\dimen172
+\bframebox=\box86
+LaTeX Info: Redefining \\ on input line 3056.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip71
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks26
+\ex@=\dimen173
+)
+LaTeX Info: Redefining \text on input line 28.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen174
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count344
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count345
+\leftroot@=\count346
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count347
+\DOTSCASE@=\count348
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box87
+\strutbox@=\box88
+\big@size=\dimen175
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count349
+\c@MaxMatrixCols=\count350
+\dotsspace@=\muskip17
+\c@parentequation=\count351
+\dspbrk@lvl=\count352
+\tag@help=\toks27
+\row@=\count353
+\column@=\count354
+\maxfields@=\count355
+\andhelp@=\toks28
+\eqnshift@=\dimen176
+\alignsep@=\dimen177
+\tagshift@=\dimen178
+\tagwidth@=\dimen179
+\totwidth@=\dimen180
+\lineht@=\dimen181
+\@envbody=\toks29
+\multlinegap=\skip72
+\multlinetaggap=\skip73
+\mathdisplay@stack=\toks30
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
+rs
+\f@nch@headwidth=\skip74
+\f@nch@O@elh=\skip75
+\f@nch@O@erh=\skip76
+\f@nch@O@olh=\skip77
+\f@nch@O@orh=\skip78
+\f@nch@O@elf=\skip79
+\f@nch@O@erf=\skip80
+\f@nch@O@olf=\skip81
+\f@nch@O@orf=\skip82
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/settobox.sty
+Package: settobox 2016/05/16 v1.5 Assign box dimensions to length registers (HO
+)
+)
+\DIFdelgraphicsbox=\box89
+\DIFdelgraphicswidth=\skip83
+\DIFdelgraphicsheight=\skip84
+LaTeX Info: Redefining \DIFaddbegin on input line 78.
+LaTeX Info: Redefining \DIFaddend on input line 79.
+LaTeX Info: Redefining \DIFdelbegin on input line 80.
+LaTeX Info: Redefining \DIFdelend on input line 81.
+LaTeX Info: Redefining \DIFaddbeginFL on input line 86.
+LaTeX Info: Redefining \DIFaddendFL on input line 87.
+LaTeX Info: Redefining \DIFdelbeginFL on input line 88.
+LaTeX Info: Redefining \DIFdelendFL on input line 89.
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count356
+\lst@gtempboxa=\box90
+\lst@token=\toks31
+\lst@length=\count357
+\lst@currlwidth=\dimen182
+\lst@column=\count358
+\lst@pos=\count359
+\lst@lostspace=\dimen183
+\lst@width=\dimen184
+\lst@newlines=\count360
+\lst@lineno=\count361
+\lst@maxwidth=\dimen185
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count362
+\lst@skipnumbers=\count363
+\lst@framebox=\box91
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+Class aastex701 Info: Unrecognized array package. Please update this document c
+lass! (Proceeding with fingers crossed.) on input line 108.
+Class aastex701 Info: Patching unrecognized longtable package. (Proceeding with
+ fingers crossed) on input line 108.
+Class aastex701 Info: cite was not loaded (OK!) on input line 108.
+Class aastex701 Info: mcite was not loaded (OK!) on input line 108.
+Class aastex701 Info: multicol was not loaded (OK!) on input line 108.
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count364
+\l__pdf_internal_box=\box92
+)
+(./redblue.aux
+
+LaTeX Warning: Label `eq:Basic_GAN' multiply defined.
+
+
+LaTeX Warning: Label `eq:Disc_optimum' multiply defined.
+
+
+LaTeX Warning: Label `eq:conditional_GAN' multiply defined.
+
+
+LaTeX Warning: Label `eq:total_gen_loss' multiply defined.
+
+)
+\openout1 = `redblue.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count365
+\scratchdimen=\dimen186
+\scratchbox=\box93
+\nofMPsegments=\count366
+\nofMParguments=\count367
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count368
+\MPscratchDim=\dimen187
+\MPnumerator=\count369
+\makeMPintoPDFobject=\count370
+\everyMPtoPDFconversion=\toks33
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package hyperref Info: Link coloring ON on input line 108.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count371
+)
+LaTeX Info: Redefining \ref on input line 108.
+LaTeX Info: Redefining \pageref on input line 108.
+LaTeX Info: Redefining \nameref on input line 108.
+
+(./redblue.out) (./redblue.out)
+\@outlinefile=\write3
+\openout3 = `redblue.out'.
+
+\c@lstlisting=\count372
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 13
+5.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 135
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 135
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+Package natbib Warning: Citation `Rai2025' on page 1 undefined on input line 14
+5.
+
+
+Package natbib Warning: Citation `brown1954lxxiv' on page 1 undefined on input 
+line 149.
+
+
+Package natbib Warning: Citation `HBT56' on page 1 undefined on input line 149.
+
+
+
+Package natbib Warning: Citation `HBT56Lab' on page 1 undefined on input line 1
+53.
+
+
+Package natbib Warning: Citation `brown1957interferometry' on page 1 undefined 
+on input line 153.
+
+
+Package natbib Warning: Citation `brown1958interferometry' on page 1 undefined 
+on input line 153.
+
+
+Package natbib Warning: Citation `glauber1963quantum' on page 1 undefined on in
+put line 153.
+
+
+Package natbib Warning: Citation `brown1957interferometry' on page 1 undefined 
+on input line 157.
+
+
+Package natbib Warning: Citation `brown1958interferometry' on page 1 undefined 
+on input line 157.
+
+
+Package natbib Warning: Citation `glauber1963quantum' on page 1 undefined on in
+put line 157.
+
+
+Package natbib Warning: Citation `HBT56Lab' on page 1 undefined on input line 1
+61.
+
+
+Package natbib Warning: Citation `Rai2025' on page 1 undefined on input line 16
+1.
+
+
+Package natbib Warning: Citation `MandelWolf1995' on page 1 undefined on input 
+line 163.
+
+
+Package natbib Warning: Citation `Hecht2002' on page 1 undefined on input line 
+163.
+
+
+Overfull \hbox (967.24933pt too wide) in paragraph at lines 147--164
+|   [][]\OT1/cmr/m/n/10 "[][][][]|   []
+ []
+
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.165 ... and multiple star systems conducted by }
+                                                  \DIFdelend Hanbury Brown a...
+
+? 
+
+Package natbib Warning: Citation `hanbury1974angular' on page 1 undefined on in
+put line 167.
+
+
+Package natbib Warning: Citation `hanbury1974angular' on page 1 undefined on in
+put line 169.
+
+
+Overfull \hbox (313.54597pt too wide) in paragraph at lines 165--170
+[]\OT1/cmr/m/n/10 5pt[][]Hanbury
+ []
+
+
+Overfull \hbox (1350.77791pt too wide) in paragraph at lines 165--170
+\OT1/cmr/m/n/10 Brown and his col-lab-o-ra-tors [][][][]|   []
+ []
+
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.172 \DIFdel{More recently}
+                            \DIFdelend \DIFaddbegin \DIFadd{data processing ...
+
+? 
+
+Package natbib Warning: Citation `LeBohec2006' on page 1 undefined on input lin
+e 172.
+
+
+Package natbib Warning: Citation `nunez2010stellar' on page 1 undefined on inpu
+t line 172.
+
+
+Package natbib Warning: Citation `nunez2012high' on page 1 undefined on input l
+ine 172.
+
+
+Package natbib Warning: Citation `2013APh....43..331D' on page 1 undefined on i
+nput line 172.
+
+
+Package natbib Warning: Citation `2024ApJ...966...28A' on page 1 undefined on i
+nput line 174.
+
+
+Package natbib Warning: Citation `2024MNRAS.529.4387A' on page 1 undefined on i
+nput line 174.
+
+
+Package natbib Warning: Citation `2025MNRAS.537.2334V' on page 1 undefined on i
+nput line 174.
+
+
+Package natbib Warning: Citation `2024ApJ...966...28A' on page 1 undefined on i
+nput line 178.
+
+
+Package natbib Warning: Citation `2024MNRAS.529.4387A' on page 1 undefined on i
+nput line 178.
+
+
+Package natbib Warning: Citation `2025MNRAS.537.2334V' on page 1 undefined on i
+nput line 178.
+
+
+Package natbib Warning: Citation `10.1093/mnras/stab2391' on page 1 undefined o
+n input line 178.
+
+
+Package natbib Warning: Citation `10.1093/mnras/stac2433' on page 1 undefined o
+n input line 178.
+
+
+Package natbib Warning: Citation `10.1093/mnras/stab2391' on page 1 undefined o
+n input line 180.
+
+
+Package natbib Warning: Citation `10.1093/mnras/stac2433' on page 1 undefined o
+n input line 180.
+
+
+Overfull \hbox (604.60667pt too wide) in paragraph at lines 172--181
+[][][][]|   []
+ []
+
+
+Overfull \hbox (346.01215pt too wide) in paragraph at lines 172--181
+[][][][]|   []
+ []
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.182 ...ensity rather than the field amplitude, }
+                                                  \DIFdelend \DIFaddbegin \D...
+
+? 
+
+Overfull \hbox (1757.96516pt too wide) in paragraph at lines 182--184
+[]\OT1/cmr/m/n/10 5pt[][][]|   []
+ []
+
+
+Package natbib Warning: Citation `Haubois2009' on page 2 undefined on input lin
+e 194.
+
+
+Package natbib Warning: Citation `Norris2021AZCyg' on page 2 undefined on input
+ line 194.
+
+
+Package natbib Warning: Citation `Liu2024SuperresolutionII' on page 2 undefined
+ on input line 194.
+
+
+Package natbib Warning: Citation `Liu2025' on page 2 undefined on input line 19
+4.
+
+
+Package natbib Warning: Citation `Haubois2009' on page 2 undefined on input lin
+e 194.
+
+
+Package natbib Warning: Citation `Norris2021AZCyg' on page 2 undefined on input
+ line 194.
+
+
+Package natbib Warning: Citation `Liu2024SuperresolutionII' on page 2 undefined
+ on input line 194.
+
+
+Package natbib Warning: Citation `Liu2025' on page 2 undefined on input line 19
+4.
+
+
+Package natbib Warning: Citation `vanBelle2001' on page 2 undefined on input li
+ne 205.
+
+
+Package natbib Warning: Citation `DomicianodeSouza2003' on page 2 undefined on 
+input line 205.
+
+
+Package natbib Warning: Citation `DomicianodeSouza2005' on page 2 undefined on 
+input line 205.
+
+
+Package natbib Warning: Citation `mcalister2005first' on page 2 undefined on in
+put line 205.
+
+
+Package natbib Warning: Citation `Monnier2007' on page 2 undefined on input lin
+e 205.
+
+
+Package natbib Warning: Citation `Pedretti2009' on page 2 undefined on input li
+ne 205.
+
+
+Package natbib Warning: Citation `Zhao2009' on page 2 undefined on input line 2
+05.
+
+
+Package natbib Warning: Citation `Martinez2021' on page 2 undefined on input li
+ne 205.
+
+
+Package natbib Warning: Citation `Archer-arXiv-2025' on page 2 undefined on inp
+ut line 205.
+
+
+Package natbib Warning: Citation `Archer-arXiv-2025' on page 2 undefined on inp
+ut line 205.
+
+
+Package natbib Warning: Citation `isola2017image' on page 2 undefined on input 
+line 205.
+
+
+Overfull \hbox (610.62378pt too wide) in paragraph at lines 207--208
+[][][][]|   []
+ []
+
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.210 ...heoretical and computational approaches }
+                                                  \DIFdelend \DIFaddbegin \s...
+
+? 
+
+Overfull \hbox (2.18436pt too wide) in paragraph at lines 210--210
+[]\OT1/cmr/m/n/10 5pt[][] 
+ []
+
+
+Package natbib Warning: Citation `gamo1963triple' on page 2 undefined on input 
+line 211.
+
+
+Package natbib Warning: Citation `goldberger1963use' on page 2 undefined on inp
+ut line 215.
+
+
+Package natbib Warning: Citation `sato1978imaging' on page 2 undefined on input
+ line 215.
+
+
+Package natbib Warning: Citation `sato1979computer' on page 2 undefined on inpu
+t line 215.
+
+
+Package natbib Warning: Citation `sato1981adaptive' on page 2 undefined on inpu
+t line 215.
+
+
+Package natbib Warning: Citation `goldberger1963use' on page 2 undefined on inp
+ut line 219.
+
+
+Package natbib Warning: Citation `sato1978imaging' on page 2 undefined on input
+ line 219.
+
+
+Package natbib Warning: Citation `sato1979computer' on page 2 undefined on inpu
+t line 219.
+
+
+Package natbib Warning: Citation `sato1981adaptive' on page 2 undefined on inpu
+t line 219.
+
+
+Overfull \hbox (1133.48569pt too wide) in paragraph at lines 211--220
+[][][][]|   []
+ []
+
+
+Overfull \hbox (10.01172pt too wide) in paragraph at lines 211--220
+\OT1/cmr/m/n/10 (SNR)[][][] 
+ []
+
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.224 ... method to determine the phase from the }
+                                                  \DIFdelend \DIFaddbegin \D...
+
+? 
+
+Package natbib Warning: Citation `GerchbergSaxton1972' on page 2 undefined on i
+nput line 224.
+
+
+Package natbib Warning: Citation `GerchbergSaxton1972' on page 2 undefined on i
+nput line 226.
+
+
+Package natbib Warning: Citation `Fienup1982' on page 2 undefined on input line
+ 228.
+
+
+Package natbib Warning: Citation `Fienup1982' on page 2 undefined on input line
+ 230.
+
+
+Overfull \hbox (73.55939pt too wide) in paragraph at lines 224--231
+[]\OT1/cmr/m/n/10 5pt[][][]|   []
+ []
+
+
+Overfull \hbox (68.01181pt too wide) in paragraph at lines 224--231
+\OT1/cmr/m/n/10 age and diffrac-tion plane [][][][]|   []
+ []
+
+
+Overfull \hbox (213.69246pt too wide) in paragraph at lines 224--231
+|   []   |   []   []\OT1/cmr/m/n/10 ini-tial es-ti-mates and [][][][]|   []
+ []
+
+
+Overfull \hbox (329.56789pt too wide) in paragraph at lines 224--231
+\OT1/cmr/m/n/10 al-go-rithm[][][] 
+ []
+
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.235 ...an alternative method that utilizes the }
+                                                  \DIFdelend \DIFaddbegin \D...
+
+? 
+
+Package natbib Warning: Citation `holmes2010two' on page 2 undefined on input l
+ine 235.
+
+
+Package natbib Warning: Citation `holmes2010two' on page 2 undefined on input l
+ine 237.
+
+
+Package natbib Warning: Citation `nunez2010stellar' on page 2 undefined on inpu
+t line 237.
+
+
+Package natbib Warning: Citation `nunez2012high' on page 2 undefined on input l
+ine 237.
+
+
+Package natbib Warning: Citation `nunez2012imaging' on page 2 undefined on inpu
+t line 237.
+
+
+Overfull \hbox (39.19826pt too wide) in paragraph at lines 235--238
+[]\OT1/cmr/m/n/10 5pt[][][]|   []
+ []
+
+
+Overfull \hbox (111.17853pt too wide) in paragraph at lines 235--238
+[][][][]|   []
+ []
+
+
+Overfull \hbox (267.73447pt too wide) in paragraph at lines 235--238
+|   []   []\OT1/cmr/m/n/10 ap-plied to sim-u-lated [][][][]|   []
+ []
+
+
+Overfull \hbox (463.10956pt too wide) in paragraph at lines 235--238
+[][][]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 ???\OT1/cmr/m/n/10 )[][][][]|   []
+ []
+
+[2]
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.242 ...hod that incorporates prior information }
+                                                  \DIFdelend \DIFaddbegin \D...
+
+? 
+
+Package natbib Warning: Citation `Li2014' on page 3 undefined on input line 242
+.
+
+
+Package natbib Warning: Citation `Li2014' on page 3 undefined on input line 244
+.
+
+
+Overfull \hbox (188.68465pt too wide) in paragraph at lines 242--246
+[]\OT1/cmr/m/n/10 5pt[][][]|   []
+ []
+
+
+Overfull \hbox (1384.43082pt too wide) in paragraph at lines 242--246
+|   []   []\OT1/cmr/m/n/10 (e.g., spar-sity[][][] 
+ []
+
+
+Package natbib Warning: Citation `Teague1983' on page 3 undefined on input line
+ 248.
+
+
+Package natbib Warning: Citation `Zhang2020' on page 3 undefined on input line 
+250.
+
+
+Package natbib Warning: Citation `Zhang2020' on page 3 undefined on input line 
+252.
+
+
+Package natbib Warning: Citation `Kirisits2024' on page 3 undefined on input li
+ne 254.
+
+
+Package natbib Warning: Citation `Kirisits2024' on page 3 undefined on input li
+ne 256.
+
+
+Overfull \hbox (991.04126pt too wide) in paragraph at lines 248--257
+[]\OT1/cmr/m/n/10 pro-posed by \OT1/cmr/bx/n/10 ?[][][][]|   []
+ []
+
+
+Overfull \hbox (600.63762pt too wide) in paragraph at lines 248--257
+\OT1/cmr/m/n/10 tion[][][][]|   []
+ []
+
+
+Overfull \hbox (671.59622pt too wide) in paragraph at lines 248--257
+\OT1/cmr/m/n/10 Equa-tion [][][][]|   []
+ []
+
+
+Overfull \hbox (771.7632pt too wide) in paragraph at lines 248--257
+\OT1/cmr/m/n/10 uniform il-lu-mi-na-tion, [][][][]|   []
+ []
+
+
+Package natbib Warning: Citation `ronneberger2015u' on page 3 undefined on inpu
+t line 258.
+
+
+Package natbib Warning: Citation `goodfellow2014generative' on page 3 undefined
+ on input line 260.
+
+
+Package natbib Warning: Citation `mirza2014conditional' on page 3 undefined on 
+input line 260.
+
+
+Package natbib Warning: Citation `isola2017image' on page 3 undefined on input 
+line 260.
+
+
+Package natbib Warning: Citation `schawinski2017galaxypics' on page 3 undefined
+ on input line 262.
+
+
+Package natbib Warning: Citation `mustafa2019cosmogan' on page 3 undefined on i
+nput line 262.
+
+
+Package natbib Warning: Citation `coccomini2021lightweightgan' on page 3 undefi
+ned on input line 262.
+
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.268 }
+       \DIFdelend \DIFaddbegin \section{\DIFadd{Intensity Interferometry (II...
+
+? 
+
+Package natbib Warning: Citation `isola2017image' on page 3 undefined on input 
+line 268.
+
+
+Overfull \hbox (2347.21613pt too wide) in paragraph at lines 268--268
+[]\OT1/cmr/m/n/10 5pt[][] 
+ []
+
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.272 }
+       \DIFdelend \begin{figure}
+? 
+<fig/telescope.png, id=109, 551.05875pt x 377.9721pt>
+File: fig/telescope.png Graphic file (type png)
+<use fig/telescope.png>
+Package pdftex.def Info: fig/telescope.png  used on input line 274.
+(pdftex.def)             Requested size: 242.26653pt x 166.16982pt.
+
+Overfull \hbox (2066.75728pt too wide) in paragraph at lines 272--278
+[]\OT1/cmr/m/n/10 5pt[][] 
+ []
+
+
+Overfull \hbox (66.67815pt too wide) in paragraph at lines 278--278
+ [][][][] 
+ []
+
+<fig/baseline.png, id=111, 550.98648pt x 378.98389pt>
+File: fig/baseline.png Graphic file (type png)
+<use fig/baseline.png>
+Package pdftex.def Info: fig/baseline.png  used on input line 284.
+(pdftex.def)             Requested size: 242.26653pt x 166.63776pt.
+<fig/ellipse/ellipse1612.png, id=114, 462.528pt x 346.896pt>
+File: fig/ellipse/ellipse1612.png Graphic file (type png)
+<use fig/ellipse/ellipse1612.png>
+Package pdftex.def Info: fig/ellipse/ellipse1612.png  used on input line 293.
+(pdftex.def)             Requested size: 242.26653pt x 181.69966pt.
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 293--294
+[][][] 
+ []
+
+<fig/ft/ft.jpg, id=115, 462.528pt x 346.896pt>
+File: fig/ft/ft.jpg Graphic file (type jpg)
+<use fig/ft/ft.jpg>
+Package pdftex.def Info: fig/ft/ft.jpg  used on input line 299.
+(pdftex.def)             Requested size: 251.43036pt x 188.57553pt.
+<fig/ft/ft_base.jpg, id=116, 462.528pt x 346.896pt>
+File: fig/ft/ft_base.jpg Graphic file (type jpg)
+<use fig/ft/ft_base.jpg>
+Package pdftex.def Info: fig/ft/ft_base.jpg  used on input line 307.
+(pdftex.def)             Requested size: 251.43036pt x 188.57553pt.
+
+LaTeX Warning: Reference `fig:ft_base' on page 3 undefined on input line 327.
+
+
+Overfull \hbox (2006.63995pt too wide) in paragraph at lines 311--332
+[][][] 
+ []
+
+
+Package natbib Warning: Citation `acciari2020optical' on page 3 undefined on in
+put line 333.
+
+
+Package natbib Warning: Citation `2013APh....43..331D' on page 3 undefined on i
+nput line 333.
+
+[3 <./fig/telescope.png>]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 334.
+
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 334.
+
+
+Class aastex701 Warning: Deferred float stuck during \clearpage processing.
+
+
+Package natbib Warning: Citation `acciari2020optical' on page 4 undefined on in
+put line 338.
+
+
+Overfull \hbox (29.70613pt too wide) in paragraph at lines 342--344
+[][][] 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.347 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Extra }, or forgotten $.
+<recently read> }
+                 
+l.347 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.347 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.347 }
+       \end{displaymath}%DIFAUXCMD
+? 
+
+Overfull \hbox (838.63242pt too wide) in paragraph at lines 347--350
+[][][][][][][]|   []
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.352 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.352 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.352 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Extra }, or forgotten $.
+\frac  #1#2->{\begingroup #1\endgroup \@@over #2}
+                                                 
+l.352 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Extra }, or forgotten $.
+<recently read> }
+                 
+l.352 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.352 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.352 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.352 }
+       \end{displaymath}%DIFAUXCMD
+? 
+
+Overfull \hbox (4.21127pt too wide) detected at line 352
+[][]
+ []
+
+
+Overfull \hbox (882.85356pt too wide) in paragraph at lines 352--354
+[][][] 
+ []
+
+
+Package natbib Warning: Citation `aleksic2016major' on page 4 undefined on inpu
+t line 361.
+
+[4 <./fig/baseline.png> <./fig/ellipse/ellipse1612.png>]
+
+Package natbib Warning: Citation `10.1093/mnras/stab2391' on page 5 undefined o
+n input line 363.
+
+
+Package natbib Warning: Citation `acciari2020optical' on page 5 undefined on in
+put line 368.
+
+
+Overfull \hbox (58.62277pt too wide) in paragraph at lines 367--370
+[][][] 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.372 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.372 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.372 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Extra }, or forgotten $.
+\frac  #1#2->{\begingroup #1\endgroup \@@over #2}
+                                                 
+l.372 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Extra }, or forgotten $.
+<recently read> }
+                 
+l.372 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.372 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.372 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.372 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.376 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Extra }, or forgotten $.
+<recently read> }
+                 
+l.376 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.376 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.376 }
+       \end{displaymath}%DIFAUXCMD
+? 
+
+Overfull \hbox (648.74535pt too wide) in paragraph at lines 376--379
+[][][] 
+ []
+
+
+Package natbib Warning: Citation `2020MNRAS.498.4577B' on page 5 undefined on i
+nput line 390.
+
+[5 <./fig/ft/ft.jpg> <./fig/ft/ft_base.jpg>]
+
+Package natbib Warning: Citation `2013APh....43..331D' on page 6 undefined on i
+nput line 402.
+
+
+Package natbib Warning: Citation `von1924radiative' on page 6 undefined on inpu
+t line 405.
+
+
+Package natbib Warning: Citation `1999A&A...347..185M' on page 6 undefined on i
+nput line 405.
+
+
+Package natbib Warning: Citation `lucy1967gravity' on page 6 undefined on input
+ line 405.
+
+
+Package natbib Warning: Citation `vanBelle2001' on page 6 undefined on input li
+ne 407.
+
+
+Package natbib Warning: Citation `mcalister2005first' on page 6 undefined on in
+put line 409.
+
+
+Package natbib Warning: Citation `mcalister2005first' on page 6 undefined on in
+put line 415.
+
+
+Package natbib Warning: Citation `vanBelle2001' on page 6 undefined on input li
+ne 415.
+
+
+Package natbib Warning: Citation `DomicianodeSouza2003' on page 6 undefined on 
+input line 415.
+
+
+Package natbib Warning: Citation `mcalister2005first' on page 6 undefined on in
+put line 415.
+
+
+Package natbib Warning: Citation `DomicianodeSouza2005' on page 6 undefined on 
+input line 415.
+
+
+Package natbib Warning: Citation `Monnier2007' on page 6 undefined on input lin
+e 415.
+
+
+Package natbib Warning: Citation `Pedretti2009' on page 6 undefined on input li
+ne 415.
+
+
+Package natbib Warning: Citation `Zhao2009' on page 6 undefined on input line 4
+15.
+
+
+Package natbib Warning: Citation `Martinez2021' on page 6 undefined on input li
+ne 415.
+
+
+Package natbib Warning: Citation `Archer-arXiv-2025' on page 6 undefined on inp
+ut line 415.
+
+
+Overfull \hbox (10.04533pt too wide) in paragraph at lines 405--416
+[]\OT1/cmr/m/n/10 In our work pre-sented here, we [][][][]|   []
+ []
+
+
+Overfull \hbox (549.15155pt too wide) in paragraph at lines 405--416
+[][][][]|   []
+ []
+
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.417 ...lbegin \DIFdel{Intensity Interferometry }
+                                                  \DIFdelend \DIFaddbegin \D...
+
+? 
+
+LaTeX Warning: Reference `fig:ft_base' on page 6 undefined on input line 417.
+
+<fig/ellipse1612.jpg, id=173, 570.6921pt x 277.035pt>
+File: fig/ellipse1612.jpg Graphic file (type jpg)
+<use fig/ellipse1612.jpg>
+Package pdftex.def Info: fig/ellipse1612.jpg  used on input line 423.
+(pdftex.def)             Requested size: 436.15294pt x 211.72394pt.
+pdfTeX warning (ext4): destination with the same identifier (name{section.4}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.431 \section{Generative Adversarial Networks}
+                                               
+<fig/FlowDiagram_TikZ.png, id=178, 751.80875pt x 811.03pt>
+File: fig/FlowDiagram_TikZ.png Graphic file (type png)
+<use fig/FlowDiagram_TikZ.png>
+Package pdftex.def Info: fig/FlowDiagram_TikZ.png  used on input line 437.
+(pdftex.def)             Requested size: 513.11743pt x 553.57216pt.
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 437--438
+ [][][] 
+ []
+
+! You can't use `\raise' in internal vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.447 ...kernel size seems to be the most stable.}
+                                                  }
+? 
+
+Overfull \hbox (452.0939pt too wide) in paragraph at lines 447--472
+ []\OT1/cmr/m/n/9 5pt[][] 
+ []
+
+
+Overfull \hbox (344.96346pt too wide) in paragraph at lines 447--472
+ [][][] 
+ []
+
+
+Overfull \hbox (82.78891pt too wide) in paragraph at lines 447--472
+ [][][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 95.65326pt on input line 472.
+
+<fig/analysis/Discrep_Runs_Losses_disc_loss.png, id=181, 433.62pt x 433.62pt>
+File: fig/analysis/Discrep_Runs_Losses_disc_loss.png Graphic file (type png)
+<use fig/analysis/Discrep_Runs_Losses_disc_loss.png>
+Package pdftex.def Info: fig/analysis/Discrep_Runs_Losses_disc_loss.png  used o
+n input line 481.
+(pdftex.def)             Requested size: 242.26653pt x 242.26976pt.
+<fig/analysis/Discrep_Runs_Losses_gen_total_loss.png, id=182, 433.62pt x 433.62
+pt>
+File: fig/analysis/Discrep_Runs_Losses_gen_total_loss.png Graphic file (type pn
+g)
+<use fig/analysis/Discrep_Runs_Losses_gen_total_loss.png>
+Package pdftex.def Info: fig/analysis/Discrep_Runs_Losses_gen_total_loss.png  u
+sed on input line 482.
+(pdftex.def)             Requested size: 242.26653pt x 242.26976pt.
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 481--483
+ [][][] 
+ []
+
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 481--483
+ [][][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 81.92061pt on input line 490.
+
+<fig/analysis/Telescope_Runs_Losses_disc_loss.png, id=183, 433.62pt x 433.62pt>
+
+File: fig/analysis/Telescope_Runs_Losses_disc_loss.png Graphic file (type png)
+<use fig/analysis/Telescope_Runs_Losses_disc_loss.png>
+Package pdftex.def Info: fig/analysis/Telescope_Runs_Losses_disc_loss.png  used
+ on input line 493.
+(pdftex.def)             Requested size: 242.26653pt x 242.26976pt.
+<fig/analysis/Telescope_Runs_Losses_gen_total_loss.png, id=184, 433.62pt x 433.
+62pt>
+File: fig/analysis/Telescope_Runs_Losses_gen_total_loss.png Graphic file (type 
+png)
+<use fig/analysis/Telescope_Runs_Losses_gen_total_loss.png>
+Package pdftex.def Info: fig/analysis/Telescope_Runs_Losses_gen_total_loss.png 
+ used on input line 494.
+(pdftex.def)             Requested size: 242.26653pt x 242.26976pt.
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 493--495
+ [][][] 
+ []
+
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 493--495
+ [][][] 
+ []
+
+
+Package natbib Warning: Citation `goodfellow2014generative' on page 6 undefined
+ on input line 500.
+
+
+Overfull \hbox (19.4052pt too wide) in paragraph at lines 500--502
+\OT1/cmr/m/n/10 duced by \OT1/cmr/bx/n/10 ?\OT1/cmr/m/n/10 . [][][][]|   []
+ []
+
+
+Overfull \hbox (96.10791pt too wide) in paragraph at lines 500--502
+|   []   |   []   []\OT1/cmr/m/n/10 in-volves two com-pet-ing [][][][]|   []
+ []
+
+
+Overfull \hbox (832.73526pt too wide) in paragraph at lines 500--502
+[][][] 
+ []
+
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.505 }
+       \begin{displaymath}
+? 
+
+Overfull \hbox (1011.64447pt too wide) in paragraph at lines 505--505
+[]\OT1/cmr/m/n/10 5pt[][] 
+ []
+
+
+! Package amsmath Error: \begin{aligned} allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.512 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.512 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.512 }
+       \end{displaymath}%DIFAUXCMD
+? 
+
+Overfull \hbox (45.62558pt too wide) in paragraph at lines 512--514
+[][][] 
+ []
+
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.516 ...'s distribution, \(p_G\), over the data }
+                                                  \DIFdelend \DIFaddbegin \D...
+
+? 
+
+Overfull \hbox (115.56668pt too wide) in paragraph at lines 516--517
+[]\OT1/cmr/m/n/10 5pt[][][]|   []
+ []
+
+
+Overfull \hbox (193.61249pt too wide) in paragraph at lines 516--517
+[][][][]|   []
+ []
+
+[6] [7 <./fig/ellipse1612.jpg>] [8 <./fig/FlowDiagram_TikZ.png>]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 528.
+
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 528.
+
+
+Class aastex701 Warning: Deferred float stuck during \clearpage processing.
+
+[9 <./fig/analysis/Discrep_Runs_Losses_disc_loss.png> <./fig/analysis/Discrep_R
+uns_Losses_gen_total_loss.png> <./fig/analysis/Telescope_Runs_Losses_disc_loss.
+png> <./fig/analysis/Telescope_Runs_Losses_gen_total_loss.png>]
+
+Package natbib Warning: Citation `goodfellow2014generative' on page 10 undefine
+d on input line 548.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.553 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Extra }, or forgotten $.
+<recently read> }
+                 
+l.553 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.553 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.553 }
+       \end{displaymath}%DIFAUXCMD
+? 
+
+Package natbib Warning: Citation `mirza2014conditional' on page 10 undefined on
+ input line 556.
+
+
+Overfull \hbox (53.3359pt too wide) in paragraph at lines 556--556
+\OT1/cmr/m/n/10 con-di-tional model (\OT1/cmr/bx/n/10 ?\OT1/cmr/m/n/10 ). [][][
+][]|   []
+ []
+
+
+Overfull \hbox (220.94037pt too wide) in paragraph at lines 556--556
+[][][] 
+ []
+
+
+! Package amsmath Error: \begin{aligned} allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.563 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.563 }
+       \end{displaymath}%DIFAUXCMD
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.563 }
+       \end{displaymath}%DIFAUXCMD
+? 
+
+Package natbib Warning: Citation `isola2017image' on page 10 undefined on input
+ line 577.
+
+
+Overfull \hbox (30.70622pt too wide) in paragraph at lines 577--579
+[][][][]|   []
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.594 \DIFdel{L_1(G) = \mathbb{E}_{x,y,z} }
+                                           %DIFDELCMD < \left[ %%%
+? 
+! Extra }, or forgotten $.
+<recently read> }
+                 
+l.594 \DIFdel{L_1(G) = \mathbb{E}_{x,y,z} }
+                                           %DIFDELCMD < \left[ %%%
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.594 \DIFdel{L_1(G) = \mathbb{E}_{x,y,z} }
+                                           %DIFDELCMD < \left[ %%%
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.594 \DIFdel{L_1(G) = \mathbb{E}_{x,y,z} }
+                                           %DIFDELCMD < \left[ %%%
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.597 \DIFdel{||_1 }
+                    %DIFDELCMD < \right]
+? 
+! Extra }, or forgotten $.
+<recently read> }
+                 
+l.597 \DIFdel{||_1 }
+                    %DIFDELCMD < \right]
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.597 \DIFdel{||_1 }
+                    %DIFDELCMD < \right]
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.597 \DIFdel{||_1 }
+                    %DIFDELCMD < \right]
+? 
+
+Overfull \hbox (39.08698pt too wide) in paragraph at lines 589--602
+ [][][][][][][][][][][][][][][] 
+ []
+
+
+Package natbib Warning: Citation `isola2017image' on page 10 undefined on input
+ line 603.
+
+
+Package natbib Warning: Citation `ronneberger2015u' on page 10 undefined on inp
+ut line 606.
+
+
+Overfull \hbox (942.81892pt too wide) in paragraph at lines 606--607
+[][][][]|   []
+ []
+
+
+Overfull \hbox (368.20685pt too wide) in paragraph at lines 606--607
+\OT1/cmr/m/n/10 2)[][][] 
+ []
+
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.609 ...followed by operations with a stride of }
+                                                  \DIFdelend \DIFaddbegin \D...
+
+? 
+
+Package natbib Warning: Citation `isola2017image' on page 10 undefined on input
+ line 609.
+
+
+Overfull \hbox (655.93544pt too wide) in paragraph at lines 609--611
+[]\OT1/cmr/m/n/10 5pt[][][]|   []
+ []
+
+[10]
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.612 .... e. , when the GAN loss is minimized), }
+                                                  \DIFdelend \DIFaddbegin \D...
+
+? 
+
+Overfull \hbox (1316.54745pt too wide) in paragraph at lines 612--613
+[]\OT1/cmr/m/n/10 5pt[][][]|   []
+ []
+
+
+Overfull \hbox (731.17957pt too wide) in paragraph at lines 623--624
+[][][][]|   []
+ []
+
+
+Overfull \hbox (1487.5537pt too wide) in paragraph at lines 624--625
+|   [][]\OT1/cmr/m/n/10 . [][][] 
+ []
+
+
+Package natbib Warning: Citation `isola2017image' on page 11 undefined on input
+ line 632.
+
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.635 ...epper noise is added to the input images}
+                                                  \DIFdelend \DIFaddbegin \D...
+
+? 
+
+Overfull \hbox (695.51889pt too wide) in paragraph at lines 635--637
+[]\OT1/cmr/m/n/10 5pt[][][]|   []
+ []
+
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.641 ...tion that the Generator uses as feedback}
+                                                  \DIFdelend \DIFaddbegin \D...
+
+? 
+
+Overfull \hbox (2304.61935pt too wide) in paragraph at lines 641--642
+[]\OT1/cmr/m/n/10 5pt[][][]|   []
+ []
+
+
+Overfull \hbox (488.43515pt too wide) in paragraph at lines 643--645
+[]\OT1/cmr/m/n/10 The [][][][]|   []
+ []
+
+
+Overfull \hbox (45.17831pt too wide) in paragraph at lines 651--656
+[][][][]|   []
+ []
+
+
+Overfull \hbox (35.34503pt too wide) in paragraph at lines 651--656
+[][][][]|   []
+ []
+
+
+Overfull \hbox (591.02652pt too wide) in paragraph at lines 651--656
+[][][][]|   []
+ []
+
+[11]
+<fig/testing_image/image_4.png, id=242, 939.51pt x 216.81pt>
+File: fig/testing_image/image_4.png Graphic file (type png)
+<use fig/testing_image/image_4.png>
+Package pdftex.def Info: fig/testing_image/image_4.png  used on input line 674.
+
+(pdftex.def)             Requested size: 410.4955pt x 94.72842pt.
+<fig/testing_image/image_17.png, id=243, 939.51pt x 216.81pt>
+File: fig/testing_image/image_17.png Graphic file (type png)
+<use fig/testing_image/image_17.png>
+Package pdftex.def Info: fig/testing_image/image_17.png  used on input line 675
+.
+(pdftex.def)             Requested size: 410.4955pt x 94.72842pt.
+<fig/testing_image/image_22.png, id=244, 939.51pt x 216.81pt>
+File: fig/testing_image/image_22.png Graphic file (type png)
+<use fig/testing_image/image_22.png>
+Package pdftex.def Info: fig/testing_image/image_22.png  used on input line 676
+.
+(pdftex.def)             Requested size: 410.4955pt x 94.72842pt.
+<fig/testing_image/image_30.png, id=245, 939.51pt x 216.81pt>
+File: fig/testing_image/image_30.png Graphic file (type png)
+<use fig/testing_image/image_30.png>
+Package pdftex.def Info: fig/testing_image/image_30.png  used on input line 677
+.
+(pdftex.def)             Requested size: 410.4955pt x 94.72842pt.
+<fig/testing_image/image_50.png, id=246, 939.51pt x 216.81pt>
+File: fig/testing_image/image_50.png Graphic file (type png)
+<use fig/testing_image/image_50.png>
+Package pdftex.def Info: fig/testing_image/image_50.png  used on input line 678
+.
+(pdftex.def)             Requested size: 410.4955pt x 94.72842pt.
+<fig/testing_image/image_75.png, id=247, 939.51pt x 216.81pt>
+File: fig/testing_image/image_75.png Graphic file (type png)
+<use fig/testing_image/image_75.png>
+Package pdftex.def Info: fig/testing_image/image_75.png  used on input line 679
+.
+(pdftex.def)             Requested size: 410.4955pt x 94.72842pt.
+
+
+LaTeX Warning: Reference `fig:ft_base' on page 12 undefined on input line 680.
+
+
+Overfull \hbox (30.86496pt too wide) in paragraph at lines 680--680
+\OT1/cmr/m/n/9 plane.[][][][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 85.20158pt on input line 682.
+
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.683 ...cting images of stellar objects using II}
+                                                  \DIFdelend \DIFaddbegin \D...
+
+? 
+
+Overfull \hbox (294.03188pt too wide) in paragraph at lines 683--684
+[]\OT1/cmr/m/n/10 5pt[][][]|   []
+ []
+
+
+Overfull \hbox (880.29108pt too wide) in paragraph at lines 687--690
+[][][] 
+ []
+
+
+Overfull \hbox (108.51196pt too wide) in paragraph at lines 691--692
+\OT1/cmr/m/n/10 lated[][][]. 
+ []
+
+
+LaTeX Warning: Reference `fig:ft_base' on page 12 undefined on input line 693.
+
+
+LaTeX Warning: Reference `fig:ft_base' on page 12 undefined on input line 697.
+
+
+Overfull \hbox (1305.90263pt too wide) in paragraph at lines 697--699
+[][][][]|   []
+ []
+
+
+Overfull \hbox (149.22026pt too wide) in paragraph at lines 697--699
+\OT1/cmr/m/n/10 Fig. [][]5[][])[][][][]|   []
+ []
+
+
+Overfull \hbox (18.12297pt too wide) in paragraph at lines 697--699
+[][][][]|   []
+ []
+
+
+Package natbib Warning: Citation `isola2017image' on page 12 undefined on input
+ line 703.
+
+
+Package natbib Warning: Citation `isola2017image' on page 12 undefined on input
+ line 705.
+
+
+Package natbib Warning: Citation `abadi2016tensorflow' on page 12 undefined on 
+input line 706.
+
+
+Package natbib Warning: Citation `virtanen2020scipy' on page 12 undefined on in
+put line 706.
+
+
+Package natbib Warning: Citation `4160265' on page 12 undefined on input line 7
+06.
+
+
+Overfull \hbox (575.10988pt too wide) in paragraph at lines 701--707
+[][][][]|   []
+ []
+
+[12] [13 <./fig/testing_image/image_4.png> <./fig/testing_image/image_17.png> <
+./fig/testing_image/image_22.png> <./fig/testing_image/image_30.png> <./fig/tes
+ting_image/image_50.png> <./fig/testing_image/image_75.png>]
+
+Package natbib Warning: Citation `murphy2022probabilistic' on page 14 undefined
+ on input line 709.
+
+
+Package natbib Warning: Citation `murphy2022probabilistic' on page 14 undefined
+ on input line 711.
+
+
+LaTeX Warning: Reference `fig:Plot_learning_rate_loss' on page 14 undefined on 
+input line 711.
+
+
+Overfull \hbox (1107.36063pt too wide) in paragraph at lines 711--712
+[][][][]|   []
+ []
+
+
+LaTeX Warning: Reference `fig:Plot_kernel_size_loss' on page 14 undefined on in
+put line 714.
+
+
+Overfull \hbox (987.63814pt too wide) in paragraph at lines 713--716
+[][][][]|   []
+ []
+
+
+LaTeX Warning: Reference `fig:Plot_noise_loss' on page 14 undefined on input li
+ne 719.
+
+
+Overfull \hbox (404.03998pt too wide) in paragraph at lines 717--720
+[][][] 
+ []
+
+
+Package natbib Warning: Citation `prince2023understanding' on page 14 undefined
+ on input line 721.
+
+
+LaTeX Warning: Reference `fig:Plot_batchsize_loss' on page 14 undefined on inpu
+t line 721.
+
+
+Overfull \hbox (153.23396pt too wide) in paragraph at lines 721--723
+[][][]\OT1/cmr/m/n/10 However,
+ []
+
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.724 \DIFdelbegin \DIFdel{When training }
+                                          \DIFdelend \DIFaddbegin \DIFadd{Th...
+
+? 
+
+Overfull \hbox (61.40065pt too wide) in paragraph at lines 728--729
+[][][][]|   []
+ []
+
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.730 \DIFdelbegin \DIFdel{Finally, the }
+                                         \DIFdelend \DIFaddbegin \DIFadd{One...
+
+? 
+
+Overfull \hbox (263.17877pt too wide) in paragraph at lines 730--731
+[][][][]|   []
+ []
+
+
+Overfull \hbox (906.34642pt too wide) in paragraph at lines 730--731
+[][][][]|   []
+ []
+
+
+Overfull \hbox (523.60982pt too wide) in paragraph at lines 730--731
+[][][][]|   []
+ []
+
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.735 ...l and generated images. A batch size of }
+                                                  \DIFdelend \DIFaddbegin \D...
+
+? 
+
+Overfull \hbox (1593.89334pt too wide) in paragraph at lines 735--737
+[]\OT1/cmr/m/n/10 5pt[][][]|   []
+ []
+
+[14]pdfTeX warning (ext4): destination with the same identifier (name{subsectio
+n.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.742 ...el{Predicted Image from the Trained GAN}}
+                                                  
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.745 ... trained on the training datasets for 60}
+                                                  \DIFdelend \DIFaddbegin \D...
+
+? 
+
+Overfull \hbox (782.29674pt too wide) in paragraph at lines 745--769
+[]\OT1/cmr/m/n/10 5pt[][][]|   []
+ []
+
+
+Overfull \hbox (343.3734pt too wide) in paragraph at lines 745--769
+|   []   |   []   |   []   |   [][]\OT1/cmr/m/n/10 ,000 [][][][]|   []
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{section.6}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.773 ... Reconstruction: Results and Evaluation}}
+                                                  
+Overfull \hbox (105.44838pt too wide) in paragraph at lines 779--782
+[]\OT1/cmr/m/n/10 Fig. [][]9[][] [][][][]|   []
+ []
+
+
+Overfull \hbox (28.0395pt too wide) in paragraph at lines 779--782
+[][][][]|   []
+ []
+
+[15]
+<fig/moments/mom0.png, id=302, 433.62pt x 433.62pt>
+File: fig/moments/mom0.png Graphic file (type png)
+<use fig/moments/mom0.png>
+Package pdftex.def Info: fig/moments/mom0.png  used on input line 803.
+(pdftex.def)             Requested size: 164.20132pt x 164.20168pt.
+<fig/moments/mom1.png, id=303, 433.62pt x 433.62pt>
+File: fig/moments/mom1.png Graphic file (type png)
+<use fig/moments/mom1.png>
+Package pdftex.def Info: fig/moments/mom1.png  used on input line 804.
+(pdftex.def)             Requested size: 164.20132pt x 164.20168pt.
+<fig/moments/mom2.png, id=304, 433.62pt x 433.62pt>
+File: fig/moments/mom2.png Graphic file (type png)
+<use fig/moments/mom2.png>
+Package pdftex.def Info: fig/moments/mom2.png  used on input line 805.
+(pdftex.def)             Requested size: 164.20132pt x 164.20168pt.
+<fig/moments/mom3.png, id=305, 433.62pt x 433.62pt>
+File: fig/moments/mom3.png Graphic file (type png)
+<use fig/moments/mom3.png>
+Package pdftex.def Info: fig/moments/mom3.png  used on input line 812.
+(pdftex.def)             Requested size: 164.20132pt x 164.20168pt.
+<fig/moments/mom4.png, id=306, 433.62pt x 433.62pt>
+File: fig/moments/mom4.png Graphic file (type png)
+<use fig/moments/mom4.png>
+Package pdftex.def Info: fig/moments/mom4.png  used on input line 813.
+(pdftex.def)             Requested size: 164.20132pt x 164.20168pt.
+<fig/moments/mom5.png, id=307, 433.62pt x 433.62pt>
+File: fig/moments/mom5.png Graphic file (type png)
+<use fig/moments/mom5.png>
+Package pdftex.def Info: fig/moments/mom5.png  used on input line 814.
+(pdftex.def)             Requested size: 164.20132pt x 164.20168pt.
+<fig/moments/mom6.png, id=308, 433.62pt x 433.62pt>
+File: fig/moments/mom6.png Graphic file (type png)
+<use fig/moments/mom6.png>
+Package pdftex.def Info: fig/moments/mom6.png  used on input line 819.
+(pdftex.def)             Requested size: 251.43036pt x 251.43361pt.
+<fig/moments/mom7.png, id=309, 433.62pt x 433.62pt>
+File: fig/moments/mom7.png Graphic file (type png)
+<use fig/moments/mom7.png>
+Package pdftex.def Info: fig/moments/mom7.png  used on input line 820.
+(pdftex.def)             Requested size: 251.43036pt x 251.43361pt.
+<fig/moments/mom8.png, id=310, 433.62pt x 433.62pt>
+File: fig/moments/mom8.png Graphic file (type png)
+<use fig/moments/mom8.png>
+Package pdftex.def Info: fig/moments/mom8.png  used on input line 821.
+(pdftex.def)             Requested size: 251.43036pt x 251.43361pt.
+<fig/moments/mom9.png, id=311, 433.62pt x 433.62pt>
+File: fig/moments/mom9.png Graphic file (type png)
+<use fig/moments/mom9.png>
+Package pdftex.def Info: fig/moments/mom9.png  used on input line 822.
+(pdftex.def)             Requested size: 251.43036pt x 251.43361pt.
+
+Overfull \hbox (3.34326pt too wide) in paragraph at lines 819--823
+[][][] [][][]
+ []
+
+
+Overfull \hbox (3.34326pt too wide) in paragraph at lines 819--823
+[][][] [][][] 
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 827.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\includegraphics' on input line 827.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\DIFdelincludegraphics' on input line 827.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 827.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\includegraphics' on input line 827.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\DIFOincludegraphics' on input line 827.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 827.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\includegraphics' on input line 827.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\DIFaddincludegraphics' on input line 827.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 827.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\includegraphics' on input line 827.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\DIFOincludegraphics' on input line 827.
+
+
+Overfull \hbox (70.51175pt too wide) in paragraph at lines 828--831
+[][][][]|   []
+ []
+
+
+Package natbib Warning: Citation `hu1962visual' on page 16 undefined on input l
+ine 834.
+
+
+Overfull \hbox (842.4413pt too wide) in paragraph at lines 845--847
+\OT1/cmr/m/n/10 pre-dicted ([][][][]|   []
+ []
+
+
+Overfull \hbox (1435.66817pt too wide) in paragraph at lines 850--853
+[]\OT1/cmr/m/n/10 The [][][][]|   []
+ []
+
+
+Overfull \hbox (971.86732pt too wide) in paragraph at lines 856--858
+[][][] 
+ []
+
+
+Overfull \hbox (187.92871pt too wide) in paragraph at lines 860--861
+[][][][]|   []
+ []
+
+[16]
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.869 ... these are $\mu_{11},\mu_{20},\mu_{02}$.}
+                                                  }
+? 
+
+Overfull \hbox (942.41502pt too wide) in paragraph at lines 869--892
+[]\OT1/cmr/m/n/10 5pt[][]
+ []
+
+
+Overfull \hbox (787.82309pt too wide) in paragraph at lines 869--892
+[][][]
+ []
+
+! You can't use `\raise' in vertical mode.
+\sout #1->\raise 
+                 5pt\hbox {\underline {\vbox to 0pt{\vskip -4pt\hbox {#1\vru...
+l.900 ... which is quantified by calculating the }
+                                                  \DIFdelend \DIFaddbegin \D...
+
+? 
+
+Overfull \hbox (292.32361pt too wide) in paragraph at lines 900--902
+[]\OT1/cmr/m/n/10 5pt[][][]|   []
+ []
+
+[17 <./fig/moments/mom0.png> <./fig/moments/mom1.png> <./fig/moments/mom2.png> 
+<./fig/moments/mom3.png> <./fig/moments/mom4.png> <./fig/moments/mom5.png>]
+[18 <./fig/moments/mom6.png> <./fig/moments/mom7.png> <./fig/moments/mom8.png> 
+<./fig/moments/mom9.png>]
+Overfull \hbox (629.28821pt too wide) in paragraph at lines 903--904
+[][][]\OT1/cmr/m/n/10 and
+ []
+
+
+Overfull \hbox (507.31133pt too wide) in paragraph at lines 903--904
+[][][][]|   []
+ []
+
+
+Package natbib Warning: Citation `teague1980image' on page 19 undefined on inpu
+t line 906.
+
+
+Overfull \hbox (84.98416pt too wide) in paragraph at lines 943--944
+[][][][]|   []
+ []
+
+
+Overfull \hbox (174.06754pt too wide) in paragraph at lines 943--944
+[][][][]|   []
+ []
+
+[19] (./redblue.bbl [20]) [21]
+
+Package natbib Warning: There were undefined citations.
+
+(./redblue.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `redblue.out' has not changed.
+(rerunfilecheck)             Checksum: CA2D6D5BD748D2838C1AAEE1B592B392;4050.
+ ) 
+Here is how much of TeX's memory you used:
+ 15274 strings out of 480247
+ 229768 string characters out of 5896151
+ 769534 words of memory out of 5000000
+ 32865 multiletter control sequences out of 15000+600000
+ 480303 words of font info for 72 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 75i,16n,77p,2607b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/nitu/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600p
+k></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+i10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy6.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on redblue.pdf (21 pages, 2042311 bytes).
+PDF statistics:
+ 570 PDF objects out of 1000 (max. 8388607)
+ 439 compressed objects within 5 object streams
+ 134 named destinations out of 1000 (max. 500000)
+ 312 words of extra memory for PDF output out of 10000 (max. 10000000)
+

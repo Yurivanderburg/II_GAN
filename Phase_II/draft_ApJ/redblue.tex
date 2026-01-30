@@ -1,0 +1,962 @@
+\documentclass[linenumbers, twocolumn]{aastex701}
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL AJsubmitted/main.tex   Sat Aug 30 14:42:10 2025
+%DIF ADD main.tex               Thu Jan 15 11:41:06 2026
+\usepackage{amsmath}
+%DIF 3a3-7
+\usepackage{graphicx} %DIF > 
+\usepackage{xcolor} %DIF > 
+\usepackage[normalem]{ulem} %DIF > 
+\usepackage{hyperref} %DIF > 
+\usepackage{lineno} %DIF > 
+%DIF -------
+
+%DIF 4a9-14
+\usepackage{fancyhdr} %DIF > 
+%\pagestyle{fancy} %DIF > 
+%\fancyfoot[L]{DOI: \href{https://doi.org/10.5281/zenodo.17598807}{10.5281/zenodo.17598807}} %DIF > 
+ %DIF > 
+ %DIF > 
+\definecolor{BLUE}{named}{blue}  %DIF > 
+%DIF -------
+
+\newcommand{\mias}{$\SI{}{\micro{\rm as}}$}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\norm}[2]{\left\lVert#1\right\rVert}
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFaddtex}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdeltex}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+\providecommand{\DIFmodbegin}{} %DIF PREAMBLE
+\providecommand{\DIFmodend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF HYPERREF PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{\texorpdfstring{\DIFaddtex{#1}}{#1}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{\texorpdfstring{\DIFdeltex{#1}}{}} %DIF PREAMBLE
+\newcommand{\DIFscaledelfig}{0.5}
+%DIF HIGHLIGHTGRAPHICS PREAMBLE %DIF PREAMBLE
+\RequirePackage{settobox} %DIF PREAMBLE
+\RequirePackage{letltxmacro} %DIF PREAMBLE
+\newsavebox{\DIFdelgraphicsbox} %DIF PREAMBLE
+\newlength{\DIFdelgraphicswidth} %DIF PREAMBLE
+\newlength{\DIFdelgraphicsheight} %DIF PREAMBLE
+% store original definition of \includegraphics %DIF PREAMBLE
+\LetLtxMacro{\DIFOincludegraphics}{\includegraphics} %DIF PREAMBLE
+\newcommand{\DIFaddincludegraphics}[2][]{{\color{blue}\fbox{\DIFOincludegraphics[#1]{#2}}}} %DIF PREAMBLE
+\newcommand{\DIFdelincludegraphics}[2][]{% %DIF PREAMBLE
+\sbox{\DIFdelgraphicsbox}{\DIFOincludegraphics[#1]{#2}}% %DIF PREAMBLE
+\settoboxwidth{\DIFdelgraphicswidth}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\settoboxtotalheight{\DIFdelgraphicsheight}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\scalebox{\DIFscaledelfig}{% %DIF PREAMBLE
+\parbox[b]{\DIFdelgraphicswidth}{\usebox{\DIFdelgraphicsbox}\\[-\baselineskip] \rule{\DIFdelgraphicswidth}{0em}}\llap{\resizebox{\DIFdelgraphicswidth}{\DIFdelgraphicsheight}{% %DIF PREAMBLE
+\setlength{\unitlength}{\DIFdelgraphicswidth}% %DIF PREAMBLE
+\begin{picture}(1,1)% %DIF PREAMBLE
+\thicklines\linethickness{2pt} %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\framebox(1,1){}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\line( 1,1){1}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,1){\line(1,-1){1}}}% %DIF PREAMBLE
+\end{picture}% %DIF PREAMBLE
+}\hspace*{3pt}}} %DIF PREAMBLE
+} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbegin}{\DIFaddbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddend}{\DIFaddend} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbegin}{\DIFdelbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelend}{\DIFdelend} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbegin}{\DIFOaddbegin \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbegin}{\DIFOdelbegin \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbeginFL}{\DIFaddbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddendFL}{\DIFaddendFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbeginFL}{\DIFdelbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelendFL}{\DIFdelendFL} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbeginFL}{\DIFOaddbeginFL \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbeginFL}{\DIFOdelbeginFL \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+%DIF LISTINGS PREAMBLE %DIF PREAMBLE
+\RequirePackage{listings} %DIF PREAMBLE
+\RequirePackage{color} %DIF PREAMBLE
+\lstdefinelanguage{DIFcode}{ %DIF PREAMBLE
+%DIF DIFCODE_UNDERLINE %DIF PREAMBLE
+  moredelim=[il][\color{red}\sout]{\%DIF\ <\ }, %DIF PREAMBLE
+  moredelim=[il][\color{blue}\uwave]{\%DIF\ >\ } %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstdefinestyle{DIFverbatimstyle}{ %DIF PREAMBLE
+	language=DIFcode, %DIF PREAMBLE
+	basicstyle=\ttfamily, %DIF PREAMBLE
+	columns=fullflexible, %DIF PREAMBLE
+	keepspaces=true %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim}{\lstset{style=DIFverbatimstyle}}{} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim*}{\lstset{style=DIFverbatimstyle,showspaces=true}}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\begin{document}
+
+\title{Generative AI for image reconstruction in Intensity Interferometry: a first attempt}
+
+\author{Km Nitu Rai}
+\affiliation{School of Physics, Indian Institute of Science Education and Research Thiruvananthapuram, Maruthamala PO, Vithura, Thiruvananthapuram 695551, Kerala, India.}
+\affiliation{Aryabhatta Research Institute of Observational Sciences, Manora Peak, Nainital 263129, India.}
+\email{niturai201296@gmail.com}  
+
+\author{Yuri van der Burg} 
+\affiliation{Physik-Institut, University of Zurich,	Winterthurerstrasse 190, 8057 Zurich, Switzerland.}
+\email{yuri.vanderburg@uzh.ch}
+
+\author{Soumen Basak}
+\affiliation{School of Physics, Indian Institute of Science Education and Research Thiruvananthapuram, Maruthamala PO, Vithura, Thiruvananthapuram 695551, Kerala, India.}
+\email{sbasak2006@gmail.com}
+
+\author{Prasenjit Saha}
+\affiliation{Physik-Institut, University of Zurich,	Winterthurerstrasse 190, 8057 Zurich, Switzerland.}
+\email{psaha@physik.uzh.ch}
+
+\author{Subrata Sarangi}
+\affiliation{School of Applied Sciences, Centurion University of	Technology and Management, Odisha-752050, India.}
+\affiliation{Visiting Associate, Inter-University Centre for Astronomy and Astrophysics, Post Bag 4, Ganeshkhind, Pune 411 007, Maharashtra, India.}
+\email{ssarangi.itech@gmail.com}
+
+\begin{abstract}
+In the last few years Intensity Interferometry (II) has made significant strides in achieving high-precision resolution of stellar objects at optical wavelengths. Despite these advancements, phase retrieval remains a major challenge due to the nature of photon correlation. This paper explores the application of a conditional Generative Adversarial Network (cGAN) to tackle the problem of image reconstruction in \DIFdelbegin \DIFdel{Intensity Interferometry. This approach }\DIFdelend \DIFaddbegin \DIFadd{II. This method }\DIFaddend successfully reconstructs the shape, size, and brightness distribution of \DIFdelbegin \DIFdel{a }\DIFdelend \DIFaddbegin \DIFadd{simulated, }\DIFaddend fast-rotating \DIFdelbegin \DIFdel{star from sparsely sampled , }\DIFdelend \DIFaddbegin \DIFadd{stars based on a sparsely sampled }\DIFaddend spatial power spectrum \DIFdelbegin \DIFdel{of the source, corresponding to II with four telescopes}\DIFdelend \DIFaddbegin \DIFadd{obtained from a hypothetical ground-based II facility composed of four Imaging Atmospheric Cherenkov Telescopes (IACTs)}\DIFaddend .  Although this particular example could also be addressed using parameter fitting, the results suggest that with larger arrays much more complicated systems could be reconstructed by applying machine-learning techniques to II.
+\end{abstract}
+
+\section{Introduction}
+\DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \DIFadd{Humans instinctively feel a relationship with the stars. One of the primary scientific projects of humanity is to figure out what the stars are and how do they do what they do. The first obvious step in this project, beyond measuring their global parameters like diameter, mass, orbital and astrometric elements, is to obtain images of the stars with all details of the stellar surfaces. In case of the Sun, this is done routinely by observatories and Sun-observation satellites. But such a routine still remains a challenge even for the $\alpha$-Centauri system, our nearest stellar neighbour. The objective is to achieve capability of high fidelity image reconstruction of distant stars. Two interferometry based techniques, namely, Michelson Interferometry (MI) or }\DIFaddend Intensity Interferometry (II) \DIFdelbegin \DIFdel{was first reported }\DIFdelend \DIFaddbegin \DIFadd{have emerged during the last century to address this objective. A discussion of the development of these two approaches and comparison of their respective merits and challenges can be found in \mbox{%DIFAUXCMD
+\citep{Rai2025}}\hspace{0pt}%DIFAUXCMD
+. The work reported here presents the results of a first effort at applying a Conditional Generative Adversarial (neural) Network (cGAN) to image reconstruction of a fast rotator using its simulated II observations.  
+}
+
+\DIFadd{The foundational basis of II stems from the pioneering experiments and theoretical investigations carried out initially }\DIFaddend by Hanbury Brown and Twiss (HBT) \DIFdelbegin \DIFdel{during the 1950s \mbox{%DIFAUXCMD
+\citep{brown1954lxxiv, HBT56} }\hspace{0pt}%DIFAUXCMD
+as a }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\citep{HBT56Lab,brown1957interferometry, brown1958interferometry} }\hspace{0pt}%DIFAUXCMD
+and, later, by \mbox{%DIFAUXCMD
+\citep{glauber1963quantum} }\hspace{0pt}%DIFAUXCMD
+and others. The correlation between photons (called the , widely referred to as the }\DIFaddend \textquotedblleft \DIFdelbegin \DIFdel{new type of interferometry}\DIFdelend \DIFaddbegin \DIFadd{HBT effect}\DIFaddend \textquotedblright\DIFdelbegin \DIFdel{\ to measure stellar parameters such as angular diameter, orbits, andlimb darkening coefficients. Later, theoretical results reported by \mbox{%DIFAUXCMD
+\cite{brown1957interferometry, brown1958interferometry}}\hspace{0pt}%DIFAUXCMD
+, along with those of \mbox{%DIFAUXCMD
+\cite{glauber1963quantum} }\hspace{0pt}%DIFAUXCMD
+and others, demonstrated the deeper physical properties of photon correlations that lie at the core of II and }\DIFdelend \DIFaddbegin \DIFadd{) measured by a pair of photon detectors in two partially coherent beams of light was reported in 1956 \mbox{%DIFAUXCMD
+\cite{HBT56Lab}}\hspace{0pt}%DIFAUXCMD
+. \mbox{%DIFAUXCMD
+\cite{Rai2025} }\hspace{0pt}%DIFAUXCMD
+present a recent variant of this experiment, carried out with pseudo-thermal light. The HBT Effect and the related theoretical investigations }\DIFaddend laid the foundation for \DIFdelbegin \DIFdel{Quantum Optics \mbox{%DIFAUXCMD
+\cite[for textbook treatments see][]{MandelWolf1995, Hecht2002}}\hspace{0pt}%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{the modern field of Quantum Optics}\DIFaddend .
+
+\DIFdelbegin \DIFdel{By the 1970s, with stellar parameter measurements of 32 stars in single and multiple star systems conducted by }\DIFdelend Hanbury Brown and his collaborators \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
+\citep{hanbury1974angular} }\hspace{0pt}%DIFAUXCMD
+at the historic Narrabri Stellar Intensity Interferometer (NSII) in Australia, II had emerged as an alternative to the already established technique of Michelson Interferometry for measuring stellar parameters. Despite these significant achievements, the method did not gain widespread adoption in the ensuing decades, primarily }\DIFdelend \DIFaddbegin \DIFadd{led the creation and installation of the historic II facility at Narrabri, Australia, and reported the measurement of angular diameters of 32 stars and a few multiple star-systems \mbox{%DIFAUXCMD
+\citep{hanbury1974angular}}\hspace{0pt}%DIFAUXCMD
+. Soon after this work, however, II observations of stars was stalled for over four decades }\DIFaddend due to the \DIFdelbegin \DIFdel{unavailability of sensitive }\DIFdelend \DIFaddbegin \DIFadd{limits of the then available }\DIFaddend photon detectors and \DIFdelbegin \DIFdel{advanced data analysis equipment. }%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{More recently}\DIFdelend \DIFaddbegin \DIFadd{data processing equipment. With gradual mitigation of such issues}\DIFaddend , proposals to utilize Imaging Atmospheric Cherenkov Telescope (IACT) facilities for conducting II observations of stars have emerged\citep{LeBohec2006, nunez2010stellar, nunez2012high, 2013APh....43..331D} \DIFdelbegin \DIFdel{. It has been demonstrated that such observations could be carried out during bright, moonlit nightswhen $\gamma$-ray observations based on upper atmospheric Cherenkov showers were not feasible}\DIFdelend \DIFaddbegin \DIFadd{as a secondary science application of these facilities during moonlit nights. SII observations at VERITAS, MAGIC, and H.E.S.S. are now being reported \mbox{%DIFAUXCMD
+\citep[e.g.,][]{2024ApJ...966...28A,2024MNRAS.529.4387A,2025MNRAS.537.2334V}}\hspace{0pt}%DIFAUXCMD
+}\DIFaddend . This approach has the potential to enhance the scientific output of existing IACT facilities, and especially of the upcoming Cherenkov Telescope Array Observatory (CTAO). \DIFdelbegin \DIFdel{SII observations at VERITAS, MAGIC, and HESS are now being reported \mbox{%DIFAUXCMD
+\citep[e.g.,][]{2024ApJ...966...28A,2024MNRAS.529.4387A,2025MNRAS.537.2334V}}\hspace{0pt}%DIFAUXCMD
+. Simulations \mbox{%DIFAUXCMD
+\citep[e.g.,][]{10.1093/mnras/stab2391, 10.1093/mnras/stac2433} }\hspace{0pt}%DIFAUXCMD
+have argued }\DIFdelend \DIFaddbegin \DIFadd{Simulations \mbox{%DIFAUXCMD
+\citep[e.g.,]{10.1093/mnras/stab2391, 10.1093/mnras/stac2433} }\hspace{0pt}%DIFAUXCMD
+have shown }\DIFaddend that recent advancements in photon detectors could be effective in achieving high-precision measurements of parameters for stellar objects. 
+
+\DIFdelbegin \DIFdel{Beyond measuring stellar diameters and other parameters of star systems, a fundamental goal of optical astronomy is to image stellar systems at high angular resolution. In the context of II, this involves reconstructing the source's image from the intensity correlationsrecorded by pairs of telescopes (light buckets) on the ground. However, because the primary observable in II is the electromagnetic field intensity rather than the field amplitude, }\DIFdelend \DIFaddbegin \DIFadd{The thrust of these efforts has been to measure the average global parameters of stars and star systems. High-fidelity imagery, however, would transcend the measurement of global and average stellar parameters, such as angular diameters, binary separations, and orbital characteristics, which offer only an integrated view of the star or star system as a whole. Such imaging capabilities promise direct insights into the dynamic surface phenomena, including limb darkening, convection cells, granulation, star spots, oblateness and gravity darkening in rapid rotators and atmospheric structures, akin to the detailed observations routinely conducted on our own Sun.
+}
+
+\DIFadd{As it stands today, studies grappling various issues of image reconstruction are being reported \mbox{%DIFAUXCMD
+\citep{Haubois2009, Norris2021AZCyg, Liu2024SuperresolutionII, Liu2025}}\hspace{0pt}%DIFAUXCMD
+. MI-based image reconstruction has made substantial progress in this area with efforts at generating constructed images of stars like Betelgeuse \mbox{%DIFAUXCMD
+\citep{Haubois2009} }\hspace{0pt}%DIFAUXCMD
+and AZ~Cyg \mbox{%DIFAUXCMD
+\citep{Norris2021AZCyg}}\hspace{0pt}%DIFAUXCMD
+. On the other hand, II-based methods are at a nascent stage.  Some recent publications \mbox{%DIFAUXCMD
+\cite{Liu2024SuperresolutionII, Liu2025} }\hspace{0pt}%DIFAUXCMD
+have demonstrated, through outdoor experiments, imaging millimeter-scale targets at 1.36 km with a resolution ~14 times better than a single telescope’s diffraction limit. A \textquotedblleft flexible computational algorithm \textquotedblright reconstructs images from intensity correlations, overcoming atmospheric turbulence and optical imperfections. 
+}
+
+\DIFadd{We report here, the results of our attempt -- the first of its kind -- to construct the gravity-darkened sky-image of fast rotating stars consistent with their respective simulated ground-based II-observations using a cGAN neural network architecture. Image reconstruction in gravity-darkened fast-rotating stars has long been examined using various methods in MI \mbox{%DIFAUXCMD
+\citep{vanBelle2001, DomicianodeSouza2003, DomicianodeSouza2005, mcalister2005first, Monnier2007, Pedretti2009, Zhao2009, Martinez2021}}\hspace{0pt}%DIFAUXCMD
+. Recently photosphere oblateness of $\gamma$-Cassiopeia \mbox{%DIFAUXCMD
+\citep{Archer-arXiv-2025} }\hspace{0pt}%DIFAUXCMD
+has been measured at the VERITAS observatory using II. These results put our work in context, and our work presented here is a natural next step especially of the work by \mbox{%DIFAUXCMD
+\cite{Archer-arXiv-2025}}\hspace{0pt}%DIFAUXCMD
+. We implement a cGAN model \mbox{%DIFAUXCMD
+\citep{isola2017image} }\hspace{0pt}%DIFAUXCMD
+to reconstruct images of fast-rotating stars using their simulated Intensity Interferograms and sky-intensity distributions as input data for training, testing, and validation. We consider an array of four Imaging Cherenkov Telescopes (IACTs) whose relative positions approximately mimic those at VERITAS and simulate observations of a set of synthetically generated fast-rotating stars. The image predicted by the trained cGAN shows promising results in reconstructing the stars' shapes and sizes. The reconstructed brightness distributions are then assessed using moments.
+}
+
+\DIFadd{This paper is organized as follows. The next section discusses briefly the past efforts at image reconstruction on II, followed by the section on a discussion of II, focusing on its signal and noise characteristics for fast-rotating stars along the Earth’s rotation. The following section introduces the cGAN formulation and its structure. The fifth section details the parameter selection for training the network for image reconstruction. The sixth section presents the results of }\DIFaddend the \DIFdelbegin \DIFdel{phase of the interferometric signal is lost. Since a complete reconstructionof a source's brightness distribution requires phase information, the challenge is to recover the phase of the signal}\DIFdelend \DIFaddbegin \DIFadd{trained network both visually and via image moments. Finally, the paper concludes with a discussion of the overall results}\DIFaddend .
+
+
+\DIFdelbegin \DIFdel{Several theoretical and computational approaches }\DIFdelend \DIFaddbegin \section{\DIFadd{Past Efforts at Image Reconstruction relevant to Intensity Interferometry}}
+\DIFadd{Several approaches have been developed }\DIFaddend for phase reconstruction \DIFdelbegin \DIFdel{with IIhave been proposed}\DIFdelend \DIFaddbegin \DIFadd{in intensity interferometry (II)}\DIFaddend . \cite{gamo1963triple} introduced \DIFdelbegin \DIFdel{the concept of }\DIFdelend triple-intensity correlation, \DIFdelbegin \DIFdel{which \mbox{%DIFAUXCMD
+\cite{goldberger1963use} }\hspace{0pt}%DIFAUXCMD
+subsequently applied in an experiment to observe scattered particles in microscopic systems . Sato conducted experiments to measure the diameter and phase of asymmetrical objects, suggesting that triple correlation could extend II to image stellar bodies \mbox{%DIFAUXCMD
+\citep{sato1978imaging, sato1979computer, sato1981adaptive}}\hspace{0pt}%DIFAUXCMD
+. However, achieving a satisfactory }\DIFdelend \DIFaddbegin \DIFadd{applied by \mbox{%DIFAUXCMD
+\cite{goldberger1963use} }\hspace{0pt}%DIFAUXCMD
+to microscopic systems and extended by \mbox{%DIFAUXCMD
+\cite{sato1978imaging, sato1979computer, sato1981adaptive} }\hspace{0pt}%DIFAUXCMD
+to measure stellar diameters and phases, though limited by low }\DIFaddend signal-to-noise ratio (SNR)\DIFdelbegin \DIFdel{remained a significant challenge for this approach. }%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{\mbox{%DIFAUXCMD
+\cite{GerchbergSaxton1972} }\hspace{0pt}%DIFAUXCMD
+suggested an iterative method to determine the phase from the }\DIFdelend \DIFaddbegin \DIFadd{. \mbox{%DIFAUXCMD
+\cite{GerchbergSaxton1972} }\hspace{0pt}%DIFAUXCMD
+proposed an iterative phase retrieval method using }\DIFaddend image and diffraction plane \DIFdelbegin \DIFdel{pictures. This method relies on accurate }\DIFdelend \DIFaddbegin \DIFadd{data, sensitive to }\DIFaddend initial estimates and \DIFdelbegin \DIFdel{is vulnerable to slow convergence otherwise. \mbox{%DIFAUXCMD
+\cite{Fienup1982} }\hspace{0pt}%DIFAUXCMD
+introduced a }\DIFdelend \DIFaddbegin \DIFadd{convergence speed. \mbox{%DIFAUXCMD
+\cite{Fienup1982} }\hspace{0pt}%DIFAUXCMD
+improved this with the }\DIFaddend Hybrid Input-Output algorithm\DIFdelbegin \DIFdel{that incorporates feedback mechanisms to improve convergence rate and robustness, particularly in noisy environments. }%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Later, \mbox{%DIFAUXCMD
+\cite{holmes2010two} }\hspace{0pt}%DIFAUXCMD
+proposed an alternative method that utilizes the }\DIFdelend \DIFaddbegin \DIFadd{, enhancing robustness in noisy conditions. \mbox{%DIFAUXCMD
+\cite{holmes2010two} }\hspace{0pt}%DIFAUXCMD
+utilized }\DIFaddend Cauchy-Riemann relations \DIFdelbegin \DIFdel{to reconstruct }\DIFdelend \DIFaddbegin \DIFadd{for }\DIFaddend 1-D \DIFdelbegin \DIFdel{images. They also extended the approach to }\DIFdelend \DIFaddbegin \DIFadd{and }\DIFaddend 2-D \DIFdelbegin \DIFdel{images across a range of signal-to-noise (SNR) values. This algorithm was }\DIFdelend \DIFaddbegin \DIFadd{image reconstruction, }\DIFaddend applied to simulated \DIFdelbegin \DIFdel{data of stellar objects using II, considering both existing and forthcoming }\DIFdelend \DIFaddbegin \DIFadd{stellar data with }\DIFaddend Imaging Cherenkov Telescope Arrays \DIFdelbegin \DIFdel{(IACTs) with a large number of telescopes }\DIFdelend \citep{nunez2010stellar, nunez2012high, nunez2012imaging}\DIFdelbegin \DIFdel{. However, this method faces challenges related to computational complexity when attempting to generalize to }\DIFdelend \DIFaddbegin \DIFadd{, but faced computational complexity for }\DIFaddend higher dimensions. \DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{\mbox{%DIFAUXCMD
+\cite{Li2014} }\hspace{0pt}%DIFAUXCMD
+suggested a flexible iterative Regularization method that incorporates prior information }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{Li2014} }\hspace{0pt}%DIFAUXCMD
+introduced a regularized iterative method incorporating priors }\DIFaddend (e.g., sparsity\DIFdelbegin \DIFdel{, smoothness, or non-negativity) to reduce the ill-posedness of the phase retrieval problem. This method is more robust against noise and stabilizes the solution against artefacts and spurious solutions. Nevertheless, it faces challenges regarding the choice of the regularization parameter , computational complexity, and sensitivity to the initial guess .
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \DIFadd{) to mitigate noise and ill-posedness, though challenged by parameter tuning and initial guess sensitivity. }\DIFaddend The Transport-of-Intensity Equation (TIE)\DIFdelbegin \DIFdel{method is a non-interferometric technique first }\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend proposed by \cite{Teague1983}\DIFdelbegin \DIFdel{that relates the intensity variations along the optical axis to the phase of the optical fields. This method enables phase retrieval from intensity measurements taken at multiple planes. \mbox{%DIFAUXCMD
+\cite{Zhang2020} }\hspace{0pt}%DIFAUXCMD
+proposed a method to obtain a \textquotedblleft universal solution\textquotedblright\ to the TIE by employing a \textquotedblleft }\DIFdelend \DIFaddbegin \DIFadd{, retrieves phase from intensity variations across planes; \mbox{%DIFAUXCMD
+\cite{Zhang2020} }\hspace{0pt}%DIFAUXCMD
+solved TIE as a Poisson equation using a }\DIFaddend maximum intensity assumption\DIFdelbegin \DIFdel{\textquotedblright, thereby converting the TIE into a Poisson equation which is then solved iteratively. More recently, \mbox{%DIFAUXCMD
+\cite{Kirisits2024} }\hspace{0pt}%DIFAUXCMD
+have explored hybrid methods that combine the TIE with other equations, such as }\DIFdelend \DIFaddbegin \DIFadd{, while \mbox{%DIFAUXCMD
+\cite{Kirisits2024} }\hspace{0pt}%DIFAUXCMD
+combined TIE with }\DIFaddend the Transport of Phase Equation \DIFdelbegin \DIFdel{(TPE). These approaches leverage the strengths of both equations to improve phase retrieval accuracy. This method is universally applicable, as it works for arbitrarily shaped apertures , handles }\DIFdelend \DIFaddbegin \DIFadd{for improved accuracy across arbitrary apertures and }\DIFaddend non-uniform illumination, \DIFdelbegin \DIFdel{and accommodates inhomogeneous boundary conditions. It guarantees convergence, although the speed of convergence depends on the quality of the initial guess, and the final results are influenced by the }\DIFdelend \DIFaddbegin \DIFadd{with convergence dependent on initial guesses and }\DIFaddend boundary conditions.
+
+With non-linearity built into their architecture, artificial neural networks (ANNs) empowered by deep learning methods are promising for exploring the task of reconstructing images of stellar objects from ground-based observations. Convolutional Neural Networks (CNNs), with their specialized architecture for processing two-dimensional datasets, are a natural choice for image processing tasks. In astronomical image reconstruction projects, a common challenge is that the interferometric data are typically undersampled as well as noisy.  Therefore, the CNN architectures and deep learning methods employed must be capable of reliably learning both the global context of the training dataset and the local features within it. Among the various CNN architectures, U-Net models \citep{ronneberger2015u} have proven successful in such tasks.
+
+Furthermore, given that achieving a high signal-to-noise ratio (SNR) is often challenging in astronomical datasets, it is immensely beneficial if additional data can be generated using the available information from the observed sky density distribution and ground-based observations (II data, in our case) of the sources under investigation. Generative Adversarial Networks (GANs), introduced by \cite{goodfellow2014generative}, have been successful in such data augmentation tasks. Conditional GAN (cGAN) architectures, proposed by \cite{mirza2014conditional} and applied to a wide variety of datasets by \cite{isola2017image}, leverage additional information about the images in the training datasets and have demonstrated remarkable robustness in image recovery across diverse data types.
+
+In the astrophysical context, \cite{schawinski2017galaxypics} employed a GAN model to recover features\DIFdelbegin \DIFdel{— }\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend such as spiral arms, central bulges, and disk structures of galaxies\DIFdelbegin \DIFdel{— }\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend from noise-affected images. \cite{mustafa2019cosmogan} developed and customized a Deep Convolutional GAN, dubbed \textquotedblleft CosmoGAN\textquotedblright, capable of generating high-fidelity weak-lensing convergence maps of dark matter distribution that statistically reproduce real weak lensing structures. \cite{coccomini2021lightweightgan} have successfully generated credible images of planets, nebulae, and galaxies using \textquotedblleft lightweight\textquotedblright\ and \textquotedblleft physics-uninformed\textquotedblright\ GANs to produce synthetic images of celestial bodies. They also generated a \textquotedblleft Hubble Deep Field-inspired\textquotedblright\ wide-view simulation of the universe. 
+
+
+\DIFdelbegin \DIFdel{In this paper, we propose a conditional Generative Adversarial Network (cGAN) model \mbox{%DIFAUXCMD
+\citep[following][]{isola2017image} }\hspace{0pt}%DIFAUXCMD
+to reconstruct images of fast-rotating stars using their simulated Intensity Interferograms and simulated sky-intensity distributions as input data for training, testing, and validation. We consider four Imaging Cherenkov Telescope Arrays (IACTs) and simulate observation of a fast-rotating star. The image predicted by the trained GAN shows promising results in reconstructing the star’s shape and size. The reconstructed brightness distributions are then assessed using moments.
+}\DIFdelend \DIFaddbegin \section{\DIFadd{Intensity Interferometry (II) with IACT arrays}}
+\DIFaddend 
+
+\DIFdelbegin \DIFdel{This paper is organized as follows. The next section discusses Intensity Interferometry, focusing on its signal and noise characteristics for fast-rotating stars along the Earth’s rotation. The following section introduces the GAN formulation and its structure. The fourth section details the parameter selection for training the GAN for image reconstruction. The fifth section presents the results of the trained GAN both visually and via image moments. Finally, the paper concludes with a discussion of the overall results.
+}\DIFdelend \begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{fig/telescope.png}
+	\caption{\DIFdelbeginFL \DIFdelFL{The telescope configuration }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{A schematic representation of a hypothetical observation facility }\DIFaddendFL with \DIFdelbeginFL \DIFdelFL{similar properties each }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{an the array of four Cherenkov Telescopes (IACTs) whose relative positions approximately mimic those at VERITAS. This array is }\DIFaddendFL used \DIFdelbeginFL \DIFdelFL{to simulate }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{in simulating }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{signal for }\DIFdelendFL II observation \DIFaddbeginFL \DIFaddFL{of the fast rotators. Each of the telescopes has a diameter of 12m. The baselines provided by the array are of the order of 100m}\DIFaddendFL .}
+	\label{fig:teles}
+\end{figure}
+\DIFdelbegin \section{\DIFdel{Intensity Interferometry (II) with IACT arrays}}
+%DIFAUXCMD
+\addtocounter{section}{-1}%DIFAUXCMD
+\DIFdelend \DIFaddbegin 
+
+\DIFaddend \begin{figure}
+  \includegraphics[width=\linewidth]{fig/baseline.png}
+  \caption{The tracks of the baselines \DIFaddbeginFL \DIFaddFL{due to Earth rotation (described in sec.~\ref{sec:earth}) }\DIFaddendFL provided by the \DIFaddbeginFL \DIFaddFL{hypothetical observation facility of }\DIFaddendFL four telescopes arranged in fig.~\ref{fig:teles} for one night of observation. \DIFaddbeginFL \DIFaddFL{The number of baselines scales as square of number of telescopes in the array thus leading to greater coverage of the observational plane and better image reconstruction prospects.}\DIFaddendFL } 
+\label{fig:base}
+\end{figure}
+\DIFaddbegin 
+
+\DIFaddend \begin{figure}[hbt]
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\linewidth]{fig/ellipse/ellipse1612.jpg}
+%DIFDELCMD <   %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\linewidth]{fig/ellipse/ellipse1612.png}
+  \DIFaddendFL \caption{This figure shows \DIFaddbeginFL \DIFaddFL{one of }\DIFaddendFL the simulated fast rotating \DIFdelbeginFL \DIFdelFL{star}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{stars (FRS)}\DIFaddendFL . The brightness is highest at the poles\DIFdelbeginFL \DIFdelFL{and there is gravitational }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{; gravity }\DIFaddendFL darkening \DIFaddbeginFL \DIFaddFL{visible }\DIFaddendFL along the equator. \DIFaddbeginFL \DIFaddFL{A total of 31460 such images of FRS with different parameter values have been generated to train the model.}\DIFaddendFL }
+  \label{fig:image}
+\end{figure}
+\begin{figure*}
+	%DIF < \begin{subfigure}{0.5\linewidth}
+		\includegraphics[width=.49\linewidth]{fig/ft/ft.jpg}\hfil
+	%DIF < \caption{The signal (absolute value of the Fourier transform of the source).}
+	%DIF < \end{subfigure}\hfill
+	%DIF < \begin{subfigure}{0.5\linewidth}
+		\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=.49\linewidth]{fig/ft/ft_log.jpg}
+%DIFDELCMD < 		%%%
+%DIF < \caption{The logarithm of the signal.}
+	%DIF < \end{subfigure}
+	\DIFdelendFL \DIFaddbeginFL \includegraphics[width=.49\linewidth]{fig/ft/ft_base.jpg}
+	\DIFaddendFL \caption{\DIFdelbeginFL \DIFdelFL{Absolute }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{The left panel shows the absolute }\DIFaddendFL value of the two-dimensional Fast Fourier Transform of the source depicted in Fig.~\ref{fig:image}\DIFdelbeginFL \DIFdelFL{in linear scale (left panel) and logarithmic scale (right panel)}\DIFdelendFL . \DIFdelbeginFL \DIFdelFL{These figures represent }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{It represents }\DIFaddendFL the intensity interferometric ($u,v$) plane image of the source that would be obtained by an infinite number of baselines (or \DIFaddbeginFL \DIFaddFL{an }\DIFaddendFL infinite number of telescopes observing the source). \DIFdelbeginFL \DIFdelFL{Both }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{The right panel shows }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{linear }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{absolute value of the same source measured along the tracks shown in Fig.~\ref{fig:base}. This figure reflects the sparse nature of the signal received by a realistic finite number of telescopes }\DIFaddendFL and \DIFaddbeginFL \DIFaddFL{baselines sampled from }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{logarithmic scales }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{full ($u,v$) plane signal space, as shown in the figure on the left panel. Both figures }\DIFaddendFL are \DIFaddbeginFL \DIFaddFL{plotted on a linear scale and }\DIFaddendFL normalized to the maximum \DIFdelbeginFL \DIFdelFL{intensity obtained at the centre of figures}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{pixel value in each respective figure}\DIFaddendFL .}
+	\label{fig:ft}
+\end{figure*}
+This section presents a brief conceptual overview of how an array of telescopes is used to perform II observations, and explains the Signal-to-Noise Ratio (SNR) from these measurements.
+\DIFdelbegin %DIFDELCMD < \begin{figure*}
+%DIFDELCMD < 	%%%
+%DIF < \centering
+	%DIF < \begin{subfigure}{0.5\linewidth}
+  %DIFDELCMD < \includegraphics[width=.49\linewidth]{fig/ft/ft_base.jpg}\hfil
+%DIFDELCMD < 		%%%
+%DIF < \caption{The signal as samples by the baselines.}
+	%DIF < \end{subfigure}\hfill
+	%DIF < \begin{subfigure}{0.5\linewidth}
+  %DIFDELCMD < \includegraphics[width=.49\linewidth]{fig/ft/ft_log_base.jpg}
+%DIFDELCMD < 		%%%
+%DIF < \caption{The logarithmic signal as sampled by the baselines.}
+	%DIF < \end{subfigure}
+  %DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdelFL{Absolute value of the two-dimensional Fast Fourier Transform of the source depicted in Fig.~\ref{fig:image} and measured along the tracks shown in Fig.~\ref{fig:base} covered by the baselines shown in Fig.~\ref{fig:teles}. Both the left panel (in linear scale) and the right panel (in logarithmic scale) are normalized to the maximum pixel value in the respective figures. The panels of Fig.~\ref{fig:ft_base} reflect the sparse nature of the signal received by the realistic finite number of telescopes and baselines sampled from the full ($u,v$) plane signal space of Fig.~\ref{fig:ft}.}} 
+	%DIFAUXCMD
+%DIFDELCMD < \label{fig:ft_base}
+%DIFDELCMD < \end{figure*}
+%DIFDELCMD < %%%
+\DIFdelend \subsection{The signal for II}\label{sec:signal}
+As a simple example, let us consider a pair of IACTs pointed at a star. Suppose the two telescopes simultaneously measure the intensity of radiation $I_1(t)$ and $I_2(t)$, respectively. The signals from these detectors are cross-correlated and averaged over time, yielding the second order ($n=2$) correlation of these intensities as \citep[cf.][]{acciari2020optical, 2013APh....43..331D}
+\begin{equation}
+	g^{(2)}= \frac{\left\langle I_1(t) \cdot I_2(t + \tau) \right\rangle}{\langle I_1(t) \rangle \cdot \langle I_2(t) \rangle} 
+	\label{eqn:HBT}
+\end{equation}
+where $\tau$ is the time delay between the telescopes. For spatially coherent and randomly polarized light, Eq.~\eqref{eqn:HBT} reduces to the relation \citep[sometimes called the Siegert relation, see e.g.,][]{acciari2020optical}.
+\begin{equation}
+	g^{(2)} = 1 + \frac{\Delta f}{\Delta \nu} \abs{V_{12}}^2
+	\label{eqn:HBT2}
+\end{equation}
+where $\Delta f$ is the electronic bandwidth of the photon detectors which measure the intensities and $\Delta \nu$ is the frequency bandwidth of the filters employed in the telescopes to observe the star.  Values of $\Delta\nu\sim 1\,\mathrm{THz}$ and $\Delta f \sim 1\,\mathrm{GHz}$ are typical of recent work.  In Eq.~\eqref{eqn:HBT2}, $V_{12}$, referred to as the complex visibility function, is the Fourier transform of the source brightness distribution. \DIFdelbegin \DIFdel{For a uniform disk source representing the star, it is given by
+}\begin{displaymath}
+ \DIFdel{V_{12} = 2 \frac{J_1(\pi\theta_D b)}{(\pi\theta_D b)}
+%DIFDELCMD < \label{eqn:absvisib}%%%
+}\end{displaymath}%DIFAUXCMD
+\DIFdel{where $\theta_D$ is the angular diameter of the star and $b$ is the radial coordinate in the conventional interferometric $(u , v) = (x/\lambda, y/\lambda)$ plane, with $\lambda$ representing the optical wavelength of the filter used for observation. It is evident from Eq.~}%DIFDELCMD < \eqref{eqn:absvisib} %%%
+\DIFdel{that $V_{12}$ }\DIFdelend \DIFaddbegin \DIFadd{It }\DIFaddend contains information about the star's angular diameter. However, the phase information is lost since we measure only the absolute value $\vert V_{12} \vert^2$. In observational astronomy, the correlation is often expressed in terms of the normalized contrast, given by:
+\DIFdelbegin \begin{displaymath}
+	\DIFdel{c = \frac{\left\langle \left( I_1(t) - \left\langle I_1 \right\rangle \right) \cdot \left( I_2(t + \tau) - \left\langle I_2 \right\rangle \right) \right\rangle}{\langle I_1(t) \rangle \cdot \langle I_2(t) \rangle} = g^{(2)} - 1
+}\end{displaymath}%DIFAUXCMD
+\DIFdel{where, $\left\langle I_1 \right\rangle$ and $\left\langle I_2 \right\rangle$ denote the mean intensities from the two telescopes. Therefore, the signal measured by the photon detectors in II, operating with an electronic bandwidth $\Delta f$ within the optical bandwidth $\Delta {\mathrm {\nu}}$ of the observational (filtered) radiation, is
+}\DIFdelend \begin{equation}
+	c = g^{(2)} - 1 = \frac{\Delta f}{\Delta \nu} \abs{V_{12}}^2
+	\label{eq:signal}
+\end{equation}
+with $\abs{V_{12}}^2$ being a function of baseline $b = \sqrt{u^2 + v^2}$ on the observational plane \DIFaddbegin \DIFadd{$(u, v)$}\DIFaddend . This implies the strength of the signal would be enhanced if a larger number of baselines or pairs of telescopes are employed.
+
+\subsection{The Signal-to-Noise Ratio for II}
+The primary purpose of IACTs is to study high-energy gamma rays (with energy $E\ \geq 30$ GeV) arriving from cosmic sources, entering the Earth's atmosphere, and initiating Cherenkov showers in the upper atmosphere due to multiple scattering. These telescopes feature an array of mirrors that focus light \DIFdelbegin \DIFdel{onto a }\DIFdelend \DIFaddbegin \DIFadd{received from a sky source onto their respective }\DIFaddend set of photo-multiplier tubes \citep[PMTs, see e.g.,][]{aleksic2016major} \DIFaddbegin \DIFadd{with appropriate specifications needed for II observations}\DIFaddend . In the simulation model adopted here, we consider a set of four IACTs, each with similar properties. The positional configuration of these IACTs is shown in Fig.~\ref{fig:teles}. The optical signal directed to a PMT is filtered using a spectral filter with a chosen mean observational wavelength $\lambda$ and corresponding bandpass $\Delta \lambda$. The use of filters not only reduces background noise but also improves the signal quality and the efficiency of the PMTs. Filtering background skylight becomes even more significant in II observations, as, currently, these are carried out during full moon nights when the primary function of the IACTs (of observing Cherenkov Showers) is rendered infeasible. It is important to note that the light from the stellar source is focused on a PMT attached with each of the telescopes during II observations.
+
+The significance of the signal can be expressed in terms of the signal-to-noise ratio (SNR), which depends on many factors. However, most importantly, it does not depend on the optical bandwidth $\Delta {\mathrm {\nu}}$ of the radiation for a two-telescope correlation. The explanation for the independence of the SNR from $\Delta {\mathrm {\nu}}$ is provided in several works \citep[e.g., subsection 4.1 of][]{10.1093/mnras/stab2391}.  The Signal-to-Noise is given by
+\begin{equation}
+	SNR = A \cdot \alpha \cdot q \cdot n \cdot F^{-1} \cdot \sigma \cdot \sqrt{\frac{T \Delta f}{2}} \cdot \abs{V_{12}}^{2}
+	\label{eq:SNR}
+\end{equation}
+Here, $A$ is the total mirror area, $\alpha$ is the quantum efficiency of the PMTs, $q$ is the throughput of the remaining optics, and $n$ is the differential photon flux from the source. The excess noise factor of the PMTs is represented by $F$, $T$ denotes the observation time, and $\sigma$ is the normalized spectral distribution of the light (including filters) \citep[e.g.,][]{acciari2020optical}.
+\DIFdelbegin \DIFdel{The signal ($S$) and noise ($N$) can be inferred using eqns.\ref{eq:signal} and \ref{eq:SNR} as:
+}\begin{displaymath}
+	\DIFdel{S = \frac{\Delta f}{\Delta \nu} \abs{V_{12}}^2
+}\end{displaymath}%DIFAUXCMD
+\DIFdel{and
+}\begin{displaymath}
+	\DIFdel{N = (A \cdot \alpha \cdot q \cdot n \cdot F \cdot \sigma \cdot \Delta \nu)^{-1}\sqrt{\frac{2 \Delta f}{T}}.
+}\end{displaymath}%DIFAUXCMD
+\DIFdel{While most of the parameters can be optimized with hardware, the only way to achieve a better SNR with fixed telescopes that is at the disposal of the astronomer is to increase the observation time $T$.
+}\DIFdelend 
+
+\subsection{Baseline considerations}\DIFaddbegin \label{sec:earth}
+\DIFaddend The measurement of the size of stellar objects via squared visibility depends on the distance between the telescopes, known as the baseline $b$.
+\begin{equation}
+	|V_{12}(b)|^2 = \frac{c(b)}{c(0)}
+	\label{eq:angular_size_meas}
+\end{equation}
+For achieving a good SNR with a given telescope configuration, covering as much as possible of the interferometric plane is always desirable. If the source is at the zenith, the coordinates in the Fourier plane ($u,v$) are given by:
+\begin{equation}
+	(u,v) = \frac{1}{\lambda} (b_E, b_N)
+\end{equation}
+where $b_E$ and $b_N$ are\DIFaddbegin \DIFadd{, respectively, }\DIFaddend the baselines expressed in east and north coordinates. However, \DIFdelbegin \DIFdel{of course }\DIFdelend \DIFaddbegin \DIFadd{the }\DIFaddend sources can be anywhere on the sky, and the telescopes are stationary and may also have different relative altitudes $b_A$ depending on the available terrain. \DIFdelbegin \DIFdel{Therefore, the }\DIFdelend \DIFaddbegin \DIFadd{In order to gather maximum possible information on the source during the observation session and to cover as much of the observational plane as possible during such sessions, }\DIFaddend Earth's rotation must be taken into account \DIFdelbegin \DIFdel{to cover the maximum observational plane }\DIFdelend using rotated baselines.  For a given stellar source with declination $\delta$ and hour-angle $h$, as observed by telescopes \DIFaddbegin \DIFadd{located }\DIFaddend at latitude $l$, equation (\ref{eq:baseline_rot}) provides the rotated baselines for a given pair of telescopes \citep[see e.g., eqs.~8--10 from][]{2020MNRAS.498.4577B} \DIFaddbegin \DIFadd{with the $R$-matrices representing the respective rotation operations}\DIFaddend .
+\begin{equation}
+\begin{pmatrix} u\\ v\\ w\\ \end{pmatrix} = R_x(\delta) \cdot R_y(h) \cdot R_x(-l) \begin{pmatrix} b_E \\ b_N \\ b_A \\ \end{pmatrix}
+	\label{eq:baseline_rot}
+\end{equation}
+
+Fig.~\ref{fig:base} shows the track of six baselines generated from the telescopes (Fig.~\ref{fig:teles}) due to the Earth's rotation. Since every pair of telescopes traces an ellipse in the Fourier plane, the total number of ellipses scales as
+\begin{equation}
+	\label{eq:N_telescopes}
+	\mathcal{N} = \tfrac12 N_T \cdot (N_T -1)
+\end{equation}
+where $N_T$ is the number of telescopes considered.
+As the number of baselines increases non-linearly, Intensity Interferometry (II) benefits greatly from a large number of telescopes. The CTAO can offer many more baselines --- \cite{2013APh....43..331D} considered the telescope configurations then being planned and showed how it would provide a dense coverage of the interference plane.
+
+\subsection{A Fictitious Fast Rotating Star: Our Test Case}
+In our work presented here, we \DIFdelbegin \DIFdel{simulate a single }\DIFdelend \DIFaddbegin \DIFadd{attempt image reconstruction of a }\DIFaddend fast-rotating star \DIFdelbegin \DIFdel{to test image reconstruction using a GAN}\DIFdelend \DIFaddbegin \DIFadd{using its simulated Intensity Interferometric observation in a cGAN architecture. Fast-rotating stars are important test cases for understanding various astrophysical processes, including stellar evolution, internal structure, and dynamical behaviour over time}\DIFaddend . Fast rotation causes stars to adopt an oblate shape, flattening at the poles and bulging at the equator due to the stronger centrifugal force \citep[e.g.,][]{von1924radiative, 1999A&A...347..185M}. Fig.~\ref{fig:image} shows an image qualitatively representing a fictitious fast-rotating star, with brightness \DIFaddbegin \DIFadd{(and, therefore, the effective surface temperature) }\DIFaddend distributed across its surface. The brightness \DIFaddbegin \DIFadd{(effective temperature) }\DIFaddend is highest at the poles and lowest at the equator, a phenomenon known as gravity darkening \citep{lucy1967gravity}. \DIFdelbegin \DIFdel{This effect }\DIFdelend \DIFaddbegin \DIFadd{First direct interferometric detection of stellar photospheric oblateness (of Altair) was pioneered by \mbox{%DIFAUXCMD
+\cite{vanBelle2001} }\hspace{0pt}%DIFAUXCMD
+using the Palomar Testbed Interferometer (PTI) and the Navy Prototype Optical Interferometer (NPOI). Gravity darkening due to fast rotation }\DIFaddend was first observed through interferometric and spectroscopic data from the CHARA Array for the fast-rotating star Regulus \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
+\cite{mcalister2005first}}\hspace{0pt}%DIFAUXCMD
+.  Fast-rotating stars are important test cases for understanding various astrophysical processes, including stellar evolution, internal structure, and dynamical behavior over time}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\citep{mcalister2005first}}\hspace{0pt}%DIFAUXCMD
+.  As pointed out earlier, these two pieces  of work, all using Michelson Interferometry, make a subset of several others \mbox{%DIFAUXCMD
+\citep{vanBelle2001, DomicianodeSouza2003, mcalister2005first, DomicianodeSouza2005, Monnier2007, Pedretti2009, Zhao2009, Martinez2021}}\hspace{0pt}%DIFAUXCMD
+. The first observation of photospheric oblateness (of $\gamma$ Cassiopeiae or $\gamma$-Cas) using Intensity Interfereometry (II) has been recently carried out at VERITAS observatory and is reported by \mbox{%DIFAUXCMD
+\cite{Archer-arXiv-2025}}\hspace{0pt}%DIFAUXCMD
+. Reportage of such observations of other $\gamma$-Cas like targets and other class of FRS by Cherenkov Telescope arrays, such as  the MAGIC array, are expected by 2026. In addition, observation and measurement of gravity darkening using II is the natural next step and is yet to be reported. In this context, our work of reconstructing the image of FRSs from their II-simulated observations using cGAN is an attempt at solving this inverse problem along with mitigation of loss of phase information in II}\DIFaddend . 
+
+\DIFdelbegin \DIFdel{Intensity Interferometry }\DIFdelend \DIFaddbegin \DIFadd{II }\DIFaddend counts the photons arriving at the telescopes from the stellar object. The correlation of these photon arrivals at the telescopes yields the squared visibility Eq.~\eqref{eq:angular_size_meas}, as explained in subsection~\ref{sec:signal}. \DIFdelbegin \DIFdel{Fig}\DIFdelend \DIFaddbegin \DIFadd{The left panel of fig}\DIFaddend .~\ref{fig:ft} shows the signal from the source shown in Fig.~\ref{fig:image} using II, displayed \DIFdelbegin \DIFdel{in both linear and logarithmic scales.  Point }\DIFdelend \DIFaddbegin \DIFadd{on linear scales.  A point }\DIFaddend to note here is that this figure represents the signal from the source that would be recorded by an infinite number of baselines provided by an infinite number of telescopes on the interferometric plane. In practice, only a small part of this information is available (as seen \DIFaddbegin \DIFadd{in right panel of }\DIFaddend Fig.~\DIFdelbegin \DIFdel{\ref{fig:ft_base}}\DIFdelend \DIFaddbegin \DIFadd{\ref{fig:ft}}\DIFaddend ), because one has a finite number of baselines corresponding to the finite number $N_T$ of telescopes at our disposal and a limited observation schedule. We have simulated the II observation of the fictitious star by \DIFdelbegin \DIFdel{four telescopes }\DIFdelend \DIFaddbegin \DIFadd{a hypothetical observation facility having an array of four IACTs with their relative positions approximating those at VERITAS }\DIFaddend (correlated with baselines as seen in Fig.~\ref{fig:teles}) over one night. Using this modest amount of signal from one night's observation, we have trained a cGAN to construct the image of the source.
+\DIFdelbegin %DIFDELCMD < \begin{figure}
+%DIFDELCMD <   \includegraphics[width=\linewidth]{fig/ellipse1612.png}
+%DIFDELCMD <   %%%
+\DIFdelendFL \DIFaddbeginFL \begin{figure*}
+   \centering
+  \includegraphics[width=0.85\linewidth]{fig/ellipse1612.jpg}
+  \DIFaddendFL \caption{\DIFdelbeginFL \DIFdelFL{Merged }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{An illustrative example of the input used for training the cGAN model. The picture on the left shows the source }\DIFaddendFL image, which \DIFdelbeginFL \DIFdelFL{includes }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{serves as }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{original }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{ground truth or the real data ($x$), as mentioned in the Flow Diagram (Fig.\ref{fig:FlowDiagram} discussed later during the training). The picture on  the right represents the simulated II observation pattern of the source (on the left) using a hypothetical observation facility having as array of four IACTs (see Fig.~\ref{fig:teles}) }\DIFaddendFL and the \DIFdelbeginFL \DIFdelFL{sparsely sampled Fourier plane}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{tracks of the six telescope baselines (see Fig}\DIFaddendFL .\DIFdelbeginFL \DIFdelFL{It is exactly what }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{~\ref{fig:base}) generated  by these four IACTs due to Earth's rotation during the observation session. This pattern referred to as $y$, in the Flow Diagram (Fig.\ref{fig:FlowDiagram} discussed later) forms the ``condition" during the training to which }\DIFaddendFL the GAN \DIFdelbeginFL \DIFdelFL{receives}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{model has to conform}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{The grey scale }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Salt-and-pepper noise is added to this pattern for enhancing the robustness }\DIFaddendFL of the \DIFdelbeginFL \DIFdelFL{figure }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{cGAN model. Together, these images form a training pair, where the GAN learns to reconstruct a predicted image (modeling of observed signal) similar to ground truth (left) from the noisy baseline signal (right). The grayscale in both images }\DIFaddendFL is normalized to the brightest pixel\DIFdelbeginFL \DIFdelFL{in the image}\DIFdelendFL .}
+  \label{fig:GANinput}
+\DIFdelbeginFL %DIFDELCMD < \end{figure}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \end{figure*}
+\DIFaddend 
+
+\section{Generative Adversarial Networks}
+\begin{figure*}
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=.49\textwidth]{fig/analysis/Plot_learning_rate_disc_loss.pdf}\hfil
+%DIFDELCMD < 	\includegraphics[width=.49\textwidth]{fig/analysis/Plot_learning_rate_gen_total_loss.pdf}
+%DIFDELCMD < 	%%%
+\DIFdelendFL \DIFaddbeginFL \centering
+\includegraphics[width=\linewidth]{fig/FlowDiagram_TikZ.png}
+\DIFaddendFL \caption{\DIFaddbeginFL \DIFaddFL{A schematic representation of the features of a cGAN model used in this work and the iterative process of its training, validation and testing. The process constitutes four broad stages: (1) choice of an appropriate GAN architecture including both the }\DIFaddendFL Discriminator and \DIFaddbeginFL \DIFaddFL{the }\DIFaddendFL Generator \DIFdelbeginFL \DIFdelFL{losses for three different learning rates}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{(not shown in this figure) (2) preparation of the Training, Validation and Testing datasets and (3) Training and Validation of the Model (4) Testing and Evaluation of the Model}\DIFaddendFL . The \DIFdelbeginFL \DIFdelFL{left panel }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{stages (2), (3) }\DIFaddendFL and \DIFaddbeginFL \DIFaddFL{(4) are depicted in this figure. The datasets are prepared in three broad steps: (i) generating }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{right panel show }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{``ground truth'' images of fictitious fast-rotators $x$, }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{total discriminator loss }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{sparse II images $y$ used as the ``condition'' images in the Model }\DIFaddendFL and the \DIFdelbeginFL \DIFdelFL{total generator loss }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{generated images $z$ sampled from a Normal Distribution }\DIFaddendFL (\DIFdelbeginFL \DIFdelFL{Eq}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{ii)merging these images into individual files with $(x|y)$ and/ or $(z|y)$ (as seen in an illustrated sample in Fig}\DIFaddendFL .\DIFdelbeginFL \DIFdelFL{~\ref{eq:total_gen_loss}}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{(\ref{fig:GANinput}}\DIFaddendFL )\DIFdelbeginFL \DIFdelFL{respectively}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{) and generating the full dataset in this process, and finally (iii) partitioning the full dataset into Training Set, Validation Set and the Testing Set}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{There }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{After the iterative training of the Model and its validation process }\DIFaddendFL is \DIFdelbeginFL \DIFdelFL{no significant difference}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{complete (``Nash point'' of the Minimax Game is reached)}\DIFaddendFL , \DIFdelbeginFL \DIFdelFL{but these figures indicate that higher learning rates might render }\DIFdelendFL the \DIFdelbeginFL \DIFdelFL{training prone to outliers}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Model is tested using the Testing Set and evaluated}\DIFaddendFL .}
+\DIFdelbeginFL %DIFDELCMD < \label{fig:Plot_learning_rate_loss}
+%DIFDELCMD < \end{figure*}
+%DIFDELCMD < \begin{figure*}
+%DIFDELCMD < 	\includegraphics[width=.49\textwidth]{fig/analysis/Plot_Kernel_size_disc_loss.pdf}
+%DIFDELCMD < 	\includegraphics[width=.49\textwidth]{fig/analysis/Plot_Kernel_size_gen_total_loss.pdf}
+%DIFDELCMD < 	%%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdelFL{Discriminator and Generator losses (left and right panels respectively) for three different kernel sizes in the convolutional layers. Here, the smallest kernel size has many outliers, while the largest kernel size seems to be the most stable.}}
+	%DIFAUXCMD
+%DIFDELCMD < \label{fig:Plot_kernel_size_loss}
+%DIFDELCMD < \end{figure*}
+%DIFDELCMD < \begin{figure*}
+%DIFDELCMD < 	\includegraphics[width=.49\textwidth]{fig/analysis/Plot_noise_factor_disc_loss.pdf}
+%DIFDELCMD < 	\includegraphics[width=.49\textwidth]{fig/analysis/Plot_noise_factor_gen_total_loss.pdf}
+%DIFDELCMD < 	%%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdelFL{Effect of the Salt (alpha) and Pepper (beta) noise (explained in the text) introduced into the images.  There is no significant effect of the alpha/beta ratio. These results are from training on $64\times64$-pixel images.}}
+	%DIFAUXCMD
+%DIFDELCMD < \label{fig:Plot_noise_loss}
+%DIFDELCMD < \end{figure*}
+%DIFDELCMD < \begin{figure*}
+%DIFDELCMD < 	\includegraphics[width=.49\textwidth]{fig/analysis/Plot_Batchsize_disc_loss.pdf}\hfill
+%DIFDELCMD < 	\includegraphics[width=.49\textwidth]{fig/analysis/Plot_Batchsize_gen_total_loss.pdf}
+%DIFDELCMD < 	%%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdelFL{Loss functions for two different batch sizes. Large batch sizes seem to make the training more robust, but also increase training time significantly. }}
+	%DIFAUXCMD
+%DIFDELCMD < \label{fig:Plot_batchsize_loss}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \label{fig:FlowDiagram}
+\DIFaddendFL \end{figure*}
+ \DIFdelbegin %DIFDELCMD < \begin{figure*}
+%DIFDELCMD < 	\includegraphics[width=.49\textwidth]{fig/analysis/Plot_Disc_rep_disc_loss.pdf}\hfil
+%DIFDELCMD < 	\includegraphics[width=.49\textwidth]{fig/analysis/Plot_Disc_rep_gen_total_loss.pdf}
+%DIFDELCMD < 	%%%
+\DIFdelendFL \DIFaddbeginFL 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{fig/analysis/Discrep_Runs_Losses_disc_loss.png}
+	\includegraphics[width=\linewidth]{fig/analysis/Discrep_Runs_Losses_gen_total_loss.png}
+	\DIFaddendFL \caption{\DIFdelbeginFL \DIFdelFL{The number }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{These figures show the effect of the ratio }\DIFaddendFL of episodes of Discriminator training per every episode of Generator training\DIFdelbeginFL \DIFdelFL{(}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{. This hyperparameter is }\DIFaddendFL termed Discriminator repetition or \DIFdelbeginFL \DIFdelFL{Disc}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{(discrep) in the figures}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{rep}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{The square root of the cumulative mean of the losses are plotted against the training steps for 3 values of this ratio}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{), understandably}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Understandably}\DIFaddendFL , \DIFaddbeginFL \DIFaddFL{this ratio }\DIFaddendFL has a higher impact on the Discriminator loss than \DIFdelbeginFL \DIFdelFL{on }\DIFdelendFL the Generator loss. \DIFdelbeginFL \DIFdelFL{The left and }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Equal number of episodes of training produces minimum cumulative loss of }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{right panel show this effect on }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Discriminator. The dip in }\DIFaddendFL the Discriminator loss \DIFaddbeginFL \DIFaddFL{during the initial phases of its training can be interpreted as its early success in detecting ``fake" (or generated) images because of a poorly trained Generator. With gradual training of the Generator, the success rate of the Discriminator decreases and eventually approaches saturation with equal probability of being successful in telling ``fake" from real. The continual decrease }\DIFaddendFL and \DIFaddbeginFL \DIFaddFL{eventual saturation of }\DIFaddendFL the Generator loss \DIFdelbeginFL \DIFdelFL{respectively}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{is a result of its training to generate better images with increasing number of steps}\DIFaddendFL .}
+	\label{fig:Plot_discrep_loss}
+\DIFdelbeginFL %DIFDELCMD < \end{figure*}
+%DIFDELCMD < \begin{figure*}
+%DIFDELCMD < 	\includegraphics[width=.49\textwidth]{fig/analysis/Plot_N_telescopes_disc_loss.pdf}\hfil
+%DIFDELCMD < 	\includegraphics[width=0.49\textwidth]{fig/analysis/Plot_N_telescopes_gen_total_loss.pdf}\hfil
+%DIFDELCMD < 	%%%
+\DIFdelendFL \DIFaddbeginFL \end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{fig/analysis/Telescope_Runs_Losses_disc_loss.png}
+	\includegraphics[width=\linewidth]{fig/analysis/Telescope_Runs_Losses_gen_total_loss.png}
+	\DIFaddendFL \caption{\DIFaddbeginFL \DIFaddFL{The square root of cumulative mean of }\DIFaddendFL Discriminator and Generator loss for different numbers of telescopes. \DIFdelbeginFL \DIFdelFL{It }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{The number of telescopes is also another hyperparameter that }\DIFaddendFL has \DIFdelbeginFL \DIFdelFL{a very }\DIFdelendFL significant impact on the model performance. If there are only two telescopes, both Discriminator and Generator are not trained smoothly. The result of four telescopes is a lot better because the \DIFaddbeginFL \DIFaddFL{cumulative mean of }\DIFaddendFL loss functions \DIFdelbeginFL \DIFdelFL{change only slightly }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{is smaller compare to other parameters. For the same reasons as explained in Fig.(\ref{fig:Plot_discrep_loss}), we observe initial dip and eventual saturation of the Discriminator loss and continual decrease and eventual saturation of the Generator loss }\DIFaddendFL with \DIFdelbeginFL \DIFdelFL{increasing }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{training }\DIFaddendFL steps. }
+	\label{fig:Plot_telescopes_loss}
+\DIFdelbeginFL %DIFDELCMD < \end{figure*}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \end{figure}
+\DIFaddend Generative Adversarial Networks (GANs) were introduced by \cite{goodfellow2014generative}. \DIFdelbegin \DIFdel{The underlying concept is straightforward: it }\DIFdelend \DIFaddbegin \DIFadd{A GAN model }\DIFaddend involves two competing \DIFdelbegin \DIFdel{networks. The first network , known }\DIFdelend \DIFaddbegin \DIFadd{deep neural network models, referred to }\DIFaddend as the Generator \DIFdelbegin \DIFdel{, produces new images based on an input image. These will be referred to as generated images. The second network, the Discriminator, attempts to distinguish between the generated image (predicted image) and the real image (ground truth) .
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Through the alternating training of these networks, the generated images gradually become indistinguishable from the real images. Essentially, this process constitutes a two-player min-max game --- a classic problem in game theory. The original formulation of GANs is given by:
+}\begin{displaymath}
+	\DIFdel{\centering
+	\begin{aligned}
+		\min_{G} \max_{D} V(D, G) &= \mathbb{E}_{x \sim p_{\rm data}(x)} \left[ \log D(x) \right] \\
+		&+ \mathbb{E}_{z \sim p_{z}(z)} \left[ \log \left( 1-D(G(z)) \right) \right]
+	\end{aligned}
+	\label{eq:Basic_GAN}
+}\end{displaymath}%DIFAUXCMD
+\DIFdel{where $V(D, G)$ denotes the value function of the min-max game. }%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{The objective is to learn the Generator's distribution, \(p_G\), over the data }\DIFdelend \DIFaddbegin \DIFadd{and the Discriminator. These two networks engage in a zero-sum “Minimax” game, as in Game Theory. Given a real data set $\{x_i\}$ (for example, a set of real images) drawn from some unknown distribution $P_{\mathrm{data}}(x)$ generated by some unknown or ill-understood process, the objective here is to generate a new set (of images) whose probability distribution should match $P_{\mathrm{data}}(x)$ as closely as possible. During the training of the two models, the Generator samples a latent variable \(z\) from a known prior distribution \(P_z(z)\) (}{\it \DIFadd{e.g.}}\DIFadd{, the Normal Distribution) and produces a synthetic sample \(G(z)\) to start with and, subsequently, based on updates received from the Discriminator as its training progresses. The Discriminator, being a probabilistic binary classifier, receives either a real data sample }\DIFaddend \(x\) \DIFdelbegin \DIFdel{. We begin with input noise variables \(p_z(z)\) and employ two perceptrons, \(G(z; \theta_G)\) and \(D(x; \theta_D)\), }\DIFdelend \DIFaddbegin \DIFadd{or a generated sample \(G(z)\), and outputs a probability that the input is real. The Discriminator aims to maximise its classification accuracy, while the Generator aims to fool it by trying to minimize it. The training of these two networks proceeds alternately leading to the optimization of the adversarial loss function $L(D,G)$ given by 
+}\begin{equation}
+	\DIFadd{\centering
+	\begin{aligned}
+		L(D,G) & = \min_{G} \max_{D} V(D, G)& \\
+		&= \mathbb{E}_{x \sim p_{\rm data}(x)} \left[ \log D(x) \right] \\
+		&+ \mathbb{E}_{z \sim p_{z}(z)} \left[ \log \left( 1-D(G(z)) \right) \right].
+	\end{aligned}
+	\label{eq:Basic_GAN}
+}\end{equation}
+\DIFadd{The two neural networks \( G(z) \equiv G(z; \theta_G)\) and \(D(x) \equiv D(x; \theta_D)\) are }\DIFaddend parameterized by \(\theta_i\) with \(i = G \ \mathrm{or}\ D\) respectively. \DIFdelbegin \DIFdel{Here, \(G(z)\) is a differentiable function }\DIFdelend \DIFaddbegin \DIFadd{During its training, the Generator generates the differentiable function $x_{\mathrm{gen}} \equiv G(z)$ }\DIFaddend that maps \(z\) to the data space \(x\)\DIFdelbegin \DIFdel{, while }\DIFdelend \DIFaddbegin \DIFadd{. Through such maps the Generator generates its own distribution $p_{\mathrm G}(x_{\mathrm gen})$ and through the training episodes, specifically by iteratively updating its parameters $\theta_{\mathrm G}$, aligns this distribution with the distribution of real data $p_{\mathrm data}(x)$. The training data set provided to the Discriminator is constructed by mixing real data points $x$ and generated data points $x_{\mathrm gen}$ in equal ratio. The Discriminator generates the function }\DIFaddend \(D(x)\) \DIFaddbegin \DIFadd{that }\DIFaddend represents the probability that \(x\) originates from real data. \DIFdelbegin \DIFdel{The }\DIFdelend \DIFaddbegin \DIFadd{Eq.(\ref{eq:Basic_GAN}) implies that training of the GAN model moves towards maximization of the expectation of \(D(x)\). Through this process, both the parameters $\theta_{\mathrm G}$ and $\theta_{\mathrm D}$ are optimized such that $p_{\mathrm G}(x_{\mathrm gen})$ gets maximally aligned with $p_{\mathrm data}(x)$.  
+}
+
+\DIFadd{For a given fixed Generator $G(z)$, the }\DIFaddend problem can be reformulated as:
+\begin{equation}
+	\centering
+	\DIFdelbegin %DIFDELCMD < \begin{aligned}
+%DIFDELCMD < 		\max_{D} V(G, D) &= \mathbb{E}_{x \sim p_{\rm data}} \left[ \log D^{*}_{G}(x) \right] \\ 
+%DIFDELCMD < 		&+ \mathbb{E}_{x \sim p_{G}} \left[ \log \left( 1 - D^{*}_{G}(x) \right) \right]
+%DIFDELCMD < 	\end{aligned}%%%
+\DIFdelend \DIFaddbegin \begin{aligned}
+		\max_{D} V(D,G) &= \mathbb{E}_{x \sim p_{\rm data}} \left[ \log D^{*}_{G}(x) \right] \\ 
+		&+ \mathbb{E}_{x \sim p_{G}} \left[ \log \left( 1 - D^{*}_{G}(x) \right) \right]
+	\end{aligned}\DIFaddend 
+	\label{eq:GAN_reformulated}
+\end{equation}
+where \(D^{*}_{G}\) denotes the optimum of the discriminator\DIFdelbegin \DIFdel{for a given fixed generator, as shown }\DIFdelend \DIFaddbegin \DIFadd{. As seen }\DIFaddend in equation (\ref{eq:Disc_optimum})\DIFdelbegin \DIFdel{. It can be demonstrated that }\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend the global optimum of equation (\ref{eq:GAN_reformulated}) is achieved if and only if \(p_G = p_{\rm data}\). Furthermore, if both \(G\) and \(D\) are allowed to reach their respective optima, \DIFdelbegin \DIFdel{then \(p_G\) }\DIFdelend \DIFaddbegin \DIFadd{-- the so called Nash point of the Minimax game -- \(p_{\mathrm G}\) }\DIFaddend converges to \(p_{\rm data}\). 
+\DIFaddbegin \begin{equation}
+	\DIFadd{\centering
+	D^*_G(x) = \frac{p_{\rm data}(x)}{p_{\rm data}(x) + p_G(x_{\mathrm gen})}
+	\label{eq:Disc_optimum}
+}\end{equation}
+\DIFadd{At this point, the Discriminator finds its job no better than random guessing. }\DIFaddend A more comprehensive discussion of the problem, including proofs, is provided in \cite{goodfellow2014generative}.
+\DIFdelbegin \begin{displaymath}
+	\DIFdel{\centering
+	D^*_G(x) = \frac{p_{\rm data}(x)}{p_{\rm data}(x) + p_G(g)}
+	\label{eq:Disc_optimum}
+}\end{displaymath}%DIFAUXCMD
+\DIFdelend 
+
+Subsequently, the GAN framework was extended to a conditional model \citep{mirza2014conditional}. \DIFdelbegin \DIFdel{In this formulation, both the Generator }\DIFdelend \DIFaddbegin \DIFadd{This new model, known as ``conditional GAN" or cGAN injects a conditioning variable \(y\) into both networks: the Generator now generates \(G(z \mid y)\), }\DIFaddend and the Discriminator \DIFdelbegin \DIFdel{receive additional information $y$, and the value function of the conditional GAN (cGAN) is expressed as: }\begin{displaymath}
+	\DIFdel{\centering
+	\begin{aligned}
+		V(D, G) &= \mathbb{E}_{x \sim p_{\rm data}(x)} \left[ \log D(x|y) \right] \\
+		&+ \mathbb{E}_{z \sim p_{z}(z)} \left[ \log \left( 1-D(G(z|y) \right) \right]
+	\end{aligned}
+	\label{eq:conditional_GAN}
+}\end{displaymath}%DIFAUXCMD
+\DIFdelend \DIFaddbegin \DIFadd{evaluates \(D(x \mid y)\). The adversarial objective becomes  
+}\begin{equation}
+	\DIFadd{\centering
+	\begin{aligned}
+		V(D, G) &= \mathbb{E}_{x,y \sim p_{\rm data}(x)} \left[ \log D(x|y) \right] \\
+		&+ \mathbb{E}_{z,y\sim p_{z}(z)} \left[ \log \left( 1-D(G(z|y)|y )\right) \right]
+	\end{aligned}
+	\label{eq:conditional_GAN}
+}\end{equation}\DIFaddend 
+\DIFaddbegin \DIFadd{The conditional variable $y$ in a cGAN can be various additional information including images, labels or text contextual to ``ground truth'' real data $x$. Among various types of cGANs, Pix2Pix GAN with its image-to-image translation design is suitable for the task at hand.
+In our work, we specifically use this conditional variable by choosing \(y\) to represent the ground-based intensity-interferometry (II) observation patterns: the Generator is trained to produce stellar surface images that not only look realistic but also conform to the measured II correlations, while the Discriminator judges realism }\emph{\DIFadd{and}} \DIFadd{consistency with the II data.
+}
+
+\DIFaddend \cite{isola2017image} further observed that combining the cGAN from Eq.~\eqref{eq:conditional_GAN} with the traditional \DIFdelbegin \DIFdel{L1 loss }\DIFdelend \DIFaddbegin \DIFadd{$L_1(G)$ loss (also known  as the Mean Absolute Error) }\DIFaddend improves the results, as the Generator is encouraged to produce outputs closer to the \DIFdelbegin \DIFdel{ground truth. Hence, the function that is minimized is:
+}\DIFdelend \DIFaddbegin \DIFadd{target image in a pixel-wise sense. We adopt this approach in the training of our cGAN model by including $L_1(G)$ defined in eq.(\ref{eq:l1_loss})
+}\begin{equation}
+	\centering
+	\DIFadd{L_1(G) = \mathbb{E}_{x \sim p_{\mathrm{data}, z \sim p_z(z)}} }\bigl[ \lVert \DIFadd{x - G(z \mid y) }\rVert\DIFadd{_{1} }\bigr]\DIFadd{.
+	}\label{eq:l1_loss}
+\end{equation}
+\DIFadd{The total adversarial loss function, along with the $L_1$ loss modulated by a hyperparameter $\lambda$ then becomes
+}\DIFaddend \begin{equation}
+	\centering
+	L_{tot} = \arg \min_{G} \max_{D} V(D, G) + \lambda \cdot L_1(G)\DIFaddbegin \DIFadd{.
+	}\DIFaddend \label{eq:total_gen_loss}
+\end{equation}
+\DIFdelbegin \DIFdel{with the choice $\lambda = 100$ and
+}%DIFDELCMD < \begin{displaymath}
+%DIFDELCMD < 	\centering
+%DIFDELCMD < 	%%%
+\DIFdel{L_1(G) = \mathbb{E}_{x,y,z} }%DIFDELCMD < \left[ %%%
+\DIFdel{||}%DIFDELCMD < {%%%
+\DIFdel{y - G(x,z)}%DIFDELCMD < }%%%
+\DIFdel{||_1 }%DIFDELCMD < \right]
+%DIFDELCMD < 	\label{eq:l1_loss}
+%DIFDELCMD < \end{displaymath}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin 
+
+\DIFaddend This type of network has demonstrated remarkable robustness across a variety of applications. For example, it can generate colored images from grayscale inputs based on architectural labels, transform images from day to night, and even predict maps from satellite data. A more extensive list of applications is provided in \cite{isola2017image}.
+
+\subsection{Generator}
+As discussed above, in a GAN the Generator\DIFaddbegin \DIFadd{, a deep neural network in iteself, }\DIFaddend is responsible for producing synthetic data\DIFdelbegin \DIFdel{—}\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend in this case, images that resemble those of a fast-rotating star. In this work, the Generator is implemented as a U-Net convolutional network \citep{ronneberger2015u}. \DIFdelbegin \DIFdel{In such architectures, the image's spatial resolution is first reduced through downsampling and then restored via upsampling, resulting in a U-shaped structure. The downsampling process typically involves convolutional layers followed by a strided operation (with a }\DIFdelend \DIFaddbegin \DIFadd{The U-Net consists of a symmetric encoder--decoder structure forming a characteristic ``U'' shape along with skip connections: the left (contracting or down-sampling) path, the right (expanding or up-sampling path) and the connecting (bottle-neck) path. The left down-sampling path repeatedly applies 3$\times$3 convolutions (padded to preserve spatial dimensions) followed by LeakyReLU activations and strided convolution (with }\DIFaddend stride of 2)\DIFdelbegin \DIFdel{to effectively subsample the image, and a leaky version of the Rectified Linear Unit (LeakyReLU)is employed as the activation function. }%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{In contrast, the upsampling process uses only the standard Rectified Linear Unit (ReLU) for neuron activation . This stage also comprises convolutional layers followed by operations with a stride of }\DIFdelend \DIFaddbegin \DIFadd{, by progressively halving the spatial resolution while doubling the channel depth (typically 64 $\to$ 128 $\to$ 256 $\to$ 512 $\to$ 1024). At the bottleneck, high-level features are processed without further spatial reduction. The right up-sampling path mirrors this process using }\DIFaddend 2\DIFdelbegin \DIFdel{to upscale the image to a higher resolution}\DIFdelend \DIFaddbegin \DIFadd{$\times$2 transposed convolutions (stride 2) for up-sampling, halving the channel count at each level and using ReLU as the activation function for all its layers except the output layer}\DIFaddend . Additionally, a dropout layer is introduced at the beginning of the upsampling phase to mitigate overfitting of the Generator model \citep{isola2017image}. \DIFaddbegin \DIFadd{Critically, long skip connections concatenate feature maps from each encoder (down-sampling) level to the corresponding decoder (up-sampling level), directly injecting high-resolution details into the reconstruction process. This enables the network to ``remember where everything is'' while the deep bottleneck still provides the large receptive field needed to think globally about image structure and semantics. Besides the strided convolutions, modern variants of U-Nets used in state-of-the-art GANs incorporate residual blocks within resolution levels, and frequently add spectral normalization and self-attention at the bottleneck for improved training stability and long-range dependency modelling. These architectural choices allow our U-Net generator to simultaneously recover sharp, high-frequency details (stellar limb edges, limb-darkening profiles, gravity darkening, and rapid-rotation-induced oblateness) and enforce global coherence (overall disk morphology and physical consistency with the observed interferometric visibilities)---making it ideally suited for high-fidelity sky-image reconstruction of fast-rotating stars from sparse ground-based intensity interferometry observations.
+}\DIFaddend 
+
+\DIFdelbegin \DIFdel{After generating images, the Generator aims to deceive the Discriminator into classifying the generated images as real. The extent to which the Generator succeeds in this deception isquantified by the GAN loss. When the Discriminator is unable to distinguish between the generated and real images (i. e. , when the GAN loss is minimized), }\DIFdelend \DIFaddbegin \DIFadd{During the training, the total Generator Loss function $L_G$ including the $L_1$ loss defined in eq.(\ref{eq:l1_loss}) that is minimized is given by
+}\begin{equation}
+\DIFadd{\centering
+\begin{aligned}
+L_{G} \; &= \; - \, \mathbb{E}_{z \sim p_{z}(z)} \bigl[ \log D(G(z \mid y)\mid y) \bigr] \\
+& +\; \lambda \; \mathbb{E}_{x \sim p_{\mathrm{data}, z \sim p_z(z)}} \bigl[ \lVert x - G(z \mid y) \rVert_{1} \bigr].  
+\end{aligned}
+\label{eq:total_gen_loss}
+}\end{equation}
+\DIFadd{Here, 
+}\begin{itemize}
+  \item \DIFadd{\(x\) denotes a real data sample (e.g.\ the ``ground-truth'' image; here, }\DIFaddend the \DIFdelbegin \DIFdel{Generator is considered to have reached an optimal state.Conversely, if the generated image fails to fool the Discriminator, the Generator produces a new image for further comparison with the real image}\DIFdelend \DIFaddbegin \DIFadd{synthetically generated fast rotator image) corresponding to condition \(y\), the simulated II observation data.  
+  }\item \DIFadd{\(z\) is a random latent vector drawn from the prior \(p_z(z)\)}\DIFaddend .  
+  \DIFdelbegin \DIFdel{Additionally, the Generator's performance is evaluated using another metric known as the L1 loss,which is defined as the mean absolute error between the pixels of the real image and those of the generated image.Balancing the minimization of both the GAN loss and the L1 loss enables the Generator to produce images that are not only realistic but also faithful to the input data.}\DIFdelend \DIFaddbegin \item \DIFadd{\(G(z \mid y)\) is the generator output (the reconstructed / synthesized image) given \(z\) and condition \(y\).  
+  }\item \DIFadd{\(D(\cdot \mid y)\) is the discriminator’s estimate (probability) that its input is “real,” given the same condition \(y\).  
+  }\item \DIFadd{\(\lambda\) is a hyperparameter controlling the trade-off between adversarial realism and pixel-wise fidelity (typical values depend on the problem, e.g.\ in pix2pix, \(\lambda = 100\)). 
+}\end{itemize}
+\DIFaddend 
+
+\subsection{Discriminator}
+The Discriminator is tasked with classifying the images produced by the Generator as either real or fake. It takes a real image from the dataset (often referred to as the target image for the Generator) and provides feedback to guide the Generator toward producing more accurate images. In this work, the PatchGAN model \citep{isola2017image} is employed as the Discriminator. Unlike a traditional global classifier, PatchGAN evaluates individual patches of the image, outputting a grid of predictions rather than a single scalar value. \DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{The Discriminator’s architecture begins with an initializer that accepts both the input (generated) images and the corresponding real images . Initially, Salt-and-Pepper noise is added to the input images}\DIFdelend \DIFaddbegin \DIFadd{Each element in the grid corresponds to the ``realness'' of one patch of the image under examination of the Discriminator at a time. The final loss of the Discriminator is the average over all the patch responses. Evaluating the ``realness'' of the input image in terms of its constituent patches facilitates capture of texture/ style and other high frequency components in the image. As compared to a global discriminator, it also reduces the number of parameters in the network thereby helping reduce computation cost. It also works on images with arbitrary sizes.
+}
+
+\DIFadd{Prior to the down-sampling of data using PatchGAN, each input image is preprocessed with application of Zero Padding followed by batch normalization. The purpose of Zero Padding is to prevent the loss of spatial information and to facilitate the extraction of deeper features from the down-sampled output. Batch normalization is required to stabilize the learning (loss minimization) process}\DIFaddend . PatchGAN then reduces the spatial dimensions of the images to extract localized features, ensuring the model focuses on smaller regions. In this \DIFdelbegin \DIFdel{downsampling }\DIFdelend \DIFaddbegin \DIFadd{down-sampling }\DIFaddend stage, a leaky version of the Rectified Linear Unit (LeakyReLU) is applied in the convolutional layers, similar to the approach used in the Generator. \DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Subsequently, zero padding is applied—adding rows and columns of zeros around the images—to prevent the loss of spatial information during convolution and to facilitate the extraction of deeper features from the downsampled output. Following this, batch normalization is employed to stabilize learning by normalizing activations, and the Discriminator begins classifying each patch as realor fake. This is followed by additional layers involving LeakyReLU activation, zero padding, and convolution, culminating in a final prediction that the Generator uses as feedback}\DIFdelend \DIFaddbegin \DIFadd{The probability $D(\cdot|y)$ that the patch of the input image represented by $\cdot$ is ``real'' is evaluated through this process. The loss function $D$ of the full input image is obtained by averaging over all the patch responses}\DIFaddend . 
+
+The \DIFdelbegin \DIFdel{effectiveness of the Discriminator is measured by 
+its ability to distinguish between real and fake images, quantified through the Discriminator loss.}\DIFdelend \DIFaddbegin \DIFadd{Discriminator Loss function $L_D$ that is optimized during the training process is given by 
+}\begin{equation}
+\DIFadd{\centering
+\begin{aligned}
+L_{D} \; &= \; - \, \mathbb{E}_{x \sim p_{\mathrm{data}}(x \mid y)} \bigl[ \log D(x \mid y) \bigr] \\
+& -\; \mathbb{E}_{z \sim p_{z}(z)} \bigl[ \log\bigl( 1 - D(G(z \mid y)\mid y)\bigr) \bigr]
+\end{aligned}
+}\end{equation}
+\DIFadd{where the arguments of the $D$ and $G$ functions are as noted in the text following eq.(\ref{eq:total_gen_loss}) }\DIFaddend This loss is composed of two parts: one that \DIFdelbegin \DIFdel{measures how accurately the Discriminator identifies real }\DIFdelend \DIFaddbegin \DIFadd{assesses how accurately it identifies fake }\DIFaddend images (by comparing predictions to a target value of \DIFdelbegin \DIFdel{1) and another that assesses how accurately it identifies fake }\DIFdelend \DIFaddbegin \DIFadd{0) and the other that measures how accurately the Discriminator identifies real }\DIFaddend images (by comparing predictions to a target value of \DIFdelbegin \DIFdel{0).
+Together, these loss components ensure that the Discriminator improves its classification performance, which in turn challenges the Generator to produce increasingly realistic images.
+}\DIFdelend \DIFaddbegin \DIFadd{1).
+}
+
+\DIFadd{The training procedure of these two components of the cGAN model can be outlined as follows:
+}\begin{itemize}
+\item{The discriminator \(D\) is updated by minimizing \(L_D\), keeping \(G\) fixed (so that \(D\) becomes better at distinguishing real vs generated images).}  
+\item{The generator \(G\) is updated by minimizing \(L_G\), keeping \(D\) fixed, thus pushing \(G\) to generate images that are (a) judged “real” by \(D\), and (b) close (in pixel-wise sense) to the ground-truth \(x\).} 
+\end{itemize}
+\DIFaddend 
+
+\section{Network Parameters}
+\begin{figure*}
+	\centering
+	\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\linewidth]{fig/testing_image/image_3.png}
+%DIFDELCMD < 	\includegraphics[width=\linewidth]{fig/testing_image/image_14.png}
+%DIFDELCMD < 	\includegraphics[width=\linewidth]{fig/testing_image/image_15.png}
+%DIFDELCMD < 	\includegraphics[width=\linewidth]{fig/testing_image/image_18.png}
+%DIFDELCMD < 	\includegraphics[width=\linewidth]{fig/testing_image/image_42.png}
+%DIFDELCMD < 	\includegraphics[width=\linewidth]{fig/testing_image/image_47.png}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.8\textwidth]{fig/testing_image/image_4.png}
+	\includegraphics[width=0.8\textwidth]{fig/testing_image/image_17.png}
+	\includegraphics[width=0.8\textwidth]{fig/testing_image/image_22.png}
+	\includegraphics[width=0.8\textwidth]{fig/testing_image/image_30.png}
+	\includegraphics[width=0.8\textwidth]{fig/testing_image/image_50.png}
+	\includegraphics[width=0.8\textwidth]{fig/testing_image/image_75.png}
+\DIFaddendFL \caption{Example results of image reconstruction using the \DIFdelbeginFL \DIFdelFL{GAN }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{cGAN }\DIFaddendFL model along with the II observations simulated in this work. Each row in this figure represents the results for a hypothetical fast-rotating star. \DIFdelbeginFL \DIFdelFL{Going from }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{The }\DIFaddendFL left \DIFdelbeginFL \DIFdelFL{to right in each row, the first }\DIFdelendFL panel represents the \DIFdelbeginFL \DIFdelFL{simulated $(u,v)$ plane }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{sparse }\DIFaddendFL II \DIFdelbeginFL \DIFdelFL{signals }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{pattern }\DIFaddendFL obtained \DIFdelbeginFL \DIFdelFL{using }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{by }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{six baselines (}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{simulated observation }\DIFaddendFL of \DIFaddbeginFL \DIFaddFL{the star using the four IACTs illustrated in }\DIFaddendFL Fig.\DIFdelbeginFL \DIFdelFL{\ref{fig:ft_base})}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{\ref{fig:teles}}\DIFaddendFL . This image \DIFdelbeginFL \DIFdelFL{is presented, }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{acts }\DIFaddendFL as the \DIFaddbeginFL \DIFaddFL{``condition'' part of the data }\DIFaddendFL input \DIFdelbeginFL \DIFdelFL{, }\DIFdelendFL to the \DIFdelbeginFL \DIFdelFL{trained GAN to produce a predicted image}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{cGAN model}\DIFaddendFL . The second panel \DIFdelbeginFL \DIFdelFL{is }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{from left displays }\DIFaddendFL the real image\DIFdelbeginFL \DIFdelFL{of the star}\DIFdelendFL , \DIFdelbeginFL \DIFdelFL{also called the }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{or }\DIFaddendFL ground truth\DIFaddbeginFL \DIFaddFL{, which the Discriminator uses to distinguish from the images generated by the Generator. The data generated for training, validation and testing of the cGAN model is a merge of this image and its II pattern presented in the left panel}\DIFaddendFL . The third panel is the reconstructed image, or the predicted image, produced by the trained GAN model . The fourth and the last panel is the difference between the ground truth and the predicted image in the $(u,v)$ plane.\DIFdelbeginFL \DIFdelFL{The uniform background color in the difference panel suggests that the network is picking up white noise from the $(u,v)$ plane. }\DIFdelendFL }
+	\label{fig:GAN}
+\end{figure*}
+\DIFdelbegin \DIFdel{Here, we discuss the parameters of the GAN architecture used for reconstructing images of stellar objects using II}\DIFdelend \DIFaddbegin \DIFadd{An appropriate cGAN architecture along with a set of hyperparameters was optimized by tuning. The objective of the model, as already mentioned, was to learn to faithfully reproduce a set of sky-images of fast rotators subject to the condition that those images are consistent with their simulated II observation data. We discuss below the architecture and the hyperparameters of the cGAN model used for this task}\DIFaddend . Given the adversarial nature of GANs\DIFdelbegin \DIFdel{—}\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend where the Generator and Discriminator engage in a \DIFdelbegin \DIFdel{min-max game—}\DIFdelend \DIFaddbegin \DIFadd{minimax game, }\DIFaddend careful tuning of key parameters is critical to ensure that both networks are well-balanced for effective training.
+
+
+\subsection{Data Preparation}\DIFaddbegin \label{sec:DataPrep}
+\DIFaddend First, we \DIFdelbegin \DIFdel{simulate fast-rotating stars , }\DIFdelend \DIFaddbegin \DIFadd{generate synthetic images of rapidly rotating stars by }\DIFaddend modelling them as oblate spheroids with varying radii and \DIFdelbegin \DIFdel{an oblateness ranging }\DIFdelend \DIFaddbegin \DIFadd{oblateness parameters }\DIFaddend between 0.5 and 1. \DIFdelbegin \DIFdel{We }\DIFdelend \DIFaddbegin \DIFadd{To incorporate the effect of gravity darkening, we }\DIFaddend also consider different viewing angles \DIFdelbegin \DIFdel{, assuming }\DIFdelend \DIFaddbegin \DIFadd{and assume }\DIFaddend a linear dependence \DIFdelbegin \DIFdel{for the effect of gravity darkening}\DIFdelend \DIFaddbegin \DIFadd{on the declination angle of each point on the stellar surface}\DIFaddend . The traced ellipses result from integrating over the source's hour angle.
+\DIFdelbegin \DIFdel{For hyperparameter tuning and comparing different telescopes, the total observing duration is set to approximately 11.5 hours. Finally, the ellipses are plotted, converted into grayscale images, resized, and stored as raw arrays to facilitate further analysis.
+}\DIFdelend 
+
+Next, Salt and Pepper noise is introduced \DIFdelbegin \DIFdel{usually at a }\DIFdelend \DIFaddbegin \DIFadd{into these images; usually this is done at the }\DIFaddend rate of 0.5\% \DIFaddbegin \DIFadd{of the number of pixels in the image}\DIFaddend . Then, the images are resized and their mean is subtracted. A two-dimensional Fast Fourier Transform, along with a Fourier shift, is applied, yielding a complex number for each pixel. Since II does not measure phase, the absolute value is calculated\DIFdelbegin \DIFdel{(as shown in Fig.~\ref{fig:ft} on both linear and logarithmic scales for visualization)}\DIFdelend . 
+
+Next, \DIFdelbegin \DIFdel{sparse sampling }\DIFdelend \DIFaddbegin \DIFadd{sampling of the interferometric plane }\DIFaddend is introduced via pixel-wise multiplication \DIFdelbegin \DIFdel{between }\DIFdelend \DIFaddbegin \DIFadd{of }\DIFaddend the absolute-valued Fourier-transformed image (\DIFaddbegin \DIFadd{left panel of }\DIFaddend Fig.~\ref{fig:ft}) and the \DIFdelbegin \DIFdel{sparse sampling map }\DIFdelend \DIFaddbegin \DIFadd{baseline tracks of }\DIFaddend (Fig.~\ref{fig:base}) \DIFaddbegin \DIFadd{generated by the four IACTs due to Earth rotation during the II observation}\DIFaddend . The result is a map in the Fourier plane featuring several ellipses, which is also referred to as the sparse sampling map (\DIFdelbegin \DIFdel{Fig.~\ref{fig:ft_base}}\DIFdelend \DIFaddbegin \DIFadd{right panel of fig.~\ref{fig:ft}}\DIFaddend ). This map represents the sparse sampling of the signal space 
+\DIFdelbegin \DIFdel{(Fig.~\ref{fig:ft}) }\DIFdelend corresponding to the source (Fig.~\ref{fig:image}) observed with four telescopes (Fig.~\ref{fig:teles}). \DIFaddbegin \DIFadd{In essence, the right panel of fig.~\ref{fig:ft} represents the result of simulated II observation of the fictitious fast-rotator illustrated in fig.~\ref{fig:image}.
+}\DIFaddend 
+
+Finally, \DIFdelbegin \DIFdel{the pixels are normalized and converted }\DIFdelend \DIFaddbegin \DIFadd{we normalize the pixel values and convert them }\DIFaddend to 8-bit integers\DIFdelbegin \DIFdel{. This image represents }\DIFdelend \DIFaddbegin \DIFadd{, producing an image that encodes }\DIFaddend the sparsely sampled\DIFdelbegin \DIFdel{phaseless visibility as it can be measured with }\DIFdelend \DIFaddbegin \DIFadd{, phase-free visibility measured by }\DIFaddend II. The image \DIFdelbegin \DIFdel{shown in Fig.~\ref{fig:ft_base} serves as the input for the GAN, which also requires the corresponding ground truthimage. Consequently, the simulated stars are resized using the same algorithm and converted to 8-bit integers to reduce bias. The GAN must have access to the ground truth corresponding to each input image; therefore, the input and ground truth }\DIFdelend \DIFaddbegin \DIFadd{of the corresponding simulated (fictitious) star, which serves as the ``ground truth'' is processed identically to avoid any bias. These two }\DIFaddend images are merged side-by-side \DIFaddbegin \DIFadd{into a single 
+image }\DIFaddend (as shown in Fig.~\ref{fig:GANinput})\DIFdelbegin \DIFdel{and used to train the GAN. This procedure is applied to all simulated stars, with }\DIFdelend \DIFaddbegin \DIFadd{. The dataset thus created is split into three parts in the proportions of 80\% for training, }\DIFaddend 10\% \DIFdelbegin \DIFdel{used as test data, }\DIFdelend \DIFaddbegin \DIFadd{for validation, and }\DIFaddend 10\% as \DIFdelbegin \DIFdel{validation data, and the remaining 80\% as training data}\DIFdelend \DIFaddbegin \DIFadd{the test set. This partition of the full dataset is indicated in the Fig.\ref{fig:FlowDiagram}. In the following, we refer to these three parts as the Training Set, the Validation Set and the Testing Set respectively}\DIFaddend .
+
+\subsection{GAN Architecture}
+The GAN \DIFaddbegin \DIFadd{architecture }\DIFaddend used in this work is \DIFdelbegin \DIFdel{based on pix2pix, which utilizes a conditional GAN (cGAN) as discussed in the previous section \mbox{%DIFAUXCMD
+\citep{isola2017image}}\hspace{0pt}%DIFAUXCMD
+. This architecture is highly robust and has already been applied to various problems}\DIFdelend \DIFaddbegin \DIFadd{a Pix2Pix cGAN, which uses an image-to-image translation strategy with both the ground truth and the condition being images. Originally introduced by Isola et al. \mbox{%DIFAUXCMD
+\cite{isola2017image}}\hspace{0pt}%DIFAUXCMD
+, this architecture is specifically suitable for image processing and reconstruction objectives}\DIFaddend . For instance, the TensorFlow tutorials\footnote{\url{https://www.tensorflow.org/tutorials/generative/pix2pix}} demonstrate its application to a dataset of architectural facades. \DIFdelbegin \DIFdel{However, to adapt the pix2pix GAN }\DIFdelend \DIFaddbegin \DIFadd{This architecture has been adapted
+}\DIFaddend for the phase retrieval problem \DIFdelbegin \DIFdel{, some modifications are necessary}\DIFdelend \DIFaddbegin \DIFadd{at hand here}\DIFaddend . The network is implemented using the TensorFlow library \citep{abadi2016tensorflow}, calculations are performed with scipy \citep{virtanen2020scipy}, and plots are generated with matplotlib \citep{4160265}.
+
+\subsection{Hyperparameter Tuning}
+The \DIFdelbegin \DIFdel{GAN }\DIFdelend \DIFaddbegin \DIFadd{cGAN model architecture }\DIFaddend used in this work \DIFdelbegin \DIFdel{depends on several parameters}\DIFdelend \DIFaddbegin \DIFadd{employs several hyper-parameters}\DIFaddend , which are explained briefly below \citep[for a more in-depth discussion, see][]{murphy2022probabilistic}.
+
+The learning rate \DIFaddbegin \DIFadd{($lr$) }\DIFaddend of the optimizer determines how much the model updates its parameters with each iteration. A learning rate that is too small may lead to underfitting, while one that is too large can render the model unstable. Therefore, selecting an appropriate learning rate is crucial \citep{murphy2022probabilistic}. \DIFdelbegin \DIFdel{Fig.~\ref{fig:Plot_learning_rate_loss} illustrates the effect of different learning rates on both the Generator and Discriminator losses. As expected, lower learning rates result in fewer outliers in the loss functions, indicating more stable updates. Although all models eventually stabilize at a similar level, lower learning rates are preferred}\DIFdelend \DIFaddbegin \DIFadd{A canonical choice in Pix2Pix and other GAN models is $lr = 2\times10^{-4}$. In our case too, we found this choice to be appropriate}\DIFaddend .
+
+The kernel size refers to the dimensions of the convolutional kernel used in the network, determining how many pixels are combined to produce a new pixel. A larger kernel size can capture features spanning several pixels, but it may also incorporate unrelated features. \DIFdelbegin \DIFdel{As shown in Fig. ~\ref{fig:Plot_kernel_size_loss}, the kernel size does not have a significant impact on the loss functions; however, smaller kernel sizes tend to produce more outliers, suggesting that either the Generator or Discriminator may gain an advantage. Therefore, a kernel size of 5 is preferred.
+}\DIFdelend \DIFaddbegin \DIFadd{Small kernel sizes are preferable in cases where target images finer details or high spatial frequency features. Since the ``ground truth'' target images in our case have longer scale gravity darkening features, we have opted for the more canonical choice of kernel size being 5.
+}\DIFaddend 
+
+The amount of noise is controlled by two parameters, ``alpha" and ``beta", which indicate the percentage of pixels altered to either white or black\DIFdelbegin \DIFdel{— }\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend hence the term Salt and Pepper noise. Here, ``alpha" is applied to the real image, while ``beta" is applied to the generated image. Different ratios (``alpha/beta") can lead to varying model performance; however, our results indicate that distinct noise rates do not significantly affect the loss functions. 
+\DIFdelbegin \DIFdel{Figure~\ref{fig:Plot_noise_loss} shows the loss functions for smaller images ($64 \times 64$), and due to the negligible impact, this analysis was not repeated for larger images.
+}\DIFdelend 
+
+The batch size defines the number of images processed simultaneously by the network. Smaller batch sizes have been observed to improve generalization \citep{prince2023understanding}. \DIFdelbegin \DIFdel{As illustrated in Fig.~\ref{fig:Plot_batchsize_loss}, processing two images at once results in fewer outliers. }\DIFdelend However, because a larger batch size significantly increases training time, a batch size of 1 is used. \DIFaddbegin \DIFadd{Besides, in Pix2Pix cGAN implementations found in literature this choice is found to be often preferred.
+}\DIFaddend 
+
+\DIFdelbegin \DIFdel{When training }\DIFdelend \DIFaddbegin \DIFadd{The buffer size of a Pix2Pix GAN refers to a small memory of image pool of previously generated images. They are occasionally fed to the Discriminator in place of the freshly generated ones. This strategy of mixing old and new fakes  mitigates the risk of mode collapse wherein the Discriminator tends to map all or large number of generated images to only one or a few real ``ground truth'' image(s). We have chosen a fairly large buffer size (=1400) to protect the model against mode collapse.
+}
+
+
+\DIFadd{In the training of }\DIFaddend GANs, one \DIFaddbegin \DIFadd{often-followed }\DIFaddend strategy to potentially boost performance is to give the Discriminator an advantage by increasing its number of training \DIFdelbegin \DIFdel{steps }\DIFdelend \DIFaddbegin \DIFadd{epochs }\DIFaddend before returning to the Generator's training. \DIFaddbegin \DIFadd{This hyperparameter is referred to as the Discriminator repetition (as seen in Table \ref{tab:hyperparameters}). }\DIFaddend While this can lower the Discriminator loss\DIFdelbegin \DIFdel{—}\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend as shown in Fig.~\ref{fig:Plot_discrep_loss}\DIFdelbegin \DIFdel{—}\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend it also increases training time\DIFdelbegin \DIFdel{and leads to a slight rise in the Generator loss}\DIFdelend \DIFaddbegin \DIFadd{. In training our model, we did not notice any significant advantage derived from this strategy}\DIFaddend . Since the generated images \DIFdelbegin \DIFdel{do }\DIFdelend \DIFaddbegin \DIFadd{did }\DIFaddend not noticeably improve with additional Discriminator training, \DIFdelbegin \DIFdel{both networks are typically trained with the same number of steps}\DIFdelend \DIFaddbegin \DIFadd{we adopted the strategy of training both the networks with equal preference (Discriminator repetition = 1)}\DIFaddend .
+
+\DIFdelbegin \DIFdel{Finally, the }\DIFdelend \DIFaddbegin \DIFadd{One domain specific hyperparameter of the cGAN model presented here is the Number of Telescopes $N_T$. The }\DIFaddend degree of sparse sampling \DIFaddbegin \DIFadd{of the intensity interferometric (II) image plane }\DIFaddend can be varied to provide the model with access to more \DIFdelbegin \DIFdel{pixels. Increasing the number of telescopes results in more baselinesand, consequently, more available pixels}\DIFdelend \DIFaddbegin \DIFadd{number of active (non-zero) pixels. Point to note here, is that the coverage of the Fourier interferometric plane (number of active pixels in the II image) scales with available number of baselines, and the latter scales quadratically with the number of telescopes}\DIFaddend . Fig.~\ref{fig:Plot_telescopes_loss} shows the loss functions for different numbers of telescopes. There is a significant disparity in performance \DIFdelbegin \DIFdel{, partly because the relationship between telescopes and baselines is not linear. For example, the Fourier plane can be sampled along six tracks when using four telescopes, as compared to only one track if using only two telescopes. In the case of two telescopes}\DIFdelend \DIFaddbegin \DIFadd{of the model: at the ``Nash point''}\DIFaddend , both the \DIFdelbegin \DIFdel{Generator and Discriminator exhibit less smooth training, as indicated by the outliers. Performance improves with three telescopes and becomes very promising with four }\DIFdelend \DIFaddbegin \DIFadd{loss functions are minimized for the case of four telescopes}\DIFaddend . Overall, the degree of sparse sampling appears to have the most pronounced effect of all the hyperparameters.
+
+\DIFdelbegin \section{\DIFdel{Images Reconstructed by the GAN}}
+%DIFAUXCMD
+\addtocounter{section}{-1}%DIFAUXCMD
+\DIFdel{In this section, we begin by discussing phase retrieval using hyperparameters, as mentioned earlier, followed by an analysis in which multiple sources are trained simultaneously.The best performance for image reconstruction has been observed with a learning rate of \(2 \cdot 10^{-4}\), a kernel size of 5×5, and equal noise percentages (alpha/beta = 1) applied to both the original and generated images. A batch size of }\DIFdelend \DIFaddbegin \DIFadd{The hyperparameter Output Channels refers to the number of channels in the generator output (e.g., }\DIFaddend 1 \DIFdelbegin \DIFdel{is used, and equal training is provided to }\DIFdelend \DIFaddbegin \DIFadd{for grayscale, 3 for RGB). It is worthwhile to recall that the cGAN model constructed in this work is trained on ``ground truth'' target images and the simulated II data, both in grey scales as seen in Fig.\ref{fig:GANinput}. It is natural that the output of this model will be in grey scales only. Therefore the value of this hyperparameter is set to 1. The choice of hyperparameter \(\lambda\) has been commented upon earlier.
+}
+
+\DIFadd{An optimized set of hyperparameters is selected through an iterative process of training and validation. For a tentatively chosen set of the hyperparameters, the model is trained using the Training Set until the both the Discriminator and the Generator loss functions are minimized. This model, thus trained along with its model parameters, is then passed through validation using the Validation Set. This cycle of training and validation is iterated till an optimal set of hypermaraters is arrived at. During each epoch of training of the model, }\DIFaddend both the Discriminator and the Generator \DIFdelbegin \DIFdel{.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\subsection{\DIFdel{Predicted Image from the Trained GAN}}
+%DIFAUXCMD
+\addtocounter{subsection}{-1}%DIFAUXCMD
+\DIFdel{Fig.~\ref{fig:GAN} demonstrates the success of the GAN in training a model to reconstruct the images of fast-rotating stars using their Intensity Interferometry (II) observation . The GAN was trained on the training datasets for 60}\DIFdelend \DIFaddbegin \DIFadd{networks are trained for 100}\DIFaddend ,000 \DIFdelbegin \DIFdel{steps and subsequently tested on various validation datasets to produce predicted images of the stars.
+In }\DIFdelend \DIFaddbegin \DIFadd{steps. Plots of the ``Discriminator Loss'' function and the ``Generator Total Loss'' function presented in Fig.}{\DIFadd{\ref{fig:Plot_discrep_loss}}} \DIFadd{and Fig.}{\DIFadd{\ref{fig:Plot_telescopes_loss} represent the results of this training for two of the hyperparameters, namely, the Disriminator repetition (``discrep'', in short) and the Number of telescopes, respectively}}\DIFadd{. Obviously, the most compute-intensive part of this process is that of the training of the Model. The results of training and validation presented in this work were carried out on a CPU using two nodes, each with 48 threads and the entire process of training and validation required approximately 20 hours on the machine employed for this work. This iterative process of training and validation of the Model is represented schematically in the Fig.\ref{fig:FlowDiagram}. The chosen optimal set of hyperparameters is presented in the table Table-}{\DIFadd{\ref{tab:hyperparameters}.}}
+\begin{table}[ht]
+	\centering
+	\caption{\DIFaddFL{Selected hyperparameters used for training the model.}}
+	\label{tab:hyperparameters}
+	\begin{tabular}{ll}
+		\hline
+		\textbf{\DIFaddFL{Hyperparameter}} & \textbf{\DIFaddFL{Value}} \\
+		\hline
+		\DIFaddFL{Learning rate           }& \DIFaddFL{2e-4 }\\
+		\DIFaddFL{Kernel size             }& \DIFaddFL{5 }\\
+		\DIFaddFL{Alpha/Beta              }& \DIFaddFL{1 }\\
+		\DIFaddFL{Batch size              }& \DIFaddFL{1 }\\
+		\DIFaddFL{Buffer Size             }& \DIFaddFL{1400 }\\
+		\DIFaddFL{Discriminator repetition  }& \DIFaddFL{1 }\\
+		\DIFaddFL{Number of Telescope        }& \DIFaddFL{4 }\\
+		\DIFaddFL{Output Channels         }& \DIFaddFL{1 }\\
+		\DIFaddFL{Lambda                  }& \DIFaddFL{100 }\\
+		\hline
+	\end{tabular}
+\end{table}
+\DIFadd{This optimized and trained Model is then subjected to testing and evaluation using the Testing Set. The results of this testing and evaluation is presented in the following section.
+}
+
+\DIFadd{The Pix2Pix cGAN architecture along with the choice of the values of the hyperparameters mentioned in the Table -\ref{tab:hyperparameters} and used in the implementation of this architecture constitutes the cGAN model (hereinafter referred to as ``the GAN Model'' or simply ``the Model'').
+}
+
+\section{\DIFadd{Image Reconstruction: Results and Evaluation}}
+
+\DIFadd{In this section, we examine the performance of the GAN Model whose architecture and choice of hyperparameters have been discussed above. We subject the trained Model to the task of phase retrieval and image reconstruction on the Testing Dataset.
+}
+
+\subsection{\DIFadd{Visual Evaluation of Images Predicted by the Model}}
+\DIFaddend Fig.~\ref{fig:GAN} \DIFdelbegin \DIFdel{, four combined images illustrate the GAN's performance }\DIFdelend \DIFaddbegin \DIFadd{demonstrates the success of the trained Model }\DIFaddend in reconstructing the \DIFdelbegin \DIFdel{stars' shape, size, and brightness distribution using II.
+}\DIFdelend \DIFaddbegin \DIFadd{images of a sample of the fictitious fast-rotators drawn from the Testing Set.
+}
+
+\DIFadd{The four panels from left to right in each row of Fig.~\ref{fig:GAN} represent the following:
+}\DIFaddend \begin{itemize}
+\DIFdelbegin %DIFDELCMD < \item{The left panel shows the signals collected from six baselines, which serve as the input for the Generator during training.}
+%DIFDELCMD < \item{The first middle panel displays the real image, or ground truth, which the Discriminator uses to distinguish between real images and those generated by the Generator. During training, the GAN aims to replicate these ground truth images.}
+%DIFDELCMD < \item{The second middle panel presents the reconstructed, or predicted, image produced by the trained GAN, highlighting its success in image reconstruction.}
+%DIFDELCMD < \item{The right panel shows the difference between the ground truth and the predicted image in the interferometric plane. The uniform background color of the frames suggests that the GAN model picks up white noise in the interferometric plane.}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \item{The left panel represents the sparse II pattern obtained by the simulated observation using the four IACTs illustrated in Fig.\ref{fig:teles}. As explained earlier, this image acts as part of the input, namely its ``condition'' part. This image acts as the condition that the sky-images of the star generated by the Generator must conform to.}
+
+\item{The second panel from left displays the real image, or ground truth target image, which the Discriminator loss function uses to distinguish from the images generated by the Generator.}
+
+\item{The third panel from left presents the reconstructed (or predicted) image corresponding to the ground truth (second panel) and generated by the trained Model. The similarity of these two images indicates the success of the Model in its stated objective of image reconstruction.  We remark that rotating the images by $180^\circ$ would not change the data.  That is, each predicted image contains an arbitrary choice among two possible orientations, differing by $180^\circ$.}
+
+\item{The right panel shows the residuals between the ground truth target image and the predicted image in the interferometric plane. The small values are indicative of the success of training the Model.}
+\DIFaddend \end{itemize}
+\DIFaddbegin 
+
+\DIFaddend The predicted images \DIFdelbegin \DIFdel{in }\DIFdelend \DIFaddbegin \DIFadd{and the residuals presented in the third and the fourth columns (from left) of }\DIFaddend Fig.~\ref{fig:GAN} \DIFdelbegin \DIFdel{yield }\DIFdelend \DIFaddbegin \DIFadd{show }\DIFaddend encouraging results, \DIFdelbegin \DIFdel{accurately }\DIFdelend conveying visual information about the source's size, shape, and brightness distribution across its surface \DIFaddbegin \DIFadd{fairly accurately. This has been achieved on the basis of the input provided by II observation }\DIFaddend using only six baselines\DIFdelbegin \DIFdel{. However, further improvements can }\DIFdelend \DIFaddbegin \DIFadd{, corresponding to four telescopes, at present the maximum on which II is already implemented.  Further improvements could surely }\DIFaddend be achieved by increasing the number of telescopes to \DIFdelbegin \DIFdel{maximize }\DIFdelend \DIFaddbegin \DIFadd{enhance the }\DIFaddend coverage of the $(u, v)$ plane\DIFdelbegin \DIFdel{, making }\DIFdelend \DIFaddbegin \DIFadd{. A closer examination of this proposition might be able to contribute to the design and instrumentation aspects in }\DIFaddend the existing and upcoming CTAO\DIFdelbegin \DIFdel{an ideal candidate for this approach}\DIFdelend .
+
+\begin{figure*}
+	\includegraphics[width=.32\linewidth]{fig/moments/mom0.png}\hfil
+	\includegraphics[width=.32\linewidth]{fig/moments/mom1.png}\hfil
+	\includegraphics[width=.32\linewidth]{fig/moments/mom2.png}
+\DIFdelbeginFL %DIFDELCMD < \hfil
+%DIFDELCMD < 	%%%
+\DIFdelendFL \caption{This set of figures shows \DIFaddbeginFL \DIFaddFL{comparisons of }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{comparison }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{monopole, and the coordinates of the centroids ($x_c,\, y_c$) }\DIFaddendFL of \DIFaddbeginFL \DIFaddFL{the pixel brightness distribution of the ground truth images and the corresponding images predicted (generated) by the trained model. The }\DIFaddendFL monopole \DIFaddbeginFL \DIFaddFL{moment of the images represents the overall pixel brightness of the images. The values}\DIFaddendFL , \DIFdelbeginFL \DIFdelFL{x-centroid}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{as expected of a trained Model, not only lie in same range}\DIFaddendFL , \DIFaddbeginFL \DIFaddFL{but lie close to the diagonal }\DIFaddendFL and \DIFdelbeginFL \DIFdelFL{y-centroid for }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{show an approximate equality. The centroids of both the }\DIFaddendFL ground truth \DIFaddbeginFL \DIFaddFL{images }\DIFaddendFL and \DIFaddbeginFL \DIFaddFL{the }\DIFaddendFL predicted images \DIFdelbeginFL \DIFdelFL{generated by }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{lie within small ranges of pixel values as should be expected of an ideally }\DIFaddendFL trained \DIFdelbeginFL \DIFdelFL{GAN}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{model. Please see the relevant text for detailed comments}\DIFaddendFL .}
+\label{fig:cen}
+\end{figure*}
+\DIFaddbegin \begin{figure*}
+	\includegraphics[width=.32\linewidth]{fig/moments/mom3.png}\hfil
+	\includegraphics[width=.32\linewidth]{fig/moments/mom4.png}\hfil
+	\includegraphics[width=.32\linewidth]{fig/moments/mom5.png}
+	\caption{\DIFaddFL{The second order central moment of the brightness distribution of the images is analogous to the moment of inertia of a mass distribution. The panels of this figure show the comparison of the second order moments ($\mu_{11}$, $\mu_{20}$, and $\mu_{02}$) of the predicted images vs. the ground truth images from left to right respectively. Approximate equality of these moments is evident. The small scatter in the moments of the predicted images is indicative of a balanced training of the Model. }}
+	\label{fig:struc}
+\end{figure*}
+\begin{figure*}
+	\includegraphics[width=.49\linewidth]{fig/moments/mom6.png}\hfil
+	\includegraphics[width=.49\linewidth]{fig/moments/mom7.png}\hfil
+	\includegraphics[width=.49\linewidth]{fig/moments/mom8.png}\hfil
+	\includegraphics[width=.49\linewidth]{fig/moments/mom9.png}
+	\caption{\DIFaddFL{Shown here are all the third-order central moments ($\mu_{30}$, $\mu_{03}$, $\mu_{21}$, and $\mu_{12}$) for ground truth and predicted images generated by the trained Model. They represent the skewness of the brightness distributions. The low skewness in the brightness distribution of the ground truth images is evident. One outlier among the predicted images dominates their skewness distribution along the $y$-axis as seen in the values of \(\mu_{03}\) and \(\mu_{12}\). The trained Model, however, seems to have learned the approximately uniform distribution of skewness along the $x$-axis as is evident, with a few outliers though, in the values of \(\mu_{30}\) and \(\mu_{21}\).}}
+	\label{fig:moments}
+\end{figure*}
+
+\DIFaddend \subsection{Evaluation of \DIFdelbegin \DIFdel{GAN }\DIFdelend \DIFaddbegin \DIFadd{the Model }\DIFaddend using Moments}
+The reconstructed images are visually compelling, demonstrating the \DIFdelbegin \DIFdel{GAN}\DIFdelend \DIFaddbegin \DIFadd{Model}\DIFaddend 's effectiveness in using II to reconstruct images. However, visual assessment alone is insufficient; statistical evaluation \DIFaddbegin \DIFadd{of the generated images in comparison with the ground truth images }\DIFaddend is necessary to validate the results. \DIFdelbegin \DIFdel{To achieve this, we employ image moments as a statistical method.
+}\DIFdelend \DIFaddbegin \DIFadd{We present here the results of our calculation and comparison of the moments of distribution pixel brightness in the target ``Ground Truth'' images and the ``Predicted'' images.
+}
+
+\DIFaddend Image moments capture key properties of the reconstructed objects\DIFdelbegin \DIFdel{—}\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend such as shape, size, and intensity distribution\DIFdelbegin \DIFdel{—}\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend by quantifying features like position, orientation, and brightness distribution. By comparing the moments of the \DIFdelbegin \DIFdel{GAN-generated images to }\DIFdelend \DIFaddbegin \DIFadd{Model-generated images with }\DIFaddend those of the ground truth, we can objectively assess the consistency and accuracy of the reconstruction. This approach provides a reliable framework for evaluating reconstruction quality, as image moments can reveal subtle differences in geometric and intensity properties that might not be apparent through visual inspection alone.
+
+The raw moment $M_{ij}$ of an image is defined as \citep{hu1962visual}
+\begin{equation}
+	M_{ij} = \sum_{x} \sum_{y} x^i y^j I(x, y)
+	\label{eqn:Mom}
+\end{equation}
+where $I(x,y)$ represents the intensity at pixel $(x,y)$. The zeroth order raw moment, or monopole, represents the total intensity of an image. It is computed by summing all pixel values across the image, yielding an overall intensity measure. In this context, analyzing the monopole provides the total \DIFdelbegin \DIFdel{flux of fast-rotating }\DIFdelend \DIFaddbegin \DIFadd{pixel brightness of the images of the fictitious }\DIFaddend stars. According to Eq.~\eqref{eqn:Mom}, the monopole of an image is calculated as:
+\begin{equation}
+	M_{00} = \sum_{x} \sum_{y} I(x, y).
+\end{equation}
+\DIFdelbegin \DIFdel{The left figure }\DIFdelend \DIFaddbegin 
+
+\DIFadd{An ideally trained Model should predict the overall pixel brightness of the generated images to be in the same range of values, if not equal to those of the ground truth images. The left panel }\DIFaddend of Fig.~\ref{fig:cen} displays the monopole values for \DIFdelbegin \DIFdel{50 }\DIFdelend \DIFaddbegin \DIFadd{100 }\DIFaddend reconstructed images. The plot reveals a \DIFdelbegin \DIFdel{linear relationship between the monopole }\DIFdelend \DIFaddbegin \DIFadd{broad agreement in the overall intensity }\DIFaddend of the ground truth \DIFdelbegin \DIFdel{(real image) on the $x$-axis and that of }\DIFdelend \DIFaddbegin \DIFadd{targets and }\DIFaddend the predicted (\DIFdelbegin \DIFdel{reconstructed) image on the $y$-axis, consistent across sources of varying shapes and sizes. This linearity confirms that the predicted images have an overall intensity (flux) that closely matches the ground truth. However, while }\DIFdelend \DIFaddbegin \DIFadd{generated) images. However, a slightly higher brightness of reconstructed images in the intermediate range of brightness is evident. This could, perhaps, be mitigated by tuning the Batch Size hyperparameter.
+}
+
+\DIFadd{While }\DIFaddend the monopole effectively represents the total brightness, it does not provide information about the position, shape, size, or detailed brightness distribution of the fast-rotating stars. For these aspects, higher-order moments are necessary.
+
+The \DIFdelbegin \DIFdel{center of mass of the sky image of any stellar object, is determined by its centroid, which provides the $x$ and $y$ coordinates representing the spatial position of the image. This centroid is computed using the first-order raw moments in conjunction with the monopole (the zeroth-order moment). The formulations for the centroid along the $x$ and $y$ directions are given by 
+:
+}\DIFdelend \DIFaddbegin \DIFadd{first order raw moments normalized by the respective monopole moments of the images given by 
+}\DIFaddend \begin{eqnarray}
+&&x_c = \frac{M_{10}}{M_{00}} = \frac{\sum_{x,y} x \cdot I(x,y)}{\sum_{x,y} I(x,y)} \nonumber \\
+&&y_c = \frac{M_{01}}{M_{00}} = \frac{\sum_{x,y} y \cdot I(x,y)}{\sum_{x,y} I(x,y)}
+\end{eqnarray}
+\DIFdelbegin \DIFdel{Here, \(I(x,y)\) represents the intensity at pixel \((x,y)\), \(M_{00}\) is the monopole (total intensity), and \(M_{10}\) and \(M_{01}\) are the first-order raw moments along the $x$ and $y$ axes respectively. This formulation accurately captures the spatial center of mass of the stellar object in the image. }%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \DIFadd{represent the centroids $(x_c, y_c)$ of the pixel brightness distribution of the images. An ideally trained GAN model should produce the centroids of the target and predicted images within a small range of pixels. A larger range would imply a low fidelity in learning the brightness distribution of ground truth images. }\DIFaddend The middle and right \DIFdelbegin \DIFdel{panel }\DIFdelend \DIFaddbegin \DIFadd{panels }\DIFaddend of Fig.~\ref{fig:cen} compare the centroids ($x_{c}$, $y_{c}$) of \DIFdelbegin \DIFdel{50 }\DIFdelend \DIFaddbegin \DIFadd{100 }\DIFaddend predicted images with their corresponding ground truths respectively. \DIFdelbegin \DIFdel{The }\DIFdelend \DIFaddbegin \DIFadd{We notice that the coordinates of the centroids of ground truth images are spread across a range of 2 pixels whereas the those of the predicted images are spread across a span of 4 pixels along $x$-axis and 7 pixels along $y$-axis. This }\DIFaddend clustering of centroids within a \DIFdelbegin \DIFdel{specific }\DIFdelend \DIFaddbegin \DIFadd{small }\DIFaddend scale range across all results indicates that the reconstructed images \DIFdelbegin \DIFdel{accurately represent the spatial location of the fast-rotating star relative to the ground truth}\DIFdelend \DIFaddbegin \DIFadd{never have large offsets}\DIFaddend .
+
+\DIFdelbegin %DIFDELCMD < \begin{figure*}
+%DIFDELCMD <   \includegraphics[width=.32\linewidth]{fig/moments/mom3.png}\hfil
+%DIFDELCMD <   \includegraphics[width=.32\linewidth]{fig/moments/mom4.png}\hfil
+%DIFDELCMD <   \includegraphics[width=.32\linewidth]{fig/moments/mom5.png}\hfil
+%DIFDELCMD <   %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdelFL{The second-order central moments provide information about the size and shape of stellar objects.  Shown here are all the second-order central moments for ground truth and predicted images generated by the trained GAN. From left to right these are $\mu_{11},\mu_{20},\mu_{02}$.}}
+	%DIFAUXCMD
+%DIFDELCMD < \label{fig:struc}
+%DIFDELCMD < \end{figure*}
+%DIFDELCMD < \begin{figure*}
+%DIFDELCMD <   \includegraphics[width=.49\linewidth]{fig/moments/mom6.png}\hfil
+%DIFDELCMD <   \includegraphics[width=.49\linewidth]{fig/moments/mom7.png}\hfil
+%DIFDELCMD <   \includegraphics[width=.49\linewidth]{fig/moments/mom8.png}\hfil
+%DIFDELCMD <   \includegraphics[width=.49\linewidth]{fig/moments/mom9.png}\hfil
+%DIFDELCMD <   %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdelFL{Shown here are all the third-order central moments for
+    ground truth and predicted images generated by the trained GAN.
+    They represent the skewness of the brightness distributions.  The
+    panels in reading order show
+    $\mu_{30},\mu_{03},\mu_{21},\mu_{12}$.}}
+  %DIFAUXCMD
+%DIFDELCMD < \label{fig:moments}
+%DIFDELCMD < \end{figure*}
+%DIFDELCMD < %%%
+%DIF < %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DIFdelend Furthermore, these calculated centroids are instrumental in analyzing the shape, size, and brightness distribution of the stars using higher-order image moments. To this end, the central moment of an image is calculated according to:
+\begin{equation}
+	\mu_{pq} = \frac{1}{M_{00}}\sum_{x} \sum_{y} (x - x_c)^p (y - y_c)^q I(x, y).
+\end{equation}
+The sum of \(p\) and \(q\) defines the order of the central moment. 
+
+\DIFaddbegin \DIFadd{The second order central moment of the brightness distribution of the images is analogous to the moment of inertia of a mass distribution. }\DIFaddend Fig.~\ref{fig:struc} presents the \DIFaddbegin \DIFadd{comparison of }\DIFaddend second-order central moments (\(\mu_{11}, \mu_{20}, \mu_{02}\)), which are used to study the structure of a fast-rotating star along the line of sight (as explained in the upcoming subsection). All three plots demonstrate \DIFdelbegin \DIFdel{a linear relationship in the second-order }\DIFdelend \DIFaddbegin \DIFadd{an approximate equality among these }\DIFaddend moments, similar to the monopole, thereby confirming the success of applying the \DIFdelbegin \DIFdel{GAN }\DIFdelend \DIFaddbegin \DIFadd{Model }\DIFaddend to reconstruct images with II. \DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{The brightness distribution is characterized by the skewness of the image, which is quantified by calculating the }\DIFdelend \DIFaddbegin \DIFadd{The small scatter in the moments of the predicted images indicates robust learning of the Model without over-fitting.
+}
+
+\DIFadd{The }\DIFaddend third-order central moments (\(\mu_{30}, \mu_{03}, \mu_{21}, \mu_{12}\)) \DIFaddbegin \DIFadd{of the images quantify the degree and direction of asymmetry of the brightness distribution around their respective centroids}\DIFaddend . Fig.~\ref{fig:moments} presents \DIFaddbegin \DIFadd{a comparison of }\DIFaddend all third-order moments for both the ground truth and the reconstructed image.    \DIFdelbegin \DIFdel{The skewness along the $x$ and }\DIFdelend \DIFaddbegin \DIFadd{All the four panels show a low skewness in the brightness distribution of the ground truth images. The skewness of the predicted images along the }\DIFaddend $y$\DIFdelbegin \DIFdel{axes (\(\mu_{30}\) and }\DIFdelend \DIFaddbegin \DIFadd{-axis is dominated by one outlier as seen in the values of }\DIFaddend \(\mu_{03}\) \DIFdelbegin \DIFdel{) appears acceptable, as shown in both upper panel of Fig. ~\ref{fig:moments}, where a linear relationship exists between the ground truth and predicted images . However, the other higher-order moments (\(\mu_{21}\) }\DIFdelend and \DIFdelbegin \DIFdel{\(\mu_{12}\))—particularly \(\mu_{12}\), as depicted in both lower panel of Fig.~\ref{fig:moments}—do not align as well. This indicates that further improvement is possible and should be investigated}\DIFdelend \DIFaddbegin \DIFadd{\(\mu_{12}\). However, the approximately uniform distribution of skewness of the predicted images along the $x$-axis, with a few outliers though, as seen in the values of \(\mu_{30}\) and \(\mu_{21}\) suggests that this feature in the ground truth images has been picked up fairly well during the training of the Model}\DIFaddend .
+
+\subsection{The reconstructed Parameters for object}
+The centroids \((x_c, y_c)\) indicate only the center of the star and its spatial location in the image. In contrast, the second-order central moments determine the orientation, semi-major axis, and eccentricity relative to the source's center \citep{teague1980image}. These moment-based parameters fully describe the two-dimensional ellipse that fits the image data.
+
+The orientation of a fast-rotating star along the line of sight is defined in terms of second-order central moments as
+\begin{equation}
+	\theta = \tfrac{1}{2}\arctan \left(\frac{2\mu_{11}}{\mu_{20} - \mu_{02}}\right).
+	\label{eqn:orn}
+\end{equation}
+The semi-major and semi-minor axes of the stellar object are computed using the second-order central moments and are denoted as \(a\) and \(b\), respectively.
+\begin{equation}
+	\begin{aligned}
+		&a = 2\sqrt{mp + \delta} \\
+		&b = 2\sqrt{mp - \delta}
+	\end{aligned}
+	\label{eqn:semi}
+\end{equation}
+where,
+\begin{equation}
+	mp = \frac{\mu_{20} + \mu_{02}}{2}
+	\label{eqn:mp}
+\end{equation}
+and
+\begin{equation}
+	\delta = \frac{\sqrt{4\mu_{11}^2 + (\mu_{20} - \mu_{02})^2}}{2}.	
+	\label{eqn:delta}
+\end{equation}
+Using the calculated axis values, the eccentricity of the fast-rotating star is determined as:
+\begin{equation}
+	e = \sqrt{1 - a/b}.
+	\label{eqn:eccen}
+\end{equation}
+Eqs.~\ref{eqn:orn}-\ref{eqn:eccen} describe the elliptical nature of the stellar object (in this case, a fast-rotating star) and provide information on its shape and size, depending on the computed values. In contrast, the brightness distribution is characterized by skewness, which is quantified using third and higher-order moments.
+
+
+\section{Conclusion}
+
+Intensity Interferometry (II) is re-emerging as a promising technique to overcome the challenges of very long baseline interferometry in the optical wavelength range.  However, compared to radio-interferometry, optical interferometry faces \DIFdelbegin \DIFdel{an important }\DIFdelend \DIFaddbegin \DIFadd{a major }\DIFaddend hurdle: photon correlation captures only the magnitude of the interferometric signal, resulting in a loss of phase information.
+
+This work addresses the challenge of phase retrieval in II using a machine-learning technique, specifically a conditional Generative Adversarial Network (cGAN). Our study demonstrates that \DIFdelbegin \DIFdel{applying a cGAN to II data successfully recovers }\DIFdelend the size, shape \DIFdelbegin \DIFdel{, }\DIFdelend and brightness distribution of \DIFdelbegin \DIFdel{a fast-rotating star. Evaluations based on image moments—specifically}\DIFdelend \DIFaddbegin \DIFadd{fast rotating stars can be recovered by a Pix2Pix cGAN model trained on the combined input of the sky-image of known sources  along with their respective II data. In this training the sky-image acts as the real ``ground truth'' and the II data acts as the ``condition''. The Discriminator of our Model is trained to efficiently distinguish between the real images and fake (generated) images based on the ``ground truth'' images and the respective II data as the condition. The Generator is trained to generate progressively realistic images which are also consistent with the condition of the II data. The evaluation of the trained Model is then carried out by comparison of image moments of ground truth images and generated images. Specifically}\DIFaddend , the monopole, second, and third-order moments \DIFdelbegin \DIFdel{—}\DIFdelend \DIFaddbegin \DIFadd{are compared. The results }\DIFaddend support the effectiveness of cGAN in achieving \DIFdelbegin \DIFdel{accurate image reconstruction from a simulation of II from a single site with four telescopes}\DIFdelend \DIFaddbegin \DIFadd{the stated objective}\DIFaddend .
+
+While the results of this study highlight the significant potential of machine learning, and in particular the applicability of cGAN, for image reconstruction in II, several aspects require further refinement. First, an important factor in the reconstruction process is the extent of Fourier plane coverage, which depends on the number of available telescopes and the total observing time. The reasonable success of this piece of work suggests that a network of higher number of telescopes providing higher number of baselines and greater coverage of the $(u,v)$ plane signal, \DIFaddbegin \DIFadd{would play a critical role in }\DIFaddend projects of image reconstruction of more complicated stellar systems can be undertaken. Future work might explore different observatory layouts to assess their impact on image reconstruction quality.  Second, detector efficiencies, which impact the signal-to-noise ratio (SNR) of actual observational data, have not yet been incorporated; addressing these factors will be crucial for more accurate SNR estimation.  Third, exploring and comparing alternative methods for image generation could reveal approaches that outperform cGAN in reconstructing stellar images with II. Fourth, experimenting with different loss functions could provide additional insights into the reconstruction quality. Although further testing is needed to refine the GAN and enhance its robustness and reliability, our findings suggest that machine learning is a promising approach for phase reconstruction in II.
+
+
+\DIFaddbegin \section*{\DIFadd{Note on software}}
+
+\DIFadd{The code used for this work is available on the DOI:}\hfil\break
+\href{https://doi.org/10.5281/zenodo.17598807}{\DIFadd{10.5281/zenodo.17598807}}
+
+\DIFaddend \begin{acknowledgements}
+\textbf{Acknowledgment:} One of the authors (SS) gratefully acknowledges the computing facilities and the local hospitality extended to him by the Inter-University Centre for Astronomy and Astrophysics (IUCAA), Pune, India under its Visiting Associate Programme during the preparation \DIFaddbegin \DIFadd{and finalization }\DIFaddend of this manuscript.
+\end{acknowledgements}
+
+\bibliographystyle{aasjournalv7}
+%DIF > \bibliographystyle{aa}
+\bibliography{refs}
+
+\end{document}
+

@@ -14,7 +14,7 @@ alpha = 0.005                                                                   
 save_images = True
 
 """
-Script that calculates the Power spectrum (2D-FFT) of an image (i.e. a stellar source). Then automatically creates training, testing and validation datasets. Includes addition of Salt and Pepper noise. Output: test, train and validation folders contaning merged images (stellar objects in sky and on observational plane), ready to be used in the pix2pix model.
+Script that calculates the Power spectrum (2D-FFT) of an image (i.e. a stellar source). Then automatically creates training, testing and validation datasets. Includes addition of Salt and Pepper noise. Output: test, train and validation folders contaning merged images (stellar objects in sky and on observational plane), ready to be used in the model.
 """
 
 base = np.load("base_npy/base.npy")                                                                   # the baseline in .npy format
@@ -29,8 +29,7 @@ for filename in os.listdir(path_in):
     image_original = ps.sap_noise(img_org, alpha)                                                     # ground truth with salt and pepper noise
     img_ed = cv2.resize(image_original, dsize=(image_size, image_size), interpolation=cv2.INTER_AREA) # Resize the image_size and subtract the mean for noisy image
     img_ed = img_ed - np.mean(img_ed)                                                                 # Subtracting the mean from each pixel in the image centers the data around zero (helps center and 
-                                                                                                      # normalize the data, remove bias, improve network convergence, and reduce covariate shift). 
-    
+                                                                                                      # normalize the data, remove bias, improve network convergence, and reduce covariate shift).   
     img_fft = fft.fftshift(fft.fft2(fft.fftshift(img_ed)))                                            # calculate 2D FFT for noisy image (power spectrum)
     fft_argument = np.abs(img_fft)                                                                    # the absolute value of fourier transform
     
@@ -113,4 +112,4 @@ if save_images:
 else:
     print(f"{counter} images not saved")
    
-    
+print("finished")   

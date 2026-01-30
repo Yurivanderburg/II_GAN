@@ -102,8 +102,8 @@ class ellipsoid():
           -----------
           rad: size of the ellipsoid [3e-9 and 1.5e-8]
           inc: Inclination of the ellipsoid [0, 2pi]
-          pa: Rotation around x/y-axis [0, 2pi]
-          sq: Thickness of the ellipsoid along z-axis [0.6, 1]
+          pa: Position angle; Rotation around x/y-axis [0, 2pi]
+          sq: Axis Ratio; Thickness of the ellipsoid along z-axis [0.6, 1]
           
           Output: 
           -------
