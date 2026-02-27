@@ -1,27 +1,30 @@
 \section{Intensity Interferometry (II) with IACT arrays}
 
-\begin{figure}
+\begin{figure*}
 	\centering
-	\includegraphics[width=\linewidth]{fig/telescope.png}
-	\caption{A schematic representation of a hypothetical observation facility with an the array of four Cherenkov Telescopes (IACTs) whose relative positions approximately mimic those at VERITAS. This array is used in simulating the II observation of the fast rotators. Each of the telescopes has a diameter of 12m. The baselines provided by the array are of the order of 100m.}
+	\includegraphics[width=0.49\linewidth]{fig/six/telescope.png}\hfil
+	\includegraphics[width=0.49\linewidth]{fig/nine/telescope.png}
+	\caption{A schematic representation of a hypothetical observation facility with an the array of six Imaging Atmospheric Cherenkov Telescopes (IACTs) and nine IACTs like ASTRI \cite{scuderi2022astri}. This array is used in simulating the II observation of the fast rotators.}
 	\label{fig:teles}
-\end{figure}
+\end{figure*}
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{fig/baseline.png}
-  \caption{The tracks of the baselines due to Earth rotation (described in sec.~\ref{sec:earth}) provided by the hypothetical observation facility of four telescopes arranged in fig.~\ref{fig:teles} for one night of observation. The number of baselines scales as square of number of telescopes in the array thus leading to greater coverage of the observational plane and better image reconstruction prospects.} 
+\begin{figure*}
+  \includegraphics[width=0.49\linewidth]{fig/six/base/baseline_1.png}\hfil
+  \includegraphics[width=0.49\linewidth]{fig/nine/base/baseline_1.png}
+  \caption{The tracks of the baselines due to Earth rotation (described in sec.~\ref{sec:earth}) provided by the hypothetical observation facility of six and nine telescopes arranged in fig.~\ref{fig:teles} for one night of observation. The number of baselines scales as square of number of telescopes in the array thus leading to greater coverage of the observational plane and better image reconstruction prospects.} 
 \label{fig:base}
-\end{figure}
+\end{figure*}
 
 \begin{figure}[hbt]
-  \includegraphics[width=\linewidth]{fig/ellipse/ellipse1612.png}
+  \includegraphics[width=\linewidth]{fig/ellipse/ellipse18.jpg}
   \caption{This figure shows one of the simulated fast rotating stars (FRS). The brightness is highest at the poles; gravity darkening visible along the equator. A total of 31460 such images of FRS with different parameter values have been generated to train the model.}
   \label{fig:image}
 \end{figure}
 \begin{figure*}
-	\includegraphics[width=.49\linewidth]{fig/ft/ft.jpg}\hfil
-	\includegraphics[width=.49\linewidth]{fig/ft/ft_base.jpg}
-	\caption{The left panel shows the absolute value of the two-dimensional Fast Fourier Transform of the source depicted in Fig.~\ref{fig:image}. It represents the intensity interferometric ($u,v$) plane image of the source that would be obtained by an infinite number of baselines (or an infinite number of telescopes observing the source). The right panel shows the absolute value of the same source measured along the tracks shown in Fig.~\ref{fig:base}. This figure reflects the sparse nature of the signal received by a realistic finite number of telescopes and baselines sampled from the full ($u,v$) plane signal space, as shown in the figure on the left panel. Both figures are plotted on a linear scale and normalized to the maximum pixel value in each respective figure.}
+	\includegraphics[width=.33\linewidth]{fig/six/ft/ft.jpg}\hfil
+	\includegraphics[width=.33\linewidth]{fig/six/ft/ft_base.jpg}\hfil
+	\includegraphics[width=.33\linewidth]{fig/nine/ft/ft_base.jpg}
+	\caption{The left panel shows the absolute value of the two-dimensional Fast Fourier Transform of the source depicted in Fig.~\ref{fig:image}. It represents the intensity interferometric ($u,v$) plane image of the source that would be obtained by an infinite number of baselines (or an infinite number of telescopes observing the source). The middle panel shows the absolute value of the same source measured along the tracks shown in left of Fig.~\ref{fig:base}. The right panel show the same for right panel in Fig.~\ref{fig:base}. This figure reflects the sparse nature of the signal received by a realistic finite number of telescopes and baselines sampled from the full ($u,v$) plane signal space. All figures are plotted on a linear scale and normalized to the maximum pixel value in each respective figure.}
 	\label{fig:ft}
 \end{figure*}
 This section presents a brief conceptual overview of how an array of telescopes is used to perform II observations, and explains the Signal-to-Noise Ratio (SNR) from these measurements.
@@ -83,7 +86,8 @@ In our work presented here, we attempt image reconstruction of a fast-rotating s
 II counts the photons arriving at the telescopes from the stellar object. The correlation of these photon arrivals at the telescopes yields the squared visibility Eq.~\eqref{eq:angular_size_meas}, as explained in subsection~\ref{sec:signal}. The left panel of fig.~\ref{fig:ft} shows the signal from the source shown in Fig.~\ref{fig:image} using II, displayed on linear scales.  A point to note here is that this figure represents the signal from the source that would be recorded by an infinite number of baselines provided by an infinite number of telescopes on the interferometric plane. In practice, only a small part of this information is available (as seen in right panel of Fig.~\ref{fig:ft}), because one has a finite number of baselines corresponding to the finite number $N_T$ of telescopes at our disposal and a limited observation schedule. We have simulated the II observation of the fictitious star by a hypothetical observation facility having an array of four IACTs with their relative positions approximating those at VERITAS (correlated with baselines as seen in Fig.~\ref{fig:teles}) over one night. Using this modest amount of signal from one night's observation, we have trained a cGAN to construct the image of the source.
 \begin{figure*}
    \centering
-  \includegraphics[width=0.85\linewidth]{fig/ellipse1612.jpg}
-  \caption{An illustrative example of the input used for training the cGAN model. The picture on the left shows the source image, which serves as the ground truth or the real data ($x$), as mentioned in the Flow Diagram (Fig.\ref{fig:FlowDiagram} discussed later during the training). The picture on  the right represents the simulated II observation pattern of the source (on the left) using a hypothetical observation facility having as array of four IACTs (see Fig.~\ref{fig:teles}) and the tracks of the six telescope baselines (see Fig.~\ref{fig:base}) generated  by these four IACTs due to Earth's rotation during the observation session. This pattern referred to as $y$, in the Flow Diagram (Fig.\ref{fig:FlowDiagram} discussed later) forms the ``condition" during the training to which the GAN model has to conform. Salt-and-pepper noise is added to this pattern for enhancing the robustness of the cGAN model. Together, these images form a training pair, where the GAN learns to reconstruct a predicted image (modeling of observed signal) similar to ground truth (left) from the noisy baseline signal (right). The grayscale in both images is normalized to the brightest pixel.}
+   \includegraphics[width=0.49\linewidth]{fig/six/input/ellipse18.jpg}\hfil
+   \includegraphics[width=0.49\linewidth]{fig/nine/input/ellipse18.jpg}
+   \caption{An illustrative example of the input used for training the cGAN model. The picture on the left shows the source image, which serves as the ground truth or the real data ($x$), as mentioned in the Flow Diagram (Fig.\ref{fig:FlowDiagram} discussed later during the training). In both figure, the picture on  the right represents the simulated II observation pattern of the source (on the left) using a hypothetical observation facility having as array of six and nine IACTs (see Fig.~\ref{fig:teles}) and the tracks of the six and nine telescope baselines (see Fig.~\ref{fig:base}) generated  by these IACTs due to Earth's rotation during the observation session. This pattern referred to as $y$, in the Flow Diagram (Fig.\ref{fig:FlowDiagram} discussed later) forms the ``condition" during the training to which the GAN model has to conform. Salt-and-pepper noise is added to this pattern for enhancing the robustness of the cGAN model. Together, these images form a training pair, where the GAN learns to reconstruct a predicted image (modeling of observed signal) similar to ground truth (left) from the noisy baseline signal (right). The grayscale in both images is normalized to the brightest pixel.}
   \label{fig:GANinput}
 \end{figure*}
