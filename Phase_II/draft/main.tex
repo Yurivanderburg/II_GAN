@@ -1,53 +1,67 @@
-\documentclass[linenumbers, twocolumn]{aastex701}
+\documentclass[twocolumn]{article}
+\usepackage[
+top=2.0cm,
+bottom=2.0cm,
+left=1.8cm,
+right=1.8cm,
+columnsep=0.6cm
+]{geometry}
 \usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage[normalem]{ulem}
-\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{booktabs}
 \usepackage{lineno}
 
 \usepackage{fancyhdr}
-%\pagestyle{fancy}
-%\fancyfoot[L]{DOI: \href{https://doi.org/10.5281/zenodo.17598807}{10.5281/zenodo.17598807}}
-
-
-\definecolor{BLUE}{named}{blue} 
+\usepackage{graphicx,natbib}
+\usepackage{authblk}
+\usepackage{sectsty}
+\usepackage[normalem]{ulem}
+\usepackage[
+colorlinks=true,
+linkcolor=blue,
+citecolor=blue,
+urlcolor=blue,
+breaklinks=true
+]{hyperref}
+\usepackage{xcolor}
 
 \newcommand{\mias}{$\SI{}{\micro{\rm as}}$}
 \newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\norm}[2]{\left\lVert#1\right\rVert}
 
 
-
 \begin{document}
-
 \title{Generative AI for image reconstruction in Intensity Interferometry: a first attempt}
 
-\author{Km Nitu Rai}
-\affiliation{School of Physics, Indian Institute of Science Education and Research Thiruvananthapuram, Maruthamala PO, Vithura, Thiruvananthapuram 695551, Kerala, India.}
-\affiliation{Aryabhatta Research Institute of Observational Sciences, Manora Peak, Nainital 263129, India.}
-\email{niturai201296@gmail.com}  
+\author[1,2]{Km Nitu Rai\thanks{E-mail: \href{mailto:niturai201296@gmail.com}{niturai201296@gmail.com}}}
+\affil[1]{\small{\em{Aryabhatta Research Institute of Observational Sciences, Manora Peak, Nainital 263129, India.}}}
+\affil[2]{\small{\em{School of Physics, Indian Institute of Science Education and Research Thiruvananthapuram, Maruthamala PO, Vithura, Thiruvananthapuram 695551, Kerala, India.}}}
+	
+\author[3]{Yuri van der Burg}
+\affil[3]{\small{\em{Physik-Institut, University of Zurich,	Winterthurerstrasse 190, 8057 Zurich, Switzerland.}}}	
 
-\author{Yuri van der Burg} 
-\affiliation{Physik-Institut, University of Zurich,	Winterthurerstrasse 190, 8057 Zurich, Switzerland.}
-\email{yuri.vanderburg@uzh.ch}
+\author[1]{Soumen Basak}
+\affil[1]{\small{\em{Aryabhatta Research Institute of Observational Sciences, Manora Peak, Nainital 263129, India.}}}
+	
+\author[4]{Prasenjit Saha}
+\affil[4]{\small{\em{Physik-Institut, University of Zurich,	Winterthurerstrasse 190, 8057 Zurich, Switzerland.}}}
 
-\author{Soumen Basak}
-\affiliation{School of Physics, Indian Institute of Science Education and Research Thiruvananthapuram, Maruthamala PO, Vithura, Thiruvananthapuram 695551, Kerala, India.}
-\email{sbasak2006@gmail.com}
+\author[5, 6]{Subrata Sarangi}
+\affil[5]{\small{\em{School of Applied Sciences, Centurion University of	Technology and Management, Odisha-752050, India.}}}
+\affil[6]{\small{\em{Visiting Associate, Inter-University Centre for Astronomy and Astrophysics, Post Bag 4, Ganeshkhind, Pune 411 007, Maharashtra, India.}}}
 
-\author{Prasenjit Saha}
-\affiliation{Physik-Institut, University of Zurich,	Winterthurerstrasse 190, 8057 Zurich, Switzerland.}
-\email{psaha@physik.uzh.ch}
+\setbox0=\vbox{\hsize=6.5truein
+	\hbox to \hsize{\hss\bf Abstract\hss}
+	\smallskip \noindent 
+	
+In the last few years Intensity Interferometry (II) has made significant strides in achieving high-precision resolution of stellar objects at optical wavelengths. Despite these advancements, phase retrieval remains a major challenge due to the nature of photon correlation. This paper explores the application of a conditional Generative Adversarial Network (cGAN) to tackle the problem of image reconstruction in II. This method successfully reconstructs the shape, size, and brightness distribution of simulated, fast-rotating stars based on a sparsely sampled spatial power spectrum obtained from a hypothetical ground-based II facility composed of four Imaging Atmospheric Cherenkov Telescopes (IACTs).  Although this particular example could also be addressed using parameter fitting, the results suggest that with larger arrays much more complicated systems could be reconstructed by applying machine-learning techniques to II.}
 
-\author{Subrata Sarangi}
-\affiliation{School of Applied Sciences, Centurion University of	Technology and Management, Odisha-752050, India.}
-\affiliation{Visiting Associate, Inter-University Centre for Astronomy and Astrophysics, Post Bag 4, Ganeshkhind, Pune 411 007, Maharashtra, India.}
-\email{ssarangi.itech@gmail.com}
+\date{\box0}
 
-\begin{abstract}
-In the last few years Intensity Interferometry (II) has made significant strides in achieving high-precision resolution of stellar objects at optical wavelengths. Despite these advancements, phase retrieval remains a major challenge due to the nature of photon correlation. This paper explores the application of a conditional Generative Adversarial Network (cGAN) to tackle the problem of image reconstruction in II. This method successfully reconstructs the shape, size, and brightness distribution of simulated, fast-rotating stars based on a sparsely sampled spatial power spectrum obtained from a hypothetical ground-based II facility composed of four Imaging Atmospheric Cherenkov Telescopes (IACTs).  Although this particular example could also be addressed using parameter fitting, the results suggest that with larger arrays much more complicated systems could be reconstructed by applying machine-learning techniques to II.
-\end{abstract}
+\maketitle
+
+\noindent
+\textbf{Keywords:} {{Intensity Interferometry}, {Phase Reconstruction}, {Generative Adversarial Network (cGAN)}, {Imaging Atmospheric Cherenkov Telescopes}}
 
 \input{intro_reformatted}
 \input{image-reconstruction-past-efforts}
@@ -64,9 +78,7 @@ The code used for this work is available on the DOI:\hfil\break
 \section*{Acknowledgements}
 One of the authors (SS) gratefully acknowledges the computing facilities and the local hospitality extended to him by the Inter-University Centre for Astronomy and Astrophysics (IUCAA), Pune, India under its Visiting Associate Programme during the preparation and finalization of this manuscript.
 
-\bibliographystyle{aasjournalv7}
-%\bibliographystyle{aa}
-\bibliography{refs}
+\bibliographystyle{aa}
+\bibliography{main}
 
 \end{document}
-
