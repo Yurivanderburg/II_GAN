@@ -1,0 +1,110 @@
+\documentclass{beamer}
+\input{setup_ML.tex}
+
+
+\definecolor{beamer_color}{RGB}{176,196,222} 
+\begin{document}
+	\maketitle
+
+	\begin{frame}
+		\centering  
+		\visible<1-4>{
+			\textbf{\textit{\textcolor{blue}{\underline{Objective}: High Resolution of Stellar Objects...}}}\\
+			\vspace{0.4cm}
+		}  
+		\visible<2-4>{
+			\textbf{\textit{\textcolor{red}{\underline{Limitation}: There Size of Aperture of Telescope...}}}\\
+			\vspace{0.4cm}
+		}
+		
+		\visible<3-4>{
+			\textbf{\textit{\textcolor{blue}{\underline{Solution}: Interferometry Technique using Multiple Telescope...}}}\\
+			\vspace{0.4cm}
+		}
+		
+		\visible<4>{
+			\textbf{\textit{\textcolor{red}{\underline{Challenges}: The Extraction of Lost Quantities for high resolution...}}}
+		}
+	\end{frame}
+
+    \begin{frame}{Requirements of High Resolution}
+    	\begin{columns}[c]
+    		\column{0.6\textwidth}
+    		\begin{itemize}
+    			\item Stellar objects appear almost like point sources.
+    			\item Angular sizes are extremely small ($\sim$ milliarcsecond or less).
+    			\item High angular resolution is required to resolve stellar surfaces.
+    			\item Understanding stellar structure is crucial for stellar evolution.
+    			\item The Sun is the only star currently resolved in detail.
+    		\end{itemize}
+    		
+    		\column{0.4\textwidth}
+    		\begin{figure}
+    			\centering
+    			\includegraphics[width=0.85\textwidth]{fig/sun.png}
+    		\end{figure}
+    	\end{columns}
+    \end{frame}
+
+    \begin{frame}{Maximum Resolution with a Telescope}
+    	\begin{columns}[c]
+    		\column{0.5\textwidth}
+    		\begin{itemize}
+    			\item Resolution is limited by diffraction.
+    			\item Angular resolution given by:
+    		\end{itemize}
+    		
+    		\vspace{0.3cm}
+    		
+    		\centering
+    		\[
+    		\theta \sim \frac{\lambda}{D}
+    		\]
+    		
+    		\begin{itemize}
+    			\item $\lambda$ : wavelength of light
+    			\item $D$ : diameter of the telescope
+    			\item Larger aperture $\Rightarrow$ better resolution
+    			\item Even largest telescopes $\Rightarrow$ limited to milliarcsecond scale
+    		\end{itemize}
+    		
+    		\column{0.5\textwidth}
+    		\begin{figure}
+    			\centering
+    			\includegraphics[width=0.9\textwidth]{fig/diffraction.png}
+    			\caption*{Diffraction-limited imaging (Airy disk)}
+    		\end{figure}
+    	\end{columns}
+    \end{frame}
+
+    \begin{frame}{Maximum Resolution with a Telescope}
+    	Show the diffraction formula and a figure (resolved yet with single telescope)
+    \end{frame}
+
+    \begin{figure}{Interferometry: The Technique}
+    	Talk about the baseline and resolution
+    \end{figure}
+
+    \begin{frame}{The Intensity Interferometry}
+    	Profit and Loss
+    \end{frame}
+
+    \begin{frame}{The Role of GAN}
+    	
+    \end{frame}
+
+    \begin{frame}{Image Reconstruction: The Result}
+    	
+    \end{frame}
+
+    \begin{frame}{The Next Steps.....}
+    	
+    \end{frame}
+
+	\begin{frame}
+		\begin{center}
+			{\fontsize{40}{50}\selectfont \underline{Thank You!!}}
+		\end{center}
+	\end{frame}
+
+\end{document}
