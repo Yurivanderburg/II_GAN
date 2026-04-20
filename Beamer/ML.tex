@@ -32,7 +32,7 @@
     		\column{0.6\textwidth}
     		\begin{itemize}
     			\item Stellar objects appear almost like point sources.
-    			\item Angular sizes are extremely small ($\sim$ milliarcsecond or less).
+    			\item Angular sizes are extremely small ($\sim$ milli-arcsecond or less).
     			\item High angular resolution is required to resolve stellar surfaces.
     			\item Understanding stellar structure is crucial for stellar evolution.
     			\item The Sun is the only star currently resolved in detail.
@@ -50,43 +50,44 @@
     	\begin{columns}[c]
     		\column{0.5\textwidth}
     		\begin{itemize}
-    			\item Resolution is limited by diffraction.
-    			\item Angular resolution given by:
-    		\end{itemize}
-    		
-    		\vspace{0.3cm}
-    		
-    		\centering
-    		\[
-    		\theta \sim \frac{\lambda}{D}
-    		\]
-    		
-    		\begin{itemize}
-    			\item $\lambda$ : wavelength of light
-    			\item $D$ : diameter of the telescope
-    			\item Larger aperture $\Rightarrow$ better resolution
-    			\item Even largest telescopes $\Rightarrow$ limited to milliarcsecond scale
+    			\item Resolution is limited by diffraction: $ \theta \sim \frac{\lambda}{D}$
+    	    	\item $\lambda$ : wavelength of light and $D$ : diameter of the telescope
+    	    	\item Larger aperture $\Rightarrow$ better resolution
+    	    	\item Even largest telescopes Gran Telescopio Canarias (GTC) $\Rightarrow$ limited to 13.3 milli-arcsecond scale
+    	    	\item 
     		\end{itemize}
     		
     		\column{0.5\textwidth}
     		\begin{figure}
     			\centering
-    			\includegraphics[width=0.9\textwidth]{fig/diffraction.png}
-    			\caption*{Diffraction-limited imaging (Airy disk)}
+    			\includegraphics[width=0.85\textwidth]{fig/GTC.jpg}
     		\end{figure}
     	\end{columns}
     \end{frame}
 
-    \begin{frame}{Maximum Resolution with a Telescope}
-    	Show the diffraction formula and a figure (resolved yet with single telescope)
+    \begin{frame}{Interferometry: The Technique}
+    	\begin{columns}[c]
+    		\column{0.65\textwidth}
+    		\begin{itemize}
+    			\item Two telescopes separated by a distance $B$ act like a single aperture of size $B$.
+    			\item Angular resolution: $\theta \sim \frac{\lambda}{B}$
+    			\item Interferometry measures correlation of signals from telescopes.
+    			\item The measured quantity is the \textbf{visibility function}.
+    			\item Visibility is related to the \textbf{Fourier transform of the source intensity}.
+    			\item Power spectrum: $P(u,v) = |V(u,v)|^2$
+    		\end{itemize}
+    		
+    		\column{0.35\textwidth}
+    		\begin{figure}
+    			\centering
+    			\includegraphics[width=\linewidth]{fig/earth.png}
+    			\caption*{Baseline geometry}
+    		\end{figure}
+    	\end{columns}	
     \end{frame}
 
-    \begin{figure}{Interferometry: The Technique}
-    	Talk about the baseline and resolution
-    \end{figure}
-
     \begin{frame}{The Intensity Interferometry}
-    	Profit and Loss
+    	
     \end{frame}
 
     \begin{frame}{The Role of GAN}
