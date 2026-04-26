@@ -53,7 +53,7 @@ Subsequently, the GAN framework was extended to a conditional model \citep{mirza
 	\label{eq:conditional_GAN}
 \end{equation}
 The conditional variable $y$ in a cGAN can be various additional information including images, labels or text contextual to ``ground truth'' real data $x$. Among various types of cGANs, Pix2Pix GAN with its image-to-image translation design is suitable for the task at hand.
-In our work, we specifically use this conditional variable by choosing \(y\) to represent the ground-based intensity-interferometry (II) observation patterns: the Generator is trained to produce stellar surface images that not only look realistic but also conform to the measured II correlations, while the Discriminator judges realism \emph{and} consistency with the II data.
+In our work, we specifically use this conditional variable by choosing \(y\) to represent the ground-based intensity-interferometry (II) observation patterns: the Generator is trained to produce stellar surface images that not only look realistic but also confirm to the measured II correlations, while the Discriminator judges realism \emph{and} consistency with the II data.
 
 \cite{isola2017image} further observed that combining the cGAN from Eq.~\eqref{eq:conditional_GAN} with the traditional $L_1(G)$ loss (also known  as the Mean Absolute Error) improves the results, as the Generator is encouraged to produce outputs closer to the target image in a pixel-wise sense. We adopt this approach in the training of our cGAN model by including $L_1(G)$ defined in eq.(\ref{eq:l1_loss})
 \begin{equation}

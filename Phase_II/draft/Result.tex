@@ -58,7 +58,7 @@ The raw moment $M_{ij}$ of an image is defined as \citep{hu1962visual}
 	M_{ij} = \sum_{x} \sum_{y} x^i y^j I(x, y)
 	\label{eqn:Mom-ij}
 \end{equation}
-where $I(x,y)$ represents the intensity at pixel $(x,y)$. The zeroth order raw moment, or monopole, represents the total intensity of an image. It is computed by summing all pixel values across the image, yielding an overall intensity measure. In this context, analyzing the monopole provides the total pixel brightness of the images of the fictitious stars. According to Eq.~\eqref{eqn:Mom}, the monopole of an image is calculated as:
+where $I(x,y)$ represents the intensity at pixel $(x,y)$. The zeroth order raw moment, or monopole, represents the total intensity of an image. It is computed by summing all pixel values across the image, yielding an overall intensity measure. In this context, analyzing the monopole provides the total pixel brightness of the images of the fictitious stars. According to Eq.~\eqref{eqn:Mom-ij}, the monopole of an image is calculated as:
 \begin{equation}
 	M_{00} = \sum_{x} \sum_{y} I(x, y).
 	\label{eqn:Mom-00}
@@ -132,10 +132,6 @@ Using the calculated axis values, the eccentricity of the fast-rotating star is 
 	\label{eqn:eccen}
 \end{equation}
 Eqs.~\ref{eqn:orn}-\ref{eqn:eccen} describe the elliptical nature of the stellar object (in this case, a fast-rotating star) and provide information on its shape and size, depending on the computed values. In contrast, the brightness distribution is characterized by skewness, which is quantified using third and higher-order moments.
-
-
-
-
 
 Thus at the end of this process of phase retrieval and image reconstruction using the Training Set, we have three sets of images, which we may now refer to as the ``GT", ``N6" and ``N9" images respectively. 
 
