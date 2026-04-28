@@ -1,28 +1,11 @@
-\documentclass[twocolumn]{openjournal}
-\usepackage{xcolor}
-\usepackage{textgreek}
-\usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
-
-\usepackage{hyperref}
-\hypersetup{
-	unicode, 
-	colorlinks=true,
-	linkcolor=linkcolor,
-	citecolor=linkcolor,
-	filecolor=linkcolor,
-	urlcolor=linkcolor,
-}
-\usepackage{color,colortbl}
-\definecolor{linkcolor}{rgb}{0.0,0.3,0.5}
-\usepackage{tensind}
-\tensordelimiter{?}
-\DeclareGraphicsExtensions{.bmp,.png,.jpg,.pdf}
-\usepackage{verbatim}
-\usepackage[normalem]{ulem}
-\usepackage{soul}
-
-\urlstyle{same}
+\documentclass[twocolumn]{article}
+\usepackage[
+top=2.0cm,
+bottom=2.0cm,
+left=1.8cm,
+right=1.8cm,
+columnsep=0.6cm
+]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{booktabs}
@@ -30,7 +13,16 @@
 
 \usepackage{fancyhdr}
 \usepackage{graphicx,natbib}
+\usepackage{authblk}
+\usepackage{sectsty}
 \usepackage[normalem]{ulem}
+\usepackage[
+colorlinks=true,
+linkcolor=blue,
+citecolor=blue,
+urlcolor=blue,
+breaklinks=true
+]{hyperref}
 \usepackage{xcolor}
 \usepackage{subcaption}
 \usepackage{orcidlink}
@@ -42,34 +34,33 @@
 \begin{document}
 \title{Generative AI for image reconstruction in Intensity Interferometry: a first attempt}
 
-\author{Km Nitu Rai 1\orcidlink{0000-0002-9939-805X}}
-\email{niturai201296@gmail.com}
-\affiliation{\small{\em{Aryabhatta Research Institute of Observational Sciences, Manora Peak, Nainital 263129, India.}}}
-\affiliation{\small{\em{School of Physics, Indian Institute of Science Education and Research Thiruvananthapuram, Maruthamala PO, Vithura, Thiruvananthapuram 695551, Kerala, India.}}}
+\author{Km Nitu Rai\thanks{E-mail: niturai201296@gmail.com}\orcidlink{0000-0002-9939-805X}}
+\affil[1]{\small{\em{Aryabhatta Research Institute of Observational Sciences, Manora Peak, Nainital 263129, India.}}}
+\affil[2]{\small{\em{School of Physics, Indian Institute of Science Education and Research Thiruvananthapuram, Maruthamala PO, Vithura, Thiruvananthapuram 695551, Kerala, India.}}}
 	
-\author{Yuri van der Burg 2}
-\affiliation{\small{\em{Physik-Institut, University of Zurich,	Winterthurerstrasse 190, 8057 Zurich, Switzerland.}}}	
+\author[3]{Yuri van der Burg}
+\affil[3]{\small{\em{Physik-Institut, University of Zurich,	Winterthurerstrasse 190, 8057 Zurich, Switzerland.}}}	
 
-\author{Soumen Basak 3\orcidlink{0000-0003-4042-0387}}
-\affiliation{\small{\em{School of Physics, Indian Institute of Science Education and Research Thiruvananthapuram, Maruthamala PO, Vithura, Thiruvananthapuram 695551, Kerala, India.}}}
+\author[2]{Soumen Basak\orcidlink{0000-0003-4042-0387}}
 
-\author{Prasenjit Saha 4\orcidlink{0000-0003-0136-2153}}
-\affiliation{\small{\em{Physik-Institut, University of Zurich,	Winterthurerstrasse 190, 8057 Zurich, Switzerland.}}}
+\author[3]{Prasenjit Saha\orcidlink{0000-0003-0136-2153}}
 
-\author{Subrata Sarangi 5\orcidlink{0000-0001-6500-9987}}
-\affiliation{\small{\em{School of Applied Sciences, Centurion University of	Technology and Management, Odisha-752050, India.}}}
-\affiliation{\small{\em{Visiting Associate, Inter-University Centre for Astronomy and Astrophysics, Post Bag 4, Ganeshkhind, Pune 411 007, Maharashtra, India.}}}
+\author[4, 5]{Subrata Sarangi\orcidlink{0000-0001-6500-9987}}
+\affil[4]{\small{\em{School of Applied Sciences, Centurion University of Technology and Management, Odisha-752050, India.}}}
+\affil[5]{\small{\em{Visiting Associate, Inter-University Centre for Astronomy and Astrophysics, Post Bag 4, Ganeshkhind, Pune 411 007, Maharashtra, India.}}}
 
-\begin{abstract}
-In the last few years Intensity Interferometry (II) has made significant strides in achieving high-precision resolution of stellar objects at optical wavelengths. Despite these advancements, phase retrieval remains a major challenge due to the nature of photon correlation. This paper explores the application of a conditional Generative Adversarial Network (cGAN) to tackle the problem of image reconstruction in II. This method successfully reconstructs the shape, size, and brightness distribution of simulated, fast-rotating stars based on sparsely sampled spatial power spectra obtained by using two different hypothetical ground-based II facilities composed of six and nine Imaging Atmospheric Cherenkov Telescopes (IACTs), respectively.  Although this particular example could also be addressed using parameter fitting, our results suggest that with larger arrays of IACTs much more complex systems with varied surface features could be reconstructed by applying machine-learning techniques to II. Hence this approach merits closer examination.
-\end{abstract}
+\setbox0=\vbox{\hsize=6.5truein
+	\hbox to \hsize{\hss\bf Abstract\hss}
+	\smallskip \noindent 
+	
+	In the last few years Intensity Interferometry (II) has made significant strides in achieving high-precision resolution of stellar objects at optical wavelengths. Despite these advancements, phase retrieval remains a major challenge due to the nature of photon correlation. This paper explores the application of a conditional Generative Adversarial Network (cGAN) to tackle the problem of image reconstruction in II. This method successfully reconstructs the shape, size, and brightness distribution of simulated, fast-rotating stars based on sparsely sampled spatial power spectra obtained by using two different hypothetical ground-based II facilities composed of six and nine Imaging Atmospheric Cherenkov Telescopes (IACTs), respectively.  Although this particular example could also be addressed using parameter fitting, our results suggest that with larger arrays of IACTs much more complex systems with varied surface features could be reconstructed by applying machine-learning techniques to II. Hence this approach merits closer examination.}
 
-
-\begin{keywords}
-{Intensity Interferometry, Phase Reconstruction, Generative Adversarial Network (cGAN), Imaging Atmospheric Cherenkov Telescopes}
-\end{keywords}
+\date{\box0}
 
 \maketitle
+
+\noindent
+\textbf{Keywords:} {{Intensity Interferometry}, {Phase Reconstruction}, {Generative Adversarial Network (cGAN)}, {Imaging Atmospheric Cherenkov Telescopes}}
 
 \input{intro_reformatted}
 \input{image-reconstruction-past-efforts}
@@ -86,7 +77,7 @@ The code used for this work is available on the DOI:\hfil\break
 \section*{Acknowledgements}
 One of the authors (SS) gratefully acknowledges the computing facilities and the local hospitality extended to him by the Inter-University Centre for Astronomy and Astrophysics (IUCAA), Pune, India under its Visiting Associate Programme during the preparation and finalization of this manuscript.
 
-\bibliographystyle{apsrev4-1}
+\bibliographystyle{aa}
 \bibliography{main}
 
 \end{document}
