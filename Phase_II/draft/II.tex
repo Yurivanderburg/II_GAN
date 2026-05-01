@@ -31,33 +31,46 @@
 
 This section presents a brief conceptual overview of how an array of telescopes is used to perform II observations, and explains the SNR from these measurements.
 \subsection{The signal for II}\label{sec:signal}
-As a simple example, let us consider a pair of IACTs pointed at a star. Suppose the two telescopes simultaneously measure the intensity of radiation $I_1(t)$ and $I_2(t)$, respectively. The signals from these detectors are cross-correlated and averaged over time, yielding the second order ($n=2$) correlation of these intensities as \citep[cf.][]{acciari2020optical, 2013APh....43..331D}
+As a simple example, let us consider a \textcolor{magenta}{identical} pair of IACTs pointed at a star. Suppose the two telescopes simultaneously measure the intensity of radiation $I_1(t)$ and $I_2(t)$, respectively. The signals from these detectors are cross-correlated and averaged over time, yielding the second order ($n=2$) correlation of these intensities as \citep[cf.][]{acciari2020optical, 2013APh....43..331D}
 \begin{equation}
-	g^{(2)}= \frac{\left\langle I_1(t) \cdot I_2(t + \tau) \right\rangle}{\langle I_1(t) \rangle \cdot \langle I_2(t) \rangle} 
+	\textcolor{magenta}{g^{(2)}_{12}}= \frac{\left\langle I_1(t) \cdot I_2(t + \tau) \right\rangle}{\langle I_1(t) \rangle \cdot \langle I_2(t) \rangle} 
 	\label{eqn:HBT}
 \end{equation}
 where $\tau$ is the time delay between the telescopes. For spatially coherent and randomly polarized light, Eq.~\eqref{eqn:HBT} reduces to the relation \citep[sometimes called the Siegert relation, see e.g.,][]{acciari2020optical}.
 \begin{equation}
-	g^{(2)} = 1 + \frac{\Delta f}{\Delta \nu} \abs{V_{12}}^2
+	\textcolor{magenta}{g^{(2)}_{12}} = 1 + \frac{\Delta f}{\Delta \nu} \abs{V_{12}}^2
 	\label{eqn:HBT2}
 \end{equation}
-where $\Delta f$ is the electronic bandwidth of the photon detectors which measure the intensities and $\Delta \nu$ is the frequency bandwidth of the filters employed in the telescopes to observe the star.  Values of $\Delta\nu\sim 1\,\mathrm{THz}$ and $\Delta f \sim 1\,\mathrm{GHz}$ are typical of recent work.  In Eq.~\eqref{eqn:HBT2}, $V_{12}$, referred to as the complex visibility function, is the Fourier transform of the source brightness distribution. It contains information about the star's angular diameter. However, the phase information is lost since we measure only the absolute value $\vert V_{12} \vert^2$. In observational astronomy, the correlation is often expressed in terms of the normalized contrast, given by:
+where $\Delta f$ is the electronic bandwidth of the photon detectors which measure the intensities and $\Delta \nu$ is the frequency bandwidth of the filters employed in the telescopes to observe the star.  Values of $\Delta\nu\sim 1\,\mathrm{THz}$ and $\Delta f \sim 1\,\mathrm{GHz}$ are typical of recent work.  In Eq.~\eqref{eqn:HBT2}, $V_{12}$, referred to as the complex visibility function, is the Fourier transform of the source brightness distribution. It contains information about the star's angular diameter. However, the phase information is lost since we measure only the absolute value $\vert V_{12} \vert^2$. In observational astronomy, the correlation is often expressed in terms of the normalized contrast \textcolor{magenta}{$c_{12}$}, given by:
 \begin{equation}
-	c = g^{(2)} - 1 = \frac{\Delta f}{\Delta \nu} \abs{V_{12}}^2
+	\textcolor{magenta}{c_{12} = g^{(2)}_{12}} - 1 = \frac{\Delta f}{\Delta \nu} \abs{V_{12}}^2
 	\label{eq:signal}
 \end{equation}
-with $\abs{V_{12}}^2$ being a function of baseline $b = \sqrt{u^2 + v^2}$ on the observational plane $(u, v)$. This implies the strength of the signal would be enhanced if a larger number of baselines or pairs of telescopes are employed.
+with $\abs{V_{12}}^2$ being a function of baseline $b = \sqrt{u^2 + v^2}$ on the observational plane $(u, v)$. This implies the strength of the signal would be enhanced if a larger number of baselines or pairs of telescopes are employed. 
+
+\textcolor{magenta}{The total correlation obtained by all the pairs of $N_T$ telescopes in an observation facility, excluding the zero-baseline cases, becomes
+\begin{equation}
+c_{N_T} = \sum_{\substack{i,j =1 \\ i<j}}^{N_T}  c_{ij}.
+\label{eqn:total-corr}
+\end{equation}}
 
 \subsection{The Signal-to-Noise Ratio for II}
 The primary purpose of IACT arrays is to observe the Cherenkov showers generated in the upper atmosphere by high-energy gamma rays (with energy $E\ \geq 30$ GeV) arriving from cosmic sources. When employed for II observations, these telescopes focus light received from a sky source onto their respective set of photo-multiplier tubes (PMTs), see e.g., \citep{aleksic2016major} with appropriate specifications. In the simulation models adopted here, we consider, in succession, two arrays of IACTS each with similar properties. The positional configurations of these arrays of $N_T=6$ and $N_T =9$ IACTs are respectively shown in the left and the right panels of Fig.~\ref{fig:teles}. The optical signal directed to a PMT is filtered using a spectral filter with a chosen mean observational wavelength $\lambda$ and corresponding bandpass $\Delta \lambda$. The use of filters not only reduces background noise but also improves the signal quality and the efficiency of the PMTs. Filtering background skylight becomes even more significant in II observations, as, currently, these are carried out during bright moon-lit nights when the primary function of the IACTs (of observing Cherenkov Showers) is rendered infeasible. It is important to note that the light from the stellar source is focused on a PMT attached with each of the telescopes during II observations.
 
 
-The significance of the signal can be expressed in terms of the signal-to-noise ratio (SNR), which depends on many factors. However, most importantly, it does not depend on the optical bandwidth $\Delta {\mathrm {\nu}}$ of the radiation for a two-telescope correlation. The explanation for the independence of the SNR from $\Delta {\mathrm {\nu}}$ is provided in several works \citep[e.g., subsection 4.1 of][]{10.1093/mnras/stab2391}.  The Signal-to-Noise Ratio ($SNR$) is given by
+The significance of the signal can be expressed in terms of the signal-to-noise ratio (SNR), which depends on many factors. However, most importantly, it does not depend on the optical bandwidth $\Delta {\mathrm {\nu}}$ of the radiation for a two-telescope correlation. The explanation for the independence of the SNR from $\Delta {\mathrm {\nu}}$ is provided in several works \citep[e.g., subsection 4.1 of][]{10.1093/mnras/stab2391}.  \textcolor{magenta}{The Signal-to-Noise Ratio ($\mathrm{SNR_{12}}$) produced by the considered identical pair of IACTs becomes} \sout{is given by}
 \begin{equation}
-	SNR = A \cdot \alpha \cdot q \cdot n \cdot F^{-1} \cdot \sigma \cdot \sqrt{\frac{T \Delta f}{2}} \cdot \abs{V_{12}}^{2}
+	\textcolor{magenta}{{\mathrm {SNR_{12}}}} = A \cdot \alpha \cdot q \cdot n \cdot F^{-1} \cdot \sigma \cdot \sqrt{\frac{T \Delta f}{2}} \cdot \abs{V_{12}}^{2}
 	\label{eq:SNR}
 \end{equation}
 Here, $A$ is the total mirror area, $\alpha$ is the quantum efficiency of the PMTs, $q$ is the throughput of the remaining optics, and $n$ is the differential photon flux from the source. The excess noise factor of the PMTs is represented by $F$, $T$ denotes the observation time, and $\sigma$ is the normalized spectral distribution of the light (including filters) \citep[e.g.,][]{acciari2020optical}.
+
+\textcolor{magenta}{The total SNR obtained by all the pairs of $N_T$ telescopes in an observation facility excluding the zero-baseline cases, becomes
+\begin{equation}
+\mathrm{SNR}_{N_T} = \sum_{\substack{i,j =1 \\ i<j}}^{N_T}  {\mathrm {SNR}_{ij}}.
+\label{eqn:total-SNR}
+\end{equation}
+Point to note in eqns~\ref{eq:SNR} and \ref{eqn:total-SNR} is that all the $N_T$ IACTs in the facility along with their associated optics and other parameters are considered to be identical.}
 
 \subsection{Baseline considerations}\label{sec:earth}
 The measurement of the size of stellar objects via squared visibility depends on the distance between the telescopes, known as the baseline $b$.
