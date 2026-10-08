@@ -1,4 +1,4 @@
-\section{Network Parameters}
+\section{Network Parameters}\label{sec:ParaGAN}
 
 \begin{figure*}
 	\centering
@@ -59,7 +59,7 @@ One domain specific hyperparameter of the cGAN model presented here is the Numbe
 
 The hyperparameter Output Channels refers to the number of channels in the generator output (e.g., 1 for grayscale, 3 for RGB). It is worthwhile to recall that the cGAN model constructed in this work is trained on ``ground truth'' target images and the simulated II data, both in grey scales as seen in Fig.\ref{fig:GANinput}. It is natural that the output of this model will be in grey scales only. Therefore the value of this hyperparameter is set to 1. The choice of hyperparameter \(\lambda\) has been commented upon earlier.
 
-An optimized set of hyperparameters is selected through an iterative process of training and validation. For a tentatively chosen set of the hyperparameters, the model is trained using the Training Set until the both the Discriminator and the Generator loss functions are minimized. This model, thus trained along with its model parameters, is then passed through validation using the Validation Set. This cycle of training and validation is iterated till an optimal set of hypermaraters is arrived at. During each epoch of training of the model, both the Discriminator and the Generator networks are trained for 100,000 steps. Plots of the ``Discriminator Loss'' function and the ``Generator Total Loss'' function presented in Fig.{\ref{fig:Plot_discrep_loss}} represent the results of this training for the hyperparameters, namely, the Disriminator repetition (``discrep'', in short). Obviously, the most compute-intensive part of this process is that of the training of the Model. The results of training and validation presented in this work were carried out on a CPU using two nodes, each with 48 threads and the entire process of training and validation required approximately 20 hours on the machine employed for this work. This iterative process of training and validation of the Model is represented schematically in the Fig.\ref{fig:FlowDiagram}. The chosen optimal set of hyperparameters is presented in Table-{\ref{tab:hyperparameters}.}
+An optimized set of hyperparameters is selected through an iterative process of training and validation. For a tentatively chosen set of the hyperparameters, the model is trained using the Training Set until the both the Discriminator and the Generator loss functions are minimized. This model, thus trained along with its model parameters, is then passed through validation using the Validation Set. This cycle of training and validation is iterated till an optimal set of hypermaraters is arrived at. During each epoch of training of the model, both the Discriminator and the Generator networks are trained for 100,000 steps. Plots of the ``Discriminator Loss'' function and the ``Generator Total Loss'' function presented in Fig.{\ref{fig:Plot_discrep_loss}} represent the results of this training for the hyperparameters, namely, the {\bf Discriminator} repetition (``discrep'', in short). Obviously, the most compute-intensive part of this process is that of the training of the Model. The results of training and validation presented in this work were carried out on a CPU using two nodes, each with 48 threads and the entire process of training and validation required approximately 20 hours on the machine employed for this work. This iterative process of training and validation of the Model is represented schematically in the Fig.\ref{fig:FlowDiagram}. The chosen optimal set of hyperparameters is presented in Table-{\ref{tab:hyperparameters}.}
 \begin{table}[ht]
 	\centering
 	\caption{Selected hyperparameters used for training the model.}
@@ -74,7 +74,7 @@ An optimized set of hyperparameters is selected through an iterative process of 
 		Batch size              & 1 \\
 		Buffer Size             & 1400 \\
 		Discriminator repetition  & 1 \\
-		Number of Telescope        & 4 \\
+		{\bf Number of Telescope}        & 6 \& 9 \\
 		Output Channels         & 1 \\
 		Lambda                  & 100 \\
 		\hline

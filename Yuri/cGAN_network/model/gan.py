@@ -199,9 +199,9 @@ class CGAN():
           prediction = self.optional_rotation(prediction, target)                         # predicted image or its 180 rotated form based on matching nearer with ground truth or target
             
           if show_diff:
-              difference = sfun.ff2d_diff(target[0,:,:,0], prediction, sampling=sampling, base_path=self.base_path)                       # difference of target image and predicted image
+              difference = sfun.ff2d_diff(target[0,:,:,0], prediction, sampling=sampling, base_path=self.base_path)# difference of target image and predicted image
               difference = 2*((difference - np.min(difference))/(np.max(difference) - np.min(difference))) -1   # Normalize difference which lies in the range [-1, 1]
-              display_list = [test_input[0,:,:,0], target[0,:,:,0], prediction, difference]                     # the observed signal, target or ground truth, predicted image and difference of image 
+              display_list = [test_input[0,:,:,0], target[0,:,:,0], prediction, difference] # the observed signal, target or ground truth, predicted image and difference of image 
               title = ['Input Image', 'Ground Truth', 'Predicted Image', 'Difference']                          # with title
               N_images = 4
           else:

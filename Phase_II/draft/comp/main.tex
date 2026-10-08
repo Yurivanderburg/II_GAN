@@ -1,53 +1,56 @@
-\documentclass[linenumbers, twocolumn]{aastex701}
+\documentclass[twocolumn]{openjournal}
 \usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage[normalem]{ulem}
-\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{booktabs}
 \usepackage{lineno}
-
-\usepackage{fancyhdr}
-%\pagestyle{fancy}
-%\fancyfoot[L]{DOI: \href{https://doi.org/10.5281/zenodo.17598807}{10.5281/zenodo.17598807}}
-
-
-\definecolor{BLUE}{named}{blue} 
+\usepackage{xurl}
+\usepackage[
+colorlinks=true,
+linkcolor=blue,
+citecolor=blue,
+urlcolor=blue,
+breaklinks=true
+]{hyperref}
+\usepackage{xcolor}
+\usepackage{orcidlink}
 
 \newcommand{\mias}{$\SI{}{\micro{\rm as}}$}
 \newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\norm}[2]{\left\lVert#1\right\rVert}
 
-
-
 \begin{document}
-
 \title{Generative AI for image reconstruction in Intensity Interferometry: a first attempt}
+\date{}
 
-\author{Km Nitu Rai}
-\affiliation{School of Physics, Indian Institute of Science Education and Research Thiruvananthapuram, Maruthamala PO, Vithura, Thiruvananthapuram 695551, Kerala, India.}
-\affiliation{Aryabhatta Research Institute of Observational Sciences, Manora Peak, Nainital 263129, India.}
-\email{niturai201296@gmail.com}  
+\author{Km Nitu Rai,$^{1,2\orcidlink{0000-0002-9939-805X}}$ Yuri van der Burg,$^{3}$ Soumen Basak,$^{1\orcidlink{0000-0003-4042-0387}}$	Subrata Sarangi,$^{4,5\orcidlink{0000-0001-6500-9987}}$	and Prasenjit Saha$^{3\orcidlink{0000-0003-0136-2153}}$}
 
-\author{Yuri van der Burg} 
-\affiliation{Physik-Institut, University of Zurich,	Winterthurerstrasse 190, 8057 Zurich, Switzerland.}
-\email{yuri.vanderburg@uzh.ch}
+\affiliation{$^{1}$School of Physics, Indian Institute of Science
+	Education and Research Thiruvananthapuram, Maruthamala PO, Vithura,
+	Thiruvananthapuram 695551, Kerala, India.}
 
-\author{Soumen Basak}
-\affiliation{School of Physics, Indian Institute of Science Education and Research Thiruvananthapuram, Maruthamala PO, Vithura, Thiruvananthapuram 695551, Kerala, India.}
-\email{sbasak2006@gmail.com}
+\affiliation{$^{2}$Aryabhatta Research Institute of Observational Sciences,
+	Manora Peak, Nainital 263129, India.}
 
-\author{Prasenjit Saha}
-\affiliation{Physik-Institut, University of Zurich,	Winterthurerstrasse 190, 8057 Zurich, Switzerland.}
-\email{psaha@physik.uzh.ch}
+\affiliation{$^{3}$Physik-Institut, University of Zurich,
+	Winterthurerstrasse 190, 8057 Zurich, Switzerland.}
 
-\author{Subrata Sarangi}
-\affiliation{School of Applied Sciences, Centurion University of	Technology and Management, Odisha-752050, India.}
-\affiliation{Visiting Associate, Inter-University Centre for Astronomy and Astrophysics, Post Bag 4, Ganeshkhind, Pune 411 007, Maharashtra, India.}
-\email{ssarangi.itech@gmail.com}
+\affiliation{$^{4}$School of Applied Sciences, Centurion University of
+	Technology and Management, Odisha-752050, India.}
+
+\affiliation{$^5$ Visiting Associate, Inter-University Centre for 
+	Astronomy and Astrophysics, Post Bag 4, Ganeshkhind, Pune 411007, 
+	Maharashtra, India.}
+\email{niturai201296@gmail.com}
+\email{yuri.vanderburg@gmail.com}
 
 \begin{abstract}
-In the last few years Intensity Interferometry (II) has made significant strides in achieving high-precision resolution of stellar objects at optical wavelengths. Despite these advancements, phase retrieval remains a major challenge due to the nature of photon correlation. This paper explores the application of a conditional Generative Adversarial Network (cGAN) to tackle the problem of image reconstruction in II. This method successfully reconstructs the shape, size, and brightness distribution of simulated, fast-rotating stars based on a sparsely sampled spatial power spectrum obtained from a hypothetical ground-based II facility composed of four Imaging Atmospheric Cherenkov Telescopes (IACTs).  Although this particular example could also be addressed using parameter fitting, the results suggest that with larger arrays much more complicated systems could be reconstructed by applying machine-learning techniques to II.
+	In the last few years Intensity Interferometry (II) has made significant strides in achieving high-precision resolution of stellar objects at optical wavelengths. Despite these advancements, phase retrieval remains a major challenge due to the nature of photon correlation. This paper explores the application of a conditional Generative Adversarial Network (cGAN) to tackle the problem of image reconstruction in II. This method successfully reconstructs the shape, size, and brightness distribution of simulated, fast-rotating stars based on sparsely sampled spatial power spectra obtained by using two different hypothetical ground-based II facilities composed of six and nine Imaging Atmospheric Cherenkov Telescopes (IACTs), respectively.  Although this particular example could also be addressed using parameter fitting, our results suggest that with larger arrays of IACTs much more complex systems with varied surface features could be reconstructed by applying machine-learning techniques to II. Hence this approach merits closer examination.
 \end{abstract}
+
+\maketitle
+
+\noindent
+\textbf{Keywords:} {{Intensity Interferometry}, {Phase Reconstruction}, {Generative Adversarial Network (cGAN)}, {Imaging Atmospheric Cherenkov Telescopes}}
 
 \input{intro_reformatted}
 \input{image-reconstruction-past-efforts}
@@ -64,9 +67,7 @@ The code used for this work is available on the DOI:\hfil\break
 \section*{Acknowledgements}
 One of the authors (SS) gratefully acknowledges the computing facilities and the local hospitality extended to him by the Inter-University Centre for Astronomy and Astrophysics (IUCAA), Pune, India under its Visiting Associate Programme during the preparation and finalization of this manuscript.
 
-\bibliographystyle{aasjournalv7}
-%\bibliographystyle{aa}
-\bibliography{refs}
+\bibliographystyle{aasjournal}
+\bibliography{main}
 
 \end{document}
-

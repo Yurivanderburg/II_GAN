@@ -1,14 +1,16 @@
 Comments to author:
 The manuscript explores a conditional generative model for reconstructing simulated images of fast-rotating stars from sparsely sampled intensity-interferometry data. I found the central motivation appealing. If such a method can be validated against realistic II data, it could provide a useful complement to parametric modelling and may ultimately be relevant to stellar distortions and asymmetries arising from rotation, tides, companions, or magnetic activity. The present study is therefore a worthwhile first step. My comments below are essentially around reconciliating the github repository with the actual paper text. There is as well more minor recommendations or remarks.
 
-Response:
+Response: We sincerely thank the referee for the encouraging assessment of our work and for recognizing the potential of the proposed conditional generative model for reconstructing stellar surface images from sparsely sampled intensity-interferometry (II) data. We particularly appreciate the referee's observation that the method could provide a useful complement to parametric modelling and may have broader applications to stellar distortions and asymmetries arising from rotation, tides, companions, and magnetic activity.
+
+We also appreciate the referee's careful effort in comparing the GitHub repository with the manuscript. We have thoroughly reviewed the manuscript and the accompanying GitHub repository to ensure consistency between the methodology, equations, descriptions, and the publicly available implementation. We have addressed the specific discrepancies and minor issues raised by the referee and made the corresponding corrections and clarifications in the revised manuscript and repository.
 
 
 Important issues.
 
 1. Relationship between the paper and the public code. Could the authors clarify which configuration produced the reported 6- and 9-IACT results? The manuscript’s abstract, figures, and results consistently discuss N_T = 6 and N_T = 9, whereas Table 1 gives “Number of Telescope: 4”. The public repository linked through Zenodo contains a four-telescope, VERITAS-like configuration (generate_baseline.py and generate_pspec.py) and supplied loss records for two, three, and four telescopes, but not six or nine. This may well be an incomplete release or a simplified example rather than the exact analysis code. It would be very helpful if the authors could reconcile Table 1 and provide the telescope positions, observing setup, and scripts or configuration files used for the two reported cases.
 
-Response:
+Response: We thank the referee for identifying this inconsistency. The value “4” in Table 1 was retained from an earlier configuration and does not correspond to the configurations used for the reported results. We have corrected Table 1 to reflect the N_T=6 and N_T=9 configurations. We have also updated the public repository to include the corresponding telescope configurations, observing setup, and relevant configuration files used for generating the results presented in the manuscript. These updates have been made to ensure consistency between the manuscript and the publicly available code and to improve the reproducibility of the reported results. We thank the referee for bringing this issue to our attention.
 
 
 2. Noise model and II realism. The manuscript usefully develops the II SNR expression in Section 3.2. Could the authors explain how this expression enters the simulations? In the public code, salt-and-pepper perturbations seems to be applied to the stellar image before its FFT, and an additional perturbation is applied in the discriminator; this creates a noisy training input, but it does not appear to model uncertainty in a photon-correlation measurement at a stated per-baseline SNR. It would strengthen the physical interpretation to show results across a small set of realistic II SNR/noise conditions, or alternatively to frame the present results explicitly as a noiseless or phenomenologically perturbed proof of concept. The latter would still be useful.
@@ -39,19 +41,20 @@ Minor points.
 
 1. Could Eq. 6 be clarified? If it represents a combined SNR from independent baselines, a quadrature combination may be expected rather than a linear sum.
 
-Response:
+Response: We thank the referee for pointing out the ambiguity in Eq. (6). We agree that, when the measurements from different baselines are statistically independent, their combined SNR should be obtained by adding the individual SNRs in quadrature rather than linearly. We have therefore revised Eq. (6)
 
 2. Eq. 29 appears to use e = \sqrt(1 - a/b). Unless a and b have an unconventional ordering, the usual ellipse eccentricity is e = \sqrt(1 - b**2/a**2). Clarifying the definitions would avoid ambiguity.
 
-Response:
+Response: We sincerely thank the referee for pointing out this ambiguity in Eq. (29). We agree that the expression for the eccentricity was not written correctly and could lead to confusion regarding the definitions of the semi-major and semi-minor axes. We have corrected Eq. (29) to the standard expression.
 
 3. The Fig. 4 caption appears to say “middle and left” where “middle and right” may be intended. The roadmap in Section 1 also appears to use outdated section numbers.
 
-Response:
+Response: We sincerely thank the referee for pointing out these issues. We carefully rechecked the caption of Fig. 4 and have corrected the panel designation from “middle and left” to “middle and right,” as appropriate. We have rewrite the roadmap too.
 
 4. The manuscript would benefit from a final typographical pass, including “facilites”, “Disriminator”, “iteself”, “confirm to”, and a number of bibliography-entry issues.
 
-Response:
+Response: Thank you for pointing this out. We have carefully proofread the entire manuscript and corrected the typographical errors, including “facilites,” “Disriminator,” “iteself,” and “confirm to.” We have also thoroughly checked and corrected the bibliography entries for formatting, consistency, and other typographical issues. We appreciate the reviewer’s careful reading, which has helped us improve the overall presentation and quality of the manuscript.
+
 
 5. The bibliographic entry for Coccomini et al. (2021) appears to use arXiv:2122.11578; I believe the corresponding paper is arXiv:2111.11578.
 
