@@ -43,13 +43,16 @@ Minor points.
 
 Response: We thank the referee for pointing out the ambiguity in Eq. (6). We agree that, when the measurements from different baselines are statistically independent, their combined SNR should be obtained by adding the individual SNRs in quadrature rather than linearly. We have therefore revised Eq. (6)
 
+
 2. Eq. 29 appears to use e = \sqrt(1 - a/b). Unless a and b have an unconventional ordering, the usual ellipse eccentricity is e = \sqrt(1 - b**2/a**2). Clarifying the definitions would avoid ambiguity.
 
 Response: We sincerely thank the referee for pointing out this ambiguity in Eq. (29). We agree that the expression for the eccentricity was not written correctly and could lead to confusion regarding the definitions of the semi-major and semi-minor axes. We have corrected Eq. (29) to the standard expression.
 
+
 3. The Fig. 4 caption appears to say “middle and left” where “middle and right” may be intended. The roadmap in Section 1 also appears to use outdated section numbers.
 
-Response: We sincerely thank the referee for pointing out these issues. We carefully rechecked the caption of Fig. 4 and have corrected the panel designation from “middle and left” to “middle and right,” as appropriate. We have rewrite the roadmap too.
+Response: We sincerely thank the referee for pointing out these issues. We carefully rechecked the caption of Fig. 4 and have corrected the panel designation from “middle and left” to “middle and right,” as appropriate. We also found that the roadmap in Section 1 in the previous version could be confusing. We have therefore rewritten the roadmap and explicitly provided the section numbers to make the organization of the manuscript clearer.
+
 
 4. The manuscript would benefit from a final typographical pass, including “facilites”, “Disriminator”, “iteself”, “confirm to”, and a number of bibliography-entry issues.
 
