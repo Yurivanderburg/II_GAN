@@ -2,7 +2,7 @@
 \begin{figure*}
 \centering
 \includegraphics[width=\linewidth]{fig/FlowDiagram_TikZ.png}
-\caption{A schematic representation of the features of the cGAN model used in this work and the iterative process of its training, validation and testing. The process constitutes four broad stages: (1) choice of an appropriate GAN architecture including both the Discriminator and the Generator (not shown in this figure) (2) preparation of the Training, Validation and Testing datasets and (3) Training and Validation of the Model (4) Testing and Evaluation of the Model. The stages (2), (3) and (4) are depicted in this figure. The datasets are prepared in three broad steps: (i) generating the ``ground truth'' images $x$ of fictitious fast rotating stars (FRS) , the sparse II observation signal $y$ used as the ``condition'' images in the Model and the generated images $\hat x$ sampled from a Normal Distribution (ii) merging these images into individual files with $(x|y)$ and/ or $(\hat x|y)$ (as seen in the two illustrated samples in Fig.(\ref{fig:GANinput})) and generating the full dataset in this process, and finally (iii) partitioning the full dataset into Training Set, Validation Set and the Testing Set. After the iterative training of the Model and its validation process is complete (``Nash point'' of the Minimax Game is reached), the Model is tested using the Testing Set and evaluated.}
+\caption{A schematic representation of the features of the cGAN model used in this work and the iterative process of its training, validation and testing. The process constitutes four broad stages: (1) choice of an appropriate GAN architecture including both the Discriminator and the Generator (not shown in this figure) (2) preparation of the Training, Validation and Testing datasets and (3) Training and Validation of the Model (4) Testing and Evaluation of the Model. The stages (2), (3) and (4) are depicted in this figure. The datasets are prepared in three broad steps: (i) generating the ``ground truth'' images $x$ of fictitious fast rotating stars (FRS) , the sparse II observation signal $y$ used as the ``condition'' images in the Model and the generating the ground-truth images \(x\) of fictitious fast-rotating stars and the corresponding sparse II input signals \(y\), which serve as the conditioning inputs to the model, and finally (iii) partitioning the full dataset into Training Set, Validation Set and the Testing Set. After the iterative training of the Model and its validation process is complete (``Nash point'' of the Minimax Game is reached), the Model is tested using the Testing Set and evaluated.}
 \label{fig:FlowDiagram}
 \end{figure*}
  
@@ -35,7 +35,7 @@ For a given fixed Generator $G(z)$, the problem can be reformulated as:
 	\end{aligned}
 	\label{eq:GAN_reformulated}
 \end{equation}
-where \(D^{*}_{G}\) denotes the optimum of the discriminator. As seen in equation (\ref{eq:Disc_optimum}), the global optimum of equation (\ref{eq:GAN_reformulated}) is achieved if and only if \(p_G = p_{\rm data}\). Furthermore, if both \(G\) and \(D\) are allowed to reach their respective optima, -- the so called Nash point of the Minimax game -- \(p_{\mathrm G}\) converges to \(p_{\rm data}\). 
+where \(D^{*}_{G}\) denotes the optimum of the discriminator. As seen in Eq.~\ref{eq:Disc_optimum}, the global optimum of Eq.~\ref{eq:GAN_reformulated} is achieved if and only if \(p_G = p_{\rm data}\). Furthermore, if both \(G\) and \(D\) are allowed to reach their respective optima, -- the so called Nash point of the Minimax game -- \(p_{\mathrm G}\) converges to \(p_{\rm data}\). 
 \begin{equation}
 	\centering
 	D^*_G(x) = \frac{p_{\rm data}(x)}{p_{\rm data}(x) + p_G(x_{\mathrm gen})}
@@ -53,58 +53,66 @@ Subsequently, the GAN framework was extended to a conditional model \citep{mirza
 	\label{eq:conditional_GAN}
 \end{equation}
 The conditional variable $y$ in a cGAN can be various additional information including images, labels or text contextual to ``ground truth'' real data $x$. Among various types of cGANs, Pix2Pix GAN with its image-to-image translation design is suitable for the task at hand.
-In our work, we specifically use this conditional variable by choosing \(y\) to represent the ground-based intensity-interferometry (II) observation patterns: the Generator is trained to produce stellar surface images that not only look realistic but also {\bf conform to} the measured II correlations, while the Discriminator judges realism \emph{and} consistency with the II data.
 
-\cite{isola2017image} further observed that combining the cGAN from Eq.~\eqref{eq:conditional_GAN} with the traditional $L_1(G)$ loss (also known  as the Mean Absolute Error) improves the results, as the Generator is encouraged to produce outputs closer to the target image in a pixel-wise sense. We adopt this approach in the training of our cGAN model by including $L_1(G)$ defined in eq.(\ref{eq:l1_loss})
+{\bf In our work, the conditioning variable \(y\) represents the input signal derived from the simulated intensity-interferometry (II) measurements. The generator learns a mapping from this input signal to a reconstructed stellar image, while the discriminator evaluates the consistency of a candidate image with the corresponding input signal. Although the general cGAN formulation in Eq.~\ref{eq:conditional_GAN} includes a latent noise vector \(z\), our implementation does not explicitly supply such a vector to the generator. Instead, the generator directly maps the conditional input \(y\) to the reconstructed image, which we denote by \(G(y)\). Thus, the model implemented in this work is a conditional GAN with a deterministic U-Net generator and a conditional PatchGAN discriminator.}
+
+\cite{isola2017image} further observed that combining the cGAN from Eq.~\ref{eq:conditional_GAN} with the traditional $L_1(G)$ loss (also known  as the Mean Absolute Error) improves the results, as the Generator is encouraged to produce outputs closer to the target image in a pixel-wise sense. We adopt this approach in the training of our cGAN model by including $L_1(G)$ defined in Eq.~\ref{eq:l1_loss}
 \begin{equation}
-	\centering
-	L_1(G) = \mathbb{E}_{x \sim p_{\mathrm{data}, z \sim p_z(z)}} \bigl[ \lVert x - G(z \mid y) \rVert_{1} \bigr].
+	L_1(G) = \mathbb{E}_{(x,y)\sim p_{\mathrm{data}}(x,y)}\left[\lVert x-G(y)\rVert_1\right].
 	\label{eq:l1_loss}
 \end{equation}
 The total adversarial loss function, along with the $L_1$ loss modulated by a hyperparameter $\lambda$ then becomes
 \begin{equation}
 	\centering
-	L_{tot} = \arg \min_{G} \max_{D} V(D, G) + \lambda \cdot L_1(G).
+	L_{tot} = \min_G \max_D	\left[V(D,G)+\lambda L_1(G)\right].
 	\label{eq:total_loss}
 \end{equation}
 
 This type of network has demonstrated remarkable robustness across a variety of applications. For example, it can generate colored images from grayscale inputs based on architectural labels, transform images from day to night, and even predict maps from satellite data. A more extensive list of applications is provided in \cite{isola2017image}.
 
 \subsection{Generator}
-As discussed above, in a GAN the Generator, a deep neural network in {\bf itself}, is responsible for producing synthetic data, in this case, images that resemble those of a fast-rotating star. In this work, the Generator is implemented as a U-Net convolutional network \citep{ronneberger2015u}. The U-Net consists of a symmetric encoder--decoder structure forming a characteristic ``U'' shape along with skip connections: the left (contracting or down-sampling) path, the right (expanding or up-sampling path) and the connecting (bottle-neck) path. The left down-sampling path repeatedly applies 3$\times$3 convolutions (padded to preserve spatial dimensions) followed by LeakyReLU activations and strided convolution (with stride of 2), by progressively halving the spatial resolution while doubling the channel depth (typically 64 $\to$ 128 $\to$ 256 $\to$ 512 $\to$ 1024). At the bottleneck, high-level features are processed without further spatial reduction. The right up-sampling path mirrors this process using 2$\times$2 transposed convolutions (stride 2) for up-sampling, halving the channel count at each level and using ReLU as the activation function for all its layers except the output layer. Additionally, a dropout layer is introduced at the beginning of the upsampling phase to mitigate overfitting of the Generator model \citep{isola2017image}. Critically, long skip connections concatenate feature maps from each encoder (down-sampling) level to the corresponding decoder (up-sampling level), directly injecting high-resolution details into the reconstruction process. This enables the network to ``remember where everything is'' while the deep bottleneck still provides the large receptive field needed to think globally about image structure and semantics. Besides the strided convolutions, modern variants of U-Nets used in state-of-the-art GANs incorporate residual blocks within resolution levels, and frequently add spectral normalization and self-attention at the bottleneck for improved training stability and long-range dependency modelling. These architectural choices allow our U-Net generator to simultaneously recover sharp, high-frequency details (stellar limb edges, limb-darkening profiles, gravity darkening, and rapid-rotation-induced oblateness) and enforce global coherence (overall disk morphology and physical consistency with the observed interferometric visibilities), making it ideally suited for high-fidelity sky-image reconstruction of fast-rotating stars from sparse ground-based intensity interferometry observations.
+As discussed above, in a GAN the Generator, a deep neural network in {\bf itself}, is responsible for producing synthetic data, in this case, images that resemble those of a fast-rotating star. {\bf In this work, the generator is implemented as a U-Net convolutional network \citep{ronneberger2015u}. The network consists of an encoder-decoder architecture with skip connections between corresponding encoder and decoder levels. The encoder progressively reduces the spatial resolution while increasing the number of feature channels. In the implementation, the encoder contains seven down-sampling blocks with 64, 128, 256, 512, 512, 512, and 512 filters, respectively. The decoder contains six up-sampling blocks with 512, 512, 512, 256, 128, and 64 filters, followed by a final transposed convolution that produces the reconstructed image. The decoder feature maps are concatenated with the corresponding encoder feature maps, allowing spatial information from earlier layers to be retained during reconstruction.
+	
+Dropout is enabled in the first two up-sampling blocks to help mitigate overfitting. The final layer uses a hyperbolic tangent (\(\tanh\)) activation. Unlike the general latent-variable formulation of a cGAN, the implemented generator receives only the input signal \(y\) and produces the reconstructed image \(G(y)\). The combination of multi-scale feature extraction and skip connections is intended to preserve spatial structure while learning the mapping from the input signal representation to the target stellar image.}
 
 During the training, the total Generator Loss function $L_G$ including the $L_1$ loss defined in eq.(\ref{eq:l1_loss}) that is minimized is given by
 \begin{equation}
-\centering
-\begin{aligned}
-L_{G} \; &= \; - \, \mathbb{E}_{z \sim p_{z}(z)} \bigl[ \log D(G(z \mid y)\mid y) \bigr] \\
-& +\; \lambda \; \mathbb{E}_{x \sim p_{\mathrm{data}, z \sim p_z(z)}} \bigl[ \lVert x - G(z \mid y) \rVert_{1} \bigr].  
-\end{aligned}
-\label{eq:total_gen_loss}
+	\begin{aligned}
+		L_G ={}&
+		-\mathbb{E}_{(x,y)\sim p_{\mathrm{data}}(x,y)}
+		\left[\log D(G(y)\mid y)\right]\\
+		&+\lambda\,
+		\mathbb{E}_{(x,y)\sim p_{\mathrm{data}}(x,y)}
+		\left[\|x-G(y)\|_1\right].
+	\end{aligned}
+	\label{eq:total_gen_loss}
 \end{equation}
 Here, 
 \begin{itemize}
-  \item \(x\) denotes a real data sample (e.g.\ the ``ground-truth'' image; here, the synthetically generated fast rotator image) corresponding to condition \(y\), the simulated II observation data.  
-  \item \(z\) is a random latent vector drawn from the prior \(p_z(z)\).  
-  \item \(G(z \mid y)\) is the generator output (the reconstructed / synthesized image) given \(z\) and condition \(y\).  
-  \item \(D(\cdot \mid y)\) is the discriminator’s estimate (probability) that its input is “real,” given the same condition \(y\).
-  \item \(\lambda\) is a hyperparameter controlling the trade-off between adversarial realism and pixel-wise fidelity (typical values depend on the problem, e.g.\ in pix2pix, \(\lambda = 100\)). 
+  \item \(x\) denotes the target stellar image corresponding to the input signal \(y\).
+  \item \(y\) denotes the simulated II input signal representation.
+  \item \(G(y)\) denotes the reconstructed stellar image produced by the generator. 
+  \item \(D(G(y)\mid y)\) denotes the discriminator output for a candidate image conditioned on \(y\).
+  \item \(\lambda\) controls the relative contribution of the \(L_1\) reconstruction loss. 
 \end{itemize}
 
 \subsection{Discriminator}
 The Discriminator is tasked with classifying the images produced by the Generator as either real or fake. It takes a real image from the dataset (often referred to as the target image for the Generator) and provides feedback to guide the Generator toward producing more accurate images. In this work, the PatchGAN model \citep{isola2017image} is employed as the Discriminator. Unlike a traditional global classifier, PatchGAN evaluates individual patches of the image, outputting a grid of predictions rather than a single scalar value. Each element in the grid corresponds to the ``realness'' of one patch of the image under examination of the Discriminator at a time. The final loss of the Discriminator is the average over all the patch responses. Evaluating the ``realness'' of the input image in terms of its constituent patches facilitates capture of texture/ style and other high frequency components in the image. As compared to a global discriminator, it also reduces the number of parameters in the network thereby helping reduce computation cost. It also works on images with arbitrary sizes.
 
-Prior to the down-sampling of data using PatchGAN, each input image is preprocessed with application of Zero Padding followed by batch normalization. The purpose of Zero Padding is to prevent the loss of spatial information and to facilitate the extraction of deeper features from the down-sampled output. Batch normalization is required to stabilize the learning (loss minimization) process. PatchGAN then reduces the spatial dimensions of the images to extract localized features, ensuring the model focuses on smaller regions. In this down-sampling stage, a leaky version of the Rectified Linear Unit (LeakyReLU) is applied in the convolutional layers, similar to the approach used in the Generator. The probability $D(\cdot|y)$ that the patch of the input image represented by $\cdot$ is ``real'' is evaluated through this process. The loss function $D$ of the full input image is obtained by averaging over all the patch responses. 
+{\bf The discriminator follows a PatchGAN architecture \citep{isola2017image} and receives the input signal together with a candidate stellar image, which may be either the ground-truth image or the generator output. In the implementation, salt-and-pepper perturbation is applied to the input signal before it is concatenated with the candidate image. The concatenated input is then processed by a sequence of convolutional down-sampling blocks. Subsequent layers use zero padding, convolution, batch normalization, and LeakyReLU activation, followed by a final convolution that produces a spatial grid of discriminator outputs. Each output corresponds to a local image region, allowing the discriminator to assess local characteristics of the candidate image in the context of the input signal. The discriminator is trained to distinguish real input target pairs from input generated image pairs.}
 
 The Discriminator Loss function $L_D$ that is optimized during the training process is given by 
 \begin{equation}
-\centering
-\begin{aligned}
-L_{D} \; &= \; - \, \mathbb{E}_{x \sim p_{\mathrm{data}}(x \mid y)} \bigl[ \log D(x \mid y) \bigr] \\
-& -\; \mathbb{E}_{z \sim p_{z}(z)} \bigl[ \log\bigl( 1 - D(G(z \mid y)\mid y)\bigr) \bigr]
-\end{aligned}
+	\begin{aligned}
+		L_D ={}&
+		-\mathbb{E}_{(x,y)\sim p_{\mathrm{data}}(x,y)}
+		\left[\log D(x\mid y)\right]\\
+		&-\mathbb{E}_{(x,y)\sim p_{\mathrm{data}}(x,y)}
+		\left[\log\left(1-D(G(y)\mid y)\right)\right].
+	\end{aligned}
+	\label{eq:discriminator_loss}
 \end{equation}
-where the arguments of the $D$ and $G$ functions are as noted in the text following eq.(\ref{eq:total_gen_loss}) This loss is composed of two parts: one that assesses how accurately it identifies fake images (by comparing predictions to a target value of 0) and the other that measures how accurately the Discriminator identifies real images (by comparing predictions to a target value of 1).
+where the arguments of the $D$ and $G$ functions are as noted in the text following Eq.~(\ref{eq:total_gen_loss}). This loss is composed of two parts: one that assesses how accurately it identifies fake images (by comparing predictions to a target value of 0) and the other that measures how accurately the Discriminator identifies real images (by comparing predictions to a target value of 1).
 
 The training procedure of these two components of the cGAN model can be outlined as follows:
 \begin{itemize}
