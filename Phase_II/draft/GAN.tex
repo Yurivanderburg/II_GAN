@@ -92,7 +92,7 @@ Here,
   \item \(x\) denotes the target stellar image corresponding to the input signal \(y\).
   \item \(y\) denotes the simulated II input signal representation.
   \item \(G(y)\) denotes the reconstructed stellar image produced by the generator. 
-  \item \(D(G(y)\mid y)\) denotes the discriminator output for a candidate image conditioned on \(y\).
+  \item \(D(G(y)\mid y)\) denotes the discriminator output for a candidate image conditioned on \(y\). In our implementation, this output is a grid of logits rather than calibrated probabilities.
   \item \(\lambda\) controls the relative contribution of the \(L_1\) reconstruction loss. 
 \end{itemize}
 
